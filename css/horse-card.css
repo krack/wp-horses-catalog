@@ -1,0 +1,50 @@
+.card{
+    position: relative;
+}
+.card .global-evaluation{
+   position: absolute;
+    top: 33px;
+    left: -65px;
+    transform: rotate(90deg);
+    /*transform-origin: top left;*/
+    background-color: red;
+}
+
+.card h1{
+    text-align: center;
+}
+.card .profil{
+    max-height: 200px;
+}
+
+.card .individual, .card .human-linked{
+    float: left;
+    width: 48%;
+}
+
+.card .race.SF{
+    display: block;
+    background-image: url("images/sf.jpg");
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    font-size: 0px;
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    right: 0px;
+}
+.card .individual{
+    width: 50%;
+}
+
+.card .size::after{
+    content: "m";
+}
+.card .individual span{
+    display: block;
+}
+
+.card table{
+    max-width: 100%;
+}

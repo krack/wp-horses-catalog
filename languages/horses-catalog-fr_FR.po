@@ -1,0 +1,155 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"POT-Creation-Date: 2019-11-11 00:10+0100\n"
+"PO-Revision-Date: 2019-11-11 00:12+0100\n"
+"Last-Translator: \n"
+"Language-Team: est\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: adminPlugin.php:32
+msgid "Horse Catalog"
+msgstr "Catalogue de chevaux"
+
+#: adminPlugin.php:35
+msgid "Import manager"
+msgstr "Importer"
+
+#: adminPlugin.php:38
+msgid "File uploaded"
+msgstr "Fichier uploadé"
+
+#: adminPlugin.php:47
+msgid "The file already existing, it will be overrided."
+msgstr "Il existe déjà un fichier valide, celui-ci sera surchargé."
+
+#: adminPlugin.php:49
+msgid "Warning : no file uploaded, the catalog is empty."
+msgstr ""
+"Attention : aucun fichier valide chargé pour le moment, le catalog est donc "
+"vide."
+
+#: adminPlugin.php:53
+msgid "Horses"
+msgstr "Chevaux"
+
+#: adminPlugin.php:57
+msgid "Update"
+msgstr "Enregistrer"
+
+#: adminPlugin.php:90
+msgid "Empty file"
+msgstr "Fichier vide"
+
+#: adminPlugin.php:105
+msgid "File type is not csv"
+msgstr "Le type du fichier n'est pas csv"
+
+#: adminPlugin.php:121
+msgid "Error during file uploading"
+msgstr "Erreur durant le téléchargement du fichier"
+
+#: adminPlugin.php:145
+msgid "File must be encoding in UTF-8"
+msgstr "Le fichier doit être encodé en UTF-8"
+
+#: adminPlugin.php:157
+msgid "Error during copie after file validating"
+msgstr "Erreur durant la copie après la validation du fichier"
+
+#: csvReader.php:35 csvReader.php:89
+msgid "File opening impossible"
+msgstr "Ouverture du fichier impossible"
+
+#: csvReader.php:45
+#, php-format
+msgid "File invalid : separator char must be %s"
+msgstr "Fichier invalide: le caractère séparateur doit être %s"
+
+#: csvReader.php:56
+#, php-format
+msgid "File invalid row %u : bad field number"
+msgstr "Fichier invalide ligne %u : mauvais nombre de champs"
+
+#: template/horse-detail.php:48
+msgid "Osteo Articular Status"
+msgstr "Statut Ostéo Articulaire"
+
+#: template/horse-detail.php:55
+msgid "breeder"
+msgstr "naisseur"
+
+#: template/horse-detail.php:59
+msgid "Owner"
+msgstr "Propriétaire"
+
+#: template/horse-detail.php:67
+msgid "locomotion"
+msgstr "locomotion"
+
+#: template/horse-detail.php:69
+msgid "pace"
+msgstr "pas"
+
+#: template/horse-detail.php:70
+msgid "trot"
+msgstr "trop"
+
+#: template/horse-detail.php:71
+msgid "gallop"
+msgstr "galop"
+
+#: template/horse-detail.php:81
+msgid "Obstacle exercise"
+msgstr "Exercice à l'obstacle"
+
+#: template/horse-detail.php:83
+msgid "Balance / availability"
+msgstr "Equilibre/disponibilité"
+
+#: template/horse-detail.php:84
+msgid "Medium / path"
+msgstr "Moyen/trajectoire"
+
+#: template/horse-detail.php:85
+msgid "Style"
+msgstr "Style"
+
+#: template/horse-detail.php:86
+msgid "Blood, will, respect, Intelligence of the bar"
+msgstr "Sang, volonté, respect, Inteligence de la barre"
+
+#: template/horse-detail.php:98
+msgid "Maternal line expertise"
+msgstr "Expertise lignée maternelle"
+
+#: template/horse-detail.php:100
+msgid "Mother"
+msgstr "Mère"
+
+#: template/horse-detail.php:108
+msgid "Total weighted points"
+msgstr "Total points pondérés"
+
+#: template/horse-detail.php:109
+msgid "final note"
+msgstr "note final"
+
+#: template/horse-detail.php:112
+msgid "Name"
+msgstr "Nom"
+
+#: template/horse-detail.php:124
+msgid "Points"
+msgstr "Points"
+
+#~ msgid "Marina nue"
+#~ msgstr "Marina completement nue"
