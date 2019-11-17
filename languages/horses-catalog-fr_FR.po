@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2019-11-11 00:10+0100\n"
-"PO-Revision-Date: 2019-11-11 00:12+0100\n"
+"POT-Creation-Date: 2019-11-17 19:53+0100\n"
+"PO-Revision-Date: 2019-11-17 19:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -15,55 +15,76 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: adminPlugin.php:32
+#: adminPlugin.php:19
+msgid "horses list import"
+msgstr "importeur de la liste des chevaux"
+
+#: adminPlugin.php:19 adminPlugin.php:34
 msgid "Horse Catalog"
 msgstr "Catalogue de chevaux"
 
-#: adminPlugin.php:35
+#: adminPlugin.php:37
 msgid "Import manager"
 msgstr "Importer"
 
-#: adminPlugin.php:38
+#: adminPlugin.php:40
 msgid "File uploaded"
 msgstr "Fichier uploadé"
 
-#: adminPlugin.php:47
+#: adminPlugin.php:49
 msgid "The file already existing, it will be overrided."
 msgstr "Il existe déjà un fichier valide, celui-ci sera surchargé."
 
-#: adminPlugin.php:49
+#: adminPlugin.php:51
 msgid "Warning : no file uploaded, the catalog is empty."
 msgstr ""
 "Attention : aucun fichier valide chargé pour le moment, le catalog est donc "
 "vide."
 
-#: adminPlugin.php:53
+#: adminPlugin.php:56
 msgid "Horses"
 msgstr "Chevaux"
 
-#: adminPlugin.php:57
+#: adminPlugin.php:60
+msgid "Horse pictures zip"
+msgstr "Zip d'images des chevaux"
+
+#: adminPlugin.php:65
 msgid "Update"
 msgstr "Enregistrer"
 
-#: adminPlugin.php:90
-msgid "Empty file"
-msgstr "Fichier vide"
-
-#: adminPlugin.php:105
+#: adminPlugin.php:77
 msgid "File type is not csv"
 msgstr "Le type du fichier n'est pas csv"
 
-#: adminPlugin.php:121
+#: adminPlugin.php:81
+msgid "File type is not zip"
+msgstr "Le type du fichier n'est pas une archive"
+
+#: adminPlugin.php:109
+msgid "Empty file"
+msgstr "Fichier vide"
+
+#: adminPlugin.php:142
 msgid "Error during file uploading"
 msgstr "Erreur durant le téléchargement du fichier"
 
-#: adminPlugin.php:145
+#: adminPlugin.php:168
 msgid "File must be encoding in UTF-8"
 msgstr "Le fichier doit être encodé en UTF-8"
 
-#: adminPlugin.php:157
+#: adminPlugin.php:185
+#, php-format
+msgid "It's missing picture for horse with id : %s"
+msgstr "Il manque une image pour le cheval avec l'id : %s"
+
+#: adminPlugin.php:215
 msgid "Error during copie after file validating"
 msgstr "Erreur durant la copie après la validation du fichier"
+
+#: adminPlugin.php:221 adminPlugin.php:225
+msgid "Error during extract pictures"
+msgstr "Erreur durant l'extraction des images"
 
 #: csvReader.php:35 csvReader.php:89
 msgid "File opening impossible"
@@ -79,77 +100,74 @@ msgstr "Fichier invalide: le caractère séparateur doit être %s"
 msgid "File invalid row %u : bad field number"
 msgstr "Fichier invalide ligne %u : mauvais nombre de champs"
 
-#: template/horse-detail.php:48
+#: template/horse-detail.php:50
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
 
-#: template/horse-detail.php:55
+#: template/horse-detail.php:57
 msgid "breeder"
 msgstr "naisseur"
 
-#: template/horse-detail.php:59
+#: template/horse-detail.php:61
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: template/horse-detail.php:67
+#: template/horse-detail.php:69
 msgid "locomotion"
 msgstr "locomotion"
 
-#: template/horse-detail.php:69
+#: template/horse-detail.php:71
 msgid "pace"
 msgstr "pas"
 
-#: template/horse-detail.php:70
+#: template/horse-detail.php:72
 msgid "trot"
 msgstr "trop"
 
-#: template/horse-detail.php:71
+#: template/horse-detail.php:73
 msgid "gallop"
 msgstr "galop"
 
-#: template/horse-detail.php:81
+#: template/horse-detail.php:83
 msgid "Obstacle exercise"
 msgstr "Exercice à l'obstacle"
 
-#: template/horse-detail.php:83
+#: template/horse-detail.php:85
 msgid "Balance / availability"
 msgstr "Equilibre/disponibilité"
 
-#: template/horse-detail.php:84
+#: template/horse-detail.php:86
 msgid "Medium / path"
 msgstr "Moyen/trajectoire"
 
-#: template/horse-detail.php:85
+#: template/horse-detail.php:87
 msgid "Style"
 msgstr "Style"
 
-#: template/horse-detail.php:86
+#: template/horse-detail.php:88
 msgid "Blood, will, respect, Intelligence of the bar"
 msgstr "Sang, volonté, respect, Inteligence de la barre"
 
-#: template/horse-detail.php:98
+#: template/horse-detail.php:100
 msgid "Maternal line expertise"
 msgstr "Expertise lignée maternelle"
 
-#: template/horse-detail.php:100
+#: template/horse-detail.php:102
 msgid "Mother"
 msgstr "Mère"
 
-#: template/horse-detail.php:108
+#: template/horse-detail.php:110
 msgid "Total weighted points"
 msgstr "Total points pondérés"
 
-#: template/horse-detail.php:109
+#: template/horse-detail.php:111
 msgid "final note"
 msgstr "note final"
 
-#: template/horse-detail.php:112
+#: template/horse-detail.php:114
 msgid "Name"
 msgstr "Nom"
 
-#: template/horse-detail.php:124
+#: template/horse-detail.php:126
 msgid "Points"
 msgstr "Points"
-
-#~ msgid "Marina nue"
-#~ msgstr "Marina completement nue"

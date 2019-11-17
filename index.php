@@ -24,7 +24,7 @@ new PageWithOverrideTemplate("horse-detail", "template/horse-detail.php", ["hors
 new PageWithOverrideTemplate("horses-list", "template/horses-list.php", ["horse-list.css"]);
 
 function my_plugin_load_plugin_textdomain() {
-	load_plugin_textdomain( 'horses-catalog', FALSE, basename( dirname( __FILE__ ) ) . "/languages/" );
+	load_plugin_textdomain( 'horses-catalog', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 }
 add_action( 'plugins_loaded', 'my_plugin_load_plugin_textdomain' );
 

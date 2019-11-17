@@ -16,7 +16,7 @@ class AdminPlugin{
     {
         
         add_action( 'admin_enqueue_scripts', array( $this,'load_custom_wp_admin_style') );
-        add_menu_page('Importeur de la liste des chevaux', 'Horse Catalog', 'manage_options', 'horses-uploader', array( $this,'listUpladerDisplayPage'));
+        add_menu_page(__('horses list import', 'horses-catalog'), __('Horse Catalog', 'horses-catalog'), 'manage_options', 'horses-uploader', array( $this,'listUpladerDisplayPage'));
 
     }
 
