@@ -1,8 +1,98 @@
-.card{
+/* form */
+
+form {
+    margin-bottom: 10px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+form ul {
+    display: flex;
+}
+
+form li {
+    list-style: none;
+    flex: 1 1 auto;
+}
+
+form .categories li::before, form .categories li::after {
+    content: "\25C6";
+    margin: 0 3px;
+    font-size: 0.5em;
+    vertical-align: super;
+}
+
+form input[type=checkbox] {
+    margin-right: 5px;
+}
+
+form input[type=submit] {
+    margin-top: 20px;
+}
+
+/* list */
+
+.list {
+    padding: 0;
+    position: flex;
+}
+
+.list .card {
+    width: 33%;
+    display: inline-flex;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    flex: 1 1 auto;
+}
+
+.list a {
+    text-decoration: none;
+    padding: 5% 10%;
+}
+
+.list .card .age {
+    display: block;
+    position: relative;
+    line-height: 2em;
+}
+
+.list .card .age::before {
+    content: '';
+    width: 15%;
+    height: 3px;
+    display: inline-block;
+    background: linear-gradient(to right, #2a2927, #f1c589);
+    position: absolute;
+    left: 0;
+    top: 1em;
+}
+
+.list .card .age::after {
+    content: '';
+    width: 15%;
+    height: 3px;
+    display: inline-block;
+    background: linear-gradient(to right, #2a2927, #f1c589);
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 1em;
+}
+
+.list .card img {
+    max-width: 100%;
+}
+
+/* detail */
+
+.detail-card {
     position: relative;
 }
-.card .global-evaluation{
-   position: absolute;
+
+.detail-card .global-evaluation {
+    position: absolute;
     top: 33px;
     left: -65px;
     transform: rotate(90deg);
@@ -10,19 +100,20 @@
     background-color: red;
 }
 
-.card h1{
+.detail-card h1 {
     text-align: center;
 }
-.card .profil{
+
+.detail-card .profil {
     max-height: 200px;
 }
 
-.card .individual, .card .human-linked{
+.detail-card .individual, .card .human-linked {
     float: left;
     width: 48%;
 }
 
-.card .race.SF{
+.detail-card .race.SF {
     display: block;
     background-image: url("images/sf.jpg");
     background-repeat: no-repeat;
@@ -30,21 +121,76 @@
     font-size: 0px;
     width: 40px;
     height: 40px;
-
     position: absolute;
     right: 0px;
 }
-.card .individual{
+
+.detail-card .individual {
     width: 50%;
 }
 
-.card .size::after{
+.detail-card .size::after {
     content: "m";
 }
-.card .individual span{
+
+.detail-card .individual span {
     display: block;
 }
 
-.card table{
+.detail-card table {
     max-width: 100%;
+}
+
+/** pedigree */
+
+.detail-card #pedigree>* {
+    display: flexbox;
+}
+
+.detail-card #pedigree .self {
+    width: 25%;
+    flex: 1 1 auto;
+}
+
+.detail-card #pedigree .self * {
+    display: block;
+}
+
+.detail-card #pedigree .parents {
+    width: 74%;
+    border: solid black 1px;
+}
+
+/* projection */
+
+.detail-card .projections {
+    display: block;
+}
+
+.detail-card .projections>div {
+    display: block;
+    float: left;
+    width: 7em;
+}
+
+.detail-card .projections>div>span {
+    display: block;
+    text-align: center;
+}
+
+/** individual */
+
+.detail-card .individual {
+    display: block;
+}
+
+/* contact */
+
+.detail-card #contact span {
+    text-align: center;
+    display: block;
+}
+
+.detail-card #contact .name {
+    font-weight: bold;
 }

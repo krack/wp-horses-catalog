@@ -16,7 +16,7 @@ class CsvReader{
         $row = 1;
         $headerLength = -1;
         if (($handle = fopen($this->path, "r")) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000,  $this->separator)) !== FALSE) {
+            while (($data = fgetcsv($handle, 0,  $this->separator)) !== FALSE) {
                 //header line
                 if($headerLength == -1){
                     if(!$this->checkSeparator($data)){
@@ -69,7 +69,7 @@ class CsvReader{
         $headers;
         $row = 0;
         if (($handle = fopen($this->path, "r")) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000,  $this->separator)) !== FALSE) {
+            while (($data = fgetcsv($handle, 0,  $this->separator)) !== FALSE) {
                 if($row == 0){
                     $headers = $data;
                 }else{
