@@ -92,8 +92,10 @@ class AdminPlugin{
         if(!$this->validateZipFileContent()){
             return false;
         } 
-
+        
+        $this->removeOldAttachments();
         $this->copyValidatedFile();
+        $this->saveFileInAttachment();
 
         return true;
     }
@@ -225,6 +227,41 @@ class AdminPlugin{
             array_push($this->errors, __("Error during extract pictures", 'horses-catalog'));
         }
 
+    }
+
+    private function saveFileInAttachment(){
+        $fileList = $this->getListFileInZip();
+        foreach($fileList as $file){
+            $filepath =  wp_upload_dir()['basedir']."/horses-catalog/".$file ;
+            $upload_id = wp_insert_attachment( array(
+                'guid'=> wp_upload_dir()['basedir']."/".basename( $file ), 
+                'post_title'     => substr($file, 0, strrpos($file, ".")),
+                'post_content'   => 'autoimported by horsecatalog plugin',
+                'post_mime_type' => 'image/jpeg',
+                'post_status'    => 'inherit'
+            ),$filepath);
+            require_once( ABSPATH . 'wp-admin/includes/image.php' );
+            $metadata = wp_generate_attachment_metadata( $upload_id, $filepath );
+            wp_update_attachment_metadata( $upload_id,  $metadata);
+        }
+    }
+
+    private function removeOldAttachments(){
+        $query_images_args = array(
+            'post_type'      => 'attachment',
+            'post_mime_type' => 'image',
+            'post_status'    => 'inherit',
+            'posts_per_page' => -1,
+            'post_parent'    => 0,
+            's'              => 'autoimported by horsecatalog plugin'
+            
+            
+        );
+        
+        $query_images = new WP_Query( $query_images_args );
+        foreach ( $query_images->posts as $image ) {
+            wp_delete_attachment($image->ID, true);
+        }
     }
 }
 ?>

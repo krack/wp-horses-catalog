@@ -91,26 +91,35 @@ form input[type=submit] {
     position: relative;
 }
 
-.detail-card .global-evaluation {
-    position: absolute;
-    top: 33px;
-    left: -65px;
-    transform: rotate(90deg);
-    /*transform-origin: top left;*/
-    background-color: red;
-}
-
 .detail-card h1 {
     text-align: center;
 }
 
 .detail-card .profil {
-    max-height: 200px;
+    width: 80%;
+    margin: 0 10%;
 }
 
-.detail-card .individual, .card .human-linked {
-    float: left;
-    width: 48%;
+.detail-card .human-linked, .detail-card .projections, .detail-card .individual, .detail-card .osteopathy-status {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.detail-card .human-linked>*, .detail-card .projections>*, .detail-card .individual>*, .detail-card .osteopathy-status>* {
+    flex: 1 1 auto;
+    display: block;
+}
+
+/* projection */
+
+.detail-card .projections>*>span, .detail-card .osteopathy-status>*>span {
+    display: block;
+}
+
+.detail-card .value {
+    font-weight: bold;
 }
 
 .detail-card .race.SF {
@@ -125,16 +134,8 @@ form input[type=submit] {
     right: 0px;
 }
 
-.detail-card .individual {
-    width: 50%;
-}
-
 .detail-card .size::after {
     content: "m";
-}
-
-.detail-card .individual span {
-    display: block;
 }
 
 .detail-card table {
@@ -161,29 +162,6 @@ form input[type=submit] {
     border: solid black 1px;
 }
 
-/* projection */
-
-.detail-card .projections {
-    display: block;
-}
-
-.detail-card .projections>div {
-    display: block;
-    float: left;
-    width: 7em;
-}
-
-.detail-card .projections>div>span {
-    display: block;
-    text-align: center;
-}
-
-/** individual */
-
-.detail-card .individual {
-    display: block;
-}
-
 /* contact */
 
 .detail-card #contact span {
@@ -193,4 +171,84 @@ form input[type=submit] {
 
 .detail-card #contact .name {
     font-weight: bold;
+}
+
+/* pedigree */
+
+.detail-card #pedigree table {
+    border: solid lightgray 1px;
+    background-image: none;
+    background-color: lightgray;
+    width: 80%;
+    margin: auto;
+}
+
+.detail-card #pedigree td>* {
+    display: block;
+    text-align: center;
+}
+
+/** strong point */
+
+.detail-card #strong_points ul {
+    list-style: none;
+    text-align: center;
+}
+
+/** maternal */
+
+.mother-notes {
+    background-image: linear-gradient(to bottom, #2a2927, #f1c589);
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.mother-notes {
+    background-image: linear-gradient(to bottom, #2a2927, #f1c589);
+    border-spacing: 0px 0px;
+    background-color: tomato;
+    border: 0;
+}
+
+.mother-notes tr:nth-child(2) td {
+    border-right: solid 1px #c69e6b;
+}
+
+.mother-notes .total {
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.mother-notes .exponant {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+/* galerry */
+
+.gallery {}
+
+.gallery #zoom {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
+.gallery .thumbnail {
+    overflow-x: auto;
+    width: 80%;
+    margin: auto;
+    display: block;
+    white-space: nowrap;
+}
+
+.gallery .thumbnail img {
+    max-width: 20%;
+}
+
+video {
+    display: block;
+    width: 80%;
+    margin: auto;
 }

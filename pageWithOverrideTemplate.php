@@ -38,11 +38,16 @@ class PageWithOverrideTemplate{
     }
 
     function wptuts_scripts_basicAppointmentPlugin(){
+        wp_register_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css',  array(), null, 'all');
+        wp_enqueue_style( 'fontawesome' );
        
         foreach($this->cssFiles as $cssFile ){
             wp_register_style( 'custom-style', plugins_url( "/css/".$cssFile, __FILE__ ), array(), null, 'all' );
         }
+
         wp_enqueue_style( 'custom-style' );
+
+        wp_enqueue_script( 'horse-catalog-galery', plugins_url( "/js/".'galery.js', __FILE__ ), array(), null, true);
         
     }
 

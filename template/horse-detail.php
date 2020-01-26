@@ -5,38 +5,6 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
 
 <?php get_header(); ?>
 
-<?php
-function displayPedigree($horse, $step){
-    if($horse->father == null || $horse->mother == null){
-        return;
-    }
-?>
-    <div class="father">
-        <div class="self">
-            <span class="name"><?php echo $horse->father->name ?></span>
-            <span class="race"><?php echo $horse->father->race ?></span>
-        </div>
-        <div class="parents">
-            <?php
-                displayPedigree( $horse->father, $step +1); 
-            ?>  
-        </div>
-    </div>
-    <div class="mother">
-        <div class="self">
-            <span class="name"><?php echo $horse->mother->name ?></span>
-            <span class="race"><?php echo $horse->mother->race ?></span>
-        </div>
-        <div class="parents">
-            <?php
-                displayPedigree( $horse->mother, $step +1); 
-            ?>  
-        </div>
-    </div>
-<?php
-}
-?>
-
 <?php 
 $horse = Horses::get($_GET["id"]);
 ?>
@@ -60,30 +28,29 @@ $horse = Horses::get($_GET["id"]);
     <img class="profil" src="<?php echo "/wp-content/uploads/horses-catalog/".$horse->id.".jpg" ?>" alt="profil <?php echo $horse->name ?>" />
     <span class="race <?php echo $horse->race ?>"><?php echo $horse->race ?></span>
 
-         
-    <br />
+    <hr />
     <div class="human-linked">
         <div class="owner">
             <h4><?php _e("Owner", 'horses-catalog') ?></h4>
             <span><?php echo $horse->owner ?></span>
         </div>
         <div class="breeder">
-            <h4><?php _e("breeder", 'horses-catalog') ?></h4>
+            <h4><?php _e("Breeder", 'horses-catalog') ?></h4>
             <span ><?php echo $horse->breeder ?></span>
         </div>
        
     </div>
     <div class="projections">
         <div>
-            <span><?php echo $horse->projections ?></span>
+            <span class="value" ><?php echo $horse->projections ?></span>
             <span><?php _e("Protected mares in 2018", 'horses-catalog') ?></span>
         </div>
         <div>
-            <span><?php echo $horse->riding ?></span>
+            <span  class="value" ><?php echo $horse->riding ?></span>
             <span><?php _e("Year of riding in France", 'horses-catalog') ?></span>
         </div>
         <div>
-            <span><?php echo $horse->frProjections ?></span>
+            <span class="value" ><?php echo $horse->frProjections ?></span>
             <span><?php _e("Protected mares in France", 'horses-catalog') ?></span>
         </div>
         
@@ -94,19 +61,18 @@ $horse = Horses::get($_GET["id"]);
         <span class="coat-color"><?php echo $horse->coatColor ?></span>
         <span class="birth-year"><?php echo $horse->birthYear ?></span>
 
-        <div class="osteopathy-status">
-            <h2><?php _e("Osteo Articular Status", 'horses-catalog') ?></h2>
-            <span><?php echo $horse->osteopathyStatus ?></span>
+        
+    </div>
+    <div class="osteopathy-status">
+       
+        <div>
+            <span><?php _e("Osteo Articular Status", 'horses-catalog') ?></span>
+            <span class="value"><?php echo $horse->osteopathyStatus ?><span>
         </div>
     </div>  
       
-    <br />
-    <div id="pedigree">
-        <h2><?php _e("Pedigree", 'horses-catalog') ?></h2>
-        <div class="parents">
-            <?php displayPedigree($horse, 0) ?>
-        </div>
-    </div>
+    <hr />
+    <?php include("pedigree.php"); ?>
 
     <div id="strong_points">
         <h2><?php _e("The strong points", 'horses-catalog') ?></h2>
@@ -124,12 +90,27 @@ $horse = Horses::get($_GET["id"]);
                 <?php 
                 for ($i = 0; $i < 5; $i++){
                 ?>
-                    <td><?php echo ($i+1) ?></td>
+                    <td>
+                        <?php echo ($i+1) ?>
+                        <span class="exponant">
+                        <?php
+                        echo _n(
+                            'iere',
+                            'ième',
+                            ($i+1),
+                            'horses-catalog'
+                        )
+                        ?>
+                        </span>
+                        <?php _e("Mother", 'horses-catalog') ?>
+                   
+                
+                </td>
                 <?php
                 }
                 ?>
-                <td><?php _e("Total weighted points", 'horses-catalog') ?></td>
-                <td><?php _e("final note", 'horses-catalog') ?></td>
+                <td  rowspan="2" class="total label"><?php _e("Total weighted points", 'horses-catalog') ?></td>
+                <td  rowspan="2" class="total label"><?php _e("Final note", 'horses-catalog') ?></td>
             </tr>
             <tr>
                 <td><?php _e("Name", 'horses-catalog') ?></td>
@@ -140,8 +121,6 @@ $horse = Horses::get($_GET["id"]);
                 <?php
                 }
                 ?>
-                <td rowspan="2"><?php echo $horse->totalMothersNotes; ?></td>
-                <td rowspan="2"><?php echo $horse->evaluateMothersNotes; ?></td>
             </tr>
             <tr>
                 <td><?php _e("Points", 'horses-catalog') ?></td>
@@ -152,6 +131,8 @@ $horse = Horses::get($_GET["id"]);
                 <?php
                 }
                 ?>
+                <td class="total value"><?php echo $horse->totalMothersNotes; ?></td>
+                <td class="total value"><?php echo $horse->evaluateMothersNotes; ?>/10</td>
             </tr>
         </table>
     </div>
@@ -189,7 +170,7 @@ $horse = Horses::get($_GET["id"]);
             <caption><?php _e("Locomotion and general functioning", 'horses-catalog') ?></caption>
             <tr>
                 <td><?php echo $horse->notes->sfExprets->locomotion; ?></td>
-                <td><?php echo $horse->notes->sfExprets->locomotionComment; ?></td>
+                <td><pre><?php echo $horse->notes->sfExprets->locomotionComment; ?></pre></td>
             </tr>
         </table>
 
@@ -197,7 +178,7 @@ $horse = Horses::get($_GET["id"]);
             <caption><?php _e("Jumping ability", 'horses-catalog') ?></caption>
             <tr>
                 <td><?php echo $horse->notes->sfExprets->freeObstacle; ?></td>
-                <td><?php echo $horse->notes->sfExprets->freeObstacleComment; ?></td>
+                <td><pre><?php echo $horse->notes->sfExprets->freeObstacleComment; ?></pre></td>
             </tr>
         </table>
 
@@ -224,7 +205,7 @@ $horse = Horses::get($_GET["id"]);
                         </tr> 
                     </table>
                 </td>
-                <td><?php echo $horse->notes->sfExprets->ridingObstacleComment; ?></td>
+                <td><pre><?php echo $horse->notes->sfExprets->ridingObstacleComment; ?></pre></td>
             </tr>
         </table>
     </div>
@@ -278,7 +259,7 @@ $horse = Horses::get($_GET["id"]);
                </td>
             </tr>
             <tr ><td colspan="2"><?php _e("General impression", 'horses-catalog') ?><?php echo $horse->notes->testingExprets->globale; ?></td></tr>
-            <tr ><td colspan="2"><?php echo $horse->notes->testingExprets->comment; ?></td></tr>
+            <tr ><td colspan="2"><pre><?php echo $horse->notes->testingExprets->comment; ?></pre></td></tr>
 
           
         </table>
@@ -286,17 +267,17 @@ $horse = Horses::get($_GET["id"]);
         function displayNoteInStar($number){
             for($i = 0; $i < $number; $i++ ){
                 ?>
-                    <span class="star"></span>
+                    <span class="star fas fa-star"></span>
                 <?php
             }
             for($i = $number; $i < 5; $i++ ){
                 ?>
-                    <span class="star-black"></span>
+                    <span class="star-black  far fa-star"></span>
                 <?php
             }
         }
         ?>
-        <div>
+        <div class="temperament">
             <h3><?php _e("Temperament - Behavior", 'horses-catalog') ?></h3>
             <ul>
                 <li>
@@ -327,11 +308,11 @@ $horse = Horses::get($_GET["id"]);
             <table>
                 <tr>
                     <td><?php _e("Behavior under the saddle", 'horses-catalog') ?></td>
-                    <td><?php echo $horse->notes->temperament->seatComment; ?></td>
+                    <td><pre><?php echo $horse->notes->temperament->seatComment; ?></pre></td>
                 </tr>
                 <tr>
                     <td><?php _e("Behavior in care", 'horses-catalog') ?></td>
-                    <td><?php echo $horse->notes->temperament->careComment; ?></td>
+                    <td><pre><?php echo $horse->notes->temperament->careComment; ?></pre></td>
                 </tr>
 
             </table>
@@ -364,20 +345,16 @@ $horse = Horses::get($_GET["id"]);
                         </tr>
                     </table>
                 </td>
-                <td>
-                    <?php echo $horse->notes->ridersExperts->ridingObstacleComment; ?>
-                </td>
+                <td><pre><?php echo $horse->notes->ridersExperts->ridingObstacleComment; ?></pre></td>
             </tr>
             <tr ><td colspan="2"><?php _e("General impression", 'horses-catalog') ?><?php echo $horse->notes->ridersExperts->globale; ?></td></tr>
-            <tr ><td colspan="2"><?php echo $horse->notes->ridersExperts->comment; ?></td></tr>
+            <tr ><td colspan="2"><pre><?php echo $horse->notes->ridersExperts->comment; ?></pre></td></tr>
 
         </table>
     </div>
 
-    <div id="video">
-        <h2><?php _e("Video", 'horses-catalog') ?></h2>
-
-    </div>
+   
+    <?php include("galerie.php"); ?>
     <?php if(function_exists("shf_connected_block") && shf_connected_block()){ ?>
     <div id="contact">
         <h2><?php _e("Contact", 'horses-catalog') ?></h2>
