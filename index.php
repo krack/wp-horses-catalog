@@ -21,7 +21,12 @@ function configure_admin_menu(){
 add_action( 'admin_menu', 'configure_admin_menu' );
 
 new PageWithOverrideTemplate("horse-detail", "template/horse-detail.php", ["horse-card.css"]);
-new PageWithOverrideTemplate("horses-list", "template/horses-list.php", ["horse-list.css"]);
+$pageName= get_option( 'menu_page_name' );
+if($pageName == null){
+        $pageName = "horse-list"; 
+        add_option( 'menu_page_name', $pageName );  
+}
+new PageWithOverrideTemplate($pageName, "template/horses-list.php", ["horse-list.css"]);
 
 function my_plugin_load_plugin_textdomain() {
 	load_plugin_textdomain( 'horses-catalog', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );

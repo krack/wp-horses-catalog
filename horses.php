@@ -1,7 +1,12 @@
 <?php
 
 require_once plugin_dir_path( __FILE__ ).'csvReader.php'; 
-
+function comparator($horse1, $horse2){
+    if($horse1->age == $horse2->age){
+        return  $horse1->name > $horse2->name; 
+    }
+    return $horse1->age > $horse2->age; 
+}
 class Horses{
     private static $list = null;
     private static $map = null;
@@ -100,7 +105,11 @@ class Horses{
             array_push(self::$list, $horse);
             self::$map[$horse->id] = $horse;
         }
+
+        usort(self::$list, 'comparator');
     }
+
+     
 
     public $id;
     public $name;
@@ -157,7 +166,7 @@ class Horses{
         $this->projections = $rawData["saillit"];
         $this->frProjections = $rawData["fr saillit"];
         $this->riding = $rawData["monte"];
-        $this->strongPoints = $keywords = preg_split("/\|/", $rawData["strong points"]);
+        $this->strongPoints = $keywords = preg_split("/\|/", $rawData["points fort"]);
         
         $this->notes = new Notes($rawData);
 
@@ -167,7 +176,10 @@ class Horses{
 
         $this->mothersNotes = [];
         for($i = 1; $i<=5; $i++){
-            array_push($this->mothersNotes, new MotherNotes($rawData, $i));
+            $notes = new MotherNotes($rawData, $i);
+            if(!$notes->isEmpty()){
+                array_push($this->mothersNotes, $notes);
+            }
         }
 
         $this->totalMothersNotes = $rawData["mere_points_total"];
@@ -362,6 +374,10 @@ class MotherNotes{
     public function __construct($rawData, $index) {
         $this->name = $rawData["mere_".$index];
         $this->points = $rawData["mere_".$index."_points"];
+    }
+
+    public function isEmpty(){
+        return $this->points == "";
     }
 }
 

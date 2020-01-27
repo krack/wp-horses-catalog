@@ -28,7 +28,10 @@ class AdminPlugin{
     }
 
     public function listUpladerDisplayPage(){
-        $fileUploaded = $this->uploadFileIfValid();
+        if(isset($_POST["import-catalog"])){
+            $fileUploaded = $this->uploadFileIfValid();
+        }
+        $saved = $this->saveConfiguration();
         ?>
         <div class="wrap wp-horses-catalog-plugin-admin">
             <h1><?php _e("Horse Catalog", 'horses-catalog'); ?></h1>  
@@ -60,13 +63,65 @@ class AdminPlugin{
                         <label for="file_pictures_uploaded" class="fas fa-file-archive"><?php _e("Horse pictures zip", 'horses-catalog'); ?></label>
                         <input type="file" name="<?php echo $this->zipInputName ?>" id="file_pictures_uploaded" accept=".zip" />
                     </div>
+                    
+                    <input type="submit" class="button-primary" value="<?php _e("Import", 'horses-catalog'); ?>" name="import-catalog"/>
                 </fieldset>
 
-                <input type="submit" class="button-primary" value="<?php _e("Update", 'horses-catalog'); ?>" />
+            </form> 
+
+            <form method="post" >
+                <fieldset>
+                    <legend><?php _e("Configuration manager", 'horses-catalog'); ?></legend>
+                    <div class="messages">
+                        <?php if($saved){ ?>
+                            <span class="fas fa-check saved"><?php _e("saved", 'horses-catalog'); ?></span>
+                        <?php } ?>
+                    </div>
+                    <div>
+                        <label ref="menu-page-name"><?php _e("Menu title ", 'horses-catalog'); ?></label>
+                        <input id="menu-page-name" placeholder="catalog 2020" name="menu-page-name" value="<?php echo get_option( 'menu_page_name' ); ?>" /> 
+                    </div>
+
+                    <input type="submit" class="button-primary" value="<?php _e("save", 'horses-catalog'); ?>" name="save-information" />
+                </fieldset>
+
             </form> 
         </div>
         <?php
 
+    }
+
+    private function saveConfiguration(){
+        $saved = false;
+        if(isset($_POST["save-information"])){
+            $oldPageName = get_option( 'menu_page_name' );
+            $newPageName = $_POST["menu-page-name"];
+            $this->defineOption('menu_page_name', $newPageName);
+            $this->renamePage($oldPageName, $newPageName);
+
+            $saved = true;
+        }
+        return $saved;
+    }
+
+    private function renamePage($oldPageName, $newPageName){
+        $pages = get_pages(array(
+            'post_status'  => array('publish', 'private')
+        )); 
+        foreach ( $pages as $page ) {
+            if($page->post_title === $oldPageName){
+                $page->post_title = $newPageName;
+                $page->post_name = sanitize_title($newPageName);
+                wp_update_post($page);
+            };
+        }
+    }
+    private function defineOption($name, $value){
+        if(!get_option($name)){
+            add_option( $name, $value );
+        }else{
+            update_option( $name, $value );
+        }
     }
 
     private function uploadFileIfValid() {

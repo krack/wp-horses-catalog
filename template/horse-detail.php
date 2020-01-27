@@ -2,7 +2,7 @@
 
 require_once plugin_dir_path( __DIR__ ).'horses.php'; 
 ?>
-
+<?php include("check.php"); ?>
 <?php get_header(); ?>
 
 <?php 
@@ -14,20 +14,34 @@ $horse = Horses::get($_GET["id"]);
 
     <nav>
         <ul>
+            <?php 
+            if(havePedigree($horse)){ ?>
             <li><a href="#pedigree"><?php _e("Pedigree", 'horses-catalog') ?></a></li>
+            <?php 
+            }
+
+            if(haveStrongPoints($horse)){ ?>
             <li><a href="#strong_points"><?php _e("The strong points", 'horses-catalog') ?></a></li>
-            <li><a href="#maternal"><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></a></li>
-            <li><a href="#sf"><?php _e("Expertise judges SF", 'horses-catalog') ?></a></li>
-            <li><a href="#testing"><?php _e("Expertise SF test team", 'horses-catalog') ?></a></li>
-            <li><a href="#opinion"><?php _e("International riders opinion", 'horses-catalog') ?></a></li>
-            <li><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li>
+            <?php 
+            }
+
+            if(haveMotherNotes($horse)){ ?>
+            <li><a href="#maternal"><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></a></li> <?php 
+            }
+ ?>
+            <li><a href="#sf"><?php _e("Expertise judges SF", 'horses-catalog') ?></a></li> 
+            <li><a href="#testing"><?php _e("Expertise SF test team", 'horses-catalog') ?></a></li> 
+            <li><a href="#opinion"><?php _e("International riders opinion", 'horses-catalog') ?></a></li> 
+            <li><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li> 
             <li><a href="#contact"><?php _e("Contact", 'horses-catalog') ?></a></li>
         </ul>
     </nav>
 
-    <img class="profil" src="<?php echo "/wp-content/uploads/horses-catalog/".$horse->id.".jpg" ?>" alt="profil <?php echo $horse->name ?>" />
-    <span class="race <?php echo $horse->race ?>"><?php echo $horse->race ?></span>
-
+    <div class="profilblock">
+        <img class="profil" src="<?php echo "/wp-content/uploads/horses-catalog/".$horse->id.".jpg" ?>" alt="profil <?php echo $horse->name ?>" />
+        <span class="race <?php echo $horse->race ?>"><?php echo $horse->race ?></span>
+    </div>
+    <span class="categorie"><?php echo $horse->globalEvaluation; ?></span>
     <hr />
     <div class="human-linked">
         <div class="owner">
@@ -74,68 +88,13 @@ $horse = Horses::get($_GET["id"]);
     <hr />
     <?php include("pedigree.php"); ?>
 
-    <div id="strong_points">
-        <h2><?php _e("The strong points", 'horses-catalog') ?></h2>
-        <ul>
-            <?php foreach($horse->strongPoints as $point){ ?>
-                <li><?php echo $point; ?></li>
-            <?php } ?>
-        </ul>
-    </div>
-    <div id="maternal">
-        <h2><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></h2>
-        <table class="mother-notes">
-            <tr>
-                <td><?php _e("Mother", 'horses-catalog') ?></td>
-                <?php 
-                for ($i = 0; $i < 5; $i++){
-                ?>
-                    <td>
-                        <?php echo ($i+1) ?>
-                        <span class="exponant">
-                        <?php
-                        echo _n(
-                            'iere',
-                            'ième',
-                            ($i+1),
-                            'horses-catalog'
-                        )
-                        ?>
-                        </span>
-                        <?php _e("Mother", 'horses-catalog') ?>
-                   
-                
-                </td>
-                <?php
-                }
-                ?>
-                <td  rowspan="2" class="total label"><?php _e("Total weighted points", 'horses-catalog') ?></td>
-                <td  rowspan="2" class="total label"><?php _e("Final note", 'horses-catalog') ?></td>
-            </tr>
-            <tr>
-                <td><?php _e("Name", 'horses-catalog') ?></td>
-                <?php 
-                for ($i = 0; $i < 5; $i++){
-                ?>
-                    <td><?php echo $horse->mothersNotes[$i]->name; ?></td>
-                <?php
-                }
-                ?>
-            </tr>
-            <tr>
-                <td><?php _e("Points", 'horses-catalog') ?></td>
-                <?php 
-                for ($i = 0; $i < 5; $i++){
-                ?>
-                    <td><?php echo $horse->mothersNotes[$i]->points; ?></td>
-                <?php
-                }
-                ?>
-                <td class="total value"><?php echo $horse->totalMothersNotes; ?></td>
-                <td class="total value"><?php echo $horse->evaluateMothersNotes; ?>/10</td>
-            </tr>
-        </table>
-    </div>
+    <?php include("strong-points.php"); ?>
+
+    <?php include("mother-notes.php"); ?>
+
+
+   
+    
     <div id="sf">
         <h2><?php _e("Expertise judges SF", 'horses-catalog') ?></h2>
         <table>

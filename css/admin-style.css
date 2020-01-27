@@ -1,13 +1,14 @@
-.wp-horses-catalog-plugin-admin label::after{
+.wp-horses-catalog-plugin-admin label::after {
     content: ':';
 }
 
 /**
 * global fieldset 
 */
+
 .wp-horses-catalog-plugin-admin fieldset {
     border: 1px solid #39c;
-    border-radius:8px;	
+    border-radius: 8px;
     margin: 10px;
     padding: 10px;
 }
@@ -19,27 +20,28 @@
 /**
 * Messages 
 */
-.wp-horses-catalog-plugin-admin .errors{
-    color : red;
-}
-.wp-horses-catalog-plugin-admin .uploaded{
-    color : green;
-}
-.wp-horses-catalog-plugin-admin .warning::before{
-    color : orange;
+
+.wp-horses-catalog-plugin-admin .errors {
+    color: red;
 }
 
-.wp-horses-catalog-plugin-admin .info::before{
-    color : #39c;
+.wp-horses-catalog-plugin-admin .uploaded, .wp-horses-catalog-plugin-admin .saved {
+    color: green;
 }
 
-.wp-horses-catalog-plugin-admin .fas::before{
+.wp-horses-catalog-plugin-admin .warning::before {
+    color: orange;
+}
+
+.wp-horses-catalog-plugin-admin .info::before {
+    color: #39c;
+}
+
+.wp-horses-catalog-plugin-admin .fas::before {
     padding-right: 5px;
     font-size: 1.5em;
 }
-.wp-horses-catalog-plugin-admin .messages li{
+
+.wp-horses-catalog-plugin-admin .messages li {
     display: list-item;
 }
-
-
-

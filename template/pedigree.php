@@ -6,7 +6,10 @@
     <?php
     }
 ?>
+<?php 
 
+if(havePedigree($horse)){
+?>
 <div id="pedigree">
     <h2><?php _e("Pedigree", 'horses-catalog') ?></h2>
 
@@ -81,3 +84,6 @@
 </div>
 
 
+<?php
+}
+?>

@@ -56,7 +56,7 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
             <a href="/horse-detail/?id=<?php echo $horse->id;?>">
                 <span class="age"><?php echo sprintf(__('%s years', 'horses-catalog'), $horse->age)  ?> - <?php echo $horse->discipline; ?></span>
                 <img class="profil" src="<?php echo "/wp-content/uploads/horses-catalog/".$horse->id.".jpg" ?>" alt="profil <?php echo $horse->name ?>" />
-                <h5><?php echo $horse->name;?></h5>
+                <h3><?php echo $horse->name;?></h3>
                 <span><?php echo sprintf(__('By %s x %s', 'horses-catalog'), $horse->father->name, $horse->mother->name) ?></span>
             </a>
         </div>
