@@ -294,11 +294,42 @@ form input[type=submit] {
 .root-notation {
     font-size: 1.3em;
     line-height: 1.6em;
+    position: relative;
+}
+
+.back {
+    background: radial-gradient(#f1c589, #2a2927);
+    position: absolute;
+    top: 120px;
+    left: 30%;
+    bottom: 0;
+    right: 30%;
+    z-index: -1;
+}
+
+#testing .back {
+    flex: none;
+    margin: inherit;
+    top: 20px;
+}
+
+#testing>div {
+    position: relative;
+}
+
+#testing .global-impression::before {
+    text-decoration: none;
+    content: '';
+    display: inline-block;
+    background: linear-gradient(to right, #2a2927, #f1c589, #2a2927);
+    height: 2px;
+    width: 20%;
+    position: absolute;
+    transform: translate(-25%);
 }
 
 .root-notation>div {
     display: flex;
-    background: linear-gradient(to right, red, purple);
     padding: 0px;
 }
 
@@ -306,8 +337,7 @@ form input[type=submit] {
     flex: 1 1 auto;
     display: inline-block;
     width: 50%;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 40px;
     background-color: white;
 }
 
@@ -316,6 +346,10 @@ form input[type=submit] {
     margin-right: 0px;
     margin-bottom: 1px;
     margin-top: 0px;
+}
+
+#testing.root-notation>div>div {
+    margin-bottom: 0px;
 }
 
 .root-notation>div:last-child>div {

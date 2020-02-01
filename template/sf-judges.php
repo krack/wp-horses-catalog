@@ -1,5 +1,7 @@
 <div id="sf" class="root-notation">
     <h2><?php _e("Expertise judges SF", 'horses-catalog') ?></h2>
+
+    <div class="back"></div>
     <div>
         <div class="model list-note">
             <h3><?php _e("Modele", 'horses-catalog') ?></h3>

@@ -1,5 +1,6 @@
 <div id="opinion" class="root-notation">
     <h2><?php _e("International riders opinion", 'horses-catalog') ?></h2>
+        <div class="back"></div>
     <div>
         <div class="model list-note">
             <h3><?php _e("Ability to climb jump obstacle", 'horses-catalog') ?></h3>
