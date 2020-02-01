@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2020-01-26 12:20+0100\n"
-"PO-Revision-Date: 2020-01-26 12:20+0100\n"
+"POT-Creation-Date: 2020-02-01 01:15+0100\n"
+"PO-Revision-Date: 2020-02-01 01:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -19,70 +19,86 @@ msgstr ""
 msgid "horses list import"
 msgstr "importeur de la liste des chevaux"
 
-#: adminPlugin.php:19 adminPlugin.php:34
+#: adminPlugin.php:19 adminPlugin.php:37
 msgid "Horse Catalog"
 msgstr "Catalogue de chevaux"
 
-#: adminPlugin.php:37
+#: adminPlugin.php:40
 msgid "Import manager"
 msgstr "Importer"
 
-#: adminPlugin.php:40
+#: adminPlugin.php:43
 msgid "File uploaded"
 msgstr "Fichier uploadé"
 
-#: adminPlugin.php:49
+#: adminPlugin.php:52
 msgid "The file already existing, it will be overrided."
 msgstr "Il existe déjà un fichier valide, celui-ci sera surchargé."
 
-#: adminPlugin.php:51
+#: adminPlugin.php:54
 msgid "Warning : no file uploaded, the catalog is empty."
 msgstr ""
 "Attention : aucun fichier valide chargé pour le moment, le catalog est donc "
 "vide."
 
-#: adminPlugin.php:56
+#: adminPlugin.php:59
 msgid "Horses"
 msgstr "Chevaux"
 
-#: adminPlugin.php:60
+#: adminPlugin.php:63
 msgid "Horse pictures zip"
 msgstr "Zip d'images des chevaux"
 
-#: adminPlugin.php:65
-msgid "Update"
-msgstr "Enregistrer"
+#: adminPlugin.php:67
+msgid "Import"
+msgstr "Importer"
+
+#: adminPlugin.php:74
+msgid "Configuration manager"
+msgstr "Importer"
 
 #: adminPlugin.php:77
+msgid "saved"
+msgstr "savegardé"
+
+#: adminPlugin.php:81
+msgid "Menu title "
+msgstr "Menu titre "
+
+#: adminPlugin.php:85
+msgid "save"
+msgstr "sauvegarder"
+
+#: adminPlugin.php:132
 msgid "File type is not csv"
 msgstr "Le type du fichier n'est pas csv"
 
-#: adminPlugin.php:81
+#: adminPlugin.php:136
 msgid "File type is not zip"
 msgstr "Le type du fichier n'est pas une archive"
 
-#: adminPlugin.php:109
+#: adminPlugin.php:166
 msgid "Empty file"
 msgstr "Fichier vide"
 
-#: adminPlugin.php:142
+#: adminPlugin.php:199
 msgid "Error during file uploading"
 msgstr "Erreur durant le téléchargement du fichier"
 
-#: adminPlugin.php:168
+#: adminPlugin.php:225
 msgid "File must be encoding in UTF-8"
 msgstr "Le fichier doit être encodé en UTF-8"
 
-#: adminPlugin.php:185
+#: adminPlugin.php:242
 #, php-format
 msgid "It's missing picture for horse with id : %s"
 msgstr "Il manque une image pour le cheval avec l'id : %s"
 
-#: adminPlugin.php:215
+#: adminPlugin.php:272
 msgid "Error during copie after file validating"
 msgstr "Erreur durant la copie après la validation du fichier"
 
-#: adminPlugin.php:221 adminPlugin.php:225
+#: adminPlugin.php:278 adminPlugin.php:282
 msgid "Error during extract pictures"
 msgstr "Erreur durant l'extraction des images"
 
@@ -100,218 +116,73 @@ msgstr "Fichier invalide: le caractère séparateur doit être %s"
 msgid "File invalid row %u : bad field number"
 msgstr "Fichier invalide ligne %u : mauvais nombre de champs"
 
-#: horses.php:77
+#: horses.php:82
 msgid "Very promising"
 msgstr "Très prometteur"
 
-#: horses.php:78
+#: horses.php:83
 msgid "Hope"
 msgstr "Espoir"
 
-#: horses.php:79
+#: horses.php:84
 msgid "To follow"
 msgstr "À suivre"
 
-#: template/horse-detail.php:17 template/pedigree.php:11
-msgid "Pedigree"
-msgstr "Pédigrée"
-
-#: template/horse-detail.php:18 template/horse-detail.php:78
-msgid "The strong points"
-msgstr "Les points forts"
-
-#: template/horse-detail.php:19 template/horse-detail.php:86
-msgid "Maternal Lineage Expertise"
-msgstr "Expertise Lignée Maternelle"
-
-#: template/horse-detail.php:20 template/horse-detail.php:140
-msgid "Expertise judges SF"
-msgstr "Expertise juges SF"
-
-#: template/horse-detail.php:21 template/horse-detail.php:214
-msgid "Expertise SF test team"
-msgstr "Expertise équipe testage SF"
-
-#: template/horse-detail.php:22 template/horse-detail.php:324
-msgid "International riders opinion"
-msgstr "L’avis des cavaliers internationaux"
-
-#: template/horse-detail.php:23 template/horse-detail.php:359
+#: template/galerie.php:48 template/horse-detail.php:35
 msgid "Video"
 msgstr "Vidéo"
 
-#: template/horse-detail.php:24 template/horse-detail.php:364
+#: template/horse-detail.php:19 template/pedigree.php:14
+msgid "Pedigree"
+msgstr "Pédigrée"
+
+#: template/horse-detail.php:24 template/strong-points.php:6
+msgid "The strong points"
+msgstr "Les points forts"
+
+#: template/horse-detail.php:29 template/mother-notes.php:6
+msgid "Maternal Lineage Expertise"
+msgstr "Expertise Lignée Maternelle"
+
+#: template/horse-detail.php:32 template/sf-judges.php:2
+msgid "Expertise judges SF"
+msgstr "Expertise juges SF"
+
+#: template/horse-detail.php:33 template/testing.php:3
+msgid "Expertise SF test team"
+msgstr "Expertise équipe testage SF"
+
+#: template/horse-detail.php:34 template/internationnal.php:2
+msgid "International riders opinion"
+msgstr "L’avis des cavaliers internationaux"
+
+#: template/horse-detail.php:36 template/horse-detail.php:106
 msgid "Contact"
 msgstr "Contact"
 
-#: template/horse-detail.php:34
+#: template/horse-detail.php:48
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: template/horse-detail.php:38
+#: template/horse-detail.php:52
 msgid "Breeder"
 msgstr "Naisseur"
 
-#: template/horse-detail.php:46
+#: template/horse-detail.php:60
 msgid "Protected mares in 2018"
 msgstr "Juments saillies en 2018"
 
-#: template/horse-detail.php:50
+#: template/horse-detail.php:64
 msgid "Year of riding in France"
 msgstr "Année de monte en France"
 
-#: template/horse-detail.php:54
+#: template/horse-detail.php:68
 msgid "Protected mares in France"
 msgstr "Juments saillies en France"
 
-#: template/horse-detail.php:69
+#: template/horse-detail.php:83
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
-
-#: template/horse-detail.php:89 template/horse-detail.php:105
-msgid "Mother"
-msgstr "Mère"
-
-#: template/horse-detail.php:112
-msgid "Total weighted points"
-msgstr "Total points pondérés"
-
-#: template/horse-detail.php:113
-msgid "Final note"
-msgstr "Note final"
-
-#: template/horse-detail.php:116
-msgid "Name"
-msgstr "Nom"
-
-#: template/horse-detail.php:126
-msgid "Points"
-msgstr "Points"
-
-#: template/horse-detail.php:142
-msgid "Modele"
-msgstr "Modèle"
-
-#: template/horse-detail.php:144
-msgid "race type"
-msgstr "type race"
-
-#: template/horse-detail.php:148
-msgid "head tie - neckline"
-msgstr "attache de tête – encolure"
-
-#: template/horse-detail.php:152
-msgid "front profile"
-msgstr "profil avant"
-
-#: template/horse-detail.php:156
-msgid "top line"
-msgstr "ligne de dessus"
-
-#: template/horse-detail.php:160
-msgid "rear profile"
-msgstr "profil arrière"
-
-#: template/horse-detail.php:164
-msgid "limbs"
-msgstr "aplombs"
-
-#: template/horse-detail.php:170 template/horse-detail.php:218
-msgid "Locomotion and general functioning"
-msgstr "Locomotion et fonctionnement général"
-
-#: template/horse-detail.php:178
-msgid "Jumping ability"
-msgstr "Aptitude à l’obstacle saut en liberté"
-
-#: template/horse-detail.php:186 template/horse-detail.php:219
-#: template/horse-detail.php:326
-msgid "Ability to climb jump obstacle"
-msgstr "Aptitude à l’obstacle saut monté"
-
-#: template/horse-detail.php:191 template/horse-detail.php:227
-msgid "balance on jumps"
-msgstr "équilibre sur les sauts"
-
-#: template/horse-detail.php:195 template/horse-detail.php:237
-msgid "means on the obstacle"
-msgstr "moyens sur l’obstacle"
-
-#: template/horse-detail.php:199 template/horse-detail.php:247
-msgid "style on the obstacle"
-msgstr "style sur l’obstacle"
-
-#: template/horse-detail.php:203 template/horse-detail.php:257
-msgid "blood, will, respect & bar intelligence"
-msgstr "sang, volonté, respect & intelligence de la barre"
-
-#: template/horse-detail.php:223
-msgid "pace"
-msgstr "pas"
-
-#: template/horse-detail.php:233
-msgid "trot"
-msgstr "trot"
-
-#: template/horse-detail.php:243
-msgid "gallop"
-msgstr "galop"
-
-#: template/horse-detail.php:253
-msgid "general operation"
-msgstr "fonctionnement général"
-
-#: template/horse-detail.php:261 template/horse-detail.php:352
-msgid "General impression"
-msgstr "Impression générale"
-
-#: template/horse-detail.php:281
-msgid "Temperament - Behavior"
-msgstr "Tempérament - Comportement"
-
-#: template/horse-detail.php:284
-msgid "emotionality"
-msgstr "émotivité"
-
-#: template/horse-detail.php:289
-msgid "sensory sensitivity"
-msgstr "sensibilité sensorielle\t"
-
-#: template/horse-detail.php:294
-msgid "reactivity towards humans"
-msgstr "réactivité vis-à-vis des humains"
-
-#: template/horse-detail.php:298
-msgid "motor activity"
-msgstr "activité motrice"
-
-#: template/horse-detail.php:302
-msgid "gregariousness"
-msgstr "grégarité"
-
-#: template/horse-detail.php:310
-msgid "Behavior under the saddle"
-msgstr "Comportement sous la selle"
-
-#: template/horse-detail.php:314
-msgid "Behavior in care"
-msgstr "Comportement aux soins"
-
-#: template/horse-detail.php:331
-msgid "means ; style; aptitude"
-msgstr "moyens ; style ; aptitude"
-
-#: template/horse-detail.php:335
-msgid "availability"
-msgstr "disponibilité"
-
-#: template/horse-detail.php:339
-msgid "impulses; reactivity"
-msgstr "influx ; réactivité"
-
-#: template/horse-detail.php:343
-msgid "instinct; helm intelligence"
-msgstr "instinct ; intelligence de la barre"
 
 #: template/horses-list.php:6
 msgid "Catalog"
@@ -338,15 +209,192 @@ msgstr "Filtrer par nom : "
 msgid "search"
 msgstr "rechercher"
 
-#: template/horses-list.php:57
+#: template/horses-list.php:76
 #, php-format
 msgid "%s years"
 msgstr "%s ans"
 
-#: template/horses-list.php:60
+#: template/horses-list.php:79
 #, php-format
 msgid "By %s x %s"
 msgstr "Par %s x %s"
+
+#: template/internationnal.php:5 template/sf-judges.php:53
+#: template/testing.php:27
+msgid "Ability to climb jump obstacle"
+msgstr "Aptitude à l’obstacle saut monté"
+
+#: template/internationnal.php:8
+msgid "Means, style, aptitude"
+msgstr "Moyens, style, aptitude"
+
+#: template/internationnal.php:12
+msgid "Availability"
+msgstr "Disponibilité"
+
+#: template/internationnal.php:16
+msgid "Impulses, reactivity"
+msgstr ""
+"Instinct &\n"
+"intelligence de la barre"
+
+#: template/internationnal.php:20
+msgid "Instinct, helm intelligence"
+msgstr "Instinct & intelligence de la barre"
+
+#: template/internationnal.php:27 template/testing.php:49
+msgid "General impression"
+msgstr "Impression générale"
+
+#: template/mother-notes.php:9 template/mother-notes.php:25
+msgid "Mother"
+msgstr "Mère"
+
+#: template/mother-notes.php:32
+msgid "Total weighted points"
+msgstr "Total points pondérés"
+
+#: template/mother-notes.php:33
+msgid "Final note"
+msgstr "Note final"
+
+#: template/mother-notes.php:36
+msgid "Name"
+msgstr "Nom"
+
+#: template/mother-notes.php:46
+msgid "Points"
+msgstr "Points"
+
+#: template/sf-judges.php:5
+msgid "Modele"
+msgstr "Modèle"
+
+#: template/sf-judges.php:8
+msgid "Race type"
+msgstr "Type race"
+
+#: template/sf-judges.php:12
+msgid "Head tie - neckline"
+msgstr "Attache de tête – encolure"
+
+#: template/sf-judges.php:16
+msgid "Front profile (shoulder- forearm)"
+msgstr "Profil avant (épaule- avant bras)"
+
+#: template/sf-judges.php:20
+msgid "Top line(tourniquet-dos-kidney)"
+msgstr "Ligne de dessus (garrot-dos-rein)"
+
+#: template/sf-judges.php:25
+msgid "Rear profile(rump-thigh-basin)"
+msgstr "Profil arrière (croupe-bassin-cuisse)"
+
+#: template/sf-judges.php:29
+msgid "Limbs"
+msgstr "Aplombs"
+
+#: template/sf-judges.php:36 template/testing.php:6
+msgid "Locomotion and general functioning"
+msgstr "Locomotion et fonctionnement général"
+
+#: template/sf-judges.php:45
+msgid "Jumping ability"
+msgstr "Aptitude à l’obstacle saut en liberté"
+
+#: template/sf-judges.php:56 template/testing.php:30
+msgid "Balance on jumps"
+msgstr "Équilibre sur les sauts"
+
+#: template/sf-judges.php:60 template/testing.php:34
+msgid "Means on the obstacle"
+msgstr "Moyens sur l’obstacle"
+
+#: template/sf-judges.php:64 template/testing.php:38
+msgid "Style on the obstacle"
+msgstr "Style sur l’obstacle"
+
+#: template/sf-judges.php:68 template/testing.php:42
+msgid "Blood, will, respect & bar intelligence"
+msgstr "Sang, volonté, respect & intelligence de la barre"
+
+#: template/testing.php:9
+msgid "Pace"
+msgstr "Pas"
+
+#: template/testing.php:13
+msgid "Trot"
+msgstr "Trot"
+
+#: template/testing.php:17
+msgid "Gallop"
+msgstr "Galop"
+
+#: template/testing.php:21
+msgid "General operation"
+msgstr "Impression générale"
+
+#: template/testing.php:70
+msgid "Temperament - Behavior"
+msgstr "Tempérament - Comportement"
+
+#: template/testing.php:73
+msgid "Emotionality"
+msgstr "Émotivité"
+
+#: template/testing.php:78
+msgid "Sensory sensitivity"
+msgstr "Sensibilité sensorielle"
+
+#: template/testing.php:84
+msgid "Reactivity towards humans"
+msgstr "Réactivité vis-à-vis des humains"
+
+#: template/testing.php:89
+msgid "Motor activity"
+msgstr "Activité motrice"
+
+#: template/testing.php:94
+msgid "Gregariousness"
+msgstr "Gréfarité"
+
+#: template/testing.php:102
+msgid "Behavior under the saddle"
+msgstr "Comportement sous la selle"
+
+#: template/testing.php:106
+msgid "Behavior in care"
+msgstr "Comportement aux soins"
+
+#~ msgid "pace"
+#~ msgstr "pas"
+
+#~ msgid "trot"
+#~ msgstr "trot"
+
+#~ msgid "balance on jumps"
+#~ msgstr "équilibre sur les sauts"
+
+#~ msgid "means on the obstacle"
+#~ msgstr "moyens sur l’obstacle"
+
+#~ msgid "style on the obstacle"
+#~ msgstr "style sur l’obstacle"
+
+#~ msgid "blood, will, respect & bar intelligence"
+#~ msgstr "sang, volonté, respect & intelligence de la barre"
+
+#~ msgid "Update"
+#~ msgstr "Enregistrer"
+
+#~ msgid "front profile"
+#~ msgstr "profil avant"
+
+#~ msgid "top line"
+#~ msgstr "ligne de dessus"
+
+#~ msgid "rear profile"
+#~ msgstr "profil arrière"
 
 #~ msgid "Expert opinion"
 #~ msgstr "L’avis des experts"

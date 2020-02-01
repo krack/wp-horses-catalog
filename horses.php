@@ -25,7 +25,7 @@ class Horses{
 
     private static function filter($search){
 
-        return array_filter(self::$list, function($k) {
+        return array_values(array_filter(self::$list, function($k) {
             global $search;
 
             return  
@@ -35,7 +35,7 @@ class Horses{
                 && 
                 self::searchTerm($k, $search)
                 ;
-        });
+        }));
     }
 
     private static function searchTerm($horse, $search){

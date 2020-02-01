@@ -57,6 +57,7 @@ form input[type=submit] {
     display: block;
     position: relative;
     line-height: 2em;
+    font-size: 1.5em;
 }
 
 .list .card .age::before {
@@ -86,6 +87,32 @@ form input[type=submit] {
     max-width: 100%;
 }
 
+.pagination {
+    font-size: 1.5em;
+    text-align: right;
+    margin-right: 5%;
+    font-family: "BluuNext-Bold";
+}
+
+.pagination a {
+    padding: 0;
+}
+
+.pagination a::after {
+    content: "\25C6";
+    font-size: 10px;
+    vertical-align: baseline;
+    margin-left: 1%;
+}
+
+.pagination span:last-child a::after {
+    content: "";
+}
+
+.pagination .current {
+    font-size: 2em;
+}
+
 /* detail */
 
 .detail-card {
@@ -94,6 +121,10 @@ form input[type=submit] {
 
 .detail-card h1 {
     text-align: center;
+}
+
+.detail-card h3 {
+    text-align: left;
 }
 
 .profilblock {
@@ -136,16 +167,23 @@ form input[type=submit] {
     vertical-align: middle;
 }
 
-.detail-card .human-linked, .detail-card .projections, .detail-card .individual, .detail-card .osteopathy-status {
+.detail-card .human-linked, .detail-card .projections, .detail-card .osteopathy-status {
     display: flex;
     margin: auto;
     text-align: center;
     margin-bottom: 40px;
+    max-width: 600px;
 }
 
-.detail-card .human-linked>*, .detail-card .projections>*, .detail-card .individual>*, .detail-card .osteopathy-status>* {
+.detail-card .human-linked>*, .detail-card .projections>*, .detail-card .osteopathy-status>* {
     flex: 1 1 auto;
     display: block;
+}
+
+.detail-card .individual {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.6em;
 }
 
 /* projection */
@@ -154,8 +192,10 @@ form input[type=submit] {
     display: block;
 }
 
-.detail-card .value {
+.detail-card .projections .value, .detail-card .osteopathy-status .value {
     font-weight: bold;
+    font-size: 2em;
+    font-family: "BluuNext-Bold";
 }
 
 .detail-card .size::after {
@@ -249,9 +289,169 @@ form input[type=submit] {
     font-size: smaller;
 }
 
+/* sf judges */
+
+.root-notation {
+    font-size: 1.3em;
+    line-height: 1.6em;
+}
+
+.root-notation>div {
+    display: flex;
+    background: linear-gradient(to right, red, purple);
+    padding: 0px;
+}
+
+.root-notation>div>div {
+    flex: 1 1 auto;
+    display: inline-block;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: white;
+}
+
+.root-notation>div>div {
+    margin-left: 1px;
+    margin-right: 0px;
+    margin-bottom: 1px;
+    margin-top: 0px;
+}
+
+.root-notation>div:last-child>div {
+    margin-bottom: 0px;
+    margin-top: 1px;
+}
+
+.root-notation>div>div:first-child {
+    text-align: right;
+    margin-right: 1px;
+    margin-left: 0px;
+}
+
+.root-notation>div>div:first-child h3 {
+    float: right;
+}
+
+.root-notation>div>div .notation {
+    float: left;
+    clear: both;
+    display: block;
+    width: 400px;
+    text-align: left;
+}
+
+.root-notation>div>div:first-child .notation {
+    float: right;
+}
+
+.root-notation>div>div:first-child>.notation {
+    float: right;
+    clear: both;
+    display: block;
+}
+
+.notation {
+    background-image: url("images/dash.png");
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+.notation>* {
+    background-color: white;
+}
+
+.notation>.value {
+    width: 40px;
+    text-align: right;
+}
+
+.notation+* {
+    clear: both;
+}
+
+.cso pre {
+    padding-top: 20px;
+}
+
+.notation .label {
+    display: inline-block;
+    max-width: 350px;
+}
+
+.root-notation>div>div .notation .value {
+    float: right;
+}
+
+.root-notation>div>div:first-child>div span:last-child, .detail-card .freejump .value, .root-notation>div>div:first-child>div>pre {
+    float: right;
+    clear: both;
+}
+
+.root-notation pre {
+    max-width: 80%;
+}
+
+.root-notation>div>div:first-child>div>pre {
+    text-align: right;
+}
+
+.root-notation .value {
+    font-weight: bold;
+}
+
+.root-notation .global-impression, .root-notation .temperament {
+    display: block;
+    text-align: center;
+}
+
+.root-notation .global-impression div, .root-notation .temperament div {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.root-notation .global-impression div pre, .root-notation .temperament .comment pre {
+    max-width: 100%;
+}
+
+.root-notation .temperament .notation {
+    float: none;
+    margin: auto;
+    width: 475px;
+}
+
+.root-notation .temperament .notation>.value {
+    width: max-content;
+}
+
+.root-notation .temperament .comment {
+    display: block;
+    clear: both;
+}
+
+.root-notation .temperament .comment .label {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.root-notation .temperament .comment .label::after {
+    content: ' :';
+}
+
+.root-notation .temperament .comment pre {
+    text-align: center;
+    margin-top: 5px;
+}
+
 /* galerry */
 
-.gallery {}
+.gallery {
+    margin-top: 70px;
+}
 
 .gallery #zoom {
     width: 80%;
