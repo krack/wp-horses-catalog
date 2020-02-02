@@ -52,7 +52,7 @@
     <div class="global-impression">
         <h3><?php _e("General impression", 'horses-catalog') ?></h3>
         <div>
-            <span class="value"><?php echo $horse->notes->testingExprets->globale; ?>6</span>
+            <span class="value"><?php echo $horse->notes->testingExprets->globale; ?></span>
             <pre><?php echo $horse->notes->testingExprets->comment; ?></pre>     
         </div>
     </div>

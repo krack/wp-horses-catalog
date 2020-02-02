@@ -307,7 +307,7 @@ class TestingExperts{
         $this->ridingObstacleRespect = $rawData["expertise_testing_note_obstacle_monte_barre"];
 
 
-        $this->globale = $rawData["expertise_testing_note_generale"];
+        $this->globale = $rawData[" expertise_testing_note_generale"];
         $this->comment = $rawData["expertise_testing_note_commentaire"];
     }
 }

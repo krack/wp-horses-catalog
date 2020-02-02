@@ -87,6 +87,12 @@ form input[type=submit] {
     max-width: 100%;
 }
 
+.list .card .name {
+    font-weight: bolder;
+    display: block;
+    font-size: 1.2em;
+}
+
 .pagination {
     font-size: 1.5em;
     text-align: right;
