@@ -12,7 +12,7 @@ $horse = Horses::get($_GET["id"]);
 <div class="detail-card">
     <h1><?php echo $horse->name ?></h1>
 
-    <nav>
+    <nav id="horse-menu">
         <ul>
             <?php 
             if(havePedigree($horse)){ ?>
@@ -38,7 +38,7 @@ $horse = Horses::get($_GET["id"]);
     </nav>
 
     <div class="profilblock">
-        <img class="profil" src="<?php echo "/wp-content/uploads/horses-catalog/".$horse->id.".jpg" ?>" alt="profil <?php echo $horse->name ?>" />
+        <img class="profil" src="<?php echo "/wp-content/uploads/horses-catalog/".$horse->id.".JPG" ?>" alt="profil <?php echo $horse->name ?>" />
         <span class="race <?php echo $horse->race ?>"><?php echo $horse->race ?></span>
     </div>
     <span class="categorie"><?php echo $horse->globalEvaluation; ?></span>

@@ -238,7 +238,7 @@ class AdminPlugin{
         $csvReader = new CsvReader($this->currentCsvFile);
         $horsesList =  $csvReader->readFile();
         foreach($horsesList as $horse){
-            if (!in_array($horse["id"].".jpg", $fileList)) {
+            if (!in_array($horse["id"].".jpg", $fileList) && !in_array($horse["id"].".JPG", $fileList)) {
                 array_push($this->errors,  sprintf(__("It's missing picture for horse with id : %s", 'horses-catalog'),$horse["id"]));
                 $valid= false;
             }

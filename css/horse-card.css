@@ -1,3 +1,15 @@
+.fixed-menu {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 80%;
+    background-color: white;
+}
+
+.with-admin-menu {
+    margin-top: 30px;
+}
+
 /* form */
 
 form {
@@ -5,6 +17,10 @@ form {
     text-align: center;
     width: 50%;
     margin: auto;
+}
+
+form h4 {
+    margin-left: 0;
 }
 
 form ul {
@@ -29,6 +45,18 @@ form input[type=checkbox] {
 
 form input[type=submit] {
     margin-top: 20px;
+}
+
+@media only screen and (max-width: 959px) {
+    form {
+        width: 100%;
+    }
+    form ul {
+        padding-left: 0;
+    }
+    form .categories li::before, form .categories li::after {
+        display: none;
+    }
 }
 
 /* list */
@@ -119,6 +147,12 @@ form input[type=submit] {
     font-size: 2em;
 }
 
+@media only screen and (max-width: 959px) {
+    .list .card {
+        width: 100%;
+    }
+}
+
 /* detail */
 
 .detail-card {
@@ -148,12 +182,12 @@ form input[type=submit] {
     display: block;
     background-image: url("images/sf.jpg");
     background-repeat: no-repeat;
-    background-size: 100px 100px;
+    background-size: contain;
     font-size: 0px;
     width: 100px;
     height: 100px;
     position: absolute;
-    right: 50px;
+    right: 3%;
     bottom: -50px;
 }
 
@@ -190,6 +224,15 @@ form input[type=submit] {
     text-align: center;
     margin-bottom: 40px;
     font-size: 1.6em;
+}
+
+@media only screen and (max-width: 959px) {
+    .detail-card .race.SF {
+        width: 40px;
+        height: 40px;
+        right: 3%;
+        bottom: -20px;
+    }
 }
 
 /* projection */
@@ -485,6 +528,40 @@ form input[type=submit] {
 .root-notation .temperament .comment pre {
     text-align: center;
     margin-top: 5px;
+}
+
+@media only screen and (max-width: 959px) {
+    .root-notation>div {
+        display: block;
+    }
+    .root-notation>div>div {
+        width: 100%;
+        padding: 0 1%;
+    }
+    .root-notation>div>div {
+        text-align: center !important;
+    }
+    .root-notation>div>div h3 {
+        float: none !important;
+    }
+    .root-notation>div>div .notation {
+        max-width: 95%;
+    }
+    .detail-card h3 {
+        text-align: center !important;
+    }
+    .root-notation pre {
+        max-width: 95%;
+    }
+    .root-notation>div>div:first-child>div>pre {
+        text-align: center;
+    }
+    .root-notation>div>div:first-child .notation {
+        float: left;
+    }
+    .detail-card .freejump .value, .root-notation>div>div:first-child>div>pre {
+        float: none;
+    }
 }
 
 /* galerry */

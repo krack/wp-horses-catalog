@@ -53,7 +53,7 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
         $listHorses = Horses::getAll($search);
         
         $page = 1;
-        $nbByPage = 3;
+        $nbByPage = 9;
         $nbPage = count($listHorses) / $nbByPage;
         if(count($listHorses) % $nbByPage != 0){
             $nbPage++;
@@ -74,7 +74,7 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
         <div class="card"> 
             <a href="/horse-detail/?id=<?php echo $horse->id;?>">
                 <span class="age"><?php echo sprintf(__('%s years', 'horses-catalog'), $horse->age)  ?> - <?php echo $horse->discipline; ?></span>
-                <img class="profil" src="<?php echo "/wp-content/uploads/horses-catalog/".$horse->id.".jpg" ?>" alt="profil <?php echo $horse->name ?>" />
+                <img class="profil" src="<?php echo "/wp-content/uploads/horses-catalog/".$horse->id.".JPG" ?>" alt="profil <?php echo $horse->name ?>" />
                 <span class="name"><?php echo $horse->name;?></span>
                 <span><?php echo sprintf(__('By %s x %s', 'horses-catalog'), $horse->father->name, $horse->mother->name) ?></span>
             </a>
