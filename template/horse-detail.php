@@ -2,11 +2,14 @@
 
 require_once plugin_dir_path( __DIR__ ).'horses.php'; 
 ?>
-<?php include("check.php"); ?>
 <?php get_header(); ?>
 
 <?php 
 $horse = Horses::get($_GET["id"]);
+
+function isYoungHorse($horse){
+    return $horse->age <=3 ;
+}
 ?>
 
 <div class="detail-card">
@@ -14,24 +17,22 @@ $horse = Horses::get($_GET["id"]);
 
     <nav id="horse-menu">
         <ul>
-            <?php 
-            if(havePedigree($horse)){ ?>
+            
             <li><a href="#pedigree"><?php _e("Pedigree", 'horses-catalog') ?></a></li>
-            <?php 
-            }
 
-            if(haveStrongPoints($horse)){ ?>
+            <?php if(!isYoungHorse($horse)){ ?>
             <li><a href="#strong_points"><?php _e("The strong points", 'horses-catalog') ?></a></li>
-            <?php 
-            }
+            <?php } ?>
 
-            if(haveMotherNotes($horse)){ ?>
-            <li><a href="#maternal"><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></a></li> <?php 
-            }
- ?>
+            <li><a href="#maternal"><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></a></li> 
             <li><a href="#sf"><?php _e("Expertise judges SF", 'horses-catalog') ?></a></li> 
+
+            <?php if(!isYoungHorse($horse)){ ?>
             <li><a href="#testing"><?php _e("Expertise SF test team", 'horses-catalog') ?></a></li> 
-            <li><a href="#opinion"><?php _e("International riders opinion", 'horses-catalog') ?></a></li> 
+            <?php } ?>
+            <?php if(!isYoungHorse($horse)){ ?>
+            <li><a href="#opinion"><?php _e("International riders opinion", 'horses-catalog') ?></a></li>
+            <?php } ?> 
             <li><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li> 
             <li><a href="#contact"><?php _e("Contact", 'horses-catalog') ?></a></li>
         </ul>
@@ -72,8 +73,8 @@ $horse = Horses::get($_GET["id"]);
 
     <div class="individual">
         <span class="size"><?php echo $horse->size ?></span>
-        <span class="coat-color"><?php echo $horse->coatColor ?></span>
-        <span class="birth-year"><?php echo $horse->birthYear ?></span>
+        <span class="coat-color"><?php echo $horse->coatColor; ?></span>
+        <span class="birth-year"><?php echo $horse->birthYear; ?></span>
 
         
     </div>
@@ -81,26 +82,42 @@ $horse = Horses::get($_GET["id"]);
        
         <div>
             <span><?php _e("Osteo Articular Status", 'horses-catalog') ?></span>
-            <span class="value"><?php echo $horse->osteopathyStatus ?><span>
+            <span class="value"><?php echo $horse->osteopathyStatus; ?><span>
         </div>
     </div>  
       
     <hr />
-    <?php include("pedigree.php"); ?>
+    <?php
+    
+    
+    include("pedigree.php"); ?>
 
-    <?php include("strong-points.php"); ?>
+    <?php 
+     if(!isYoungHorse($horse)){
+        include("strong-points.php"); 
+     }
+     ?>
 
     <?php include("mother-notes.php"); ?>
 
 
     <?php include("sf-judges.php"); ?>
 
-    <?php include("testing.php"); ?>
+    <?php 
+    if(!isYoungHorse($horse)){
+        include("testing.php"); 
+    } 
+    ?>
 
-    <?php include("internationnal.php"); ?>
+    <?php
+    if(!isYoungHorse($horse)){
+     include("internationnal.php");
+    }
+     ?>
     
    
     <?php include("galerie.php"); ?>
+
     <?php if(function_exists("shf_connected_block") && shf_connected_block()){ ?>
     <div id="contact">
         <h2><?php _e("Contact", 'horses-catalog') ?></h2>
@@ -113,5 +130,11 @@ $horse = Horses::get($_GET["id"]);
 
 
 </div>
+<?php 
+if(function_exists("shf_login_block")){
+    shf_login_block();
+}
+    ?>
+    
 
 <?php get_footer(); ?>

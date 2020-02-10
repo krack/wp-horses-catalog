@@ -1,7 +1,4 @@
-<?php 
 
-if(haveStrongPoints($horse)){
-?>
 <div id="strong_points">
     <h2><?php _e("The strong points", 'horses-catalog') ?></h2>
     <ul>
@@ -10,6 +7,3 @@ if(haveStrongPoints($horse)){
         <?php } ?>
     </ul>
 </div>
-<?php
-}
-?>

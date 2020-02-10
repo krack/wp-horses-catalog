@@ -1,7 +1,4 @@
-<?php 
 
-if(haveMotherNotes($horse)){
-?>
 <div id="maternal">
     <h2><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></h2>
     <table class="mother-notes">
@@ -56,6 +53,3 @@ if(haveMotherNotes($horse)){
         </tr>
     </table>
 </div>
-<?php
-}
-?>
