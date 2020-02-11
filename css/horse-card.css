@@ -166,12 +166,23 @@ form input[type=submit] {
 .detail-card h3 {
     text-align: left;
 }
+.detail-card h4 {
+    margin-left: 0%;
+	margin-bottom: 3%;
+}
 
 .profilblock {
     position: relative;
-    width: 80%;
+    width: 78%;
     margin: auto;
     margin-bottom: 10px;
+}
+
+nav#horse-menu {
+    margin-left:11%;
+	
+    width: 78%;
+    margin-right:11%;
 }
 
 .detail-card .profil {
@@ -195,8 +206,9 @@ form input[type=submit] {
     background: radial-gradient(#c11f18, #5b1017);
     padding: 7px;
     margin-top: 20px;
-    margin-left: 10%;
+    margin-left: 11%;
     color: white;
+    font-family: "BluuNext-Bold";
 }
 
 .detail-card .categorie::before, .detail-card .categorie::after {
@@ -227,6 +239,24 @@ form input[type=submit] {
 }
 
 @media only screen and (max-width: 959px) {
+	
+	.detail-card h1 {
+		text-align: centre;
+		width: 100%;
+		line-height: 1em;
+		font-size: 1.8em;
+		white-space: pre-line;
+	}	
+	.detail-card h1::after {
+		margin: auto;
+		margin-top: 2%;
+		
+	}
+	.detail-card h2 {
+		text-align: center;
+		font-size: 1em;
+	}
+	
     .detail-card .race.SF {
         width: 40px;
         height: 40px;
@@ -306,6 +336,7 @@ form input[type=submit] {
 .detail-card #strong_points ul {
     list-style: none;
     text-align: center;
+	padding-left: 0;
 }
 
 /** maternal */
@@ -340,20 +371,43 @@ form input[type=submit] {
 
 /* sf judges */
 
-.root-notation {
+.root-notation > div {
     font-size: 1.3em;
     line-height: 1.6em;
+}
+.root-notation {
     position: relative;
 }
 
+.root-notation h3{
+    line-height: 0.4em;
+}
+
+
 .back {
     background: radial-gradient(#f1c589, #2a2927);
-    position: absolute;
+    position: absolute !important;
     top: 120px;
     left: 30%;
     bottom: 0;
     right: 30%;
     z-index: -1;
+}
+
+@media only screen and (max-width: 959px) {
+	.back{
+		display: none !important;
+	}
+	
+	.root-notation > div{
+		line-height: 1em;
+	}
+	.notation ~ pre{
+		padding-top: 10px;
+	}
+	.root-notation > div > div.model, #testing.root-notation > div > div.locomotion{
+		margin-bottom: 10px;
+	}
 }
 
 #testing .back {
@@ -374,7 +428,13 @@ form input[type=submit] {
     height: 2px;
     width: 20%;
     position: absolute;
-    transform: translate(-25%);
+    transform: translate(-15%);
+}
+
+@media only screen and (max-width: 959px) {
+	#testing .global-impression::before {
+		content: none;
+	}
 }
 
 .root-notation>div {
@@ -387,6 +447,8 @@ form input[type=submit] {
     display: inline-block;
     width: 50%;
     padding: 40px;
+    padding-top: 15px;	
+    padding-bottom: 20px;
     background-color: white;
 }
 
@@ -404,6 +466,11 @@ form input[type=submit] {
 .root-notation>div:last-child>div {
     margin-bottom: 0px;
     margin-top: 1px;
+}
+@media only screen and (max-width: 959px) {
+	.root-notation>div:last-child>div {
+		margin-top: 0px;
+	}
 }
 
 .root-notation>div>div:first-child {
@@ -531,8 +598,13 @@ form input[type=submit] {
 }
 
 @media only screen and (max-width: 959px) {
+	.root-notation{
+		margin-left: 3%;
+		margin-right: 3%;
+	}
     .root-notation>div {
         display: block;
+		font-size: 1em;
     }
     .root-notation>div>div {
         width: 100%;
@@ -544,6 +616,9 @@ form input[type=submit] {
     .root-notation>div>div h3 {
         float: none !important;
     }
+	.root-notation>div>div h3::before{
+		content: none;
+	}
     .root-notation>div>div .notation {
         max-width: 95%;
     }

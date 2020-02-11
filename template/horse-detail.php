@@ -21,20 +21,19 @@ function isYoungHorse($horse){
             <li><a href="#pedigree"><?php _e("Pedigree", 'horses-catalog') ?></a></li>
 
             <?php if(!isYoungHorse($horse)){ ?>
-            <li><a href="#strong_points"><?php _e("The strong points", 'horses-catalog') ?></a></li>
+            <li><a href="#strong_points"><?php _e("Points forts", 'horses-catalog') ?></a></li>
             <?php } ?>
 
             <li><a href="#maternal"><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></a></li> 
-            <li><a href="#sf"><?php _e("Expertise judges SF", 'horses-catalog') ?></a></li> 
+            <li><a href="#sf"><?php _e("Expertise juges", 'horses-catalog') ?></a></li> 
 
             <?php if(!isYoungHorse($horse)){ ?>
-            <li><a href="#testing"><?php _e("Expertise SF test team", 'horses-catalog') ?></a></li> 
+            <li><a href="#testing"><?php _e("Expertise testage", 'horses-catalog') ?></a></li> 
             <?php } ?>
             <?php if(!isYoungHorse($horse)){ ?>
-            <li><a href="#opinion"><?php _e("International riders opinion", 'horses-catalog') ?></a></li>
+            <li><a href="#opinion"><?php _e("Avis des cavaliers", 'horses-catalog') ?></a></li>
             <?php } ?> 
-            <li><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li> 
-            <li><a href="#contact"><?php _e("Contact", 'horses-catalog') ?></a></li>
+            <li><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li>    
         </ul>
     </nav>
 
@@ -56,18 +55,24 @@ function isYoungHorse($horse){
        
     </div>
     <div class="projections">
+    <?php if($horse->projections != null){ ?>
         <div>
             <span class="value" ><?php echo $horse->projections ?></span>
             <span><?php _e("Protected mares in 2018", 'horses-catalog') ?></span>
         </div>
+    <?php } ?>
+    <?php if($horse->riding != null){ ?>
         <div>
             <span  class="value" ><?php echo $horse->riding ?></span>
             <span><?php _e("Year of riding in France", 'horses-catalog') ?></span>
         </div>
+    <?php } ?>
+    <?php if($horse->frProjections != null){ ?>
         <div>
             <span class="value" ><?php echo $horse->frProjections ?></span>
             <span><?php _e("Protected mares in France", 'horses-catalog') ?></span>
         </div>
+    <?php } ?>
         
     </div>
 

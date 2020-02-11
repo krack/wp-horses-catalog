@@ -81,7 +81,6 @@ class Horses{
         $categories = [];
         array_push($categories, new LabelisationCategory(1, __('Very promising', 'horses-catalog'), "TRES PROMETTEUR"));
         array_push($categories, new LabelisationCategory(2, __('Hope', 'horses-catalog'), "ESPOIR"));
-        array_push($categories, new LabelisationCategory(3, __('To follow', 'horses-catalog'), "A SUIVRE"));
         return $categories;
     }
     public static function getLabelisationCategories($id){
