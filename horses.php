@@ -24,7 +24,6 @@ class Horses{
     }
 
     private static function filter($search){
-
         return array_values(array_filter(self::$list, function($k) {
             global $search;
 
@@ -306,7 +305,7 @@ class TestingExperts{
         $this->ridingObstacleRespect = $rawData["expertise_testing_note_obstacle_monte_barre"];
 
 
-        $this->globale = $rawData[" expertise_testing_note_generale"];
+        $this->globale = $rawData["expertise_testing_note_generale"];
         $this->comment = $rawData["expertise_testing_note_commentaire"];
     }
 }
@@ -398,7 +397,7 @@ class Search{
     public $categories;
 
     public function __construct($post) {
-        $this->name = $post["search"];
+        $this->name = stripcslashes($post["search"]);
         $this->years = $post["years"];
         $this->categories = $post["categories"];
     }

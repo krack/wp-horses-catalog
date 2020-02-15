@@ -33,5 +33,17 @@ function my_plugin_load_plugin_textdomain() {
 }
 add_action( 'plugins_loaded', 'my_plugin_load_plugin_textdomain' );
 
+function wpse_298888_posts_where( $where, $query ) {
+global $wpdb;
+
+$starts_with = $query->get( 'starts_with' );
+
+if ( $starts_with ) {
+        $where .= " AND $wpdb->posts.post_title LIKE '$starts_with%'";
+}
+
+return $where;
+}
+add_filter( 'posts_where', 'wpse_298888_posts_where', 10, 2 );
 
 ?>

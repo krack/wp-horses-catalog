@@ -21,19 +21,19 @@ function isYoungHorse($horse){
             <li><a href="#pedigree"><?php _e("Pedigree", 'horses-catalog') ?></a></li>
 
             <?php if(!isYoungHorse($horse)){ ?>
-            <li><a href="#strong_points"><?php _e("Points forts", 'horses-catalog') ?></a></li>
+            <li class="<?php shf_connected_class() ?>"><a href="#strong_points"><?php _e("Strong points", 'horses-catalog') ?></a></li>
             <?php } ?>
 
-            <li><a href="#maternal"><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></a></li> 
-            <li><a href="#sf"><?php _e("Expertise juges", 'horses-catalog') ?></a></li> 
+            <li class="<?php shf_connected_class() ?>"><a href="#maternal"><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></a></li> 
+            <li class="<?php shf_connected_class() ?>"><a href="#sf"><?php _e("Expertise judges", 'horses-catalog') ?></a></li> 
 
             <?php if(!isYoungHorse($horse)){ ?>
-            <li><a href="#testing"><?php _e("Expertise testage", 'horses-catalog') ?></a></li> 
+            <li class="<?php shf_connected_class() ?>"><a href="#testing"><?php _e("Testing expertise", 'horses-catalog') ?></a></li> 
             <?php } ?>
             <?php if(!isYoungHorse($horse)){ ?>
-            <li><a href="#opinion"><?php _e("Avis des cavaliers", 'horses-catalog') ?></a></li>
+            <li class="<?php shf_connected_class() ?>"><a href="#opinion"><?php _e("Riders reviews", 'horses-catalog') ?></a></li>
             <?php } ?> 
-            <li><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li>    
+            <li class="<?php shf_connected_class() ?>"><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li>    
         </ul>
     </nav>
 
@@ -83,13 +83,6 @@ function isYoungHorse($horse){
 
         
     </div>
-    <div class="osteopathy-status">
-       
-        <div>
-            <span><?php _e("Osteo Articular Status", 'horses-catalog') ?></span>
-            <span class="value"><?php echo $horse->osteopathyStatus; ?><span>
-        </div>
-    </div>  
       
     <hr />
     <?php
@@ -97,6 +90,10 @@ function isYoungHorse($horse){
     
     include("pedigree.php"); ?>
 
+    <div class="osteopathy-status">
+        <h2><?php _e("Osteo Articular Status", 'horses-catalog') ?></h2>
+        <span class="value"><?php echo $horse->osteopathyStatus; ?><span>
+   </div>  
     <?php 
      if(!isYoungHorse($horse)){
         include("strong-points.php"); 
@@ -139,7 +136,12 @@ function isYoungHorse($horse){
 if(function_exists("shf_login_block")){
     shf_login_block();
 }
-    ?>
-    
 
+if(function_exists("shf_add_fixed_connection_button")){
+    shf_add_fixed_connection_button();
+}
+    ?>
+    <?php
+    include("advertisement.php");
+    ?>
 <?php get_footer(); ?>

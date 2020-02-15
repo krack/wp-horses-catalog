@@ -52,4 +52,15 @@
             <td class="total value"><?php echo $horse->evaluateMothersNotes; ?>/10</td>
         </tr>
     </table>
+
+    <div class="mobile-total">
+        <div>
+            <span class="total label"><?php _e("Total weighted points", 'horses-catalog') ?></span>
+            <span class="total value"><?php echo $horse->totalMothersNotes; ?></span>
+        </div>
+        <div>
+            <span class="total label"><?php _e("Final note", 'horses-catalog') ?></span> 
+            <span class="total value"><?php echo $horse->evaluateMothersNotes; ?></span>
+        </div>
+    </div>
 </div>

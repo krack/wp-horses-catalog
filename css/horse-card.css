@@ -166,9 +166,10 @@ form input[type=submit] {
 .detail-card h3 {
     text-align: left;
 }
+
 .detail-card h4 {
     margin-left: 0%;
-	margin-bottom: 3%;
+    margin-bottom: 3%;
 }
 
 .profilblock {
@@ -179,19 +180,17 @@ form input[type=submit] {
 }
 
 nav#horse-menu {
-    margin-left:11%;
-	
+    margin-left: 11%;
     width: 78%;
-    margin-right:11%;
+    margin-right: 11%;
 }
 
 .detail-card .profil {
     width: 100%;
 }
 
-.detail-card .race.SF {
+.detail-card .race {
     display: block;
-    background-image: url("images/sf.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     font-size: 0px;
@@ -200,6 +199,18 @@ nav#horse-menu {
     position: absolute;
     right: 3%;
     bottom: -50px;
+}
+
+.detail-card .race.SF {
+    background-image: url("images/logo_sf.png");
+}
+
+.detail-card .race.SFO {
+    background-image: url("images/logo_sfo.png");
+}
+
+.detail-card .race.AA {
+    background-image: url("images/logo_anaa.jpg");
 }
 
 .detail-card .categorie {
@@ -219,7 +230,7 @@ nav#horse-menu {
     vertical-align: middle;
 }
 
-.detail-card .human-linked, .detail-card .projections, .detail-card .osteopathy-status {
+.detail-card .human-linked, .detail-card .projections {
     display: flex;
     margin: auto;
     text-align: center;
@@ -227,7 +238,7 @@ nav#horse-menu {
     max-width: 600px;
 }
 
-.detail-card .human-linked>*, .detail-card .projections>*, .detail-card .osteopathy-status>* {
+.detail-card .human-linked>*, .detail-card .projections>* {
     flex: 1 1 auto;
     display: block;
 }
@@ -239,24 +250,10 @@ nav#horse-menu {
 }
 
 @media only screen and (max-width: 959px) {
-	
-	.detail-card h1 {
-		text-align: centre;
-		width: 100%;
-		line-height: 1em;
-		font-size: 1.8em;
-		white-space: pre-line;
-	}	
-	.detail-card h1::after {
-		margin: auto;
-		margin-top: 2%;
-		
-	}
-	.detail-card h2 {
-		text-align: center;
-		font-size: 1em;
-	}
-	
+    .detail-card h2 {
+        text-align: center;
+        font-size: 1em;
+    }
     .detail-card .race.SF {
         width: 40px;
         height: 40px;
@@ -267,11 +264,11 @@ nav#horse-menu {
 
 /* projection */
 
-.detail-card .projections>*>span, .detail-card .osteopathy-status>*>span {
+.detail-card .projections>*>span {
     display: block;
 }
 
-.detail-card .projections .value, .detail-card .osteopathy-status .value {
+.detail-card .projections .value {
     font-weight: bold;
     font-size: 2em;
     font-family: "BluuNext-Bold";
@@ -331,12 +328,28 @@ nav#horse-menu {
     text-align: center;
 }
 
+@media only screen and (max-width: 959px) {
+    .detail-card #pedigree table {
+        font-size: 0.7em;
+    }
+}
+
+/*** */
+
+.osteopathy-status {
+    text-align: center;
+}
+
+.osteopathy-status span {
+    font-family: "BluuNext-Bold";
+}
+
 /** strong point */
 
 .detail-card #strong_points ul {
     list-style: none;
     text-align: center;
-	padding-left: 0;
+    padding-left: 0;
 }
 
 /** maternal */
@@ -369,20 +382,40 @@ nav#horse-menu {
     font-size: smaller;
 }
 
+.mobile-total {
+    display: none;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.mobile-total .total.label::after {
+    content: ":";
+}
+
+@media only screen and (max-width: 959px) {
+    .mobile-total {
+        display: inherit;
+    }
+    table.mother-notes .total {
+        display: none;
+    }
+}
+
 /* sf judges */
 
-.root-notation > div {
+.root-notation>div {
     font-size: 1.3em;
     line-height: 1.6em;
 }
+
 .root-notation {
     position: relative;
 }
 
-.root-notation h3{
+.root-notation h3 {
     line-height: 0.4em;
 }
-
 
 .back {
     background: radial-gradient(#f1c589, #2a2927);
@@ -395,19 +428,24 @@ nav#horse-menu {
 }
 
 @media only screen and (max-width: 959px) {
-	.back{
-		display: none !important;
-	}
-	
-	.root-notation > div{
-		line-height: 1em;
-	}
-	.notation ~ pre{
-		padding-top: 10px;
-	}
-	.root-notation > div > div.model, #testing.root-notation > div > div.locomotion{
-		margin-bottom: 10px;
-	}
+    .back {
+        display: none !important;
+    }
+    .root-notation>div {
+        line-height: 1em;
+    }
+    .notation~pre {
+        padding-top: 10px;
+    }
+    .root-notation>div>div.model, #testing.root-notation>div>div.locomotion {
+        margin-bottom: 10px;
+    }
+    .detail-card .projections .value {
+        font-size: 1.5em;
+    }
+    .detail-card .individual {
+        font-size: 1.2em;
+    }
 }
 
 #testing .back {
@@ -432,9 +470,9 @@ nav#horse-menu {
 }
 
 @media only screen and (max-width: 959px) {
-	#testing .global-impression::before {
-		content: none;
-	}
+    #testing .global-impression::before {
+        content: none;
+    }
 }
 
 .root-notation>div {
@@ -447,7 +485,7 @@ nav#horse-menu {
     display: inline-block;
     width: 50%;
     padding: 40px;
-    padding-top: 15px;	
+    padding-top: 15px;
     padding-bottom: 20px;
     background-color: white;
 }
@@ -467,10 +505,11 @@ nav#horse-menu {
     margin-bottom: 0px;
     margin-top: 1px;
 }
+
 @media only screen and (max-width: 959px) {
-	.root-notation>div:last-child>div {
-		margin-top: 0px;
-	}
+    .root-notation>div:last-child>div {
+        margin-top: 0px;
+    }
 }
 
 .root-notation>div>div:first-child {
@@ -598,13 +637,13 @@ nav#horse-menu {
 }
 
 @media only screen and (max-width: 959px) {
-	.root-notation{
-		margin-left: 3%;
-		margin-right: 3%;
-	}
+    .root-notation {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
     .root-notation>div {
         display: block;
-		font-size: 1em;
+        font-size: 1em;
     }
     .root-notation>div>div {
         width: 100%;
@@ -616,9 +655,9 @@ nav#horse-menu {
     .root-notation>div>div h3 {
         float: none !important;
     }
-	.root-notation>div>div h3::before{
-		content: none;
-	}
+    .root-notation>div>div h3::before {
+        content: none;
+    }
     .root-notation>div>div .notation {
         max-width: 95%;
     }
@@ -667,4 +706,10 @@ video {
     display: block;
     width: 80%;
     margin: auto;
+}
+
+.advertisement img {
+    margin: auto;
+    display: block;
+    max-width: 76%;
 }

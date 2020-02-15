@@ -3,9 +3,13 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
 ?>
 <?php get_header(); ?>
 
-<h1><?php _e("Catalog", 'horses-catalog') ?></h1>
+<h1><?php _e("Stallion", 'horses-catalog') ?></h1>
+<?php
 
+$search = new Search($_GET);
+?>
 <form method="get" >
+    <?php /* 
     <div class="ages">
         <h4><?php _e("Age filter : ", 'horses-catalog') ?></h4>
         <ul>
@@ -13,7 +17,7 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
                 <li><label><input type="checkbox"
                                 name="years[]" 
                                 value="<?php echo (date("Y")-$i); ?>"
-                                <?php echo in_array("".(date("Y")-$i), $_GET["years"])?"checked" : ""; ?> 
+                                <?php echo in_array("".(date("Y")-$i), $search->years)?"checked" : ""; ?> 
                             />
                             <?php echo sprintf(__('%syears', 'horses-catalog'), $i) ?>
                     </label>
@@ -21,6 +25,7 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
             <?php } ?>
         </ul>
     </div>
+     */ ?>
 
     <div class="categories">
         <h4><?php _e("Categories filter : ", 'horses-catalog') ?></h4>
@@ -29,7 +34,7 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
             <li><label><input type="checkbox" 
                             name="categories[]"
                             value="<?php echo $category->id; ?>"
-                            <?php echo in_array("".$category->id, $_GET["categories"])?"checked" : ""; ?> 
+                            <?php echo in_array("".$category->id, $search->categories)?"checked" : ""; ?> 
                             />
                             <?php echo $category->label; ?>
             </label>
@@ -40,7 +45,7 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
     </div>
     <div class="name">
         <h4><?php _e("Name filter : ", 'horses-catalog') ?></h4>
-        <input type="text" name="search" value="<?php echo $_GET["search"]; ?>" />
+        <input type="text" name="search" value="<?php echo $search->name; ?>" />
     </div>
     <input type="submit" value="<?php _e("search", 'horses-catalog') ?>"/>
 </form>
@@ -49,7 +54,6 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
 
 <div class="list">
     <?php 
-        $search = new Search($_GET);
         $listHorses = Horses::getAll($search);
         
         $page = 1;
