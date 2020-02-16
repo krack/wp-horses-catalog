@@ -28,7 +28,7 @@ class AdminPlugin{
     }
 
     public function listUpladerDisplayPage(){
-        if(isset($_POST["import-catalog"])){
+        if(isset($_POST["import-catalog"]) || isset($_POST["import-catalog-with-file-on-server"])){
             $fileUploaded = $this->uploadFileIfValid();
         }
         $saved = $this->saveConfiguration();
@@ -63,6 +63,12 @@ class AdminPlugin{
                         <label for="file_pictures_uploaded" class="fas fa-file-archive"><?php _e("Horse pictures zip", 'horses-catalog'); ?></label>
                         <input type="file" name="<?php echo $this->zipInputName ?>" id="file_pictures_uploaded" accept=".zip" />
                     </div>
+                    <div>
+                        <label for="ignore-pictures" class="fas fa-file-archive"><?php _e("Ignore pictures requeried and use media", 'horses-catalog'); ?></label>
+                        <input type="checkbox" name="ignore-pictures" id="ignore-pictures" />
+                    </div>
+
+                    
                     
                     <input type="submit" class="button-primary" value="<?php _e("Import", 'horses-catalog'); ?>" name="import-catalog"/>
                 </fieldset>
@@ -128,13 +134,15 @@ class AdminPlugin{
         if(!$this->existFilesToUpload()) {
             return false;
         }
-
+       
         if(!$this->checkFileType($this->csvInputName, 'text/csv',  __("File type is not csv", 'horses-catalog'))) {
             return false;
         }
-
-        if(!$this->checkFileType($this->zipInputName, 'application/zip', __("File type is not zip", 'horses-catalog'))) {
-            return false;
+            
+        if(!$this->ignorePictures() && !$this->fileAlreadyOnServer()){
+            if(!$this->checkFileType($this->zipInputName, 'application/zip', __("File type is not zip", 'horses-catalog'))) {
+                return false;
+            }
         }
         if(!$this->uploadFile()){
             return false;
@@ -143,14 +151,19 @@ class AdminPlugin{
         if(!$this->validateFileContent()){
             return false;
         }
-
-        if(!$this->validateZipFileContent()){
-            return false;
-        } 
-        
-        $this->removeOldAttachments();
+        if(!$this->ignorePictures()){
+            if(!$this->validateZipFileContent()){
+                return false;
+            } 
+            $this->removeOldAttachments();
+        }
         $this->copyValidatedFile();
-        $this->saveFileInAttachment();
+
+        if(!$this->ignorePictures()){
+            $this->saveFileInAttachment();
+        }
+        
+        
 
         return true;
     }
@@ -160,7 +173,7 @@ class AdminPlugin{
         if (empty($_FILES)){
             return false;
         }
-        if($this->existFileToUploadWithName($this->csvInputName) && $this->existFileToUploadWithName($this->zipInputName)){
+        if($this->existFileToUploadWithName($this->csvInputName) && ($this->existFileToUploadWithName($this->zipInputName)|| $this->ignorePictures())){
             return true;
         }else{
             array_push($this->errors, __("Empty file", 'horses-catalog'));
@@ -171,6 +184,11 @@ class AdminPlugin{
     private function existFileToUploadWithName($name){
         return isset($name) && ($_FILES[$name]['size'] > 0);
     }
+    private function ignorePictures(){
+        return isset($_POST['ignore-pictures']);
+    }
+
+    
 
     private function checkFileType($name, $expectedType, $errorMessage){
         $arr_file_type = wp_check_filetype(basename($_FILES[$name]['name']));
@@ -189,16 +207,27 @@ class AdminPlugin{
         $upload_overrides = array( 'test_form' => false );
 
         $movefileCsv = wp_handle_upload( $_FILES[$this->csvInputName], $upload_overrides );
-        $movefileZip = wp_handle_upload( $_FILES[$this->zipInputName], $upload_overrides );
-         if ( $movefileCsv && ! isset( $movefileCsv['error']) && $movefileZip && ! isset( $movefileZip['error'] ) ) {
+        if ( $movefileCsv && ! isset( $movefileCsv['error']) ) {
             $this->currentCsvFile = $movefileCsv["file"];
-            $this->currentZipFile = $movefileZip["file"];
-             return true;
-        } else {
+        }else{
             array_push($this->errors, $movefileCsv['error']);
             array_push($this->errors, __("Error during file uploading", 'horses-catalog'));
             return false;
         }
+        if(!$this->ignorePictures()){
+            $movefileZip = wp_handle_upload( $_FILES[$this->zipInputName], $upload_overrides );
+            if ( $movefileZip && ! isset( $movefileZip['error'] ) ) {
+            
+                $this->currentZipFile = $movefileZip["file"];
+            } else {
+                array_push($this->errors, $movefileCsv['error']);
+                array_push($this->errors, __("Error during file uploading", 'horses-catalog'));
+                return false;
+            }
+        }
+
+        return true;
+
     }
 
     private function validateFileContent(){
@@ -238,7 +267,7 @@ class AdminPlugin{
         $csvReader = new CsvReader($this->currentCsvFile);
         $horsesList =  $csvReader->readFile();
         foreach($horsesList as $horse){
-            if (!in_array($horse["id"]."_1.jpg", $fileList) && !in_array($horse["id"]."_1.JPG", $fileList)) {
+            if (!in_array($horse["id"]."_1.jpg", $fileList) && !in_array($horse["id"]."_1.JPG", $fileList)&& !$this->checkPresenceInMediaIfIncremental($horse["id"])) {
                 array_push($this->errors,  sprintf(__("It's missing picture for horse with id : %s", 'horses-catalog'),$horse["id"]));
                 $valid= false;
             }
@@ -271,15 +300,18 @@ class AdminPlugin{
         if(!rename($this->currentCsvFile, wp_upload_dir()['basedir']."/horses-catalog/list_horse.csv")){
             array_push($this->errors, __("Error during copie after file validating", 'horses-catalog'));
         }
-        $zip = new ZipArchive();
-        if ($zip->open($this->currentZipFile) === TRUE) {
-            $extracted = $zip->extractTo(wp_upload_dir()['basedir']."/horses-catalog/");
-            if(!$extracted){
+
+        if(!$this->ignorePictures()){
+            $zip = new ZipArchive();
+            if ($zip->open($this->currentZipFile) === TRUE) {
+                $extracted = $zip->extractTo(wp_upload_dir()['basedir']."/horses-catalog/");
+                if(!$extracted){
+                    array_push($this->errors, __("Error during extract pictures", 'horses-catalog'));
+                }
+                $zip->close();
+            } else {
                 array_push($this->errors, __("Error during extract pictures", 'horses-catalog'));
             }
-            $zip->close();
-        } else {
-            array_push($this->errors, __("Error during extract pictures", 'horses-catalog'));
         }
 
     }
@@ -288,7 +320,7 @@ class AdminPlugin{
         $this->scanAndAddAttachment(wp_upload_dir()['basedir']."/horses-catalog/");
     }
     private function scanAndAddAttachment($directory){
-        $scanned_directory = array_diff(scandir($directory), array('..', '.', 'list_horse.csv'));
+        $scanned_directory = array_diff(scandir($directory), array('..', '.', 'list_horse.csv', 'Thumbs.db'));
         foreach($scanned_directory as $element){
             $currentFilePath = $directory."/".$element;
             if(is_dir($currentFilePath)){ 

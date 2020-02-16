@@ -28,10 +28,14 @@ if(count($query_video->posts) > 0){
         <?php
         }
     ?>
-
+    <?php
+    if($horse->videoLink != null){
+    ?>
+    <a class="complete-video" href="<?php echo $horse->videoLink;?>" target="_blank"><?php _e("Complete video", 'horses-catalog') ?> </a>
+    <?php } ?>
 </div>
 
-<?php }?>
+<?php  } ?>
 
 <?php
 $query_images_args = array(

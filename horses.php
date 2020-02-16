@@ -144,6 +144,8 @@ class Horses{
     public $strongPoints;
     public $contact;
 
+    public $videoLink;
+
 
 
     public function __construct($rawData) {
@@ -156,6 +158,9 @@ class Horses{
         $this->logo = $rawData["Logo"];
         $this->size = $rawData["toise"];
         $this->discipline = $rawData["discipline"];
+
+        $this->videoLink = $rawData["lien video"];
+        
 
         
 

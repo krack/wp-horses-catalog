@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2020-02-16 10:51+0100\n"
-"PO-Revision-Date: 2020-02-16 10:51+0100\n"
+"POT-Creation-Date: 2020-02-16 20:32+0100\n"
+"PO-Revision-Date: 2020-02-16 20:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -50,55 +50,59 @@ msgid "Horse pictures zip"
 msgstr "Zip d'images des chevaux"
 
 #: adminPlugin.php:67
+msgid "Ignore pictures requeried and use media"
+msgstr "Ignorer le besoin des photos requises et utilisé les médias"
+
+#: adminPlugin.php:73
 msgid "Import"
 msgstr "Importer"
 
-#: adminPlugin.php:74
+#: adminPlugin.php:80
 msgid "Configuration manager"
 msgstr "Importer"
 
-#: adminPlugin.php:77
+#: adminPlugin.php:83
 msgid "saved"
 msgstr "savegardé"
 
-#: adminPlugin.php:81
+#: adminPlugin.php:87
 msgid "Menu title "
 msgstr "Menu titre "
 
-#: adminPlugin.php:85
+#: adminPlugin.php:91
 msgid "save"
 msgstr "sauvegarder"
 
-#: adminPlugin.php:132
+#: adminPlugin.php:138
 msgid "File type is not csv"
 msgstr "Le type du fichier n'est pas csv"
 
-#: adminPlugin.php:136
+#: adminPlugin.php:143
 msgid "File type is not zip"
 msgstr "Le type du fichier n'est pas une archive"
 
-#: adminPlugin.php:166
+#: adminPlugin.php:179
 msgid "Empty file"
 msgstr "Fichier vide"
 
-#: adminPlugin.php:199
+#: adminPlugin.php:214 adminPlugin.php:224
 msgid "Error during file uploading"
 msgstr "Erreur durant le téléchargement du fichier"
 
-#: adminPlugin.php:225
+#: adminPlugin.php:254
 msgid "File must be encoding in UTF-8"
 msgstr "Le fichier doit être encodé en UTF-8"
 
-#: adminPlugin.php:242
+#: adminPlugin.php:271
 #, php-format
 msgid "It's missing picture for horse with id : %s"
 msgstr "Il manque une image pour le cheval avec l'id : %s"
 
-#: adminPlugin.php:272
+#: adminPlugin.php:301
 msgid "Error during copie after file validating"
 msgstr "Erreur durant la copie après la validation du fichier"
 
-#: adminPlugin.php:278 adminPlugin.php:282
+#: adminPlugin.php:309 adminPlugin.php:313
 msgid "Error during extract pictures"
 msgstr "Erreur durant l'extraction des images"
 
@@ -130,6 +134,10 @@ msgstr "Espoir"
 #: template/galerie.php:17 template/horse-detail.php:36
 msgid "Video"
 msgstr "Vidéo"
+
+#: template/galerie.php:33
+msgid "Complete video"
+msgstr "Voir la vidéo complète"
 
 #: template/horse-detail.php:21 template/pedigree.php:11
 msgid "Pedigree"
