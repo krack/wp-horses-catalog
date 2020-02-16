@@ -53,7 +53,7 @@ class CsvReader{
         $valid = true;
         $fieldNumber = count($data);
         if($fieldNumber != $expectedLenght){
-            array_push($this->errors,  sprintf(__("File invalid row %u : bad field number", 'horses-catalog'),$row));
+            array_push($this->errors,  sprintf(__("File invalid row %u with data %s : bad field number : actual %u, excepted %u", 'horses-catalog'),$row, $data[0], $fieldNumber, $expectedLenght));
             $valid = false;
         }
         return $valid;

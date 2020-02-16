@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2020-02-14 19:21+0100\n"
-"PO-Revision-Date: 2020-02-14 19:21+0100\n"
+"POT-Creation-Date: 2020-02-16 10:51+0100\n"
+"PO-Revision-Date: 2020-02-16 10:51+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -113,8 +113,11 @@ msgstr "Fichier invalide: le caractère séparateur doit être %s"
 
 #: csvReader.php:56
 #, php-format
-msgid "File invalid row %u : bad field number"
-msgstr "Fichier invalide ligne %u : mauvais nombre de champs"
+msgid ""
+"File invalid row %u with data %s : bad field number : actual %u, excepted %u"
+msgstr ""
+"Fichier invalide ligne %u avec la donnée %s : mauvais nombre de champs : "
+"actuel %u, attendu %u"
 
 #: horses.php:81
 msgid "Very promising"
@@ -152,46 +155,37 @@ msgstr "Expertise juges"
 msgid "Riders reviews"
 msgstr "Avis des cavaliers"
 
-#: template/horse-detail.php:48
+#: template/horse-detail.php:67
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: template/horse-detail.php:52
+#: template/horse-detail.php:71
 msgid "Breeder"
 msgstr "Naisseur"
 
-#: template/horse-detail.php:61
+#: template/horse-detail.php:80
 msgid "Protected mares in 2018"
 msgstr "Juments saillies en 2018"
 
-#: template/horse-detail.php:67
+#: template/horse-detail.php:86
 msgid "Year of riding in France"
 msgstr "Année de monte en France"
 
-#: template/horse-detail.php:73
+#: template/horse-detail.php:92
 msgid "Protected mares in France"
 msgstr "Juments saillies en France"
 
-#: template/horse-detail.php:94
+#: template/horse-detail.php:114
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
 
-#: template/horse-detail.php:125
+#: template/horse-detail.php:144
 msgid "Contact"
 msgstr "Contact"
 
 #: template/horses-list.php:6
 msgid "Stallion"
 msgstr "Étalon"
-
-#: template/horses-list.php:14
-msgid "Age filter : "
-msgstr "Filtrer par age : "
-
-#: template/horses-list.php:22
-#, php-format
-msgid "%syears"
-msgstr "%sans"
 
 #: template/horses-list.php:31
 msgid "Categories filter : "
@@ -205,12 +199,12 @@ msgstr "Filtrer par nom : "
 msgid "search"
 msgstr "rechercher"
 
-#: template/horses-list.php:80
+#: template/horses-list.php:96
 #, php-format
 msgid "%s years"
 msgstr "%s ans"
 
-#: template/horses-list.php:83
+#: template/horses-list.php:99
 #, php-format
 msgid "By %s x %s"
 msgstr "Par %s x %s"
@@ -234,9 +228,7 @@ msgstr "Disponibilité"
 
 #: template/internationnal.php:17
 msgid "Impulses, reactivity"
-msgstr ""
-"Instinct &\n"
-"intelligence de la barre"
+msgstr "Influx, réactivité"
 
 #: template/internationnal.php:21
 msgid "Instinct, helm intelligence"
@@ -250,11 +242,11 @@ msgstr "Impression générale"
 msgid "Mother"
 msgstr "Mère"
 
-#: template/mother-notes.php:29
+#: template/mother-notes.php:29 template/mother-notes.php:58
 msgid "Total weighted points"
 msgstr "Total points pondérés"
 
-#: template/mother-notes.php:30
+#: template/mother-notes.php:30 template/mother-notes.php:62
 msgid "Final note"
 msgstr "Note final"
 
@@ -320,7 +312,7 @@ msgstr "Style sur l’obstacle"
 
 #: template/sf-judges.php:70 template/testing.php:46
 msgid "Blood, will, respect & bar intelligence"
-msgstr "Sang, volonté, respect & intelligence de la barre"
+msgstr "Sang, volonté, respect<br />& intelligence de la barre"
 
 #: template/strong-points.php:3
 msgid "The strong points"
@@ -377,6 +369,12 @@ msgstr "Comportement sous la selle"
 #: template/testing.php:110
 msgid "Behavior in care"
 msgstr "Comportement aux soins"
+
+#~ msgid "Age filter : "
+#~ msgstr "Filtrer par age : "
+
+#~ msgid "%syears"
+#~ msgstr "%sans"
 
 #, fuzzy
 #~| msgid "Expertise SF test team"

@@ -74,11 +74,27 @@ $search = new Search($_GET);
             return ($firstOfList <= $index &&  $index < $lastOfList );
         }, 1);
     ?>
-    <?php foreach($listHorsesPagined as $horse){ ?>
+    <?php foreach($listHorsesPagined as $horse){
+        $query_profile_args = array(
+            'post_type'      => 'attachment',
+            'post_mime_type' => 'image',
+            'post_status'    => 'inherit',
+            'posts_per_page' => -1,
+            'post_parent'    => 0,
+            'starts_with'    => $horse->id."_1"
+            
+            
+        );
+        $profileUrl = "";
+        $query_profile = new WP_Query( $query_profile_args );
+        if(count($query_profile->posts) > 0){
+            $profileUrl=wp_get_attachment_url( $query_profile->posts[0]->ID , 'thumbnail');
+        }
+        ?>
         <div class="card"> 
             <a href="/horse-detail/?id=<?php echo $horse->id;?>">
                 <span class="age"><?php echo sprintf(__('%s years', 'horses-catalog'), $horse->age)  ?> - <?php echo $horse->discipline; ?></span>
-                <img class="profil" src="<?php echo "/wp-content/uploads/horses-catalog/".$horse->id.".JPG" ?>" alt="profil <?php echo $horse->name ?>" />
+                <img class="profil" src="<?php echo  $profileUrl; ?>" alt="profil <?php echo $horse->name ?>" />
                 <span class="name"><?php echo $horse->name;?></span>
                 <span><?php echo sprintf(__('By %s x %s', 'horses-catalog'), $horse->father->name, $horse->mother->name) ?></span>
             </a>

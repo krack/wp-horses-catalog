@@ -112,6 +112,7 @@ class Horses{
     public $id;
     public $name;
     public $race;
+    public $logo;
     public $birthYear;
     public $age;
     public $coatColor;
@@ -152,6 +153,7 @@ class Horses{
         $this->age = (date("Y") - $this->birthYear);
         $this->coatColor = $rawData["robe"];
         $this->race = $rawData["race"];
+        $this->logo = $rawData["Logo"];
         $this->size = $rawData["toise"];
         $this->discipline = $rawData["discipline"];
 
@@ -164,7 +166,7 @@ class Horses{
         $this->projections = $rawData["saillit"];
         $this->frProjections = $rawData["fr saillit"];
         $this->riding = $rawData["monte"];
-        $this->strongPoints = $keywords = preg_split("/\|/", $rawData["points fort"]);
+        $this->strongPoints = preg_split("/\|/", $rawData["points forts"]);
         
         $this->notes = new Notes($rawData);
 

@@ -38,8 +38,27 @@ function isYoungHorse($horse){
     </nav>
 
     <div class="profilblock">
-        <img class="profil" src="<?php echo "/wp-content/uploads/horses-catalog/".$horse->id.".JPG" ?>" alt="profil <?php echo $horse->name ?>" />
-        <span class="race <?php echo $horse->race ?>"><?php echo $horse->race ?></span>
+        <?php
+             $query_profile_args = array(
+                'post_type'      => 'attachment',
+                'post_mime_type' => 'image',
+                'post_status'    => 'inherit',
+                'posts_per_page' => -1,
+                'post_parent'    => 0,
+                'starts_with'    => $horse->id."_1"
+                
+                
+            );
+            $profileUrl = "";
+            $query_profile = new WP_Query( $query_profile_args );
+            if(count($query_profile->posts) > 0){
+                $profileUrl=wp_get_attachment_url( $query_profile->posts[0]->ID );
+            }
+        ?>
+
+
+        <img class="profil" src="<?php echo $profileUrl; ?>" alt="profil <?php echo $horse->name ?>" />
+        <span class="race <?php echo $horse->logo ?>"><?php echo $horse->logo ?></span>
     </div>
     <span class="categorie"><?php echo $horse->globalEvaluation; ?></span>
     <hr />
@@ -90,6 +109,7 @@ function isYoungHorse($horse){
     
     include("pedigree.php"); ?>
 
+    <?php if(function_exists("shf_connected_block") && shf_connected_block()){ ?>
     <div class="osteopathy-status">
         <h2><?php _e("Osteo Articular Status", 'horses-catalog') ?></h2>
         <span class="value"><?php echo $horse->osteopathyStatus; ?><span>
@@ -120,7 +140,6 @@ function isYoungHorse($horse){
    
     <?php include("galerie.php"); ?>
 
-    <?php if(function_exists("shf_connected_block") && shf_connected_block()){ ?>
     <div id="contact">
         <h2><?php _e("Contact", 'horses-catalog') ?></h2>
         <span class="name"><?php echo $horse->contact->name ?></span>

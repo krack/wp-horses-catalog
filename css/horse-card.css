@@ -249,6 +249,10 @@ nav#horse-menu {
     font-size: 1.6em;
 }
 
+.detail-card .doublelines .value {
+    padding-top: 15px;
+}
+
 @media only screen and (max-width: 959px) {
     .detail-card h2 {
         text-align: center;

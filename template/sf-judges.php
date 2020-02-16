@@ -66,7 +66,7 @@
                     <span class="label"><?php _e("Style on the obstacle", 'horses-catalog') ?></span>
                     <span class="value"><?php echo $horse->notes->sfExprets->ridingObstacleStyle; ?></span>
                 </div> 
-                <div class="notation">
+                <div class="notation doublelines">
                     <span class="label"><?php _e("Blood, will, respect & bar intelligence", 'horses-catalog') ?></span>
                     <span class="value"><?php echo $horse->notes->sfExprets->ridingObstacleRespect; ?></span>
                 </div> 

@@ -238,7 +238,7 @@ class AdminPlugin{
         $csvReader = new CsvReader($this->currentCsvFile);
         $horsesList =  $csvReader->readFile();
         foreach($horsesList as $horse){
-            if (!in_array($horse["id"].".jpg", $fileList) && !in_array($horse["id"].".JPG", $fileList)) {
+            if (!in_array($horse["id"]."_1.jpg", $fileList) && !in_array($horse["id"]."_1.JPG", $fileList)) {
                 array_push($this->errors,  sprintf(__("It's missing picture for horse with id : %s", 'horses-catalog'),$horse["id"]));
                 $valid= false;
             }
@@ -285,19 +285,27 @@ class AdminPlugin{
     }
 
     private function saveFileInAttachment(){
-        $fileList = $this->getListFileInZip();
-        foreach($fileList as $file){
-            $filepath =  wp_upload_dir()['basedir']."/horses-catalog/".$file ;
-            $upload_id = wp_insert_attachment( array(
-                'guid'=> wp_upload_dir()['basedir']."/".basename( $file ), 
-                'post_title'     => substr($file, 0, strrpos($file, ".")),
-                'post_content'   => 'autoimported by horsecatalog plugin',
-                'post_mime_type' => 'image/jpeg',
-                'post_status'    => 'inherit'
-            ),$filepath);
-            require_once( ABSPATH . 'wp-admin/includes/image.php' );
-            $metadata = wp_generate_attachment_metadata( $upload_id, $filepath );
-            wp_update_attachment_metadata( $upload_id,  $metadata);
+        $this->scanAndAddAttachment(wp_upload_dir()['basedir']."/horses-catalog/");
+    }
+    private function scanAndAddAttachment($directory){
+        $scanned_directory = array_diff(scandir($directory), array('..', '.', 'list_horse.csv'));
+        foreach($scanned_directory as $element){
+            $currentFilePath = $directory."/".$element;
+            if(is_dir($currentFilePath)){ 
+                $this->scanAndAddAttachment($currentFilePath);
+            }else{
+                $filepath =  $currentFilePath ;
+                $upload_id = wp_insert_attachment( array(
+                    'guid'=> wp_upload_dir()['basedir']."/".basename( $element ), 
+                    'post_title'     => substr($element, 0, strrpos($element, ".")),
+                    'post_content'   => 'autoimported by horsecatalog plugin',
+                    'post_mime_type' => 'image/jpeg',
+                    'post_status'    => 'inherit'
+                ),$filepath);
+                require_once( ABSPATH . 'wp-admin/includes/image.php' );
+                $metadata = wp_generate_attachment_metadata( $upload_id, $filepath );
+                wp_update_attachment_metadata( $upload_id,  $metadata);
+            }
         }
     }
 
