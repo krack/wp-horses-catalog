@@ -13,29 +13,31 @@ function isYoungHorse($horse){
 ?>
 
 <div class="detail-card">
-    <h1><?php echo $horse->name ?></h1>
+    <div class="fixe-part">
+        <h1><?php echo $horse->name ?></h1>
 
-    <nav id="horse-menu">
-        <ul>
-            
-            <li><a href="#pedigree"><?php _e("Pedigree", 'horses-catalog') ?></a></li>
+        <nav id="horse-menu">
+            <ul>
+                
+                <li><a href="#pedigree"><?php _e("Pedigree", 'horses-catalog') ?></a></li>
 
-            <?php if(!isYoungHorse($horse)){ ?>
-            <li class="<?php shf_connected_class() ?>"><a href="#strong_points"><?php _e("Strong points", 'horses-catalog') ?></a></li>
-            <?php } ?>
+                <?php if(!isYoungHorse($horse)){ ?>
+                <li class="<?php shf_connected_class() ?>"><a href="#strong_points"><?php _e("Strong points", 'horses-catalog') ?></a></li>
+                <?php } ?>
 
-            <li class="<?php shf_connected_class() ?>"><a href="#maternal"><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></a></li> 
-            <li class="<?php shf_connected_class() ?>"><a href="#sf"><?php _e("Expertise judges", 'horses-catalog') ?></a></li> 
+                <li class="<?php shf_connected_class() ?>"><a href="#maternal"><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></a></li> 
+                <li class="<?php shf_connected_class() ?>"><a href="#sf"><?php _e("Expertise judges", 'horses-catalog') ?></a></li> 
 
-            <?php if(!isYoungHorse($horse)){ ?>
-            <li class="<?php shf_connected_class() ?>"><a href="#testing"><?php _e("Testing expertise", 'horses-catalog') ?></a></li> 
-            <?php } ?>
-            <?php if(!isYoungHorse($horse)){ ?>
-            <li class="<?php shf_connected_class() ?>"><a href="#opinion"><?php _e("Riders reviews", 'horses-catalog') ?></a></li>
-            <?php } ?> 
-            <li class="<?php shf_connected_class() ?>"><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li>    
-        </ul>
-    </nav>
+                <?php if(!isYoungHorse($horse)){ ?>
+                <li class="<?php shf_connected_class() ?>"><a href="#testing"><?php _e("Testing expertise", 'horses-catalog') ?></a></li> 
+                <?php } ?>
+                <?php if(!isYoungHorse($horse)){ ?>
+                <li class="<?php shf_connected_class() ?>"><a href="#opinion"><?php _e("Riders reviews", 'horses-catalog') ?></a></li>
+                <?php } ?> 
+                <li class="<?php shf_connected_class() ?>"><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li>    
+            </ul>
+        </nav>
+    </div>
 
     <div class="profilblock">
         <?php

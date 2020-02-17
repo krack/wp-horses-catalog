@@ -2,8 +2,23 @@
     position: fixed;
     top: 0;
     z-index: 9999;
-    width: 80%;
+    width: 100%;
     background-color: white;
+    margin: auto;
+}
+
+@media only screen and (max-width: 959px) {
+    .fixed {
+        position: inherit;
+        z-index: inherit;
+        background-color: transparent;
+    }
+    .fixe-replace {
+        height: 0 !important;
+    }
+    .with-admin-menu {
+        margin-top: 0px;
+    }
 }
 
 .with-admin-menu {

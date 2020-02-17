@@ -1,15 +1,32 @@
+var originTop = $(".fixe-part").offset().top;
+var fixePartHeight = $(".fixe-part").outerHeight();
 $(window).scroll(function () {
-    var headerTop = $(".detail-card > h1").offset().top + $(".detail-card > h1").outerHeight();
 
-    if ($(window).scrollTop() > headerTop) {
+    if ($(window).scrollTop() > originTop) {
         //when the header reaches the top of the window change position to fixed
-        $("#horse-menu").addClass("fixed-menu");
+        if ($(".fixe-replace").length == 0) {
+            $("<div>").insertBefore(".fixe-part").addClass("fixe-replace").height(fixePartHeight);
+        }
+        $(".fixe-part").addClass("fixed");
         if ($("#wpadminbar").length > 0) {
-            $("#horse-menu").addClass("with-admin-menu");
+            $(".fixe-part").addClass("with-admin-menu");
         }
     } else {
         //put position back to relative
-        $("#horse-menu").removeClass("fixed-menu");
-        $("#horse-menu").removeClass("with-admin-menu");
+        $(".fixe-replace").remove();
+        $(".fixe-part").removeClass("fixed");
+        $(".fixe-part").removeClass("with-admin-menu");
     }
+});
+
+$(document).ready(function () {
+    $("a[href^='#'").click(function (e) {
+        e.preventDefault();
+        var href = $(this).attr('href');
+        var offset = $(href).offset().top - fixePartHeight;
+        if ($("#wpadminbar").length > 0) {
+            offset -= $("#wpadminbar").outerHeight();
+        }
+        $(window).scrollTop(offset);
+    });
 });
