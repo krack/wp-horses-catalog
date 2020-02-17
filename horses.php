@@ -132,6 +132,7 @@ class Horses{
     public $mothersNotes;
     public $totalMothersNotes;
     public $evaluateMothersNotes;
+    public $foreignBloodline;
 
 
     public $osteopathyStatus;
@@ -145,6 +146,7 @@ class Horses{
     public $contact;
 
     public $videoLink;
+    public $sireLink;
 
 
 
@@ -160,6 +162,7 @@ class Horses{
         $this->discipline = $rawData["discipline"];
 
         $this->videoLink = $rawData["lien video"];
+        $this->sireLink = $rawData["lien SIRE"];
         
 
         
@@ -189,7 +192,7 @@ class Horses{
 
         $this->totalMothersNotes = $rawData["mere_points_total"];
         $this->evaluateMothersNotes = $rawData["mere_evaluation"];
-        
+        $this->foreignBloodline = (strtolower($rawData["mere_ligne_etrangere"])=="oui");
 
         $this->osteopathyStatus = $rawData["statut_osteo_articulaire"];
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2020-02-16 20:32+0100\n"
-"PO-Revision-Date: 2020-02-16 20:33+0100\n"
+"POT-Creation-Date: 2020-02-17 23:16+0100\n"
+"PO-Revision-Date: 2020-02-17 23:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -135,7 +135,7 @@ msgstr "Espoir"
 msgid "Video"
 msgstr "Vidéo"
 
-#: template/galerie.php:33
+#: template/galerie.php:34
 msgid "Complete video"
 msgstr "Voir la vidéo complète"
 
@@ -183,11 +183,15 @@ msgstr "Année de monte en France"
 msgid "Protected mares in France"
 msgstr "Juments saillies en France"
 
-#: template/horse-detail.php:114
+#: template/horse-detail.php:109
+msgid "SIRE card"
+msgstr "fiche SIRE"
+
+#: template/horse-detail.php:118
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
 
-#: template/horse-detail.php:144
+#: template/horse-detail.php:148
 msgid "Contact"
 msgstr "Contact"
 
@@ -250,11 +254,11 @@ msgstr "Impression générale"
 msgid "Mother"
 msgstr "Mère"
 
-#: template/mother-notes.php:29 template/mother-notes.php:58
+#: template/mother-notes.php:29 template/mother-notes.php:63
 msgid "Total weighted points"
 msgstr "Total points pondérés"
 
-#: template/mother-notes.php:30 template/mother-notes.php:62
+#: template/mother-notes.php:30 template/mother-notes.php:67
 msgid "Final note"
 msgstr "Note final"
 
@@ -265,6 +269,10 @@ msgstr "Nom"
 #: template/mother-notes.php:43
 msgid "Points"
 msgstr "Points"
+
+#: template/mother-notes.php:55
+msgid "foreign bloodline"
+msgstr "lignée étrangère"
 
 #: template/sf-judges.php:2
 msgid "Expertise judges SF"

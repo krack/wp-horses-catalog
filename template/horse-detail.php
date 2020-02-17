@@ -104,9 +104,13 @@ function isYoungHorse($horse){
     </div>
       
     <hr />
+    
+    <?php if($horse->sireLink != null){ ?>
+        <a class="sire-link" target="_blank" href="<?php echo $horse->sireLink; ?>"><?php _e("SIRE card", 'horses-catalog'); ?></a>
+    <?php } ?>
+
     <?php
-    
-    
+        
     include("pedigree.php"); ?>
 
     <?php if(function_exists("shf_connected_block") && shf_connected_block()){ ?>
