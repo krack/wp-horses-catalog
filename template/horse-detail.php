@@ -146,13 +146,6 @@ function isYoungHorse($horse){
    
     <?php include("galerie.php"); ?>
 
-    <div id="contact">
-        <h2><?php _e("Contact", 'horses-catalog') ?></h2>
-        <span class="name"><?php echo $horse->contact->name ?></span>
-        <span class="phone"><?php echo $horse->contact->phone ?></span>
-        <span class="email"><a href="mailto:<?php echo $horse->contact->email ?>"><?php echo $horse->contact->email ?></a></span>
-        <span class="address"><?php echo $horse->contact->address ?></span>
-    </div>
     <?php } ?>
 
 
