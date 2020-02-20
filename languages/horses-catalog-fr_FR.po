@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
 "POT-Creation-Date: 2020-02-17 23:16+0100\n"
-"PO-Revision-Date: 2020-02-17 23:16+0100\n"
+"PO-Revision-Date: 2020-02-19 18:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -376,7 +376,7 @@ msgstr "Activité motrice"
 
 #: template/testing.php:98
 msgid "Gregariousness"
-msgstr "Gréfarité"
+msgstr "Grégarité"
 
 #: template/testing.php:106
 msgid "Behavior under the saddle"

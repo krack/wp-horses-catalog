@@ -24,7 +24,6 @@ if(count($query_video->posts) > 0){
 
             Sorry, your browser doesn't support embedded videos.
         </video>
-            
         <?php
         }
     ?>
@@ -55,12 +54,13 @@ if(count($query_images->posts) > 0){
 
 <div class="gallery">
     <img id="zoom" />
+    <p id="legend"></p>
     <div class="thumbnail">
         <?php
         foreach ( $query_images->posts as $image ) {
         ?>
             <img src="<?php echo wp_get_attachment_url( $image->ID ) ?>" />
-            
+            <span class="legend"><?php echo $image->post_excerpt; ?> </span>
         <?php
         }
         ?>

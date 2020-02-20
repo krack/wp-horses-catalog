@@ -238,7 +238,7 @@ nav#horse-menu {
 }
 
 .detail-card .categorie.ESPOIR {
-    background: radial-gradient(#c11f18, #5b1017);
+    background: radial-gradient(#152857, #0b0f1e);
 }
 
 .detail-card .categorie::before, .detail-card .categorie::after {
@@ -597,6 +597,7 @@ nav#horse-menu {
 .notation .label {
     display: inline-block;
     max-width: 350px;
+    padding-right: 7px;
 }
 
 .root-notation>div>div .notation .value {
@@ -719,6 +720,19 @@ nav#horse-menu {
     width: 78%;
     margin: auto;
     display: block;
+}
+
+.gallery #legend {
+    width: 78%;
+    margin: auto;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery .legend {
+    display: none;
 }
 
 .gallery .thumbnail {

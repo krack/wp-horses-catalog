@@ -12,8 +12,8 @@
                     <span class="exponant">
                     <?php
                     echo _n(
-                        'iere',
-                        'ième',
+                        'ère',
+                        'ème',
                         ($i+1),
                         'horses-catalog'
                     )
