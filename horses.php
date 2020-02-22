@@ -218,10 +218,10 @@ class HorseParent{
             $this->race = $rawData[$base."_race"];
 
         if(array_key_exists($base."p", $rawData)){
-            $this->father = new HorseParent($rawData, $base."p");
+            $this->father = new HorseParent($rawData, "p".$base);
         }
         if(array_key_exists($base."m", $rawData)){
-            $this->mother = new HorseParent($rawData, $base."m");
+            $this->mother = new HorseParent($rawData, "m".$base);
         }
     }
 }

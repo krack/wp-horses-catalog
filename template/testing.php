@@ -63,11 +63,20 @@
                 <span class="star fas fa-star"></span>
             <?php
         }
-        for($i = $number; $i < 5; $i++ ){
-            ?>
-                <span class="star-black  far fa-star"></span>
-            <?php
+        if($number != 0){
+            for($i = $number; $i < 5; $i++ ){
+                ?>
+                    <span class="star-black  far fa-star"></span>
+                <?php
+            }
+        }else{
+            for($i = $number; $i < 5; $i++ ){
+                ?>
+                    <span class="no-star "></span>
+                <?php
+            }
         }
+
     }
     ?>
     <div class="temperament">

@@ -19,7 +19,7 @@ if(count($query_video->posts) > 0){
         foreach ( $query_video->posts as $video ) {
         ?>
 
-        <video controls>
+        <video controls controlsList="nodownload">
             <source src="<?php echo wp_get_attachment_url( $video->ID ) ?>">
 
             Sorry, your browser doesn't support embedded videos.
@@ -43,7 +43,9 @@ $query_images_args = array(
     'post_status'    => 'inherit',
     'posts_per_page' => -1,
     'post_parent'    => 0,
-    'starts_with'              => $horse->id
+    'starts_with'   => $horse->id,
+    'orderby'       => 'title',
+    'order'         => 'ASC'
     
     
 );
@@ -54,7 +56,7 @@ if(count($query_images->posts) > 0){
 
 <div class="gallery">
     <img id="zoom" />
-    <p id="legend"></p>
+    <pre id="legend"></pre>
     <div class="thumbnail">
         <?php
         foreach ( $query_images->posts as $image ) {

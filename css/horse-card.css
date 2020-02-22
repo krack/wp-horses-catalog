@@ -710,6 +710,13 @@ nav#horse-menu {
     }
 }
 
+.no-star {
+    content: '';
+    width: 23.4px;
+    display: inline-block;
+    background-color: white;
+}
+
 /* galerry */
 
 .gallery {
@@ -765,6 +772,14 @@ video {
     margin: 30px auto 50px auto;
 }
 
+@media only screen and (min-width: 1200px) {
+    #video, .gallery {
+        width: 49%;
+        float: left;
+        margin-top: 00px;
+    }
+}
+
 .sire-link::before {
     content: '';
     height: 60px;
@@ -789,4 +804,15 @@ video {
     margin: auto;
     display: block;
     max-width: 78%;
+}
+
+footer {
+    clear: both;
+}
+
+@media only screen and (min-width: 1200px) {
+    footer {
+        float: left;
+        width: 100%;
+    }
 }

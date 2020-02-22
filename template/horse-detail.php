@@ -62,7 +62,9 @@ function isYoungHorse($horse){
         <img class="profil" src="<?php echo $profileUrl; ?>" alt="profil <?php echo $horse->name ?>" />
         <span class="race <?php echo $horse->logo ?>"><?php echo $horse->logo ?></span>
     </div>
+    <?php if($horse->globalEvaluation !=null) { ?>
     <span class="categorie <?php echo $horse->globalEvaluation; ?>"><?php echo $horse->globalEvaluation; ?></span>
+    <?php } ?>
     <hr />
     <div class="human-linked">
         <div class="owner">

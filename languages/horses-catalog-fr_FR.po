@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2020-02-17 23:16+0100\n"
-"PO-Revision-Date: 2020-02-19 18:21+0100\n"
+"POT-Creation-Date: 2020-02-22 16:27+0100\n"
+"PO-Revision-Date: 2020-02-22 16:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -131,69 +131,65 @@ msgstr "Très prometteur"
 msgid "Hope"
 msgstr "Espoir"
 
-#: template/galerie.php:17 template/horse-detail.php:36
+#: template/galerie.php:17 template/horse-detail.php:37
 msgid "Video"
 msgstr "Vidéo"
 
-#: template/galerie.php:34
+#: template/galerie.php:33
 msgid "Complete video"
-msgstr "Voir la vidéo complète"
+msgstr "Voir toutes les vidéos"
 
-#: template/horse-detail.php:21 template/pedigree.php:11
+#: template/horse-detail.php:22 template/pedigree.php:11
 msgid "Pedigree"
 msgstr "Pédigrée"
 
-#: template/horse-detail.php:24
+#: template/horse-detail.php:25
 msgid "Strong points"
 msgstr "Points forts"
 
-#: template/horse-detail.php:27 template/mother-notes.php:3
+#: template/horse-detail.php:28 template/mother-notes.php:3
 msgid "Maternal Lineage Expertise"
 msgstr "Expertise Lignée Maternelle"
 
-#: template/horse-detail.php:28
+#: template/horse-detail.php:29
 msgid "Expertise judges"
 msgstr "Expertise juges"
 
-#: template/horse-detail.php:31
+#: template/horse-detail.php:32
 msgid "Testing expertise"
-msgstr "Expertise juges"
+msgstr "Expertise testage"
 
-#: template/horse-detail.php:34
+#: template/horse-detail.php:35
 msgid "Riders reviews"
 msgstr "Avis des cavaliers"
 
-#: template/horse-detail.php:67
+#: template/horse-detail.php:71
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: template/horse-detail.php:71
+#: template/horse-detail.php:75
 msgid "Breeder"
 msgstr "Naisseur"
 
-#: template/horse-detail.php:80
+#: template/horse-detail.php:84
 msgid "Protected mares in 2018"
 msgstr "Juments saillies en 2018"
 
-#: template/horse-detail.php:86
+#: template/horse-detail.php:90
 msgid "Year of riding in France"
 msgstr "Année de monte en France"
 
-#: template/horse-detail.php:92
+#: template/horse-detail.php:96
 msgid "Protected mares in France"
 msgstr "Juments saillies en France"
 
-#: template/horse-detail.php:109
+#: template/horse-detail.php:113
 msgid "SIRE card"
 msgstr "fiche SIRE"
 
-#: template/horse-detail.php:118
+#: template/horse-detail.php:122
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
-
-#: template/horse-detail.php:148
-msgid "Contact"
-msgstr "Contact"
 
 #: template/horses-list.php:6
 msgid "Stallion"
@@ -270,7 +266,7 @@ msgstr "Nom"
 msgid "Points"
 msgstr "Points"
 
-#: template/mother-notes.php:55
+#: template/mother-notes.php:55 template/mother-notes.php:71
 msgid "foreign bloodline"
 msgstr "lignée étrangère"
 
@@ -354,37 +350,40 @@ msgstr "Galop"
 msgid "General operation"
 msgstr "Impression générale"
 
-#: template/testing.php:74
+#: template/testing.php:83
 msgid "Temperament - Behavior"
 msgstr "Tempérament - Comportement"
 
-#: template/testing.php:77
+#: template/testing.php:86
 msgid "Emotionality"
 msgstr "Émotivité"
 
-#: template/testing.php:82
+#: template/testing.php:91
 msgid "Sensory sensitivity"
 msgstr "Sensibilité sensorielle"
 
-#: template/testing.php:88
+#: template/testing.php:97
 msgid "Reactivity towards humans"
 msgstr "Réactivité vis-à-vis des humains"
 
-#: template/testing.php:93
+#: template/testing.php:102
 msgid "Motor activity"
 msgstr "Activité motrice"
 
-#: template/testing.php:98
+#: template/testing.php:107
 msgid "Gregariousness"
 msgstr "Grégarité"
 
-#: template/testing.php:106
+#: template/testing.php:115
 msgid "Behavior under the saddle"
 msgstr "Comportement sous la selle"
 
-#: template/testing.php:110
+#: template/testing.php:119
 msgid "Behavior in care"
 msgstr "Comportement aux soins"
+
+#~ msgid "Contact"
+#~ msgstr "Contact"
 
 #~ msgid "Age filter : "
 #~ msgstr "Filtrer par age : "
