@@ -102,11 +102,16 @@
                 <span class="label"><?php _e("Motor activity", 'horses-catalog') ?></span>                    
                 <span class="value"><?php displayNoteInStar($horse->notes->temperament->traction); ?></span>
             </div>
-
+            <?php 
+            if($horse->notes->temperament->gregariousness != 0){
+            ?>
             <div class="notation">
                 <span class="label"><?php _e("Gregariousness", 'horses-catalog') ?></span>
                 <span class="value"><?php displayNoteInStar($horse->notes->temperament->gregariousness); ?></span>
              </div>
+             <?php 
+            }
+            ?>
 
 
         </div>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2020-02-22 16:27+0100\n"
-"PO-Revision-Date: 2020-02-22 16:27+0100\n"
+"POT-Creation-Date: 2020-02-25 22:40+0100\n"
+"PO-Revision-Date: 2020-02-25 22:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -256,7 +256,7 @@ msgstr "Total points pondérés"
 
 #: template/mother-notes.php:30 template/mother-notes.php:67
 msgid "Final note"
-msgstr "Note final"
+msgstr "Note finale"
 
 #: template/mother-notes.php:33
 msgid "Name"
