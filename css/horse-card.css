@@ -485,6 +485,20 @@ nav#horse-menu {
     top: 20px;
 }
 
+.young .back {
+    bottom: 150px;
+}
+.young .locomotion{
+    text-align: center;
+    max-width: 400px;
+}
+.root-notation.young > div > div{
+    margin-right: 1px;
+}
+.root-notation.young > div > div:last-child{
+    margin-right: 0px;
+}
+
 #testing>div {
     position: relative;
 }

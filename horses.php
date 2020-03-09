@@ -254,6 +254,11 @@ class SFExprets{
     public $locomotion;
     public $locomotionComment;
 
+    public $locomotionPace;
+    public $locomotionTrot;
+    public $locomotionGallop;
+    public $locomotionGlobale;
+
     public $freeObstacle;
     public $freeObstacleComment;
 
@@ -262,6 +267,11 @@ class SFExprets{
     public $ridingObstacleStyle;
     public $ridingObstacleRespect;
     public $ridingObstacleComment;
+
+    public $freeObstacleEquilibre;
+    public $freeObstacleResource;
+    public $freeObstacleStyle;
+    public $freeObstacleRespect;
 
     public function __construct($rawData) {
         $this->raceType = $rawData["expertise_sf_note_race"];
@@ -285,6 +295,23 @@ class SFExprets{
         $this->ridingObstacleStyle = $rawData["expertise_sf_note_obstacle_monte_style"];
         $this->ridingObstacleRespect = $rawData["expertise_sf_note_obstacle_monte_barre"];
         $this->ridingObstacleComment = $rawData["expertise_sf_note_obstacle_monte_commentaire"];
+
+        $this->locomotionPace = $rawData["expertise_sf_note_locomotion_pas"];
+        $this->locomotionTrot = $rawData["expertise_sf_note_locomotion_trot"];
+        $this->locomotionGallop = $rawData["expertise_sf_note_locomotion_galop"];
+
+        $this->locomotionGlobale = $rawData["expertise_testing_note_locomotion_generale"];
+
+
+        $this->freeObstacleEquilibre = $rawData["expertise_sf_note_obstacle_liberte_equilibre"];
+        $this->freeObstacleResource = $rawData["expertise_sf_note_obstacle_liberte_moyens"];
+        $this->freeObstacleStyle = $rawData["expertise_sf_note_obstacle_liberte_style"];
+        $this->freeObstacleRespect = $rawData["expertise_sf_note_obstacle_liberte_barre"];
+
+
+        $this->globale = $rawData["expertise_sf_note_impression_ensemble"];
+
+        
     }
 }
 

@@ -1,4 +1,4 @@
-<div id="sf" class="root-notation">
+<div id="sf" class="root-notation <?php if(isYoungHorse($horse)){ ?>young<?php } ?>">
     <h2><?php _e("Expertise judges SF", 'horses-catalog') ?></h2>
 
     <div class="back"></div>
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-
+        <?php if(!isYoungHorse($horse)){ ?>
         <div class="locomotion">
             <h3><?php _e("Locomotion and general functioning", 'horses-catalog') ?></h3>
             <div>
@@ -41,7 +41,59 @@
                 <pre><?php echo $horse->notes->sfExprets->locomotionComment; ?></pre>
             </div>
         </div>
+        <?php } ?>
+        <!-- young  --->
+        <?php if(isYoungHorse($horse)){ ?>
+        <div class="locomotion list-note">
+            <h3><?php _e("Locomotion", 'horses-catalog') ?></h3>
+            <div>
+                <div class="notation">
+                    <span class="label"><?php _e("Pace", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->locomotionPace; ?></span>
+                </div>
+                <div class="notation">
+                    <span class="label"><?php _e("Trot", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->locomotionTrot; ?></span>
+                </div>
+                <div class="notation">
+                    <span class="label"><?php _e("Gallop", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->locomotionGallop; ?></span>
+                </div>
+                <div class="notation">
+                    <span class="label"><?php _e("General functioning", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->locomotion; ?></span>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+
+
+        <?php if(isYoungHorse($horse)){ ?>
+            <div class="cso list-note">
+            <h3><?php _e("Ability to obstacle", 'horses-catalog') ?></h3>
+            <div>
+                <div class="notation">
+                    <span class="label"><?php _e("Balance on jumps", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->freeObstacleEquilibre; ?></span>
+                </div>
+                <div class="notation">
+                    <span class="label"><?php _e("Means on the obstacle", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->freeObstacleResource; ?></span>
+                </div>
+                <div class="notation">
+                    <span class="label"><?php _e("Style on the obstacle", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->freeObstacleStyle; ?></span>
+                </div>
+                <div class="notation doublelines">
+                    <span class="label"><?php _e("Blood, will, respect & bar intelligence", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->freeObstacleRespect; ?></span>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+
     </div>
+    <?php if(!isYoungHorse($horse)){ ?>
     <div>
         <div class="freejump">
             <h3><?php _e("Jumping ability", 'horses-catalog') ?></h3>
@@ -74,4 +126,15 @@
             </div>
         </div>
     </div>
+
+    <?php } ?>
+
+    <?php if(isYoungHorse($horse)){ ?>
+    <div class="global-impression">
+        <h3><?php _e("Globale impression", 'horses-catalog') ?></h3>
+        <div>
+            <span class="value"><?php echo $horse->notes->sfExprets->globale; ?></span>
+        </div>
+    </div>
+    <?php } ?>
 </div>
