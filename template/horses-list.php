@@ -9,23 +9,24 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
 $search = new Search($_GET);
 ?>
 <form method="get" >
-    <?php /* 
-    <div class="ages">
+    <div class="ages" style="display: none">
         <h4><?php _e("Age filter : ", 'horses-catalog') ?></h4>
         <ul>
-            <?php for ($i = 3; $i <= 4; $i++) { ?>
+            <?php 
+             $years = Horses::getBirthYear();
+             arsort($years);
+            foreach ($years as $year){?>
                 <li><label><input type="checkbox"
                                 name="years[]" 
-                                value="<?php echo (date("Y")-$i); ?>"
-                                <?php echo in_array("".(date("Y")-$i), $search->years)?"checked" : ""; ?> 
+                                value="<?php echo $year ?>"
+                                <?php echo in_array($year, $search->years)?"checked" : ""; ?> 
                             />
-                            <?php echo sprintf(__('%syears', 'horses-catalog'), $i) ?>
+                            <?php echo sprintf(__('%s years', 'horses-catalog'), (date("Y")-$year)) ?>
                     </label>
                 </li>
             <?php } ?>
         </ul>
     </div>
-     */ ?>
 
     <div class="categories">
         <h4><?php _e("Categories filter : ", 'horses-catalog') ?></h4>
