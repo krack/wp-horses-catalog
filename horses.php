@@ -10,6 +10,7 @@ function comparator($horse1, $horse2){
 class Horses{
     private static $list = null;
     private static $map = null;
+    private static $birth_years = null;
 
     public static function getAll($search){
 
@@ -76,6 +77,13 @@ class Horses{
         return self::$map[$id];
     }
 
+    public static function getBirthYear(){
+        if(self::$birth_years == null){
+            self::reinitialisation();
+        }
+        return self::$birth_years;
+    }
+
     public static function getPossibleLabelisationCategories(){
         $categories = [];
         array_push($categories, new LabelisationCategory(1, __('Very promising', 'horses-catalog'), "TRES PROMETTEUR"));
@@ -95,6 +103,7 @@ class Horses{
     public static function reinitialisation(){
         self::$list = [];
         self::$map = [];
+        self::$birth_years = [];
         $csvReader = new CsvReader(wp_upload_dir()['basedir']."/horses-catalog/list_horse.csv");
         $rawDataList = $csvReader->readFile();
 
@@ -102,8 +111,9 @@ class Horses{
             $horse = new Horses($rawData);
             array_push(self::$list, $horse);
             self::$map[$horse->id] = $horse;
+            array_push(self::$birth_years, $horse->birthYear);
         }
-
+        self::$birth_years = array_unique(self::$birth_years);
         usort(self::$list, 'comparator');
     }
 

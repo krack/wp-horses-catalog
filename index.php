@@ -13,6 +13,7 @@
 
 require_once 'adminPlugin.php'; 
 require_once 'pageWithOverrideTemplate.php'; 
+require_once 'horses.php'; 
 
 function configure_admin_menu(){
         $admin = new AdminPlugin();
@@ -46,4 +47,35 @@ return $where;
 }
 add_filter( 'posts_where', 'wpse_298888_posts_where', 10, 2 );
 
+
+/**
+ * create submenu for etalon with age
+ */
+add_filter( 'walker_nav_menu_start_el', 'create_submenu_etalons', 10, 4 );
+function create_submenu_etalons( $item_output, $item, $depth, $args ) {
+        
+        global $pageName;
+
+        $page = get_page_by_title($pageName);
+       if ( $page->ID == $item->object_id ) {
+                $item_output = preg_replace( '/<a.*?>(.*)<\/a>/', '<a href="#">$1</a>', $item_output );
+
+
+               $years = Horses::getBirthYear();
+               arsort($years);
+                $item_output .= '<ul class="sub-menu">';
+                foreach ($years as $year){
+                        $item_output .= '<li class="'.implode(",", $item->classes).'">';
+                        $item_output .= '<a href="'.$item->url.'?years[]='.$year.'">'.sprintf(__('%s years', 'horses-catalog'), (date("Y") - $year)).'</a>';
+                        $item_output .= '</li>';
+                }
+                // add all link
+                $item_output .= '<li class="'.implode(",", $item->classes).'">';
+                $item_output .= '<a href="'.$item->url.'">'.__('All etalons', 'horses-catalog').'</a>';
+                $item_output .= '</li>';
+
+		$item_output .= '</ul>';
+	}
+	return $item_output;
+}
 ?>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2020-03-09 22:35+0100\n"
-"PO-Revision-Date: 2020-03-09 22:35+0100\n"
+"POT-Creation-Date: 2020-03-11 19:14+0100\n"
+"PO-Revision-Date: 2020-03-11 19:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -123,13 +123,22 @@ msgstr ""
 "Fichier invalide ligne %u avec la donnée %s : mauvais nombre de champs : "
 "actuel %u, attendu %u"
 
-#: horses.php:81
+#: horses.php:89
 msgid "Very promising"
 msgstr "Très prometteur"
 
-#: horses.php:82
+#: horses.php:90
 msgid "Hope"
 msgstr "Espoir"
+
+#: index.php:68 template/horses-list.php:96
+#, php-format
+msgid "%s years"
+msgstr "%s ans"
+
+#: index.php:73
+msgid "All etalons"
+msgstr "Tous les étalons"
 
 #: template/galerie.php:17 template/horse-detail.php:37
 msgid "Video"
@@ -207,11 +216,6 @@ msgstr "Filtrer par nom : "
 msgid "search"
 msgstr "rechercher"
 
-#: template/horses-list.php:96
-#, php-format
-msgid "%s years"
-msgstr "%s ans"
-
 #: template/horses-list.php:99
 #, php-format
 msgid "By %s x %s"
@@ -221,7 +225,7 @@ msgstr "Par %s x %s"
 msgid "International riders opinion"
 msgstr "L’avis des cavaliers internationaux"
 
-#: template/internationnal.php:6 template/sf-judges.php:107
+#: template/internationnal.php:6 template/sf-judges.php:103
 #: template/testing.php:31
 msgid "Ability to climb jump obstacle"
 msgstr "Aptitude à l’obstacle saut monté"
@@ -322,35 +326,31 @@ msgstr "Trot"
 msgid "Gallop"
 msgstr "Galop"
 
-#: template/sf-judges.php:63
-msgid "General functioning"
-msgstr "Fonctionnement général"
-
-#: template/sf-judges.php:73
+#: template/sf-judges.php:69
 msgid "Ability to obstacle"
 msgstr "Aptitude à l’obstacle"
 
-#: template/sf-judges.php:76 template/sf-judges.php:110 template/testing.php:34
+#: template/sf-judges.php:72 template/sf-judges.php:106 template/testing.php:34
 msgid "Balance on jumps"
 msgstr "Équilibre sur les sauts"
 
-#: template/sf-judges.php:80 template/sf-judges.php:114 template/testing.php:38
+#: template/sf-judges.php:76 template/sf-judges.php:110 template/testing.php:38
 msgid "Means on the obstacle"
 msgstr "Moyens sur l’obstacle"
 
-#: template/sf-judges.php:84 template/sf-judges.php:118 template/testing.php:42
+#: template/sf-judges.php:80 template/sf-judges.php:114 template/testing.php:42
 msgid "Style on the obstacle"
 msgstr "Style sur l’obstacle"
 
-#: template/sf-judges.php:88 template/sf-judges.php:122 template/testing.php:46
+#: template/sf-judges.php:84 template/sf-judges.php:118 template/testing.php:46
 msgid "Blood, will, respect & bar intelligence"
 msgstr "Sang, volonté, respect<br />& intelligence de la barre"
 
-#: template/sf-judges.php:99
+#: template/sf-judges.php:95
 msgid "Jumping ability"
 msgstr "Aptitude à l’obstacle saut en liberté"
 
-#: template/sf-judges.php:134
+#: template/sf-judges.php:130
 msgid "Globale impression"
 msgstr "Impression d’ensemble"
 
@@ -398,14 +398,17 @@ msgstr "Comportement sous la selle"
 msgid "Behavior in care"
 msgstr "Comportement aux soins"
 
+#~ msgid "%syears"
+#~ msgstr "%sans"
+
+#~ msgid "General functioning"
+#~ msgstr "Fonctionnement général"
+
 #~ msgid "Contact"
 #~ msgstr "Contact"
 
 #~ msgid "Age filter : "
 #~ msgstr "Filtrer par age : "
-
-#~ msgid "%syears"
-#~ msgstr "%sans"
 
 #, fuzzy
 #~| msgid "Expertise SF test team"

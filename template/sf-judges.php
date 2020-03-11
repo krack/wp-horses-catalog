@@ -59,10 +59,6 @@
                     <span class="label"><?php _e("Gallop", 'horses-catalog') ?></span>
                     <span class="value"><?php echo $horse->notes->sfExprets->locomotionGallop; ?></span>
                 </div>
-                <div class="notation">
-                    <span class="label"><?php _e("General functioning", 'horses-catalog') ?></span>
-                    <span class="value"><?php echo $horse->notes->sfExprets->locomotion; ?></span>
-                </div>
             </div>
         </div>
         <?php } ?>
