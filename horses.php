@@ -219,6 +219,7 @@ class Horses{
 class HorseParent{
     public $name;
     public $race;
+    public $consanguineous;
     
     public $father;
     
@@ -226,6 +227,7 @@ class HorseParent{
     public function __construct($rawData, $base) {
             $this->name = $rawData[$base];
             $this->race = $rawData[$base."_race"];
+            $this->consanguineous = (strtolower($rawData[$base."_consanguinite"])=="oui");
 
         if(array_key_exists($base."p", $rawData)){
             $this->father = new HorseParent($rawData, "p".$base);

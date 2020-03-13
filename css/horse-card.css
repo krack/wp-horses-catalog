@@ -315,23 +315,42 @@ nav#horse-menu {
 
 /** pedigree */
 
-.detail-card #pedigree>* {
-    display: flexbox;
+#pedigree td{
 }
-
-.detail-card #pedigree .self {
-    width: 25%;
-    flex: 1 1 auto;
-}
-
-.detail-card #pedigree .self * {
+#pedigree td *{
     display: block;
 }
+
 
 .detail-card #pedigree .parents {
     width: 74%;
     border: solid black 1px;
 }
+
+.detail-card .race-SF{
+    color: #003366;
+}
+
+.detail-card .race-PS{
+    color: #dd0806;
+}
+.detail-card .race-AA{
+    color: #006411;
+}
+.detail-card .race-AACR{
+    color: #00b050;
+}
+.detail-card .race-_AA_{
+    color: #006411;
+}
+
+.detail-card .race-_AC_{
+    color: #006411;
+}
+.detail-card .consanguineous{
+    background-color: lightgray;
+}
+
 
 /* contact */
 

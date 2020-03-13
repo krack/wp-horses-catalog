@@ -1,8 +1,12 @@
 <?php
-    function displayHorse($horse){
+    function displayHorse($horse, $size){
     ?>
-        <span class="name"><?php echo $horse->name; ?></span>
-        <span class="race"><?php echo $horse->race; ?></span>
+
+        <td rowspan="<?php echo $size; ?>" class="<?php if($horse->race != null) { echo str_replace("*",  "_", "race-".$horse->race);} ?> <?php if($horse->consanguineous){ echo "consanguineous"; } ?>">
+
+            <span class="name"><?php echo $horse->name; ?></span>
+            <span class="race-pedigree"><?php echo $horse->race; ?></span>
+        </td>
     <?php
     }
 ?>
@@ -13,68 +17,68 @@
     
     <table>
         <tr>
-            <td rowspan="8"><?php displayHorse($horse->father); ?> </td>
-            <td rowspan="4"><?php displayHorse($horse->father->father); ?> </td>
-            <td rowspan="2"><?php displayHorse($horse->father->father->father); ?> </td>
-            <td rowspan="1"><?php displayHorse($horse->father->father->father->father); ?> </td>
+            <?php displayHorse($horse->father,8); ?>
+            <?php displayHorse($horse->father->father,4); ?>
+            <?php displayHorse($horse->father->father->father,2); ?>
+            <?php displayHorse($horse->father->father->father->father,1); ?>
         </tr>
         <tr>
-            <td rowspan="1"><?php displayHorse($horse->father->father->father->mother); ?> </td>
+            <?php displayHorse($horse->father->father->father->mother,1); ?>
         </tr>
         <tr>
-            <td rowspan="2"><?php displayHorse($horse->father->father->mother); ?> </td>
-            <td rowspan="1"><?php displayHorse($horse->father->father->mother->father); ?> </td>
+            <?php displayHorse($horse->father->father->mother,2); ?>
+            <?php displayHorse($horse->father->father->mother->father,1); ?>
         </tr>
         <tr>
-            <td rowspan="1"><?php displayHorse($horse->father->father->mother->mother); ?> </td>
+            <?php displayHorse($horse->father->father->mother->mother,1); ?>
         </tr>
         <tr>
-            <td rowspan="4"><?php displayHorse($horse->father->mother); ?> </td>
-            <td rowspan="2"><?php displayHorse($horse->father->mother->father); ?> </td>
-            <td rowspan="1"><?php displayHorse($horse->father->mother->father->father); ?> </td>
+            <?php displayHorse($horse->father->mother,4); ?>
+            <?php displayHorse($horse->father->mother->father,2); ?>
+            <?php displayHorse($horse->father->mother->father->father,1); ?>
         </tr>
         <tr>
-            <td rowspan="1"><?php displayHorse($horse->father->mother->father->mother); ?> </td>
+            <?php displayHorse($horse->father->mother->father->mother,1); ?>
         </tr>
         <tr>
-            <td rowspan="2"><?php displayHorse($horse->father->mother->mother); ?> </td>
-            <td rowspan="1"><?php displayHorse($horse->father->mother->mother->father); ?> </td>
+            <?php displayHorse($horse->father->mother->mother,2); ?>
+            <?php displayHorse($horse->father->mother->mother->father,1); ?>
         </tr>
         <tr>
-            <td rowspan="1"><?php displayHorse($horse->father->mother->mother->mother); ?> </td>
+            <?php displayHorse($horse->father->mother->mother->mother,1); ?>
         </tr>
 
 
         <tr>
-            <td rowspan="8"><?php displayHorse($horse->mother); ?> </td>
-            <td rowspan="4"><?php displayHorse($horse->mother->father); ?> </td>
-            <td rowspan="2"><?php displayHorse($horse->mother->father->father); ?> </td>
-            <td rowspan="1"><?php displayHorse($horse->mother->father->father->father); ?> </td>
+            <?php displayHorse($horse->mother,8); ?>
+            <?php displayHorse($horse->mother->father,4); ?> 
+            <?php displayHorse($horse->mother->father->father,2); ?>
+            <?php displayHorse($horse->mother->father->father->father,1); ?>            
         </tr>
         <tr>
-            <td rowspan="1"><?php displayHorse($horse->mother->father->father->mother); ?> </td>
+            <?php displayHorse($horse->mother->father->father->mother,1); ?>
         </tr>
         <tr>
-            <td rowspan="2"><?php displayHorse($horse->mother->father->mother); ?> </td>
-            <td rowspan="1"><?php displayHorse($horse->mother->father->mother->father); ?> </td>
+            <?php displayHorse($horse->mother->father->mother,2); ?>
+            <?php displayHorse($horse->mother->father->mother->father,1); ?>
         </tr>
         <tr>
-            <td rowspan="1"><?php displayHorse($horse->mother->father->mother->mother); ?> </td>
+            <?php displayHorse($horse->mother->father->mother->mother,1); ?>
         </tr>
         <tr>
-            <td rowspan="4"><?php displayHorse($horse->mother->mother); ?> </td>
-            <td rowspan="2"><?php displayHorse($horse->mother->mother->father); ?> </td>
-            <td rowspan="1"><?php displayHorse($horse->mother->mother->father->father); ?> </td>
+            <?php displayHorse($horse->mother->mother,4); ?>
+            <?php displayHorse($horse->mother->mother->father,2); ?> 
+            <?php displayHorse($horse->mother->mother->father->father,1); ?>
         </tr>
         <tr>
-            <td rowspan="1"><?php displayHorse($horse->mother->mother->father->mother); ?> </td>
+            <?php displayHorse($horse->mother->mother->father->mother,1); ?>
         </tr>
         <tr>
-            <td rowspan="2"><?php displayHorse($horse->mother->mother->mother); ?> </td>
-            <td rowspan="1"><?php displayHorse($horse->mother->mother->mother->father); ?> </td>
+            <?php displayHorse($horse->mother->mother->mother,2); ?>
+            <?php displayHorse($horse->mother->mother->mother->father,1); ?>
         </tr>
         <tr>
-            <td rowspan="1"><?php displayHorse($horse->mother->mother->mother->mother); ?> </td>
+            <?php displayHorse($horse->mother->mother->mother->mother,1); ?>
         </tr>
 
     </table>
