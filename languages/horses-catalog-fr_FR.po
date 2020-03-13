@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2020-03-11 19:14+0100\n"
-"PO-Revision-Date: 2020-03-11 19:14+0100\n"
+"POT-Creation-Date: 2020-03-13 00:08+0100\n"
+"PO-Revision-Date: 2020-03-13 00:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -131,14 +131,18 @@ msgstr "Très prometteur"
 msgid "Hope"
 msgstr "Espoir"
 
-#: index.php:68 template/horses-list.php:96
+#: index.php:69 template/horses-list.php:24 template/horses-list.php:97
 #, php-format
 msgid "%s years"
 msgstr "%s ans"
 
-#: index.php:73
-msgid "All etalons"
-msgstr "Tous les étalons"
+#: index.php:74
+msgid "All"
+msgstr "Tous"
+
+#: template/fiche-download.php:19
+msgid "Download pdf cart of this horse"
+msgstr "Télécharger la fiche PDF de ce cheval"
 
 #: template/galerie.php:17 template/horse-detail.php:37
 msgid "Video"
@@ -204,19 +208,23 @@ msgstr "Statut Ostéo Articulaire"
 msgid "Stallion"
 msgstr "Étalon"
 
-#: template/horses-list.php:31
+#: template/horses-list.php:13
+msgid "Age filter : "
+msgstr "Filtrer par age : "
+
+#: template/horses-list.php:32
 msgid "Categories filter : "
 msgstr "Filtrer par catégorie de labellisation : "
 
-#: template/horses-list.php:47
+#: template/horses-list.php:48
 msgid "Name filter : "
 msgstr "Filtrer par nom : "
 
-#: template/horses-list.php:50
+#: template/horses-list.php:51
 msgid "search"
 msgstr "rechercher"
 
-#: template/horses-list.php:99
+#: template/horses-list.php:100
 #, php-format
 msgid "By %s x %s"
 msgstr "Par %s x %s"
@@ -273,6 +281,10 @@ msgstr "Points"
 #: template/mother-notes.php:55 template/mother-notes.php:71
 msgid "foreign bloodline"
 msgstr "lignée étrangère"
+
+#: template/return-button.php:2
+msgid "Revenir à la recherche"
+msgstr ""
 
 #: template/sf-judges.php:2
 msgid "Expertise judges SF"
@@ -398,6 +410,9 @@ msgstr "Comportement sous la selle"
 msgid "Behavior in care"
 msgstr "Comportement aux soins"
 
+#~ msgid "All etalons"
+#~ msgstr "Tous les étalons"
+
 #~ msgid "%syears"
 #~ msgstr "%sans"
 
@@ -406,9 +421,6 @@ msgstr "Comportement aux soins"
 
 #~ msgid "Contact"
 #~ msgstr "Contact"
-
-#~ msgid "Age filter : "
-#~ msgstr "Filtrer par age : "
 
 #, fuzzy
 #~| msgid "Expertise SF test team"

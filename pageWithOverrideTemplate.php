@@ -50,6 +50,7 @@ class PageWithOverrideTemplate{
         wp_enqueue_script( 'horse-catalog-galery', plugins_url( "/js/".'galery.js', __FILE__ ), array(), null, true);
         wp_enqueue_script( 'horse-catalog-forbiddendl', plugins_url( "/js/".'forbiddendl.js', __FILE__ ), array(), null, true);
         wp_enqueue_script( 'fixed-menu', plugins_url( "/js/".'fixed-menu.js', __FILE__ ), array(), null, true);
+        wp_enqueue_script( 'return-button', plugins_url( "/js/".'return-button.js', __FILE__ ), array(), null, true);
         
     }
 

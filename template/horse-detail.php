@@ -161,7 +161,10 @@ if(function_exists("shf_add_fixed_connection_button")){
     shf_add_fixed_connection_button();
 }
     ?>
-    <?php
-    include("advertisement.php");
-    ?>
+<?php
+include("advertisement.php");
+
+include("fiche-download.php");
+include("return-button.php");
+?>
 <?php get_footer(); ?>

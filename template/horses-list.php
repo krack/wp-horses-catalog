@@ -27,6 +27,11 @@ $search = new Search($_GET);
             <?php } ?>
         </ul>
     </div>
+   
+    <?php
+    // it's not only 3 year
+    if(!(count($search->years) == 1 && ($search->years[0] == (date("Y")-3)) )){
+    ?>
 
     <div class="categories">
         <h4><?php _e("Categories filter : ", 'horses-catalog') ?></h4>
@@ -44,6 +49,9 @@ $search = new Search($_GET);
             </li>
         </ul>
     </div>
+    <?php
+    }
+    ?>
     <div class="name">
         <h4><?php _e("Name filter : ", 'horses-catalog') ?></h4>
         <input type="text" name="search" value="<?php echo $search->name; ?>" />
@@ -94,7 +102,7 @@ $search = new Search($_GET);
         ?>
         <div class="card"> 
             <a href="/horse-detail/?id=<?php echo $horse->id;?>">
-                <span class="age"><?php echo sprintf(__('%s years', 'horses-catalog'), $horse->age)  ?> - <?php echo $horse->discipline; ?></span>
+    <span class="age"><?php echo sprintf(__('%s years', 'horses-catalog'), $horse->age)  ?><?php if($horse->discipline != null){ ?> - <?php echo $horse->discipline; ?><?php } ?></span>
                 <img class="profil" src="<?php echo  $profileUrl; ?>" alt="profil <?php echo $horse->name ?>" />
                 <span class="name"><?php echo $horse->name;?></span>
                 <span><?php echo sprintf(__('By %s x %s', 'horses-catalog'), $horse->father->name, $horse->mother->name) ?></span>
