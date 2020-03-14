@@ -918,36 +918,45 @@ footer {
 
  #return{
     border: #152857 solid 1px;
-    background-color: white;
-    color: #152857;
     font-family: "BluuNext-Bold";
     display: block;
-    padding: 5px 20px;
-    width: 7%;
+    max-width: 8%;
     white-space: initial;
     margin: 50px auto;
 
     position: fixed;
     top: 15%;
     left: 0;
-    padding: 5px 50px 5px 20px;
+    padding: 10px 10px 10px 10px;
     font-size: 1.5em;
     z-index: 99999;
 
     border: #152857 solid 1px;
-    background-color: white;
     color: #152857;
 
     top: 23%;
-}
-
-#return{
     background: radial-gradient(#152857, #0b0f1e);
     color: white;
 
     top: 10%;
     border: none;
+    font-size: 0.9em;
 }
+@media only screen and (max-width: 959px) {
+    #return::before{
+        content: "\f2ea";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 18px;
+    }
+    #return{
+        font-size: 0;
+        width: inherit;
+    }
+}
+
+
+
 @media only screen and (min-width: 1200px) {
     footer {
         float: left;

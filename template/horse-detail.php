@@ -153,8 +153,12 @@ function isYoungHorse($horse){
    
     <?php include("galerie.php"); ?>
 
-    <?php } ?>
+    <?php } 
+    
 
+    include("return-button.php");
+    ?>
+    
 
 </div>
 <?php 
@@ -168,7 +172,5 @@ if(function_exists("shf_add_fixed_connection_button")){
     ?>
 <?php
 include("advertisement.php");
-
-include("return-button.php");
 ?>
 <?php get_footer(); ?>
