@@ -60,22 +60,55 @@ function create_submenu_etalons( $item_output, $item, $depth, $args ) {
        if ( $page->ID == $item->object_id ) {
                 $item_output = preg_replace( '/<a.*?>(.*)<\/a>/', '<a href="#">$1</a>', $item_output );
 
-
-               $years = Horses::getBirthYear();
-               arsort($years);
-                $item_output .= '<ul class="sub-menu">';
-                foreach ($years as $year){
-                        $item_output .= '<li class="'.implode(",", $item->classes).'">';
-                        $item_output .= '<a href="'.$item->url.'?years[]='.$year.'">'.sprintf(__('%s years', 'horses-catalog'), (date("Y") - $year)).'</a>';
-                        $item_output .= '</li>';
-                }
-                // add all link
-                $item_output .= '<li class="'.implode(",", $item->classes).'">';
-                $item_output .= '<a href="'.$item->url.'">'.__('All etalons', 'horses-catalog').'</a>';
-                $item_output .= '</li>';
-
-		$item_output .= '</ul>';
 	}
 	return $item_output;
+}
+
+add_filter( 'wp_nav_menu_objects', 'only_submenu_for_current', 10, 2 );
+function only_submenu_for_current( $sorted_menu_items, $args ) {
+
+        $parent = getParent($sorted_menu_items);
+
+        $years = Horses::getBirthYear();
+        arsort($years);
+
+        foreach ($years as $year){
+                $pageForYear =(object) array(
+                        'menu_item_parent' =>  $parent->ID,
+                        'title' => sprintf(__('%s years', 'horses-catalog'), (date("Y") - $year)),
+                         'url' => $parent->url.'?years[]='.$year,
+                         'menu_order' => 0
+                        );
+
+
+                array_push ( $sorted_menu_items , $pageForYear);
+        }
+        
+        $pageForAll =(object) array(
+                'menu_item_parent' =>  $parent->ID,
+                'title' => __('All', 'horses-catalog'),
+                 'url' => $parent->url,
+                 'menu_order' => 1
+        );
+        array_push ( $sorted_menu_items , $pageForAll);
+
+        usort($sorted_menu_items, 'comparatorPage');
+        return $sorted_menu_items;
+}
+
+function comparatorPage($page1, $page2){
+        return $page1->menu_order > $page2->menu_order; 
+}
+
+function getParent($elements){
+        global $pageName;
+        $page = get_page_by_title($pageName);
+
+        foreach($elements as $element){
+                if( $element->title == $pageName){
+                        return $element;
+                }
+        }
+        return null;
 }
 ?>
