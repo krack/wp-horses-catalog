@@ -896,6 +896,14 @@ video {
     content: none;
 }
 
+
+@media only screen and (max-width: 959px) {
+    .fiche {
+        display: block;
+    }
+}
+
+
 .advertisement img {
     margin: auto;
     display: block;
@@ -957,7 +965,7 @@ footer {
     z-index: 9999999999;
     overflow-y: auto;
     margin: auto;
-    text-align: center;
+    text-align: center;width: 100%;
 }
 .mother-help img{
     max-width: 100%;
