@@ -55,7 +55,12 @@ if(count($query_images->posts) > 0){
 ?>
 
 <div class="gallery">
-    <img id="zoom" />
+    <div class="zoom-block">
+        <img id="zoom" />
+
+        <i class="fa fa-arrow-circle-left previous"></i>
+        <i class="fa fa-arrow-circle-right next"></i>
+        </dib>
     <pre id="legend"></pre>
     <div class="thumbnail">
         <?php

@@ -771,7 +771,21 @@ nav#horse-menu {
     margin: auto;
     display: block;
 }
-
+.gallery  .zoom-block{
+    position: relative;
+}
+.gallery .next,.gallery .previous{
+    position: absolute;
+    top: 50%;
+    font-size: 2em;
+    opacity: 0.5;
+}
+.gallery .next{
+    right: 2px;
+}
+.gallery .previous{
+    left: 2px;
+}
 .gallery #legend {
     width: 78%;
     margin: auto;
