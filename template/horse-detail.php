@@ -108,10 +108,15 @@ function isYoungHorse($horse){
     </div>
       
     <hr />
-    
-    <?php if($horse->sireLink != null){ ?>
-        <a class="sire-link" target="_blank" href="<?php echo $horse->sireLink; ?>"><?php _e("SIRE card", 'horses-catalog'); ?></a>
-    <?php } ?>
+    <div class="fiche">
+        <?php if($horse->sireLink != null){ ?>
+            <a class="sire-link" target="_blank" href="<?php echo $horse->sireLink; ?>"><?php _e("SIRE card", 'horses-catalog'); ?></a>
+        <?php }
+        
+        include("fiche-download.php");
+        ?>
+    </div>
+
 
     <?php
         
@@ -164,7 +169,6 @@ if(function_exists("shf_add_fixed_connection_button")){
 <?php
 include("advertisement.php");
 
-include("fiche-download.php");
 include("return-button.php");
 ?>
 <?php get_footer(); ?>

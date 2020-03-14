@@ -850,7 +850,11 @@ video {
         margin-top: 00px;
     }
 }
-
+.fiche{
+    display: flex;
+    max-width: 600px;
+    margin: auto;
+}
 .sire-link::before {
     content: '';
     height: 60px;
@@ -869,6 +873,27 @@ video {
     margin-top: 60px;
     color: black;
     width: min-content;
+    flex: 1 1 auto;
+}
+.download-pdf-fiche{
+    flex: 1 1 auto;
+    margin-top: 60px;
+
+}
+.download-pdf-fiche a{
+    border: #152857 solid 1px;
+    background-color: lightgray;
+    margin: auto;
+    padding: 15px;
+    display: inline-block;
+    text-align: center;
+    width: min-content;
+    min-width: 150px;
+
+}
+
+.download-pdf-fiche a[href$="pdf"]:first-child::before {
+    content: none;
 }
 
 .advertisement img {
@@ -883,7 +908,7 @@ footer {
 
 
 
-.download-pdf-fiche, #return{
+ #return{
     border: #152857 solid 1px;
     background-color: white;
     color: #152857;
@@ -900,12 +925,10 @@ footer {
     padding: 5px 50px 5px 20px;
     font-size: 1.5em;
     z-index: 99999;
-}
-.download-pdf-fiche{
+
     border: #152857 solid 1px;
     background-color: white;
     color: #152857;
-
 
     top: 23%;
 }

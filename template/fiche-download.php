@@ -15,13 +15,13 @@ if(count($query_fiche->posts) > 0){
     <?php
         foreach ( $query_fiche->posts as $pdf ) {
         ?>
-        <a class="download-pdf-fiche" target="_blank" href="<?php echo wp_get_attachment_url( $pdf->ID ) ?>">
-        <?php _e("Download pdf cart of this horse", 'horses-catalog') ?>
-        </a>
+        <div class="download-pdf-fiche">
+            <a  target="_blank" href="<?php echo wp_get_attachment_url( $pdf->ID ) ?>">
+                <?php _e("Download pdf cart of this horse", 'horses-catalog') ?>
+            </a>
+        </div>
         <?php
         }
     ?>
-
-</div>
 
 <?php  } ?>
