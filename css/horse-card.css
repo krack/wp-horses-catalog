@@ -455,11 +455,24 @@ nav#horse-menu {
         display: none;
     }
 }
-
+#maternal{
+    text-align: center;
+}
+#maternal h2{
+    display: inline-block;
+}
 #maternal .fa-info-circle{
     font-size: 2em;
-    float: left;
-    margin-left: 3%;
+    display: inline;
+    position: absolute;
+    margin-top: 78px;
+    margin-left: 20px;
+}
+@media only screen and (max-width: 959px) {
+    #maternal .fa-info-circle{
+        margin-top: 70px;
+        margin-left: 5px;
+    }
 }
 
 /* sf judges */
@@ -912,15 +925,25 @@ footer {
 
 
 .mother-help{
-    background-image: url("images/help_mothers.png");
-    background-repeat: no-repeat;
-    background-position: center;
     position: fixed;
     top: 5px;
     bottom: 5px;
     left: 5px;
     right: 5px;
     z-index: 9999999999;
+    overflow-y: auto;
+    margin: auto;
+    text-align: center;
+}
+.mother-help img{
     max-width: 100%;
-    max-height: 100%;
+}
+.background-help{
+    background-color: lightgray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999999;
 }
