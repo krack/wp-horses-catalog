@@ -60,7 +60,7 @@ if(count($query_images->posts) > 0){
 
         <i class="fa fa-arrow-circle-left previous"></i>
         <i class="fa fa-arrow-circle-right next"></i>
-        </dib>
+    </div>
     <pre id="legend"></pre>
     <div class="thumbnail">
         <?php
