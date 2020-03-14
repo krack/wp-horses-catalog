@@ -6,7 +6,7 @@ $query_advertisment_args = array(
     'post_status'    => 'inherit',
     'posts_per_page' => -1,
     'post_parent'    => 0,
-    's'              => "pub_".$horse->id
+    's'              => $horse->id."_pub"
     
     
 );
