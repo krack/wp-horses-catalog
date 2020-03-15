@@ -462,15 +462,16 @@ nav#horse-menu {
     display: inline-block;
 }
 #maternal .fa-info-circle{
-    font-size: 2em;
+    font-size: 1.2em;
     display: inline;
     position: absolute;
-    margin-top: 78px;
+    margin-top: 85px;
     margin-left: 20px;
+    cursor: help;
 }
 @media only screen and (max-width: 959px) {
     #maternal .fa-info-circle{
-        margin-top: 70px;
+        margin-top: 76px;
         margin-left: 5px;
     }
 }
@@ -941,6 +942,7 @@ footer {
     top: 10%;
     border: none;
     font-size: 0.9em;
+    cursor: pointer;
 }
 @media only screen and (max-width: 959px) {
     #return::before{
@@ -967,8 +969,8 @@ footer {
 
 .mother-help{
     position: fixed;
-    top: 5px;
-    bottom: 5px;
+    top: 100px;
+    bottom: 100px;
     left: 5px;
     right: 5px;
     z-index: 9999999999;
@@ -978,6 +980,7 @@ footer {
 }
 .mother-help img{
     max-width: 100%;
+    width: 50%;
 }
 .background-help{
     background-color: lightgray;
@@ -987,4 +990,5 @@ footer {
     right: 0;
     bottom: 0;
     z-index: 999999999;
+    opacity: 0.5;
 }
