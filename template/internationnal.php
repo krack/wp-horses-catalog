@@ -1,3 +1,20 @@
+<?php
+function isInternationnalEmpty(){
+    global $horse;
+    $isEmpty = (($horse->notes->ridersExperts->ridingObstacleResource) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleDisponibility) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleReactivity) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleRespect) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleComment) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->globale) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->comment) == null);
+
+    
+    return $isEmpty;
+}
+if(!isInternationnalEmpty()){
+?>
+
 <div id="opinion" class="root-notation">
     <h2><?php _e("International riders opinion", 'horses-catalog') ?></h2>
         <div class="back"></div>
@@ -33,3 +50,5 @@
         </div>
     </div>
 </div>
+
+<?php } ?>

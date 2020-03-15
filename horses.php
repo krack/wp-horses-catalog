@@ -184,7 +184,7 @@ class Horses{
         $this->projections = $rawData["saillit"];
         $this->frProjections = $rawData["fr saillit"];
         $this->riding = $rawData["monte"];
-        $this->strongPoints = preg_split("/\|/", $rawData["points forts"]);
+        $this->strongPoints = preg_split("/\|/", $rawData["points forts"],0,  PREG_SPLIT_NO_EMPTY);
         
         $this->notes = new Notes($rawData);
 

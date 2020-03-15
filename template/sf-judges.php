@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <?php if(!isYoungHorse($horse)){ ?>
+        <?php if(!isYoungHorse($horse) && ($horse->notes->sfExprets->locomotion != null && $horse->notes->sfExprets->locomotionComment != null)){ ?>
         <div class="locomotion">
             <h3><?php _e("Locomotion and general functioning", 'horses-catalog') ?></h3>
             <div>
@@ -98,7 +98,20 @@
                 <pre><?php echo $horse->notes->sfExprets->freeObstacleComment; ?></pre>
             </div>
         </div>
+        <?php 
+        function isRidingObstacleEmpty(){
+            global $horse;
+            $isEmpty = (($horse->notes->sfExprets->ridingObstacleEquilibre) == null);
+            $isEmpty &= (($horse->notes->sfExprets->ridingObstacleResource) == null);
+            $isEmpty &= (($horse->notes->sfExprets->ridingObstacleStyle) == null);
+            $isEmpty &= (($horse->notes->sfExprets->ridingObstacleRespect) == null);
+            $isEmpty &= (($horse->notes->sfExprets->ridingObstacleComment) == null);
 
+            
+            return $isEmpty;
+        }
+        if(!isRidingObstacleEmpty()){
+        ?>
         <div class="cso list-note">
             <h3><?php _e("Ability to climb jump obstacle", 'horses-catalog') ?></h3>
             <div>
@@ -121,6 +134,7 @@
                 <pre><?php echo $horse->notes->sfExprets->ridingObstacleComment; ?></pre>
             </div>
         </div>
+        <?php } ?>
     </div>
 
     <?php } ?>
