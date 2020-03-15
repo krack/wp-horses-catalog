@@ -10,6 +10,49 @@ $horse = Horses::get($_GET["id"]);
 function isYoungHorse($horse){
     return $horse->age <=3 ;
 }
+
+function isTestingEmpty(){
+    global $horse;
+    return 
+    ( $horse->notes->testingExprets->locomotionPace == null)
+    &&
+    ( $horse->notes->testingExprets->locomotionTrot == null)
+    &&
+    ( $horse->notes->testingExprets->locomotionGallop == null)
+    &&
+    ( $horse->notes->testingExprets->locomotionGlobale == null)
+
+&&
+    ( $horse->notes->testingExprets->ridingObstacleEquilibre == null)
+    &&
+    ( $horse->notes->testingExprets->ridingObstacleResource == null)
+    &&
+    ( $horse->notes->testingExprets->ridingObstacleStyle == null)
+    &&
+    ( $horse->notes->testingExprets->ridingObstacleRespect == null)
+
+
+&&
+    ( $horse->notes->testingExprets->globale == null)
+    &&
+    ( $horse->notes->testingExprets->comment == null)
+    
+;
+}
+
+function isInternationnalEmpty(){
+    global $horse;
+    $isEmpty = (($horse->notes->ridersExperts->ridingObstacleResource) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleDisponibility) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleReactivity) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleRespect) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleComment) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->globale) == null);
+    $isEmpty &= (($horse->notes->ridersExperts->comment) == null);
+
+    
+    return $isEmpty;
+}
 ?>
 
 <div class="detail-card">
@@ -27,11 +70,11 @@ function isYoungHorse($horse){
 
                 <li class="<?php shf_connected_class() ?>"><a href="#maternal"><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></a></li> 
                 <li class="<?php shf_connected_class() ?>"><a href="#sf"><?php _e("Expertise judges", 'horses-catalog') ?></a></li> 
-
-                <?php if(!isYoungHorse($horse)){ ?>
+                
+                <?php if(!isYoungHorse($horse) && !isTestingEmpty()){ ?>
                 <li class="<?php shf_connected_class() ?>"><a href="#testing"><?php _e("Testing expertise", 'horses-catalog') ?></a></li> 
                 <?php } ?>
-                <?php if(!isYoungHorse($horse)){ ?>
+                <?php if(!isYoungHorse($horse) && !isInternationnalEmpty()){ ?>
                 <li class="<?php shf_connected_class() ?>"><a href="#opinion"><?php _e("Riders reviews", 'horses-catalog') ?></a></li>
                 <?php } ?> 
                 <li class="<?php shf_connected_class() ?>"><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li>    

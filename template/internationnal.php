@@ -1,17 +1,5 @@
 <?php
-function isInternationnalEmpty(){
-    global $horse;
-    $isEmpty = (($horse->notes->ridersExperts->ridingObstacleResource) == null);
-    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleDisponibility) == null);
-    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleReactivity) == null);
-    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleRespect) == null);
-    $isEmpty &= (($horse->notes->ridersExperts->ridingObstacleComment) == null);
-    $isEmpty &= (($horse->notes->ridersExperts->globale) == null);
-    $isEmpty &= (($horse->notes->ridersExperts->comment) == null);
 
-    
-    return $isEmpty;
-}
 if(!isInternationnalEmpty()){
 ?>
 

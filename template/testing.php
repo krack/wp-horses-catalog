@@ -1,32 +1,5 @@
 <?php
-function isTestingEmpty(){
-    global $horse;
-    return 
-    ( $horse->notes->testingExprets->locomotionPace == null)
-    &&
-    ( $horse->notes->testingExprets->locomotionTrot == null)
-    &&
-    ( $horse->notes->testingExprets->locomotionGallop == null)
-    &&
-    ( $horse->notes->testingExprets->locomotionGlobale == null)
 
-&&
-    ( $horse->notes->testingExprets->ridingObstacleEquilibre == null)
-    &&
-    ( $horse->notes->testingExprets->ridingObstacleResource == null)
-    &&
-    ( $horse->notes->testingExprets->ridingObstacleStyle == null)
-    &&
-    ( $horse->notes->testingExprets->ridingObstacleRespect == null)
-
-
-&&
-    ( $horse->notes->testingExprets->globale == null)
-    &&
-    ( $horse->notes->testingExprets->comment == null)
-    
-;
-}
 if(!isTestingEmpty()){
 ?>
 

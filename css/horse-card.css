@@ -691,6 +691,9 @@ nav#horse-menu {
 .young.root-notation>div>div:nth-child(3n) .notation {
     float: left;
 }
+.young.root-notation>div>div:nth-child(3n) {
+    margin-left: 1px;
+}
 
 .young.root-notation .global-impression{
     width: 100%;
