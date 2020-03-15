@@ -34,6 +34,7 @@ if(!isTestingEmpty()){
 <div id="testing" class="root-notation">
     <h2><?php _e("Expertise SF test team", 'horses-catalog') ?></h2>
     
+    <div class="back"></div>
     <div>
 
         <div class="locomotion list-note">
@@ -58,7 +59,6 @@ if(!isTestingEmpty()){
             </div>
         </div>
 
-        <div class="back"></div>
         <div class="cso list-note">
             <h3><?php _e("Ability to climb jump obstacle", 'horses-catalog') ?></h3>
             <div>

@@ -1,7 +1,6 @@
 <div id="sf" class="root-notation <?php if(isYoungHorse($horse)){ ?>young<?php } ?>">
     <h2><?php _e("Expertise judges SF", 'horses-catalog') ?></h2>
-
-    <div class="back"></div>
+        <div class="back"></div>
     <div>
         <div class="model list-note">
             <h3><?php _e("Modele", 'horses-catalog') ?></h3>
@@ -88,9 +87,7 @@
         </div>
         <?php } ?>
 
-    </div>
-    <?php if(!isYoungHorse($horse)){ ?>
-    <div>
+        <?php if(!isYoungHorse($horse)){ ?>
         <div class="freejump">
             <h3><?php _e("Jumping ability", 'horses-catalog') ?></h3>
             <div>

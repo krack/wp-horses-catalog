@@ -481,6 +481,8 @@ nav#horse-menu {
 .root-notation>div {
     font-size: 1.3em;
     line-height: 1.6em;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .root-notation {
@@ -522,25 +524,6 @@ nav#horse-menu {
     }
 }
 
-#testing .back {
-    flex: none;
-    margin: inherit;
-    top: 20px;
-}
-
-.young .back {
-    bottom: 150px;
-}
-.young .locomotion{
-    text-align: center;
-    max-width: 400px;
-}
-.root-notation.young > div > div{
-    margin-right: 1px;
-}
-.root-notation.young > div > div:last-child{
-    margin-right: 0px;
-}
 
 #testing>div {
     position: relative;
@@ -554,7 +537,7 @@ nav#horse-menu {
     height: 2px;
     width: 20%;
     position: absolute;
-    transform: translate(-15%);
+    transform: translate(-30%);
 }
 
 @media only screen and (max-width: 959px) {
@@ -569,44 +552,56 @@ nav#horse-menu {
 }
 
 .root-notation>div>div {
-    flex: 1 1 auto;
+    flex: 1 1 49%;
     display: inline-block;
-    width: 50%;
-    padding: 40px;
     padding-top: 15px;
     padding-bottom: 20px;
     background-color: white;
+    flex-grow: 0;
 }
 
 .root-notation>div>div {
     margin-left: 1px;
-    margin-right: 0px;
+    margin-right: 1px;
     margin-bottom: 1px;
-    margin-top: 0px;
+    margin-top: 1px;
+}
+.root-notation>div>div:nth-last-child(-n+2){
+    margin-bottom: 0px;
 }
 
 #testing.root-notation>div>div {
     margin-bottom: 0px;
 }
-
-.root-notation>div:last-child>div {
+/** first element of line */
+.root-notation>div:nth-child(2n)>div {
     margin-bottom: 0px;
     margin-top: 1px;
 }
 
 @media only screen and (max-width: 959px) {
-    .root-notation>div:last-child>div {
+    .root-notation>div:nth-child(2n)>div {
         margin-top: 0px;
     }
 }
 
-.root-notation>div>div:first-child {
+.root-notation>div>div:nth-child(2n+1){
     text-align: right;
     margin-right: 1px;
     margin-left: 0px;
 }
+.root-notation>div>div:nth-child(2n+1) > *{
+    margin-right: 40px;
+}
+.root-notation>div>div:nth-child(2n) > *{
+    margin-left: 40px;
+}
+.root-notation>div.global-impression> div >*{
 
-.root-notation>div>div:first-child h3 {
+    margin-left: 0px;
+}
+
+.root-notation>div>div:nth-child(2n+1) h3 {
     float: right;
 }
 
@@ -618,15 +613,98 @@ nav#horse-menu {
     text-align: left;
 }
 
-.root-notation>div>div:first-child .notation {
+.root-notation>div>div:nth-child(2n+1) .notation {
     float: right;
 }
 
-.root-notation>div>div:first-child>.notation {
+.root-notation>div>div:nth-child(2n+1)>.notation {
     float: right;
     clear: both;
     display: block;
 }
+
+.young.root-notation>div>div:not(.global-impression) {
+    flex: 2 1 37%;
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    background-color: white;
+    flex-grow: 0;
+}
+
+
+@media only screen and (max-width: 1600px) {
+    .young.root-notation>div>div:not(.global-impression) {
+        flex: 2 1 30%;
+    }
+}
+@media only screen and (max-width: 1340px) {
+    .young.root-notation>div>div:not(.global-impression) {
+        flex: 2 1 25%;
+    }
+    .young.root-notation>div>div:nth-child(3n+2) {
+        flex: 1 1 5%;
+    }
+    .young.root-notation>div>div:nth-child(3n+2) .notation{
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 1230px) {
+
+    .young.root-notation>div>div:nth-child(3n+2) .notation{
+        width: 200px;
+    }
+}
+
+.young.root-notation>div>div:nth-child(3n+1):not(.global-impression){
+    text-align: right;
+    margin-right: 1px;
+    margin-left: 0px;
+}
+.young.root-notation>div>div:nth-child(3n+1):not(.global-impression) > *{
+    margin-right: 40px;
+}
+
+
+.young.root-notation>div>div:nth-child(3n+2) {
+    float: none;
+    text-align: center;
+    flex: 1 1 10%;
+}
+.young.root-notation > div > div:nth-child(3n+2) > *{
+    margin-left: 0;
+    text-align: center;
+
+}
+.young.root-notation > div > div:nth-child(3n+2) .notation{
+    margin: auto;
+    float: none;
+    max-width: 80%;
+
+}
+.young.root-notation>div>div:nth-child(3n) > *{
+    margin-left: 40px;
+}
+.young.root-notation>div>div:nth-child(3n) h3 {
+    float: left;
+}
+.young.root-notation>div>div:nth-child(3n) .notation {
+    float: left;
+}
+
+.young.root-notation .global-impression{
+    width: 100%;
+    margin-top: 0px;
+}
+.young.root-notation > div > div{
+
+    margin-bottom: 0px;
+}
+.young.root-notation > div > div.global-impression .value{
+    float: none;
+}
+
+
 
 .notation {
     background-image: url("images/dash.png");
@@ -657,20 +735,33 @@ nav#horse-menu {
     padding-right: 7px;
 }
 
-.root-notation>div>div .notation .value {
+
+.root-notation>div>div .value, .root-notation>div>div >div>pre  {
+    clear: both;
+}
+.root-notation>div>div:nth-child(2n) .value{
+    float: left;
+}
+.root-notation>div>div:nth-child(2n+1) .value{
+    float: right;
+}
+.root-notation>div>div .notation .value{
+    float: right;
+
+}
+.root-notation>div>div:nth-child(2n) pre  {
+    float: left;
+}
+.root-notation>div>div:nth-child(2n+1) pre  {
     float: right;
 }
 
-.root-notation>div>div:first-child>div span:last-child, .detail-card .freejump .value, .root-notation>div>div:first-child>div>pre {
-    float: right;
-    clear: both;
-}
 
 .root-notation pre {
     max-width: 80%;
 }
 
-.root-notation>div>div:first-child>div>pre {
+.root-notation>div>div:nth-child(2n+1)>div>pre {
     text-align: right;
 }
 
@@ -681,6 +772,8 @@ nav#horse-menu {
 .root-notation .global-impression, .root-notation .temperament {
     display: block;
     text-align: center;
+    background-color: white;
+    flex: none;
 }
 
 .root-notation .global-impression div, .root-notation .temperament div {
@@ -689,9 +782,13 @@ nav#horse-menu {
     padding-left: 0;
     padding-right: 0;
 }
+.root-notation>div.global-impression>div .value, .root-notation >div.global-impression>div pre {
+    float: none;
+}
 
 .root-notation .global-impression div pre, .root-notation .temperament .comment pre {
     max-width: 100%;
+    float: none;
 }
 
 .root-notation .temperament .notation {
@@ -741,8 +838,14 @@ nav#horse-menu {
     .root-notation>div>div {
         text-align: center !important;
     }
+    .root-notation pre{
+        text-align: center !important;
+        float: none !important;
+    }
     .root-notation>div>div h3 {
         float: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
     .root-notation>div>div h3::before {
         content: none;
@@ -758,12 +861,36 @@ nav#horse-menu {
     }
     .root-notation>div>div:first-child>div>pre {
         text-align: center;
+        width: 100%;
     }
-    .root-notation>div>div:first-child .notation {
-        float: left;
+    .root-notation .notation {
+        float: none !important;
+        margin: auto;
+        max-width: 95% !important;
+        width: 95% !important;
     }
+    
+
+
     .detail-card .freejump .value, .root-notation>div>div:first-child>div>pre {
         float: none;
+    }
+    .root-notation>div>div>div {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .root-notation > div > div:nth-child(2n) .value{
+        float: none !important;
+    }
+
+    .root-notation > div > div:nth-child(2n+1) .value{
+        float: none !important;
+    }
+    .root-notation > div > div .notation .value{
+        float: right !important;
+    }
+    .root-notation>div>div {
+        text-align: center !important;
     }
 }
 
