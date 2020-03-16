@@ -52,7 +52,7 @@
             }
             ?>
             <td class="total value"><?php echo $horse->totalMothersNotes; ?></td>
-            <td class="total value">
+            <td class="total value <?php if($horse->evaluateMothersNotes >=8){ echo "good-lineage"; } ?>">
                 <?php echo $horse->evaluateMothersNotes; ?>/10
                 <?php if($horse->foreignBloodline){ ?>
                     <span class="foreign-bloodline"><?php _e("foreign bloodline", 'horses-catalog') ?></span>
@@ -68,7 +68,7 @@
         </div>
         <div>
             <span class="total label"><?php _e("Final note", 'horses-catalog') ?></span> 
-            <span class="total value">
+            <span class="total value <?php if($horse->evaluateMothersNotes >=8){ echo "good-lineage"; } ?>">
                 <?php echo $horse->evaluateMothersNotes; ?>/10
                 <?php if($horse->foreignBloodline){ ?>
                     <span class="foreign-bloodline">- <?php _e("foreign bloodline", 'horses-catalog') ?></span>
