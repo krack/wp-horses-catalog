@@ -25,6 +25,8 @@ class AdminPlugin{
         wp_enqueue_style( 'admin-style' );
         wp_register_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css',  array(), null, 'all');
         wp_enqueue_style( 'fontawesome' );
+
+        wp_enqueue_script( 'horse-catalog-example-mediad', plugins_url( "/js/".'example-media.js', __FILE__ ), array(), null, true);
     }
 
     public function listUpladerDisplayPage(){
@@ -59,13 +61,13 @@ class AdminPlugin{
                         <label for="file_list_uploaded" class="fas fa-file-csv"><?php _e("Horses", 'horses-catalog'); ?></label>
                         <input type="file" name="<?php echo $this->csvInputName ?>" id="file_list_uploaded" accept=".csv" />
                     </div>
-                    <div>
+                    <div style="display:none">
                         <label for="file_pictures_uploaded" class="fas fa-file-archive"><?php _e("Horse pictures zip", 'horses-catalog'); ?></label>
                         <input type="file" name="<?php echo $this->zipInputName ?>" id="file_pictures_uploaded" accept=".zip" />
                     </div>
-                    <div>
+                    <div  style="display:none">
                         <label for="ignore-pictures" class="fas fa-file-archive"><?php _e("Ignore pictures requeried and use media", 'horses-catalog'); ?></label>
-                        <input type="checkbox" name="ignore-pictures" id="ignore-pictures" />
+                        <input type="checkbox" name="ignore-pictures" id="ignore-pictures" checked="checked" />
                     </div>
 
                     
@@ -77,21 +79,83 @@ class AdminPlugin{
 
             <form method="post" >
                 <fieldset>
-                    <legend><?php _e("Configuration manager", 'horses-catalog'); ?></legend>
+                    <legend><?php _e("Configuration labels", 'horses-catalog'); ?></legend>
                     <div class="messages">
                         <?php if($saved){ ?>
                             <span class="fas fa-check saved"><?php _e("saved", 'horses-catalog'); ?></span>
                         <?php } ?>
                     </div>
                     <div>
-                        <label ref="menu-page-name"><?php _e("Menu title ", 'horses-catalog'); ?></label>
+                        <label ref="menu-page-name"><?php _e("Menu title", 'horses-catalog'); ?></label>
                         <input id="menu-page-name" placeholder="catalog 2020" name="menu-page-name" value="<?php echo get_option( 'menu_page_name' ); ?>" /> 
+                    </div>
+                    <div>
+                        <label ref="menu-all-elements"><?php _e("All link label", 'horses-catalog'); ?></label>
+                        <input id="menu-all-elements" placeholder="Tous" name="menu-all-elements" value="<?php echo get_option( 'menu-all-elements' ); ?>" /> 
                     </div>
 
                     <input type="submit" class="button-primary" value="<?php _e("save", 'horses-catalog'); ?>" name="save-information" />
                 </fieldset>
 
             </form> 
+            <fieldset>
+                    <legend><?php _e("Medias name", 'horses-catalog'); ?></legend> 
+
+                    <p><?php _e("Adding wordpress medias with name can adding element on horse (photos, video, advertissement, pdf card", 'horses-catalog'); ?></p>
+                   
+                    <div>
+                        <label ref="exemple-id"><?php _e("Example", 'horses-catalog'); ?></label>
+                        <input id="exemple-id" type="text" placeholder="16394971D" value="16394971D" />
+                    </div>
+                    <div>
+                        <h3><?php _e("Add a photo", 'horses-catalog'); ?></h3> 
+                        <p>(<?php _e("horse id", 'horses-catalog'); ?>)_(<?php _e("sequence id", 'horses-catalog'); ?>)</p>
+                        <p>
+                            <?php _e("horse id is is value of columne 'id' in imported csv file.", 'horses-catalog'); ?><br />
+                            <?php _e("Sequence id order photos in galery.", 'horses-catalog'); ?><br/>
+                            <?php _e("Photo with sequence id at 1 is use as profile picture.", 'horses-catalog'); ?>
+                        </p>
+                        <div class="example">
+                            <h4><?php _e("Example", 'horses-catalog'); ?></h4>
+                            <span example="#horse-id#_1"></span> <span><?php _e("profile's photo", 'horses-catalog'); ?></span> <br />
+                            <span example="#horse-id#_5"></span> <span><?php _e("5eme galerie's photos", 'horses-catalog'); ?></span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><?php _e("Add a video", 'horses-catalog'); ?></h3> 
+                        <p>(<?php _e("horse id", 'horses-catalog'); ?>)</p>
+                        <p>
+                        <?php _e("horse id is is value of columne 'id' in imported csv file", 'horses-catalog'); ?><br />
+                        </p>
+                        <div class="example">
+                            <h4><?php _e("Example", 'horses-catalog'); ?></h4>
+                            <span example="#horse-id#"></span> <span><?php _e("horse's video", 'horses-catalog'); ?></span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><?php _e("Add a advertising", 'horses-catalog'); ?></h3> 
+                        <p>(<?php _e("horse id", 'horses-catalog'); ?>)_pub</p>
+                        <p>
+                        <?php _e("horse id is is value of columne 'id' in imported csv file", 'horses-catalog'); ?><br />
+                        </p>
+                        <div class="example">
+                            <h4><?php _e("Example", 'horses-catalog'); ?></h4>
+                            <span example="#horse-id#_pub"></span> <span><?php _e("advertissement visible in horse card", 'horses-catalog'); ?></span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><?php _e("Add a pdf card", 'horses-catalog'); ?></h3> 
+                        <p>(<?php _e("horse id", 'horses-catalog'); ?>)_fiche</p>
+                        <p>
+                        <?php _e("horse id is is value of columne 'id' in imported csv file", 'horses-catalog'); ?><br />
+                        </p>
+                        <div class="example">
+                            <h4><?php _e("Example", 'horses-catalog'); ?></h4>
+                            <span example="#horse-id#_fiche"></span> <span><?php _e("pdf card file downloadable", 'horses-catalog'); ?></span>
+                        </div>
+                    </div>
+            </fieldset>          
+
         </div>
         <?php
 
@@ -104,6 +168,10 @@ class AdminPlugin{
             $newPageName = $_POST["menu-page-name"];
             $this->defineOption('menu_page_name', $newPageName);
             $this->renamePage($oldPageName, $newPageName);
+
+
+            $newLinkName = $_POST["menu-all-elements"];
+            $this->defineOption('menu-all-elements', $newLinkName);
 
             $saved = true;
         }

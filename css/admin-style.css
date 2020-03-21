@@ -45,3 +45,11 @@
 .wp-horses-catalog-plugin-admin .messages li {
     display: list-item;
 }
+
+
+.example{
+    color: #777777;
+}
+.example span[example]::after{
+    content : ' : ';
+}

@@ -27,7 +27,13 @@ if($pageName == null){
         $pageName = "horse-list"; 
         add_option( 'menu_page_name', $pageName );  
 }
+
 new PageWithOverrideTemplate($pageName, "template/horses-list.php", ["horse-list.css"]);
+
+$allLinkName = get_option( 'menu-all-elements' );
+if($allLinkName == null){
+        add_option( 'menu-all-elements', "all" );  
+}
 
 function my_plugin_load_plugin_textdomain() {
 	load_plugin_textdomain( 'horses-catalog', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
@@ -77,7 +83,7 @@ function only_submenu_for_current( $sorted_menu_items, $args ) {
                         'menu_item_parent' =>  $parent->ID,
                         'title' => sprintf(__('%s years', 'horses-catalog'), (date("Y") - $year)),
                          'url' => $parent->url.'?years[]='.$year,
-                         'menu_order' => 0
+                         'menu_order' =>  - $year
                         );
 
 
@@ -86,7 +92,7 @@ function only_submenu_for_current( $sorted_menu_items, $args ) {
         
         $pageForAll =(object) array(
                 'menu_item_parent' =>  $parent->ID,
-                'title' => __('All', 'horses-catalog'),
+                'title' => get_option( 'menu-all-elements' ),
                  'url' => $parent->url,
                  'menu_order' => 1
         );

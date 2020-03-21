@@ -1,5 +1,6 @@
 <?php
 require_once plugin_dir_path( __DIR__ ).'horses.php'; 
+$pagination = false;
 ?>
 <?php get_header(); ?>
 
@@ -65,23 +66,27 @@ $search = new Search($_GET);
     <?php 
         $listHorses = Horses::getAll($search);
         
-        $page = 1;
-        $nbByPage = 9;
-        $nbPage = count($listHorses) / $nbByPage;
-        if(count($listHorses) % $nbByPage != 0){
-            $nbPage++;
-        }
-        if(isset($_GET["current-page"])){
-            $page = $_GET["current-page"];
-        }
+        if($pagination){
+            $page = 1;
+            $nbByPage = 9;
+            $nbPage = count($listHorses) / $nbByPage;
+            if(count($listHorses) % $nbByPage != 0){
+                $nbPage++;
+            }
+            if(isset($_GET["current-page"])){
+                $page = $_GET["current-page"];
+            }
 
-        $firstOfList = $nbByPage * ($page-1);
-        $lastOfList = $nbByPage * $page;
+            $firstOfList = $nbByPage * ($page-1);
+            $lastOfList = $nbByPage * $page;
 
-        $listHorsesPagined = array_filter($listHorses, function($object, $index) {
-            global $firstOfList, $lastOfList;
-            return ($firstOfList <= $index &&  $index < $lastOfList );
-        }, 1);
+            $listHorsesPagined = array_filter($listHorses, function($object, $index) {
+                global $firstOfList, $lastOfList;
+                return ($firstOfList <= $index &&  $index < $lastOfList );
+            }, 1);
+        }else{
+            $listHorsesPagined = $listHorses;
+        }
     ?>
     <?php foreach($listHorsesPagined as $horse){
         $query_profile_args = array(
@@ -97,7 +102,7 @@ $search = new Search($_GET);
         $profileUrl = "";
         $query_profile = new WP_Query( $query_profile_args );
         if(count($query_profile->posts) > 0){
-            $profileUrl=wp_get_attachment_url( $query_profile->posts[0]->ID , 'thumbnail');
+            $profileUrl=wp_get_attachment_image_src( $query_profile->posts[0]->ID , 'large', false)[0];
         }
         ?>
         <div class="card"> 
@@ -110,7 +115,7 @@ $search = new Search($_GET);
         </div>
 <?php } ?>
 
-
+    <?php if($pagination){ ?>
     <div class="pagination">
         <?php for ($i = 1; $i <= $nbPage; $i++){ ?>
             <span class="<?php if($i == $page) echo "current"; ?>">
@@ -120,6 +125,7 @@ $search = new Search($_GET);
             </span>
         <?php } ?>
     </div>
+    <?php } ?>
 </div>
 
 <?php get_footer(); ?>
