@@ -24,24 +24,25 @@ class Horses{
         }
     }
 
-    private static function filter($search){
-        return array_values(array_filter(self::$list, function($k) {
-            global $search;
-
+    private static function filter($searchFilter){
+        return array_values(array_filter(self::$list, function($k) use ($searchFilter) {
             return  
-                self::searchYears($k, $search)
+                self::searchYears($k, $searchFilter)
                 && 
-                self::searchCategory($k, $search)
+                self::searchCategory($k, $searchFilter)
                 && 
-                self::searchTerm($k, $search)
+                self::searchTerm($k, $searchFilter)
                 ;
         }));
     }
 
     private static function searchTerm($horse, $search){
+
         if($search->isClearName()){
+
             return true;
         }
+
         return strpos(strtolower($horse->name), strtolower($search->name)) !== false;
     }
 
@@ -463,6 +464,11 @@ class Search{
     }
     public function isClearCategories(){
         return $this->categories == null;
+    }
+
+    public function clearExceptYears(){
+        $this->name = "";
+        $this->categories = null;
     }
 }
 

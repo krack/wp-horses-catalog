@@ -7,7 +7,33 @@ $pagination = false;
 <h1><?php _e("Stallion", 'horses-catalog') ?></h1>
 <?php
 
+$searchYear = new Search($_GET);
+$searchYear->clearExceptYears();
+$listHorsesOfYear = Horses::getAll($searchYear);
+
 $search = new Search($_GET);
+$listHorses = Horses::getAll($search);
+if($pagination){
+    $page = 1;
+    $nbByPage = 9;
+    $nbPage = count($listHorses) / $nbByPage;
+    if(count($listHorses) % $nbByPage != 0){
+        $nbPage++;
+    }
+    if(isset($_GET["current-page"])){
+        $page = $_GET["current-page"];
+    }
+
+    $firstOfList = $nbByPage * ($page-1);
+    $lastOfList = $nbByPage * $page;
+
+    $listHorsesPagined = array_filter($listHorses, function($object, $index) {
+        global $firstOfList, $lastOfList;
+        return ($firstOfList <= $index &&  $index < $lastOfList );
+    }, 1);
+}else{
+    $listHorsesPagined = $listHorses;
+}
 ?>
 <form method="get" >
     <div class="ages" style="display: none">
@@ -55,39 +81,22 @@ $search = new Search($_GET);
     ?>
     <div class="name">
         <h4><?php _e("Name filter : ", 'horses-catalog') ?></h4>
-        <input type="text" name="search" value="<?php echo $search->name; ?>" />
+        <input type="text" name="search" value="<?php echo $search->name; ?>" list="horses" autocomplete="off" />
+
+        <datalist id="horses">
+            <?php foreach($listHorsesOfYear as $horse){ ?>
+                <option value="<?php echo $horse->name; ?>">
+            <?php } ?>
+        </datalist>
     </div>
+    
     <input type="submit" value="<?php _e("search", 'horses-catalog') ?>"/>
 </form>
 
 
 
 <div class="list">
-    <?php 
-        $listHorses = Horses::getAll($search);
-        
-        if($pagination){
-            $page = 1;
-            $nbByPage = 9;
-            $nbPage = count($listHorses) / $nbByPage;
-            if(count($listHorses) % $nbByPage != 0){
-                $nbPage++;
-            }
-            if(isset($_GET["current-page"])){
-                $page = $_GET["current-page"];
-            }
 
-            $firstOfList = $nbByPage * ($page-1);
-            $lastOfList = $nbByPage * $page;
-
-            $listHorsesPagined = array_filter($listHorses, function($object, $index) {
-                global $firstOfList, $lastOfList;
-                return ($firstOfList <= $index &&  $index < $lastOfList );
-            }, 1);
-        }else{
-            $listHorsesPagined = $listHorses;
-        }
-    ?>
     <?php foreach($listHorsesPagined as $horse){
         $query_profile_args = array(
             'post_type'      => 'attachment',
