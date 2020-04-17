@@ -14,6 +14,7 @@
 require_once 'adminPlugin.php'; 
 require_once 'pageWithOverrideTemplate.php'; 
 require_once 'horses.php'; 
+require_once 'documentShortcode.php'; 
 
 function configure_admin_menu(){
         $admin = new AdminPlugin();
@@ -117,4 +118,7 @@ function getParent($elements){
         }
         return null;
 }
+
+
+new DocumentShortcode();
 ?>

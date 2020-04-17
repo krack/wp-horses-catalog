@@ -12,11 +12,17 @@ class AdminPlugin{
     private $currentCsvFile = null;
     private $currentZipFile = null;
     private $errors = [];
+
+
+    private $csvDocumentInputName = "document";
+    private $currentDocumentFile = null;
     public function __construct()
     {
         
         add_action( 'admin_enqueue_scripts', array( $this,'load_custom_wp_admin_style') );
-        add_menu_page(__('horses list import', 'horses-catalog'), __('Horse Catalog', 'horses-catalog'), 'manage_options', 'horses-uploader', array( $this,'listUpladerDisplayPage'));
+        add_menu_page(__('horses list import', 'horses-catalog'), __('Horse Catalog', 'horses-catalog'), 'manage_options', 'horses-catalog-admin', array( $this,'listUpladerDisplayPage'));
+        add_submenu_page('horses-catalog-admin', __('horses list import', 'horses-catalog'), __('Horse Catalog', 'horses-catalog'), 'manage_options', 'horses-uploader', array( $this,'listUpladerDisplayPage'));
+        add_submenu_page('horses-catalog-admin', __('document list import', 'horses-catalog'), __('Documents', 'horses-catalog'), 'manage_options', 'document-uploader', array( $this,'documentUpladerDisplayPage'));
 
     }
 
@@ -361,8 +367,6 @@ class AdminPlugin{
     private function copyValidatedFile(){
         if(!is_dir(wp_upload_dir()['basedir']."/horses-catalog/")){
             mkdir(wp_upload_dir()['basedir']."/horses-catalog/", 0700);
-        }else{
-            array_map('unlink', glob(wp_upload_dir()['basedir']."/horses-catalog/*"));
         }
 
         if(!rename($this->currentCsvFile, wp_upload_dir()['basedir']."/horses-catalog/list_horse.csv")){
@@ -425,6 +429,152 @@ class AdminPlugin{
         foreach ( $query_images->posts as $image ) {
             wp_delete_attachment($image->ID, true);
         }
+    }
+
+    public function documentUpladerDisplayPage(){
+        if(isset($_POST["import-document"])){
+            $fileUploaded = $this->uploadFileIfValidDocumentsList();
+        }
+        ?>
+        <div class="wrap wp-horses-catalog-plugin-admin">
+            <h1><?php _e("Horse Catalog Document", 'horses-catalog'); ?></h1>  
+            <form method="post" enctype="multipart/form-data" >
+                <fieldset>
+                    <legend><?php _e("Import manager", 'horses-catalog'); ?></legend>
+                    <div class="messages">
+                        <?php if($fileUploaded){ ?>
+                            <span class="fas fa-check uploaded"><?php _e("File uploaded", 'horses-catalog'); ?></span>
+                        <?php } ?>
+                        <ul class="errors">
+                            <?php foreach ($this->errors as $error){    ?>
+                                <li class="fas fa-times"><?php echo $error ?></li>
+                            <?php }?>
+                        </ul>
+
+                        <?php if(!$fileUploaded && $this->documentFileAlreadyExist()){ ?>
+                            <span class="info fas fa-info-circle"><?php _e("The file already existing, it will be overrided.", 'horses-catalog'); ?></span>
+                        <?php }else if(!$fileUploaded){?>
+                            <span class="warning fas fa-exclamation-triangle"><?php _e("Warning : no file uploaded, the documents list is empty.", 'horses-catalog'); ?></span>
+                        <?php }?>
+                        </div>
+                    
+                    <div>
+                        <label for="file_list_uploaded" class="fas fa-file-csv"><?php _e("Documents files", 'horses-catalog'); ?></label>
+                        <input type="file" name="<?php echo $this->csvDocumentInputName ?>" id="file_list_uploaded" accept=".csv" />
+                    </div>
+                    
+                    <input type="submit" class="button-primary" value="<?php _e("Import", 'horses-catalog'); ?>" name="import-document"/>
+                </fieldset>
+
+            </form> 
+
+           
+            <fieldset>
+                    <legend><?php _e("Medias name", 'horses-catalog'); ?></legend> 
+
+                    <p><?php _e("Adding wordpress medias for documents", 'horses-catalog'); ?></p>
+                   
+                    <div>
+                        <label ref="exemple-id"><?php _e("Example", 'horses-catalog'); ?></label>
+                        <input id="exemple-id" type="text" placeholder="16394971D" value="16394971D" />
+                    </div>
+                    
+                    <div>
+                        <h3><?php _e("Add a document", 'horses-catalog'); ?></h3> 
+                        <p>(<?php _e("horse id", 'horses-catalog'); ?>)</p>
+                        <p>
+                        <?php _e("horse id is is value of columne 'id' in imported csv file", 'horses-catalog'); ?><br />
+                        </p>
+                        <div class="example">
+                            <h4><?php _e("Example", 'horses-catalog'); ?></h4>
+                            <span example="#horse-id#"></span> <span><?php _e("horse's document file", 'horses-catalog'); ?></span>
+                        </div>
+                    </div>
+            </fieldset>          
+
+        </div>
+        <?php
+
+    }
+    private function uploadFileIfValidDocumentsList() {
+        if(!$this->existFileDocumentToUpload()) {
+            return false;
+        }
+        if(!$this->checkFileType($this->csvDocumentInputName, 'text/csv',  __("File type is not csv", 'horses-catalog'))) {
+            return false;
+        }
+            
+        if(!$this->uploadDocumentFile()){
+            return false;
+        }
+
+        if(!$this->validateDocumentFileContent()){
+            return false;
+        }
+        
+        $this->copyValidatedDocumentFile();
+       
+
+        return true;
+    }
+    private function existFileDocumentToUpload(){
+       
+        if (empty($_FILES)){
+            return false;
+        }
+        if($this->existFileToUploadWithName($this->csvDocumentInputName)){
+            return true;
+        }else{
+            array_push($this->errors, __("Empty file", 'horses-catalog'));
+            return false;
+        }
+    }
+
+
+    private function uploadDocumentFile(){
+
+        $upload_overrides = array( 'test_form' => false );
+
+        $movefileCsv = wp_handle_upload( $_FILES[$this->csvDocumentInputName], $upload_overrides );
+        if ( $movefileCsv && ! isset( $movefileCsv['error']) ) {
+            $this->currentDocumentFile = $movefileCsv["file"];
+        }else{
+            array_push($this->errors, $movefileCsv['error']);
+            array_push($this->errors, __("Error during file uploading", 'horses-catalog'));
+            return false;
+        }
+
+        return true;
+
+    }
+
+    private function validateDocumentFileContent(){
+        $valid = true;
+        if(!$this->checkFileEncoding()){
+            $valid = false;
+        }
+        $csvReader = new CsvReader($this->currentDocumentFile);
+        $fileValid = $csvReader->check();
+        if(!$fileValid){
+            $this->errors =  array_merge($this->errors, $csvReader->errors);
+            $valid = false;
+        }
+
+        return $valid;
+    }
+
+    private function copyValidatedDocumentFile(){
+        if(!is_dir(wp_upload_dir()['basedir']."/horses-catalog/")){
+            mkdir(wp_upload_dir()['basedir']."/horses-catalog/", 0700);
+        }
+
+        if(!rename($this->currentDocumentFile, wp_upload_dir()['basedir']."/horses-catalog/list_document.csv")){
+            array_push($this->errors, __("Error during copie after file validating", 'horses-catalog'));
+        }
+    }
+    private function documentFileAlreadyExist(){
+        $csvReader = new CsvReader(wp_upload_dir()['basedir']."/horses-catalog/list_document.csv");
+        return $csvReader->fileExist();
     }
 }
 ?>

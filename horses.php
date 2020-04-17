@@ -124,6 +124,7 @@ class Horses{
     public $name;
     public $race;
     public $logo;
+    public $logoList;
     public $birthYear;
     public $age;
     public $coatColor;
@@ -169,6 +170,7 @@ class Horses{
         $this->coatColor = $rawData["robe"];
         $this->race = $rawData["race"];
         $this->logo = $rawData["Logo"];
+        $this->logoList = $rawData["sfo"];
         $this->size = $rawData["toise"];
         $this->discipline = $rawData["discipline"];
 

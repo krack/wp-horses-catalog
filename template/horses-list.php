@@ -120,6 +120,9 @@ if($pagination){
                 <img class="profil" src="<?php echo  $profileUrl; ?>" alt="profil <?php echo $horse->name ?>" />
                 <span class="name"><?php echo $horse->name;?></span>
                 <span><?php echo sprintf(__('By %s x %s', 'horses-catalog'), $horse->father->name, $horse->mother->name) ?></span>
+                <?php if( $horse->logoList != ""){ ?>
+                    <span class="logo-list <?php echo $horse->logoList; ?>"></span>
+                <?php } ?>              
             </a>
         </div>
 <?php } ?>
