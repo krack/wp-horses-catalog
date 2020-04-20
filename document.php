@@ -15,6 +15,7 @@ class Document{
         if($search->isClear()){
             return self::$list;
         }else{
+    
             return self::filter($search);
         }
     }
@@ -23,6 +24,8 @@ class Document{
         return array_values(array_filter(self::$list, function($k) use ($searchFilter) {
             return  
                 self::searchTerm($k, $searchFilter)
+                &&
+                self::startTerm($k, $searchFilter)
                 ;
         }));
     }
@@ -30,11 +33,17 @@ class Document{
     private static function searchTerm($horse, $search){
 
         if($search->isClearName()){
-
             return true;
         }
-
         return strpos(strtolower($horse->name), strtolower($search->name)) !== false;
+    }
+
+    private static function startTerm($horse, $search){
+
+        if($search->isClearStart()){
+            return true;
+        }
+        return (strpos(strtolower($horse->name), strtolower($search->start)) !== FALSE) && (strpos(strtolower($horse->name), strtolower($search->start)) == 0);
     }
 
   
@@ -55,16 +64,20 @@ class Document{
     public $id;
     public $name;
 
-    public $hasDocument1;
-    public $hasDocument2;
+    public $hasDocumentPerf;
+    public $hasDocumentCarateritic;
+    public $productFatherCount;
+    public $hasDocumentCarateriticCount;
 
 
 
     public function __construct($rawData) {
-        $this->id = $rawData["id"];
-        $this->name = $rawData["nom"];
-        $this->hasDocument1 = (strtolower($rawData["doc1"])=="oui");
-        $this->hasDocument2 = (strtolower($rawData["doc2"])=="oui");
+        $this->id = $rawData["ID_Etalon"];
+        $this->name = $rawData["Nom_Etalon"];
+        $this->hasDocumentPerf = (strtolower($rawData["Fiche_Perf"])=="oui");
+        $this->hasDocumentCarateritic = (strtolower($rawData["Fiche_Caract"])=="oui");
+        $this->productFatherCount = $rawData["Nb_pdts_exp_P"];
+        $this->hasDocumentCarateriticCount = $rawData["Nb_pdts_exp_PM"];
         
     }
 

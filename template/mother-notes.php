@@ -2,7 +2,7 @@
 <div id="maternal">
  
 <h2><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></h2>
-<i class="fas fa-info-circle" title="<?php _e("Click to learn to read maternal lineage", 'horses-catalog') ?>"></i>
+<i class="fas fa-info-circle mother" title="<?php _e("Click to learn to read maternal lineage", 'horses-catalog') ?>"></i>
 
     <table class="mother-notes">
         <tr>

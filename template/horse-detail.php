@@ -205,9 +205,6 @@ function isInternationnalEmpty(){
 
 </div>
 <?php 
-if(function_exists("shf_login_block")){
-    shf_login_block();
-}
 
 if(function_exists("shf_add_fixed_connection_button")){
     shf_add_fixed_connection_button();

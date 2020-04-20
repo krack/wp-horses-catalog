@@ -447,15 +447,17 @@ class Search{
     public $name;
     public $years;
     public $categories;
+    public $start;
 
     public function __construct($post) {
         $this->name = stripcslashes($post["search"]);
         $this->years = $post["years"];
         $this->categories = $post["categories"];
+        $this->start = $post["start"];
     }
 
     public function isClear(){
-        return$this->isClearName() && $this->isClearYear() && $this->isClearCategories();
+        return$this->isClearName() && $this->isClearYear() && $this->isClearCategories()  && $this->isClearStart();
     }
 
     public function isClearName(){
@@ -467,10 +469,15 @@ class Search{
     public function isClearCategories(){
         return $this->categories == null;
     }
+    public function isClearStart(){
+        return $this->start == null || $this->start == "";
+    }
+    
 
     public function clearExceptYears(){
         $this->name = "";
         $this->categories = null;
+        $this->start = "";
     }
 }
 

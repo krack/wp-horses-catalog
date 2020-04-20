@@ -20,8 +20,7 @@ class AdminPlugin{
     {
         
         add_action( 'admin_enqueue_scripts', array( $this,'load_custom_wp_admin_style') );
-        add_menu_page(__('horses list import', 'horses-catalog'), __('Horse Catalog', 'horses-catalog'), 'manage_options', 'horses-catalog-admin', array( $this,'listUpladerDisplayPage'));
-        add_submenu_page('horses-catalog-admin', __('horses list import', 'horses-catalog'), __('Horse Catalog', 'horses-catalog'), 'manage_options', 'horses-uploader', array( $this,'listUpladerDisplayPage'));
+        add_menu_page(__('horses list admin', 'horses-catalog'), __('Horse Catalog', 'horses-catalog'), 'manage_options', 'horses-catalog-admin', array( $this,'listUpladerDisplayPage'), 'dashicons-buddicons-activity');
         add_submenu_page('horses-catalog-admin', __('document list import', 'horses-catalog'), __('Documents', 'horses-catalog'), 'manage_options', 'document-uploader', array( $this,'documentUpladerDisplayPage'));
 
     }
@@ -117,7 +116,7 @@ class AdminPlugin{
                         <h3><?php _e("Add a photo", 'horses-catalog'); ?></h3> 
                         <p>(<?php _e("horse id", 'horses-catalog'); ?>)_(<?php _e("sequence id", 'horses-catalog'); ?>)</p>
                         <p>
-                            <?php _e("horse id is is value of columne 'id' in imported csv file.", 'horses-catalog'); ?><br />
+                            <?php _e("Horse id is is value of columne 'id' in imported csv file.", 'horses-catalog'); ?><br />
                             <?php _e("Sequence id order photos in galery.", 'horses-catalog'); ?><br/>
                             <?php _e("Photo with sequence id at 1 is use as profile picture.", 'horses-catalog'); ?>
                         </p>
@@ -483,7 +482,7 @@ class AdminPlugin{
                         <h3><?php _e("Add a document", 'horses-catalog'); ?></h3> 
                         <p>(<?php _e("horse id", 'horses-catalog'); ?>)</p>
                         <p>
-                        <?php _e("horse id is is value of columne 'id' in imported csv file", 'horses-catalog'); ?><br />
+                        <?php _e("Horse id is is value of columne 'ID_Etalon' in imported csv file for document.", 'horses-catalog'); ?><br />
                         </p>
                         <div class="example">
                             <h4><?php _e("Example", 'horses-catalog'); ?></h4>

@@ -339,6 +339,10 @@ nav#horse-menu {
 }
 
 /** pedigree */
+#pedigree table {
+
+    border-spacing: 0px 1px;
+}
 
 #pedigree td{
 }
@@ -1167,4 +1171,224 @@ footer {
     bottom: 0;
     z-index: 999999999;
     opacity: 0.5;
+}
+
+/**
+shortcode
+*/
+.documents-shortcode {
+text-align: center;
+}
+.documents-shortcode .search{
+    color: white;
+    width: 60%;
+
+    display: table;
+    margin: auto;
+    margin-bottom: 40px;
+    font-family: "FengardoNeue_Black";
+
+}
+.documents-shortcode  .search > .title{
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to right, #df0000, #740609);
+    display: table-cell;
+    font-size: 2em;
+    vertical-align: middle;
+    position: relative;
+
+}
+.documents-shortcode  .search > .title:after {
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #740609;
+    top: 50%;
+    transform: translateY(-50%) translateX(100%);
+    right: 0px;
+}
+
+
+.documents-shortcode .search > div{    
+    display: inline-block;
+    width: 80%;
+    background: linear-gradient(to left, #152a5c, #0b0f1f);
+    display: table-cell;
+}
+
+.documents-shortcode .search .by-name{
+    border: 1px white solid;
+    margin: 20px;
+    padding: 10px;
+}
+
+.documents-shortcode .search label{
+    margin-right: 20px;
+    font-size: 1.3em;
+}
+
+.documents-shortcode .search label::after{
+    content: ' : ';
+}
+.documents-shortcode .search .by-name input[type='submit']{
+    margin: 0;
+    border: none;
+    background: none;
+    color: white;
+    font-family: "FengardoNeue_Black";
+    font-size: 1.4em;
+    vertical-align: middle;
+}
+
+.documents-shortcode .letter input[type='submit']{
+    border: 1px solid black;
+    background-color: white;
+    width: 25px;
+    line-height: 1.2em;
+    padding: 5px 5px 0px 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    color: #0b0f1f;
+    font-family: "FengardoNeue_Black";
+
+}
+.documents-shortcode .letter input[type='submit']:hover, .documents-shortcode .letter input[type='submit'].selected{
+    background: linear-gradient(to right, #df0000, #740609);
+    
+    color: white;
+
+}
+
+.documents-shortcode form{
+    display: inline;
+
+}
+.documents-shortcode table{
+    margin: auto;
+    border-spacing: 1px 0px;
+    max-width: 80%;
+
+}
+
+.documents-shortcode table tr td{
+    border-bottom: 1px solid black;
+
+}
+
+.documents-shortcode table tr td:first-child{
+    border-left: 1px solid black;
+
+}
+
+.documents-shortcode table tr td:last-child{
+    border-right: 1px solid black;
+
+}
+
+.documents-shortcode table tr td a[href$="pdf"]{
+    margin-bottom: 0px;
+}
+.documents-shortcode .by-stalion-label, .documents-shortcode .reduc{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width: 1580px) {
+    .documents-shortcode .search{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 1375px) {
+    .documents-shortcode .search{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1190px) {
+    .documents-shortcode .search{
+        width: 90%;
+    }
+    .documents-shortcode  .search > .title{
+
+        font-size: 1.5em;
+    
+    }
+}
+
+@media only screen and (max-width: 1160px) {
+    .documents-shortcode .search{
+        width: 95%;
+    }
+    .documents-shortcode .search{
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+
+    .documents-shortcode .search{
+        width: 80%;
+    }
+
+    .documents-shortcode  .search > .title{
+        display: none;
+    
+    }
+    .documents-shortcode .letter{
+        display: none;
+    }
+
+    .documents-shortcode .by-stalion-label, .documents-shortcode .reduc{
+        display: inherit;
+    }
+    .documents-shortcode th.reduc, .documents-shortcode td.reduc{
+        display: table-cell;
+    }
+
+    .documents-shortcode .by-name-label, .documents-shortcode .fulltext{
+        display: none;
+    }
+
+    .documents-shortcode .search .by-name input[type="submit"]{
+        margin-top: 10px;
+    } 
+    .documents-shortcode .search .by-name input[type="text"]{
+        width: 60%;
+    }
+
+    .documents-shortcode .search .by-name{
+        border: none;
+        margin: 0;
+    }
+
+    .documents-shortcode table{
+        max-width: 100%;
+    }
+
+    .documents-shortcode table th{
+        padding: 5px;
+    }
+
+
+    .documents-shortcode table td:first-child, .documents-shortcode table th:first-child{
+        white-space: pre-line;
+        word-wrap: break-word;
+        word-break: normal;
+        width: 25%;
+    }
+
+
+
+
 }
