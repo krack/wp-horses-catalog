@@ -1251,7 +1251,7 @@ text-align: center;
     background-color: white;
     width: 25px;
     line-height: 1.2em;
-    padding: 5px 5px 0px 5px;
+    padding: 5px 0px 0px 0px;
     margin-left: 2px;
     margin-right: 2px;
     text-transform: uppercase;
@@ -1288,6 +1288,11 @@ text-align: center;
 
 }
 
+
+.documents-shortcode  td:first-child{
+    font-size: 0.9em;
+}
+
 .documents-shortcode table tr td:last-child{
     border-right: 1px solid black;
 
@@ -1300,6 +1305,33 @@ text-align: center;
     display: none;
 }
 
+.documents-shortcode button{
+    margin: 5px auto;
+}
+.documents-shortcode a[href$="pdf"]:first-child{
+    font-size: 0;
+}
+.documents-shortcode a[href$="pdf"]:first-child::before {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0px;
+}
+
+.documents-shortcode .bloqued-pdf{
+    background-image: url("images/pdf.svg");
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    margin-bottom: 0px;
+}
+
+.documents-shortcode .fa-check{
+    color: green;
+}
 
 
 

@@ -50,6 +50,13 @@ if ( $starts_with ) {
         $where .= " AND $wpdb->posts.post_title LIKE '$starts_with%'";
 }
 
+$exact = $query->get( 'exact' );
+
+if ( $exact ) {
+        $where .= " AND $wpdb->posts.post_title = '$exact'";
+}
+
+
 return $where;
 }
 add_filter( 'posts_where', 'wpse_298888_posts_where', 10, 2 );
@@ -121,4 +128,9 @@ function getParent($elements){
 
 
 new DocumentShortcode();
+
+add_action('wp_enqueue_scripts', 'qg_enqueue');
+function qg_enqueue() {
+        wp_enqueue_script( 'title', plugins_url( "/js/".'title.js', __FILE__ ), array(), null, true);
+}
 ?>

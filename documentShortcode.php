@@ -50,7 +50,7 @@ class DocumentShortcode
                 'post_status'    => 'inherit',
                 'posts_per_page' => -1,
                 'post_parent'    => 0,
-                'starts_with'    => $document->id
+                'exact'    => $document->id
                 
                 
             );
@@ -59,7 +59,7 @@ class DocumentShortcode
             ?>
                 <?php
                     foreach ( $query_fiche->posts as $pdf ) {
-                        $html[] = do_shortcode('[protected visible="true" message="'.__('Connect yourself<br /> to consult', 'horses-catalog').'"]'.'<a download class="no-pdf-style" href="'.wp_get_attachment_url( $pdf->ID ).'"><span class="fulltext" >'.__('Consult the PDF file of the horse', 'horses-catalog').'</span><i class="fas fa-download reduc"></i></a>'.'[/protected]');
+                        $html[] = do_shortcode('[protected visible="false" class="bloqued-pdf"]'.'<a download class="" href="'.wp_get_attachment_url( $pdf->ID ).'"><span class="fulltext" >'.__('Consult the PDF file of the horse', 'horses-catalog').'</span><i class="fas fa-download reduc"></i></a>'.'[/protected]');
                     }
                 ?>
         
@@ -79,7 +79,7 @@ class DocumentShortcode
     }
 
     private function addSearch($search){
-        $html[] = '<div class="search">';
+        $html[] = '<div id="search" class="search">';
         // title
         $html[] = '<div class="title">'.__('Search<br /> a stallion', 'horses-catalog').'</div>';
         //search
@@ -88,7 +88,7 @@ class DocumentShortcode
         $html[] = '<div class="letter">';
         $letters = 'abcdefghijklmnopqrstuvwxyz';
         foreach(str_split($letters) as $letter){
-            $html[] = '<form method="get" >'; 
+            $html[] = '<form method="get" action="#search">'; 
             $html[] = '<input type="hidden" name="start" value="'.$letter.'" />';
             $html[] = '<input type="submit" value="'.$letter.'" class="';
             if($search->start == $letter){
@@ -101,7 +101,7 @@ class DocumentShortcode
         $html[] = '</div>';
         // full
         $html[] = '<div class="by-name">';
-        $html[] = '<form method="get" >';
+        $html[] = '<form method="get" action="#search">';
         $html[] = '<label for="search-name" class="by-name-label">'.__('Search by name', 'horses-catalog').'</label>';
         $html[] = '<label for="search-name" class="by-stalion-label">'.__('Search a stallion', 'horses-catalog').'</label>';
         $html[] = '<input type="text" name="search" value="'.$search->name.'" />';
