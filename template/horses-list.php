@@ -34,9 +34,15 @@ if($pagination){
 }else{
     $listHorsesPagined = $listHorses;
 }
+$displayAge = "display: none";
+if($_GET['display-age']=='true'){
+    $displayAge = "";
+}
 ?>
 <form method="get" >
-    <div class="ages" style="display: none">
+    <input type="hidden" name="display-age" value="<?php echo $_GET['display-age']; ?>"/>
+
+    <div class="ages" style="<?php echo $displayAge; ?>">
         <h4><?php _e("Age filter : ", 'horses-catalog') ?></h4>
         <ul>
             <?php 
@@ -57,7 +63,7 @@ if($pagination){
    
     <?php
     // it's not only 3 year
-    if(!(count($search->years) == 1 && ($search->years[0] == (date("Y")-3)) )){
+    if(!(count($search->years) == 1 && ($search->years[0] == (date("Y")-3) && $_GET['display-age'] !== 'true') )){
     ?>
 
     <div class="categories">

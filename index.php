@@ -101,7 +101,7 @@ function only_submenu_for_current( $sorted_menu_items, $args ) {
         $pageForAll =(object) array(
                 'menu_item_parent' =>  $parent->ID,
                 'title' => get_option( 'menu-all-elements' ),
-                 'url' => $parent->url,
+                 'url' => $parent->url.'?display-age=true',
                  'menu_order' => 1
         );
         array_push ( $sorted_menu_items , $pageForAll);
