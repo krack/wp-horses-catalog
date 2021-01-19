@@ -58,7 +58,15 @@ function isInternationnalEmpty(){
 <div class="detail-card">
     <div class="fixe-part">
         <h1><?php echo $horse->name ?></h1>
-
+        <?php
+        if($horse->birthYear == null){ 
+            if($horse->id != null){    
+        ?>
+            <h2><?php _e("Coming soon online", 'horses-catalog'); ?></h2>
+        <?php 
+            }
+        }else{
+        ?>
         <nav id="horse-menu">
             <ul>
                 
@@ -197,7 +205,7 @@ function isInternationnalEmpty(){
     <?php include("galerie.php"); ?>
 
     <?php } 
-    
+    }
 
     include("return-button.php");
     ?>

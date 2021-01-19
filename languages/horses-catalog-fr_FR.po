@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2020-05-05 09:11+0200\n"
-"PO-Revision-Date: 2020-05-05 09:11+0200\n"
+"POT-Creation-Date: 2021-01-19 21:07+0100\n"
+"PO-Revision-Date: 2021-01-19 21:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -361,7 +361,7 @@ msgstr "%s ans"
 msgid "Download pdf cart of this horse"
 msgstr "Télécharger cette page en PDF"
 
-#: template/galerie.php:17 template/horse-detail.php:80
+#: template/galerie.php:17 template/horse-detail.php:87
 msgid "Video"
 msgstr "Vidéo"
 
@@ -369,55 +369,64 @@ msgstr "Vidéo"
 msgid "Complete video"
 msgstr "Voir toutes les vidéos"
 
-#: template/horse-detail.php:65 template/pedigree.php:15
+#: template/horse-detail.php:64
+msgid "Coming soon online"
+msgstr "Prochainement en ligne"
+
+#: template/horse-detail.php:65
+#| msgid "Father"
+msgid "Agathe"
+msgstr ""
+
+#: template/horse-detail.php:72 template/pedigree.php:15
 msgid "Pedigree"
 msgstr "Pédigrée"
 
-#: template/horse-detail.php:68
+#: template/horse-detail.php:75
 msgid "Strong points"
 msgstr "Points forts"
 
-#: template/horse-detail.php:71 template/mother-notes.php:4
+#: template/horse-detail.php:78 template/mother-notes.php:4
 msgid "Maternal Lineage Expertise"
 msgstr "Expertise Lignée Maternelle"
 
-#: template/horse-detail.php:72
+#: template/horse-detail.php:79
 msgid "Expertise judges"
 msgstr "Expertise juges"
 
-#: template/horse-detail.php:75
+#: template/horse-detail.php:82
 msgid "Testing expertise"
 msgstr "Expertise testage"
 
-#: template/horse-detail.php:78
+#: template/horse-detail.php:85
 msgid "Riders reviews"
 msgstr "Avis des cavaliers"
 
-#: template/horse-detail.php:114
+#: template/horse-detail.php:121
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: template/horse-detail.php:118
+#: template/horse-detail.php:125
 msgid "Breeder"
 msgstr "Naisseur"
 
-#: template/horse-detail.php:127
+#: template/horse-detail.php:134
 msgid "Protected mares in 2018"
 msgstr "Juments saillies en 2018"
 
-#: template/horse-detail.php:133
+#: template/horse-detail.php:140
 msgid "Year of riding in France"
 msgstr "Année de monte en France"
 
-#: template/horse-detail.php:139
+#: template/horse-detail.php:146
 msgid "Protected mares in France"
 msgstr "Juments saillies en France"
 
-#: template/horse-detail.php:156
+#: template/horse-detail.php:163
 msgid "SIRE card"
 msgstr "fiche SIRE"
 
-#: template/horse-detail.php:170
+#: template/horse-detail.php:177
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
 

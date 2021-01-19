@@ -110,9 +110,11 @@ class Horses{
 
         foreach ($rawDataList as $rawData){
             $horse = new Horses($rawData);
-            array_push(self::$list, $horse);
             self::$map[$horse->id] = $horse;
-            array_push(self::$birth_years, $horse->birthYear);
+            if($horse->birthYear != null){
+                array_push(self::$list, $horse);
+                array_push(self::$birth_years, $horse->birthYear);
+            }
         }
         self::$birth_years = array_unique(self::$birth_years);
         usort(self::$list, 'comparator');

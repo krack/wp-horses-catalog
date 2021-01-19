@@ -5,7 +5,7 @@ $(document).ready(function () {
         if(history.length > 2){
             window.history.back();
         }else{
-            window.location.href =  "/etalons/";
+            window.location.href =  "/"+$(this).attr("page-title")+"/";
         }
     });
 });
