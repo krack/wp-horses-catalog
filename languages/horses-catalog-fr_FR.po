@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2021-01-19 21:07+0100\n"
-"PO-Revision-Date: 2021-01-19 21:08+0100\n"
+"POT-Creation-Date: 2021-02-07 10:37+0100\n"
+"PO-Revision-Date: 2021-02-07 10:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -31,15 +31,15 @@ msgstr "importeur de la liste des document"
 msgid "Documents"
 msgstr "Documents"
 
-#: adminPlugin.php:47 adminPlugin.php:442
+#: adminPlugin.php:47 adminPlugin.php:447
 msgid "Import manager"
 msgstr "Importer"
 
-#: adminPlugin.php:50 adminPlugin.php:445
+#: adminPlugin.php:50 adminPlugin.php:450
 msgid "File uploaded"
 msgstr "Fichier uploadé"
 
-#: adminPlugin.php:59 adminPlugin.php:454
+#: adminPlugin.php:59 adminPlugin.php:459
 msgid "The file already existing, it will be overrided."
 msgstr "Il existe déjà un fichier valide, celui-ci sera surchargé."
 
@@ -54,42 +54,46 @@ msgid "Horses"
 msgstr "Chevaux"
 
 #: adminPlugin.php:70
+msgid "Year"
+msgstr "Année"
+
+#: adminPlugin.php:75
 msgid "Horse pictures zip"
 msgstr "Zip d'images des chevaux"
 
-#: adminPlugin.php:74
+#: adminPlugin.php:79
 msgid "Ignore pictures requeried and use media"
 msgstr "Ignorer le besoin des photos requises et utilisé les médias"
 
-#: adminPlugin.php:80 adminPlugin.php:465
+#: adminPlugin.php:85 adminPlugin.php:470
 msgid "Import"
 msgstr "Importer"
 
-#: adminPlugin.php:87
+#: adminPlugin.php:92
 msgid "Configuration labels"
 msgstr "Configuration des labels"
 
-#: adminPlugin.php:90
+#: adminPlugin.php:95
 msgid "saved"
 msgstr "savegardé"
 
-#: adminPlugin.php:94
+#: adminPlugin.php:99
 msgid "Menu title"
 msgstr "Menu titre"
 
-#: adminPlugin.php:98
+#: adminPlugin.php:103
 msgid "All link label"
 msgstr "Label du lien vers tous"
 
-#: adminPlugin.php:102
+#: adminPlugin.php:107
 msgid "save"
 msgstr "sauvegarder"
 
-#: adminPlugin.php:107 adminPlugin.php:472
+#: adminPlugin.php:112 adminPlugin.php:477
 msgid "Medias name"
 msgstr "Nom des médias"
 
-#: adminPlugin.php:109
+#: adminPlugin.php:114
 msgid ""
 "Adding wordpress medias with name can adding element on horse (photos, "
 "video, advertissement, pdf card"
@@ -97,134 +101,134 @@ msgstr ""
 "L'ajout de média wordpress avec un nom particulié permet d'ajouter à un "
 "cheval un élément (photos, video, pub, fiche pdf)"
 
-#: adminPlugin.php:112 adminPlugin.php:124 adminPlugin.php:136
-#: adminPlugin.php:147 adminPlugin.php:158 adminPlugin.php:477
-#: adminPlugin.php:488
+#: adminPlugin.php:117 adminPlugin.php:129 adminPlugin.php:141
+#: adminPlugin.php:152 adminPlugin.php:163 adminPlugin.php:482
+#: adminPlugin.php:493
 msgid "Example"
 msgstr "Exemple"
 
-#: adminPlugin.php:116
+#: adminPlugin.php:121
 msgid "Add a photo"
 msgstr "Ajouter une photo"
 
-#: adminPlugin.php:117 adminPlugin.php:131 adminPlugin.php:142
-#: adminPlugin.php:153 adminPlugin.php:483
+#: adminPlugin.php:122 adminPlugin.php:136 adminPlugin.php:147
+#: adminPlugin.php:158 adminPlugin.php:488
 msgid "horse id"
 msgstr "identifiant du cheval"
 
-#: adminPlugin.php:117
+#: adminPlugin.php:122
 msgid "sequence id"
 msgstr "numéro de séquence"
 
-#: adminPlugin.php:119
+#: adminPlugin.php:124
 msgid "Horse id is is value of columne 'id' in imported csv file."
 msgstr ""
 "L'identifiant du cheval est la valeur dans la colonne 'id' dans le fichier "
 "csv importé."
 
-#: adminPlugin.php:120
+#: adminPlugin.php:125
 msgid "Sequence id order photos in galery."
 msgstr "Le numéro de séquence permet d'ordonnée les photos dans la galerie."
 
-#: adminPlugin.php:121
+#: adminPlugin.php:126
 msgid "Photo with sequence id at 1 is use as profile picture."
 msgstr ""
 "La photo avec le numéro de séquence à 1 est utilisé comme photo de profil."
 
-#: adminPlugin.php:125
+#: adminPlugin.php:130
 msgid "profile's photo"
 msgstr "photo de profil"
 
-#: adminPlugin.php:126
+#: adminPlugin.php:131
 msgid "5eme galerie's photos"
 msgstr "5ieme photo dans la galerie"
 
-#: adminPlugin.php:130
+#: adminPlugin.php:135
 msgid "Add a video"
 msgstr "Ajouter une vidéo"
 
-#: adminPlugin.php:133 adminPlugin.php:144 adminPlugin.php:155
+#: adminPlugin.php:138 adminPlugin.php:149 adminPlugin.php:160
 msgid "horse id is is value of columne 'id' in imported csv file"
 msgstr ""
 "L'identifiant du cheval est la valeur dans la colonne 'id' dans le fichier "
 "csv importé"
 
-#: adminPlugin.php:137
+#: adminPlugin.php:142
 msgid "horse's video"
 msgstr "vidéo du cheval"
 
-#: adminPlugin.php:141
+#: adminPlugin.php:146
 msgid "Add a advertising"
 msgstr "Ajouter une publicité"
 
-#: adminPlugin.php:148
+#: adminPlugin.php:153
 msgid "advertissement visible in horse card"
 msgstr "publicité visible dans la fiche cheval"
 
-#: adminPlugin.php:152
+#: adminPlugin.php:157
 msgid "Add a pdf card"
 msgstr "Ajouter une fiche pdf"
 
-#: adminPlugin.php:159
+#: adminPlugin.php:164
 msgid "pdf card file downloadable"
 msgstr "fichier pdf téléchargeable de la fiche"
 
-#: adminPlugin.php:211 adminPlugin.php:502
+#: adminPlugin.php:216 adminPlugin.php:507
 msgid "File type is not csv"
 msgstr "Le type du fichier n'est pas csv"
 
-#: adminPlugin.php:216
+#: adminPlugin.php:221
 msgid "File type is not zip"
 msgstr "Le type du fichier n'est pas une archive"
 
-#: adminPlugin.php:252 adminPlugin.php:527
+#: adminPlugin.php:257 adminPlugin.php:532
 msgid "Empty file"
 msgstr "Fichier vide"
 
-#: adminPlugin.php:287 adminPlugin.php:297 adminPlugin.php:542
+#: adminPlugin.php:292 adminPlugin.php:302 adminPlugin.php:547
 msgid "Error during file uploading"
 msgstr "Erreur durant le téléchargement du fichier"
 
-#: adminPlugin.php:327
+#: adminPlugin.php:332
 msgid "File must be encoding in UTF-8"
 msgstr "Le fichier doit être encodé en UTF-8"
 
-#: adminPlugin.php:344
+#: adminPlugin.php:349
 #, php-format
 msgid "It's missing picture for horse with id : %s"
 msgstr "Il manque une image pour le cheval avec l'id : %s"
 
-#: adminPlugin.php:372 adminPlugin.php:571
+#: adminPlugin.php:377 adminPlugin.php:576
 msgid "Error during copie after file validating"
 msgstr "Erreur durant la copie après la validation du fichier"
 
-#: adminPlugin.php:380 adminPlugin.php:384
+#: adminPlugin.php:385 adminPlugin.php:389
 msgid "Error during extract pictures"
 msgstr "Erreur durant l'extraction des images"
 
-#: adminPlugin.php:439
+#: adminPlugin.php:444
 msgid "Horse Catalog Document"
 msgstr "Catalogue de document"
 
-#: adminPlugin.php:456
+#: adminPlugin.php:461
 msgid "Warning : no file uploaded, the documents list is empty."
 msgstr ""
 "Attention : aucun fichier valide chargé pour le moment, le catalogue de "
 "document est donc vide."
 
-#: adminPlugin.php:461
+#: adminPlugin.php:466
 msgid "Documents files"
 msgstr "Fichiers de documents"
 
-#: adminPlugin.php:474
+#: adminPlugin.php:479
 msgid "Adding wordpress medias for documents"
 msgstr "Ajouté des médias pour des documents"
 
-#: adminPlugin.php:482
+#: adminPlugin.php:487
 msgid "Add a document"
 msgstr "Ajouter un document"
 
-#: adminPlugin.php:485
+#: adminPlugin.php:490
 msgid ""
 "Horse id is is value of columne 'ID_Etalon' in imported csv file for "
 "document."
@@ -232,7 +236,7 @@ msgstr ""
 "L'identifiant du cheval est la valeur dans la colonne 'ID_Etalon' dans le "
 "fichier csv importé."
 
-#: adminPlugin.php:489
+#: adminPlugin.php:494
 msgid "horse's document file"
 msgstr "document pour le cheval"
 
@@ -361,7 +365,7 @@ msgstr "%s ans"
 msgid "Download pdf cart of this horse"
 msgstr "Télécharger cette page en PDF"
 
-#: template/galerie.php:17 template/horse-detail.php:87
+#: template/galerie.php:17 template/horse-detail.php:121
 msgid "Video"
 msgstr "Vidéo"
 
@@ -369,64 +373,59 @@ msgstr "Vidéo"
 msgid "Complete video"
 msgstr "Voir toutes les vidéos"
 
-#: template/horse-detail.php:64
+#: template/horse-detail.php:81
 msgid "Coming soon online"
 msgstr "Prochainement en ligne"
 
-#: template/horse-detail.php:65
-#| msgid "Father"
-msgid "Agathe"
-msgstr ""
-
-#: template/horse-detail.php:72 template/pedigree.php:15
+#: template/horse-detail.php:106 template/pedigree.php:15
 msgid "Pedigree"
 msgstr "Pédigrée"
 
-#: template/horse-detail.php:75
+#: template/horse-detail.php:109
 msgid "Strong points"
 msgstr "Points forts"
 
-#: template/horse-detail.php:78 template/mother-notes.php:4
+#: template/horse-detail.php:112 template/mother-notes.php:4
 msgid "Maternal Lineage Expertise"
 msgstr "Expertise Lignée Maternelle"
 
-#: template/horse-detail.php:79
+#: template/horse-detail.php:113
 msgid "Expertise judges"
 msgstr "Expertise juges"
 
-#: template/horse-detail.php:82
+#: template/horse-detail.php:116
 msgid "Testing expertise"
 msgstr "Expertise testage"
 
-#: template/horse-detail.php:85
+#: template/horse-detail.php:119
 msgid "Riders reviews"
 msgstr "Avis des cavaliers"
 
-#: template/horse-detail.php:121
+#: template/horse-detail.php:155
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: template/horse-detail.php:125
+#: template/horse-detail.php:159
 msgid "Breeder"
 msgstr "Naisseur"
 
-#: template/horse-detail.php:134
+#: template/horse-detail.php:168
 msgid "Protected mares in 2018"
 msgstr "Juments saillies en 2018"
 
-#: template/horse-detail.php:140
+#: template/horse-detail.php:174
 msgid "Year of riding in France"
 msgstr "Année de monte en France"
 
-#: template/horse-detail.php:146
+#: template/horse-detail.php:180
 msgid "Protected mares in France"
 msgstr "Juments saillies en France"
 
-#: template/horse-detail.php:163
+#: template/horse-detail.php:197
 msgid "SIRE card"
 msgstr "fiche SIRE"
 
-#: template/horse-detail.php:177
+#: template/horse-detail.php:211
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
 

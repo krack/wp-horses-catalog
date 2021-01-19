@@ -5,7 +5,23 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
 <?php get_header(); ?>
 
 <?php 
-$horse = Horses::get($_GET["id"]);
+$horseByYear = Horses::get($_GET["id"]);
+//construct list of year
+$yearsOfHorse = array_keys($horseByYear);
+sort($yearsOfHorse, SORT_NUMERIC);
+$yearsOfHorse = array_reverse($yearsOfHorse);
+
+
+$year = $yearsOfHorse[0];
+
+// if not connected, default year is use
+if(function_exists("shf_connected_block") && shf_connected_block(false)){
+    if(isset($_GET["years"])){
+        $year = $_GET["years"];
+    }
+}
+
+$horse = $horseByYear[$year];
 
 function isYoungHorse($horse){
     return $horse->age <=3 ;
@@ -67,6 +83,22 @@ function isInternationnalEmpty(){
         <?php 
             }
         }else{
+            if(function_exists("shf_connected_block") && shf_connected_block(false)){ ?>
+
+                <nav id="years">
+                <?php
+                
+                    foreach( $yearsOfHorse as $yearOfHorse){
+                        
+                            ?>
+                        <a href="?id=<?php echo $_GET['id']; ?>&years=<?php echo $yearOfHorse; ?>" class="<?php if($yearOfHorse ==$year ) echo "selected"; ?>"><?php echo $yearOfHorse; ?></a>
+                        
+                    <?php
+                    }
+                ?>
+                </nav>
+        <?php
+             }
         ?>
         <nav id="horse-menu">
             <ul>

@@ -66,6 +66,11 @@ class AdminPlugin{
                         <label for="file_list_uploaded" class="fas fa-file-csv"><?php _e("Horses", 'horses-catalog'); ?></label>
                         <input type="file" name="<?php echo $this->csvInputName ?>" id="file_list_uploaded" accept=".csv" />
                     </div>
+                    <div>
+                        <label for="year" class="fas fa-calendar-alt"><?php _e("Year", 'horses-catalog'); ?></label>
+                        <input type="number" name="year" id="year" value="<?php echo date("Y"); ?>" required />
+                    </div>
+
                     <div style="display:none">
                         <label for="file_pictures_uploaded" class="fas fa-file-archive"><?php _e("Horse pictures zip", 'horses-catalog'); ?></label>
                         <input type="file" name="<?php echo $this->zipInputName ?>" id="file_pictures_uploaded" accept=".zip" />
@@ -368,7 +373,7 @@ class AdminPlugin{
             mkdir(wp_upload_dir()['basedir']."/horses-catalog/", 0700);
         }
 
-        if(!rename($this->currentCsvFile, wp_upload_dir()['basedir']."/horses-catalog/list_horse.csv")){
+        if(!rename($this->currentCsvFile, wp_upload_dir()['basedir']."/horses-catalog/list_horses_".$_POST["year"].".csv")){
             array_push($this->errors, __("Error during copie after file validating", 'horses-catalog'));
         }
 

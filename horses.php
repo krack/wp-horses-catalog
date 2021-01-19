@@ -105,15 +105,22 @@ class Horses{
         self::$list = [];
         self::$map = [];
         self::$birth_years = [];
-        $csvReader = new CsvReader(wp_upload_dir()['basedir']."/horses-catalog/list_horse.csv");
-        $rawDataList = $csvReader->readFile();
+        $files = glob(wp_upload_dir()['basedir']."/horses-catalog/list_horses_*.csv", GLOB_BRACE);
+        foreach ($files as $file){
+            preg_match('/list_horses_([0-9]{4}).csv/', $file, $matches, PREG_OFFSET_CAPTURE);
+            $year_file = $matches[1][0];
+            $csvReader = new CsvReader($file);
+            $rawDataList = $csvReader->readFile();
 
-        foreach ($rawDataList as $rawData){
-            $horse = new Horses($rawData);
-            self::$map[$horse->id] = $horse;
-            if($horse->birthYear != null){
-                array_push(self::$list, $horse);
-                array_push(self::$birth_years, $horse->birthYear);
+            foreach ($rawDataList as $rawData){
+                $horse = new Horses($rawData);
+                if(self::$map[$horse->id] == null){
+                    array_push(self::$list, $horse);
+                    array_push(self::$birth_years, $horse->birthYear);
+                    self::$map[$horse->id] = [];
+                }
+                self::$map[$horse->id][$year_file] = $horse;
+                 
             }
         }
         self::$birth_years = array_unique(self::$birth_years);
