@@ -63,6 +63,7 @@ function isInternationnalEmpty(){
             if($horse->id != null){    
         ?>
             <h2><?php _e("Coming soon online", 'horses-catalog'); ?></h2>
+            <div style="height: 200px"></div>
         <?php 
             }
         }else{
