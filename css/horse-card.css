@@ -217,6 +217,37 @@ form input[type=submit] {
     margin-bottom: 10px;
 }
 
+nav#years{
+    text-align: center;
+    border: none;
+    display: block;
+}
+nav#years a{
+    border: solid 1px #152857;
+    font-family: "FengardoNeue_Black";
+    padding-bottom: 7px;
+    color:#152857;
+    background-color:#fff;
+    border-radius:1.55em;
+    cursor:pointer;
+    display:inline-block;
+    font-size:1.125em;
+    padding:.667em 1.333em;
+    text-align:center;
+    margin-bottom: 10px;
+}
+nav#years a.selected, nav#years a:hover, nav#years a:active{
+    font-family: "FengardoNeue_Black";
+    background-color: #152857;
+    color: #fff;
+}
+
+@media only screen and (max-width: 959px) {
+    nav#years a{
+        font-size:0.7em;
+    }
+}
+
 nav#horse-menu {
     margin-left: 11%;
     width: 78%;
@@ -227,7 +258,7 @@ nav#horse-menu {
     width: 100%;
 }
 
-.detail-card .race {
+.detail-card .race, .detail-card .pga {
     display: block;
     background-repeat: no-repeat;
     background-size: contain;
@@ -253,6 +284,13 @@ nav#horse-menu {
 
 .detail-card .race.AA {
     background-image: url("images/logo_anaa.jpg");
+}
+
+.detail-card .pga {
+    background-image: url("images/logo_pga.png");
+    right: 15%;
+    width: 100px;
+    height: 100px;
 }
 
 .detail-card .categorie {
@@ -306,10 +344,16 @@ nav#horse-menu {
 }
 
 @media only screen and (max-width: 959px) {
-    .detail-card .race {
+    .detail-card .race, .detail-card .pga {
         width: 40px;
         height: 40px;
-        right: 3%;
+        right: 2.5%;
+        bottom: -20px;
+    }
+    .detail-card .pga {
+        width: 40px;
+        height: 40px;
+        right: 17%;
         bottom: -20px;
     }
     .detail-card .race.PSFO {
@@ -1422,5 +1466,92 @@ text-align: center;
 
 
 
+
+}
+
+
+/* slider note */
+
+.root-notation .temperament .note{
+    margin: auto;
+    height: 50px;
+}
+
+.root-notation .temperament .note > div{
+    display: inline-block;
+}
+.root-notation .temperament .note .note-label{
+    width: 250px;
+    text-align: right;
+}
+.root-notation .temperament .note .note-label~.note-label{
+    text-align: left;
+}
+.root-notation .temperament div.slider{
+    background-color: #152a5c;
+    height: 4px;
+    width: 350px;
+    text-align: left;
+    position: relative;
+    top: 12px;
+}
+
+
+@media only screen and (max-width: 959px) {
+    .root-notation .temperament div.slider{
+        max-width: 25%;
+    }
+
+    .root-notation .temperament .note .note-label{
+        max-width: 25%;
+    }
+}
+
+.root-notation .temperament div.slider .before, .root-notation .temperament div.slider .after, .root-notation .temperament div.slider .slider-value{
+    display: inline-block;
+    position: relative;
+    height: 12px;
+    width: 2px;
+    top: -4px;
+    background-color: #152a5c;
+    
+}
+.root-notation .temperament div.slider .slider-value{
+    height: 22px;
+    width: 4px;
+    top: -8px;
+    background-color: #152a5c;
+    text-align: left;
+}
+.root-notation .temperament div.slider .slider-value.mobile{
+    display: none;
+}
+@media only screen and (max-width: 959px) {
+    .root-notation .temperament div.slider .slider-value{
+        display: none;
+    }
+    .root-notation .temperament div.slider .slider-value.mobile{
+        display: block;
+    }
+}
+
+
+.root-notation .temperament div.slider .before{
+    float: left;
+}
+
+.root-notation .temperament div.slider .after{
+    float: right;
+}
+
+.temperament h4{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.temperament p{
+    margin-top: 0px;
+    margin-top: 5px;
+    font-size: 0.89em;
+    font-style: italic;
 
 }

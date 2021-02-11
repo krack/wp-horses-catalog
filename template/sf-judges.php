@@ -2,36 +2,50 @@
     <h2><?php _e("Expertise judges SF", 'horses-catalog') ?></h2>
         <div class="back"></div>
     <div>
-        <div class="model list-note">
-            <h3><?php _e("Modele", 'horses-catalog') ?></h3>
-            <div>
-                <div class="notation">
-                    <span class="label"><?php _e("Race type", 'horses-catalog') ?></span>
-                    <span class="value"><?php echo $horse->notes->sfExprets->raceType; ?></span>
-                </div>
-                <div class="notation">
-                    <span class="label"><?php _e("Head tie - neckline", 'horses-catalog') ?></span>
-                    <span class="value"><?php echo $horse->notes->sfExprets->neck; ?></span>
-                </div>
-                <div class="notation">
-                    <span class="label"><?php _e("Front profile (shoulder- forearm)", 'horses-catalog') ?></span>
-                    <span class="value"><?php echo $horse->notes->sfExprets->frontProfile; ?></span>
-                </div>
-                <div class="notation">
-                    <span class="label"><?php _e("Top line(tourniquet-dos-kidney)", 'horses-catalog') ?></span>
-                    <span class="value"><?php echo $horse->notes->sfExprets->topLine; ?></span>
-                </div class="notation">
+        <?php
+         function is5YearsDataArePresent(){
+            global $horse;
+            $isEmpty = true;
+            $isEmpty &= (($horse->notes->sfExprets->obstacleEquilibre) == null);
+            $isEmpty &= (($horse->notes->sfExprets->obstacleMeansPath) == null);
+            $isEmpty &= (($horse->notes->sfExprets->obstacleStyle) == null);
+            $isEmpty &= (($horse->notes->sfExprets->obstacleBehaviour) == null);
+            return !$isEmpty;
+        }
+        
+        
+        if(!is5YearsDataArePresent()){ ?>
+            <div class="model list-note">
+                <h3><?php _e("Modele", 'horses-catalog') ?></h3>
+                <div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Race type", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->raceType; ?></span>
+                    </div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Head tie - neckline", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->neck; ?></span>
+                    </div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Front profile (shoulder- forearm)", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->frontProfile; ?></span>
+                    </div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Top line(tourniquet-dos-kidney)", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->topLine; ?></span>
+                    </div class="notation">
 
-                <div class="notation">
-                    <span class="label"><?php _e("Rear profile(rump-thigh-basin)", 'horses-catalog') ?></span>
-                    <span class="value"><?php echo $horse->notes->sfExprets->backProfile; ?></span>
-                </div> 
-                <div class="notation">
-                    <span class="label"><?php _e("Limbs", 'horses-catalog') ?></span>
-                    <span class="value"><?php echo $horse->notes->sfExprets->limbs; ?></span>
+                    <div class="notation">
+                        <span class="label"><?php _e("Rear profile(rump-thigh-basin)", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->backProfile; ?></span>
+                    </div> 
+                    <div class="notation">
+                        <span class="label"><?php _e("Limbs", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->limbs; ?></span>
+                    </div>
                 </div>
             </div>
-        </div>
+        <?php } ?>
         <?php if(!isYoungHorse($horse) && ($horse->notes->sfExprets->locomotion != null && $horse->notes->sfExprets->locomotionComment != null)){ ?>
         <div class="locomotion">
             <h3><?php _e("Locomotion and general functioning", 'horses-catalog') ?></h3>
@@ -87,7 +101,7 @@
             </div>
         <?php } ?>
 
-        <?php if(!isYoungHorse($horse)){ ?>
+        <?php if(!isYoungHorse($horse) && !is5YearsDataArePresent()){ ?>
             <div class="freejump">
                 <h3><?php _e("Jumping ability", 'horses-catalog') ?></h3>
                 <div>
@@ -135,6 +149,62 @@
 
         <?php } ?>
 
+        <!-- part for 5year updated dada -->
+        <?php 
+        
+        if(is5YearsDataArePresent($horse)){ ?>
+            <div class="cso list-note">
+                <h3><?php _e("Expertise judges SF obstacle", 'horses-catalog') ?></h3>
+                <div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Locomotion/Galop", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->locomotionGallop; ?></span>
+                    </div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Equilibre & availability", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo$horse->notes->sfExprets->obstacleEquilibre; ?></span>
+                    </div> 
+                    <div class="notation">
+                        <span class="label"><?php _e("Means & path", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->obstacleMeansPath; ?></span>
+                    </div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Style", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->obstacleStyle; ?></span>
+                    </div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Behaviours", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->obstacleBehaviour; ?></span>
+                    </div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Impression in a body", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->globale; ?></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="model list-note">
+                <h3><?php _e("Expertise judges SF model", 'horses-catalog') ?></h3>
+                <div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Race type", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->raceType; ?></span>
+                    </div>
+                
+                    <div class="notation">
+                        <span class="label"><?php _e("Top line", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->topLine; ?></span>
+                    </div class="notation">
+
+                    <div class="notation">
+                        <span class="label"><?php _e("Limbs", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->limbs; ?></span>
+                    </div>
+                </div>
+            </div>
+
+        <?php } ?>
+
     </div>
 
     <?php if(isYoungHorse($horse)){ ?>
@@ -145,4 +215,7 @@
         </div>
     </div>
     <?php } ?>
+
+
+   
 </div>

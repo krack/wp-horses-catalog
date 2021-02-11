@@ -140,6 +140,8 @@ class Horses{
     public $size;
     public $discipline;
 
+    public $isPga;
+
     
 
     public $breeder;
@@ -222,6 +224,9 @@ class Horses{
         $this->globalEvaluation = $rawData["categorie"];
 
         $this->contact = new Contact($rawData);
+
+
+        $this->isPga= strtoupper($rawData["pga"]) == "PGA";
         
     }
 
@@ -297,6 +302,11 @@ class SFExprets{
     public $freeObstacleStyle;
     public $freeObstacleRespect;
 
+    public $obstacleEquilibre;
+    public $obstacleMeansPath;
+    public $obstacleStyle;
+    public $obstacleBehaviour;
+
     public function __construct($rawData) {
         $this->raceType = $rawData["expertise_sf_note_race"];
         $this->neck = $rawData["expertise_sf_note_encolure"];
@@ -334,6 +344,13 @@ class SFExprets{
 
 
         $this->globale = $rawData["expertise_sf_note_impression_ensemble"];
+
+
+        $this->obstacleEquilibre = $rawData["expertise_sf_note_equilibre_disponibilité"];
+        $this->obstacleMeansPath = $rawData["expertise_sf_note_moyens_trajectoire"];
+        $this->obstacleStyle = $rawData["expertise_sf_note_style"];
+        $this->obstacleBehaviour = $rawData["expertise_sf_note_comportement"];
+        
 
         
     }

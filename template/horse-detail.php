@@ -91,7 +91,7 @@ function isInternationnalEmpty(){
                     foreach( $yearsOfHorse as $yearOfHorse){
                         
                             ?>
-                        <a href="?id=<?php echo $_GET['id']; ?>&years=<?php echo $yearOfHorse; ?>" class="<?php if($yearOfHorse ==$year ) echo "selected"; ?>"><?php echo $yearOfHorse; ?></a>
+                        <a href="?id=<?php echo $_GET['id']; ?>&years=<?php echo $yearOfHorse; ?>#pedigree" class="<?php if($yearOfHorse ==$year ) echo "selected"; ?>"><?php echo sprintf(__("Expertise at %s years (%s)", 'horses-catalog'),($yearOfHorse - $horse->birthYear), $yearOfHorse);?></a>
                         
                     <?php
                     }
@@ -144,6 +144,10 @@ function isInternationnalEmpty(){
 
 
         <img class="profil" src="<?php echo $profileUrl; ?>" alt="profil <?php echo $horse->name ?>" />
+        <?php if($horse->isPga ){ ?>
+            <span class="pga">PGA</span>
+
+        <?php } ?>
         <span class="race <?php echo $horse->logo ?>"><?php echo $horse->logo ?></span>
     </div>
     <?php if($horse->globalEvaluation !=null) { ?>
@@ -165,7 +169,8 @@ function isInternationnalEmpty(){
     <?php if($horse->projections != null){ ?>
         <div>
             <span class="value" ><?php echo $horse->projections ?></span>
-            <span><?php _e("Protected mares in 2018", 'horses-catalog') ?></span>
+            <span><?php echo sprintf(__("Protected mares in %s", 'horses-catalog'), ($year  -1 )); ?></span>
+            
         </div>
     <?php } ?>
     <?php if($horse->riding != null){ ?>

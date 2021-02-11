@@ -83,9 +83,67 @@ if(!isTestingEmpty()){
         }
 
     }
+
+    function displayNoteInSlider($number, $labelMin, $labelMax){
+    ?>
+        <div class="note">
+            <div class="note-label"><?php echo $labelMin; ?></div>
+            <div class="slider" title="<?php echo $number;?>/5">
+                <div class="before"></div>
+                <div class="after"></div>
+                <div class="slider-value value-<?php echo $number;?>" style="margin-left: <?php echo max(min(($number-1)*25, 96), 2); ?>%"></div>
+                <div class="slider-value value-<?php echo $number;?> mobile" style="margin-left: <?php echo max(min(($number-1)*25, 88), 5); ?>%"></div>
+            </div>
+            <div class="note-label"><?php echo $labelMax; ?></div>
+        </div>
+    <?php     
+
+    }
     ?>
     <div class="temperament">
         <h3><?php _e("Temperament - Behavior", 'horses-catalog') ?></h3>
+        <div>
+                <div>
+                    <h4><?php _e("Emotionality", 'horses-catalog'); ?></h4>
+                    <p><?php _e("evaluation of emotionality in relation to the environment", 'horses-catalog'); ?></p>
+                    <?php displayNoteInSlider($horse->notes->temperament->emotionality, __("Confident", 'horses-catalog'), __("Emotional", 'horses-catalog')); ?>              
+                </div>
+                <div>
+                    <h4><?php  _e("Sensory sensitivity", 'horses-catalog'); ?></h4>
+                    <p><?php _e("evaluation of the horse's reaction to a human request", 'horses-catalog'); ?></p>
+                    <?php displayNoteInSlider($horse->notes->temperament->sensorySensitivity, __("Not very reactive, not very sensitive", 'horses-catalog'), __("Reactive, very sensitive", 'horses-catalog')); ?>         
+                </div>
+                <div>
+                    <h4><?php _e("Reactivity towards humans", 'horses-catalog'); ?></h4>
+                    <p><?php _e("evaluation of the horse's reaction to human movements", 'horses-catalog'); ?></p>
+                    <?php displayNoteInSlider($horse->notes->temperament->humainReact, __("Worried", 'horses-catalog'), __("In trust", 'horses-catalog')); ?>
+                </div>
+                <div>
+                    <h4><?php _e("Motor activity", 'horses-catalog'); ?></h4>
+                    <?php displayNoteInSlider($horse->notes->temperament->traction, __("Cold", 'horses-catalog'), __("Energetic", 'horses-catalog')); ?>
+                </div>
+                
+            <?php 
+            if($horse->notes->temperament->gregariousness != 0){
+            ?>
+                <div>
+                    <h4><?php _e("Gregariousness", 'horses-catalog'); ?></h4>
+                    <p><?php _e("sensitivity to the presence of its congeners", 'horses-catalog'); ?></p>
+                    <?php displayNoteInSlider($horse->notes->temperament->gregariousness, __("Becomes distracted", 'horses-catalog'), __("Stay focused", 'horses-catalog')); ?>
+                </div>
+             <?php 
+            }
+            ?>
+                <br /><br /><br /><br />
+            <?php
+            for($k = 1; $k <= 5; $k++){
+               displayNoteInSlider($k, "test $k", "test $k");
+            }
+           
+            ?>
+            
+        </div>
+
         <div>
             <div class="notation">
                 <span class="label"><?php _e("Emotionality", 'horses-catalog') ?></span>
@@ -120,6 +178,9 @@ if(!isTestingEmpty()){
 
 
         </div>
+
+
+        
         <div class="comment">
             <div>
                 <span class="label"><?php _e("Behavior under the saddle", 'horses-catalog') ?></span>
