@@ -6,7 +6,7 @@
  * Plugin URI: 
  * Description: Plugin to display a catalog of horses.
  * Author: Sylvain Gandon
- * Version: 0.1
+ * Version: 0.2
  * Author URI: 
 */
 

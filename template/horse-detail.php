@@ -24,7 +24,8 @@ if(function_exists("shf_connected_block") && shf_connected_block(false)){
 $horse = $horseByYear[$year];
 
 function isYoungHorse($horse){
-    return $horse->age <=3 ;
+    global $year;
+    return $year - $horse->birthYear <= 3 ;
 }
 
 function isTestingEmpty(){
@@ -87,11 +88,29 @@ function isInternationnalEmpty(){
 
                 <nav id="years">
                 <?php
+
+                    function has2years(){
+                        global $yearsOfHorse, $horse;
+                        foreach( $yearsOfHorse as $yearOfHorse){
+                            if(($yearOfHorse-1 - $horse->birthYear)==2){
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
                 
                     foreach( $yearsOfHorse as $yearOfHorse){
                         
                             ?>
-                        <a href="?id=<?php echo $_GET['id']; ?>&years=<?php echo $yearOfHorse; ?>#pedigree" class="<?php if($yearOfHorse ==$year ) echo "selected"; ?>"><?php echo sprintf(__("Expertise at %s years (%s)", 'horses-catalog'),($yearOfHorse - $horse->birthYear), $yearOfHorse);?></a>
+                        <a href="?id=<?php echo $_GET['id']; ?>&years=<?php echo $yearOfHorse; ?>#pedigree" class="<?php if($yearOfHorse ==$year ) echo "selected"; ?>">
+                                <?php 
+                                if( !has2years()){
+                                    echo sprintf(__("Expertise at %s years (%s)", 'horses-catalog'),($yearOfHorse-1 - $horse->birthYear), ($yearOfHorse-1));
+                                }else{
+                                    echo sprintf(__("Expertise at %s years %s", 'horses-catalog'),3, (($yearOfHorse-1 - $horse->birthYear)==2)? __("Championnat", 'horses-catalog'): __("Testage", 'horses-catalog'));
+                                }
+                                ?>
+                        </a>
                         
                     <?php
                     }
@@ -105,7 +124,7 @@ function isInternationnalEmpty(){
                 
                 <li><a href="#pedigree"><?php _e("Pedigree", 'horses-catalog') ?></a></li>
 
-                <?php if(!isYoungHorse($horse)){ ?>
+                <?php if($horse->strongPoints != NULL){ ?>
                 <li class="<?php shf_connected_class() ?>"><a href="#strong_points"><?php _e("Strong points", 'horses-catalog') ?></a></li>
                 <?php } ?>
 
@@ -118,7 +137,8 @@ function isInternationnalEmpty(){
                 <?php if(!isYoungHorse($horse) && !isInternationnalEmpty()){ ?>
                 <li class="<?php shf_connected_class() ?>"><a href="#opinion"><?php _e("Riders reviews", 'horses-catalog') ?></a></li>
                 <?php } ?> 
-                <li class="<?php shf_connected_class() ?>"><a href="#video"><?php _e("Video", 'horses-catalog') ?></a></li>    
+                <li class="<?php shf_connected_class() ?>"><a href="#video"><?php _e("Images", 'horses-catalog') ?></a></li>   
+
             </ul>
         </nav>
     </div>
@@ -189,7 +209,7 @@ function isInternationnalEmpty(){
     </div>
 
     <div class="individual">
-        <span class="size"><?php echo $horse->size ?></span>
+        <span class="size"><?php echo $horse->size .((strlen($horse->size)<=3)?"0": ""); ?></span>
         <span class="coat-color"><?php echo $horse->coatColor; ?></span>
         <span class="birth-year"><?php echo $horse->birthYear; ?></span>
 
@@ -217,9 +237,7 @@ function isInternationnalEmpty(){
         <span class="value"><?php echo $horse->osteopathyStatus; ?><span>
    </div>  
     <?php 
-     if(!isYoungHorse($horse)){
         include("strong-points.php"); 
-     }
      ?>
 
     <?php include("mother-notes.php"); ?>

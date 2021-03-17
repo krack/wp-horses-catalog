@@ -47,8 +47,8 @@ if(!isTestingEmpty()){
                     <span class="label"><?php _e("Style on the obstacle", 'horses-catalog') ?></span>
                     <span class="value"><?php echo $horse->notes->testingExprets->ridingObstacleStyle; ?></span>
                 </div>
-                <div class="notation doublelines">
-                    <span class="label"><?php _e("Blood, will, respect & bar intelligence", 'horses-catalog') ?></span>
+                <div class="notation">
+                    <span class="label"><?php _e("Behaviours", 'horses-catalog') ?></span>
                     <span class="value"><?php echo $horse->notes->testingExprets->ridingObstacleRespect; ?></span>
                 </div>
             </div>
@@ -100,50 +100,51 @@ if(!isTestingEmpty()){
 
     }
     ?>
-    <div class="temperament">
+    <div class="temperament <?php  if($horse->notes->temperament->emotionalitySlider != null){ echo "slider-temperament"; } ?>">
         <h3><?php _e("Temperament - Behavior", 'horses-catalog') ?></h3>
+        <?php     
+
+        if($horse->notes->temperament->emotionalitySlider != null){
+        ?>
         <div>
                 <div>
                     <h4><?php _e("Emotionality", 'horses-catalog'); ?></h4>
                     <p><?php _e("evaluation of emotionality in relation to the environment", 'horses-catalog'); ?></p>
-                    <?php displayNoteInSlider($horse->notes->temperament->emotionality, __("Confident", 'horses-catalog'), __("Emotional", 'horses-catalog')); ?>              
+                    <?php displayNoteInSlider($horse->notes->temperament->emotionalitySlider, __("Confident", 'horses-catalog'), __("Emotional", 'horses-catalog')); ?>              
                 </div>
                 <div>
                     <h4><?php  _e("Sensory sensitivity", 'horses-catalog'); ?></h4>
                     <p><?php _e("evaluation of the horse's reaction to a human request", 'horses-catalog'); ?></p>
-                    <?php displayNoteInSlider($horse->notes->temperament->sensorySensitivity, __("Not very reactive, not very sensitive", 'horses-catalog'), __("Reactive, very sensitive", 'horses-catalog')); ?>         
+                    <?php displayNoteInSlider($horse->notes->temperament->sensorySensitivitySlider, __("Not very reactive, not very sensitive", 'horses-catalog'), __("Reactive, very sensitive", 'horses-catalog')); ?>         
                 </div>
                 <div>
                     <h4><?php _e("Reactivity towards humans", 'horses-catalog'); ?></h4>
                     <p><?php _e("evaluation of the horse's reaction to human movements", 'horses-catalog'); ?></p>
-                    <?php displayNoteInSlider($horse->notes->temperament->humainReact, __("Worried", 'horses-catalog'), __("In trust", 'horses-catalog')); ?>
+                    <?php displayNoteInSlider($horse->notes->temperament->humainReactSlider, __("Worried", 'horses-catalog'), __("In trust", 'horses-catalog')); ?>
                 </div>
                 <div>
                     <h4><?php _e("Motor activity", 'horses-catalog'); ?></h4>
-                    <?php displayNoteInSlider($horse->notes->temperament->traction, __("Cold", 'horses-catalog'), __("Energetic", 'horses-catalog')); ?>
+                    <?php displayNoteInSlider($horse->notes->temperament->tractionSlider, __("Cold", 'horses-catalog'), __("Energetic", 'horses-catalog')); ?>
                 </div>
                 
             <?php 
-            if($horse->notes->temperament->gregariousness != 0){
+            if($horse->notes->temperament->gregariousnessSlider != 0){
             ?>
                 <div>
                     <h4><?php _e("Gregariousness", 'horses-catalog'); ?></h4>
                     <p><?php _e("sensitivity to the presence of its congeners", 'horses-catalog'); ?></p>
-                    <?php displayNoteInSlider($horse->notes->temperament->gregariousness, __("Becomes distracted", 'horses-catalog'), __("Stay focused", 'horses-catalog')); ?>
+                    <?php displayNoteInSlider($horse->notes->temperament->gregariousnessSlider, __("Becomes distracted", 'horses-catalog'), __("Stay focused", 'horses-catalog')); ?>
                 </div>
              <?php 
             }
             ?>
-                <br /><br /><br /><br />
-            <?php
-            for($k = 1; $k <= 5; $k++){
-               displayNoteInSlider($k, "test $k", "test $k");
-            }
-           
-            ?>
             
         </div>
-
+        <?php
+        }
+         
+        if($horse->notes->temperament->emotionality != null){
+        ?>
         <div>
             <div class="notation">
                 <span class="label"><?php _e("Emotionality", 'horses-catalog') ?></span>
@@ -178,18 +179,37 @@ if(!isTestingEmpty()){
 
 
         </div>
-
+        <?php
+            }
+        ?>
 
         
         <div class="comment">
+            <?php if($horse->notes->temperament->seatComment != null){ ?>
             <div>
                 <span class="label"><?php _e("Behavior under the saddle", 'horses-catalog') ?></span>
                 <pre><?php echo $horse->notes->temperament->seatComment; ?></pre>
              </div>
+             <?php 
+            }
+            ?>
+            <?php if($horse->notes->temperament->careComment != null){ ?>
              <div>
                 <span class="label"><?php _e("Behavior in care", 'horses-catalog') ?></span>
                 <pre><?php echo $horse->notes->temperament->careComment; ?></pre>
             </div>
+            <?php 
+            }
+            ?>
+
+            <?php if($horse->notes->temperament->globalComment != null){ ?>
+             <div>
+                <span class="label"><?php _e("Globale behavior", 'horses-catalog') ?></span>
+                <pre><?php echo $horse->notes->temperament->globalComment; ?></pre>
+            </div>
+            <?php 
+            }
+            ?>
         </div>
     </div>
 </div>

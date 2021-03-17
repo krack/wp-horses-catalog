@@ -306,6 +306,10 @@ nav#horse-menu {
     background: radial-gradient(#152857, #0b0f1e);
 }
 
+.detail-card .categorie.A.SUIVRE {
+    background: radial-gradient(#3d7140, #41453e);
+}
+
 .detail-card .categorie::before, .detail-card .categorie::after {
     content: "\25C6";
     margin: 0 3px;
@@ -545,6 +549,10 @@ nav#horse-menu {
     margin-left: 20px;
     cursor: help;
 }
+#sf .fa-info-circle{
+    cursor: help;
+
+}
 @media only screen and (max-width: 959px) {
     #maternal .fa-info-circle{
         margin-top: 76px;
@@ -577,6 +585,18 @@ nav#horse-menu {
     bottom: 0;
     right: 30%;
     z-index: -1;
+}
+
+#young-locomotion{
+    margin-left: auto;
+    margin-right: auto;
+    float: none ;
+    
+}
+#young-obstacle{
+    float: left ;
+    text-align: left ;
+    margin-top: 0;
 }
 
 @media only screen and (max-width: 959px) {
@@ -1051,10 +1071,16 @@ video {
 }
 
 @media only screen and (min-width: 1200px) {
-    #video, .gallery {
+    #video, #video + .gallery {
         width: 49%;
         float: left;
-        margin-top: 00px;
+    }
+
+    .gallery {
+        width: 49%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 .fiche{
@@ -1173,7 +1199,7 @@ footer {
 }
 
 
-.mother-help{
+.mother-help,.bonus-help{
     position: fixed;
     top: 100px;
     bottom: 100px;
@@ -1186,6 +1212,16 @@ footer {
 }
 .mother-help img{
     width: 75%;
+}
+.bonus-help{
+    width: 800px;
+    background-color: white;
+    text-align: left;
+    padding: 20px;
+    height: 320px;
+}
+.bonus-help .new{
+    color: red;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -1203,6 +1239,12 @@ footer {
     .mother-help{
         top: 50px;
         bottom: 50px;
+    }
+    .bonus-help{
+
+        width: 95%;
+        padding: 10px;
+        height: 550px;
     }
 }
 
@@ -1472,6 +1514,17 @@ text-align: center;
 
 /* slider note */
 
+.root-notation > div.slider-temperament > div:nth-child(2n) > *{
+    margin-left: 0px;
+
+}
+.slider-temperament h4{
+    font-size: 1em;
+}
+.slider-temperament p{
+    font-size: 0.9em;
+}
+
 .root-notation .temperament .note{
     margin: auto;
     height: 50px;
@@ -1483,6 +1536,7 @@ text-align: center;
 .root-notation .temperament .note .note-label{
     width: 250px;
     text-align: right;
+    font-size: 0.9em;
 }
 .root-notation .temperament .note .note-label~.note-label{
     text-align: left;
@@ -1553,5 +1607,29 @@ text-align: center;
     margin-top: 5px;
     font-size: 0.89em;
     font-style: italic;
+
+}
+
+/* cross part */
+.root-notation > div > div.cross .value{
+    clear: none;
+    text-align: center;
+    padding-left: 5px;
+}
+
+.root-notation > div > div.cross .value+.value{
+    border-right: 1px solid black;
+    text-align: center;
+}
+
+.root-notation > div > div.cross .notation.head{
+    background: none;
+}
+
+.root-notation > div > div.cross .notation.head .value{
+    font-size: 0.8em;
+}
+
+.root-notation > div > div.cross .notation.head .value+.value{
 
 }

@@ -89,6 +89,7 @@ class Horses{
         $categories = [];
         array_push($categories, new LabelisationCategory(1, __('Very promising', 'horses-catalog'), "TRES PROMETTEUR"));
         array_push($categories, new LabelisationCategory(2, __('Hope', 'horses-catalog'), "ESPOIR"));
+        array_push($categories, new LabelisationCategory(3, __('To follow', 'horses-catalog'), "A SUIVRE"));
         return $categories;
     }
     public static function getLabelisationCategories($id){
@@ -307,14 +308,43 @@ class SFExprets{
     public $obstacleStyle;
     public $obstacleBehaviour;
 
+    public $locomotionGallopCross;
+    public $obstacleEquilibreCross;
+    public $obstacleMeansPathCross;
+    public $obstacleStyleCross;
+    public $obstacleBehaviourCross;
+    public $globaleCross;
+    public $etalonBonus;
+
     public function __construct($rawData) {
         $this->raceType = $rawData["expertise_sf_note_race"];
+        if($this->raceType == ""){
+            $this->raceType = $rawData["expertise_sf_note_race_cce"];
+        }
+
+        if($this->raceType == ""){
+            $this->raceType = $rawData["expertise_sf_note_race_dr"];
+        }
+
         $this->neck = $rawData["expertise_sf_note_encolure"];
         $this->frontProfile = $rawData["expertise_sf_note_avant"];
         $this->backProfile = $rawData["expertise_sf_note_arriere"];
         $this->topLine = $rawData["expertise_sf_note_dessus"];
-        $this->limbs = $rawData["expertise_sf_note_aplomb"];
+        if($this->topLine == ""){
+            $this->topLine = $rawData["expertise_sf_note_dessus_cce"];
+        }
+        if($this->topLine == ""){
+            $this->topLine = $rawData["expertise_sf_note_dessus_dr"];
+        }
 
+
+        $this->limbs = $rawData["expertise_sf_note_aplomb"];
+        if($this->limbs == ""){
+            $this->limbs = $rawData["expertise_sf_note_aplomb_cce"];
+        }
+        if($this->limbs == ""){
+            $this->limbs = $rawData["expertise_sf_note_aplombs_dr"];
+        }
 
         $this->locomotion = $rawData["expertise_sf_note_locomotion"];
         $this->locomotionComment = $rawData["expertise_sf_note_locomotion_commentaire"];
@@ -350,8 +380,43 @@ class SFExprets{
         $this->obstacleMeansPath = $rawData["expertise_sf_note_moyens_trajectoire"];
         $this->obstacleStyle = $rawData["expertise_sf_note_style"];
         $this->obstacleBehaviour = $rawData["expertise_sf_note_comportement"];
-        
+        if( $this->locomotionGallop == ""){
+            $this->locomotionGallop = $rawData["expertise_sf_note_locomotion_galop_cso_cce"];
+        }
+        if( $this->obstacleEquilibre == ""){
+            $this->obstacleEquilibre = $rawData["expertise_sf_note_equilibre_disponibilité_cso_cce"];
+        }
+        if( $this->obstacleMeansPath == ""){
+            $this->obstacleMeansPath = $rawData["expertise_sf_note_moyens_trajectoire_cso_cce"];
+        }
+        if( $this->obstacleStyle == ""){
+            $this->obstacleStyle = $rawData["expertise_sf_note_style_cso_cce"];
+        }
+        if( $this->obstacleBehaviour == ""){
+            $this->obstacleBehaviour = $rawData["expertise_sf_note_comportement_cso_cce"];
+        }
+        if( $this->globale == ""){
+            $this->globale = $rawData["expertise_sf_note_impression_ensemble_cso_cce"];
+        }
 
+
+        $this->locomotionGallopCross = $rawData["expertise_sf_note_locomotion_galop_cross_cce"];
+        $this->obstacleEquilibreCross = $rawData["expertise_sf_note_equilibre_disponibilité_cross_cce"];
+        $this->obstacleMeansPathCross = $rawData["expertise_sf_note_moyens_trajectoire_cross_cce"];
+        $this->obstacleStyleCross = $rawData["expertise_sf_note_style_cross_cce"];
+        $this->obstacleBehaviourCross = $rawData["expertise_sf_note_comportement_cross_cce"];
+        $this->globaleCross = $rawData["expertise_sf_note_impression_ensemble_cross_cce"];
+
+
+        $this->dressagePace = $rawData["expertise_sf_note_pas_dr"];
+        $this->dressageTrot = $rawData["expertise_sf_note_trot_dr"];
+        $this->dressageGallop = $rawData["expertise_sf_note_galop_dr"];
+        $this->dressageGlobale = $rawData["expertise_sf_note_ensemble_dr"];
+
+        $this->etalonBonus = $rawData["bonus_etalon"];
+
+        $this->modelComment = $rawData["expertise_sf_note_modele_commentaire"];
+        
         
     }
 }
@@ -414,8 +479,15 @@ class Temperament{
     public $traction;
     public $gregariousness;
 
+    public $emotionalitySlider;
+    public $sensorySensitivitySlider;
+    public $humainReactSlider;
+    public $tractionSlider;
+    public $gregariousnessSlider;
+
     public $seatComment;
     public $careComment;
+    public $globalComment;
 
     public function __construct($rawData){
         $this->emotionality = $rawData["temperament_emotivite"];      
@@ -424,8 +496,15 @@ class Temperament{
         $this->traction = $rawData["temperament_motricite"];      
         $this->gregariousness = $rawData["temperament_gregarite"];      
 
+        $this->emotionalitySlider = $rawData["temperament_emotivite_slider"];      
+        $this->sensorySensitivitySlider = $rawData["temperament_sens_slider"];      
+        $this->humainReactSlider = $rawData["temperament_humain_slider"];      
+        $this->tractionSlider = $rawData["temperament_motricite_slider"];      
+        $this->gregariousnessSlider = $rawData["temperament_gregarite_slider"];    
+
         $this->seatComment = $rawData["temperament_selle_commentaire"];      
-        $this->careComment = $rawData["temperament_soins_commentaire"];      
+        $this->careComment = $rawData["temperament_soins_commentaire"];  
+        $this->globalComment = $rawData["temperament_general_commentaire"];          
     }
 }
 	
