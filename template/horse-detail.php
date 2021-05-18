@@ -72,7 +72,7 @@ function isInternationnalEmpty(){
 }
 ?>
 
-<div class="detail-card">
+<div id="horse-catalog" class="detail-card">
     <div class="fixe-part">
         <h1><?php echo $horse->name ?></h1>
         <?php

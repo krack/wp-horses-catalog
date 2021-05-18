@@ -22,14 +22,14 @@ function configure_admin_menu(){
 
 add_action( 'admin_menu', 'configure_admin_menu' );
 
-new PageWithOverrideTemplate("horse-detail", "template/horse-detail.php", ["horse-card.css"]);
+new PageWithOverrideTemplate("horse-detail", "template/horse-detail.php", ["style.css","horse-card.css"]);
 $pageName= get_option( 'menu_page_name' );
 if($pageName == null){
         $pageName = "horse-list"; 
         add_option( 'menu_page_name', $pageName );  
 }
 
-new PageWithOverrideTemplate($pageName, "template/horses-list.php", ["horse-list.css"]);
+new PageWithOverrideTemplate($pageName, "template/horses-list.php", ["style.css", "horse-list.css"]);
 
 $allLinkName = get_option( 'menu-all-elements' );
 if($allLinkName == null){

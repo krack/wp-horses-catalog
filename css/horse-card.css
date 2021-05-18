@@ -586,11 +586,16 @@ nav#horse-menu {
     right: 30%;
     z-index: -1;
 }
-
+#young-model{
+    width: 400px;
+    text-align: left;
+    max-width: 100%;
+}
 #young-locomotion{
     margin-left: auto;
     margin-right: auto;
     float: none ;
+    text-align: left;
     
 }
 #young-obstacle{
@@ -617,6 +622,9 @@ nav#horse-menu {
     }
     .detail-card .individual {
         font-size: 1.2em;
+    }
+    #young-model{
+        width: 100%;
     }
 }
 

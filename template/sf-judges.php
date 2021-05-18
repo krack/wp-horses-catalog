@@ -65,7 +65,9 @@
                         <span class="value"><?php echo $horse->notes->sfExprets->limbs; ?></span>
                     </div>
                     <?php if(isYoungHorse($horse)){ ?>
-                        <pre><?php echo $horse->notes->sfExprets->locomotionComment; ?></pre>
+                        
+                        <pre id="young-model"><?php _e("Comment", 'horses-catalog') ?> :  
+                            <?php echo $horse->notes->sfExprets->locomotionComment; ?></pre>
                     <?php } ?>
                 </div>
             </div>
@@ -96,7 +98,8 @@
                     <span class="label"><?php _e("Gallop", 'horses-catalog') ?></span>
                     <span class="value"><?php echo $horse->notes->sfExprets->locomotionGallop; ?></span>
                 </div>
-                <pre id="young-locomotion"><?php echo $horse->notes->sfExprets->locomotionComment; ?></pre>
+                <pre id="young-locomotion"><?php _e("Comment", 'horses-catalog') ?> : 
+                <?php echo $horse->notes->sfExprets->locomotionComment; ?></pre>
             </div>
         </div>
         <?php } ?>
@@ -123,7 +126,8 @@
                         <span class="value"><?php echo $horse->notes->sfExprets->freeObstacleRespect; ?></span>
                     </div>
 
-                    <pre id="young-obstacle"><?php echo $horse->notes->sfExprets->freeObstacleComment; ?></pre>
+                    <pre id="young-obstacle"><?php _e("Comment", 'horses-catalog') ?> : 
+                    <?php echo $horse->notes->sfExprets->freeObstacleComment; ?></pre>
                 </div>
             </div>
         <?php } ?>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2021-03-13 17:40+0100\n"
-"PO-Revision-Date: 2021-03-13 17:41+0100\n"
+"POT-Creation-Date: 2021-03-18 23:16+0100\n"
+"PO-Revision-Date: 2021-03-18 23:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -487,7 +487,7 @@ msgstr "Par %s x %s"
 msgid "International riders opinion"
 msgstr "L’avis des cavaliers internationaux"
 
-#: template/internationnal.php:11 template/sf-judges.php:148
+#: template/internationnal.php:11 template/sf-judges.php:158
 #: template/testing.php:36
 msgid "Ability to climb jump obstacle"
 msgstr "Aptitude à l’obstacle saut monté"
@@ -552,7 +552,7 @@ msgstr "Expertise juges SF"
 msgid "Modele"
 msgstr "Modèle"
 
-#: template/sf-judges.php:43 template/sf-judges.php:292
+#: template/sf-judges.php:43 template/sf-judges.php:302
 msgid "Race type"
 msgstr "Type race"
 
@@ -572,116 +572,121 @@ msgstr "Ligne de dessus (garrot-dos-rein)"
 msgid "Rear profile(rump-thigh-basin)"
 msgstr "Profil arrière (croupe-bassin-cuisse)"
 
-#: template/sf-judges.php:64 template/sf-judges.php:302
+#: template/sf-judges.php:64 template/sf-judges.php:312
 msgid "Limbs"
 msgstr "Aplombs"
 
-#: template/sf-judges.php:72 template/testing.php:14
+#: template/sf-judges.php:69 template/sf-judges.php:101
+#: template/sf-judges.php:129
+msgid "Comment"
+msgstr "Commentaire"
+
+#: template/sf-judges.php:77 template/testing.php:14
 msgid "Locomotion and general functioning"
 msgstr "Locomotion et fonctionnement général"
 
-#: template/sf-judges.php:82
+#: template/sf-judges.php:87
 msgid "Locomotion"
 msgstr "Locomotion"
 
-#: template/sf-judges.php:85 template/sf-judges.php:231 template/testing.php:17
+#: template/sf-judges.php:90 template/sf-judges.php:241 template/testing.php:17
 msgid "Pace"
 msgstr "Pas"
 
-#: template/sf-judges.php:89 template/sf-judges.php:235 template/testing.php:21
+#: template/sf-judges.php:94 template/sf-judges.php:245 template/testing.php:21
 msgid "Trot"
 msgstr "Trot"
 
-#: template/sf-judges.php:93 template/sf-judges.php:239 template/testing.php:25
+#: template/sf-judges.php:98 template/sf-judges.php:249 template/testing.php:25
 msgid "Gallop"
 msgstr "Galop"
 
-#: template/sf-judges.php:103
+#: template/sf-judges.php:110
 msgid "Ability to obstacle"
 msgstr "Aptitude à l’obstacle"
 
-#: template/sf-judges.php:106 template/sf-judges.php:151
+#: template/sf-judges.php:113 template/sf-judges.php:161
 #: template/testing.php:39
 msgid "Balance on jumps"
 msgstr "Équilibre sur les sauts"
 
-#: template/sf-judges.php:110 template/sf-judges.php:155
+#: template/sf-judges.php:117 template/sf-judges.php:165
 #: template/testing.php:43
 msgid "Means on the obstacle"
 msgstr "Moyens sur l’obstacle"
 
-#: template/sf-judges.php:114 template/sf-judges.php:159
+#: template/sf-judges.php:121 template/sf-judges.php:169
 #: template/testing.php:47
 msgid "Style on the obstacle"
 msgstr "Style sur l’obstacle"
 
-#: template/sf-judges.php:118 template/sf-judges.php:163
-#: template/sf-judges.php:211 template/sf-judges.php:274
+#: template/sf-judges.php:125 template/sf-judges.php:173
+#: template/sf-judges.php:221 template/sf-judges.php:284
 #: template/testing.php:51
 msgid "Behaviours"
 msgstr "Comportement"
 
-#: template/sf-judges.php:127
+#: template/sf-judges.php:137
 msgid "Jumping ability"
 msgstr "Aptitude à l’obstacle saut en liberté"
 
-#: template/sf-judges.php:183
+#: template/sf-judges.php:193
 msgid "Expertise judges SF Obstacle"
 msgstr "Expertise Juges SF Obstacle"
 
-#: template/sf-judges.php:187
+#: template/sf-judges.php:197
 msgid "Cross"
 msgstr "Cross"
 
-#: template/sf-judges.php:188
+#: template/sf-judges.php:198
 msgid "CSO"
 msgstr "CSO"
 
-#: template/sf-judges.php:191 template/sf-judges.php:258
+#: template/sf-judges.php:201 template/sf-judges.php:268
 msgid "Locomotion/Galop"
 msgstr "Locomotion / Galop"
 
-#: template/sf-judges.php:196 template/sf-judges.php:262
+#: template/sf-judges.php:206 template/sf-judges.php:272
 msgid "Equilibre & availability"
 msgstr "Equilibre & disponibilité"
 
-#: template/sf-judges.php:201 template/sf-judges.php:266
+#: template/sf-judges.php:211 template/sf-judges.php:276
 msgid "Means & path"
 msgstr "Moyens & trajectoire"
 
-#: template/sf-judges.php:206 template/sf-judges.php:270
+#: template/sf-judges.php:216 template/sf-judges.php:280
 msgid "Style"
 msgstr "Style"
 
-#: template/sf-judges.php:216 template/sf-judges.php:278
+#: template/sf-judges.php:226 template/sf-judges.php:288
 msgid "Impression in a body"
 msgstr "Impression d'ensemble"
 
-#: template/sf-judges.php:228
+#: template/sf-judges.php:238
 msgid "Expertise judges SF Paces"
 msgstr "Expertise Juges SF Allures"
 
-#: template/sf-judges.php:243 template/sf-judges.php:322
+#: template/sf-judges.php:253 template/sf-judges.php:332
 msgid "Globale impression"
 msgstr "Impression d’ensemble"
 
-#: template/sf-judges.php:255
+#: template/sf-judges.php:265
 msgid "Expertise judges SF obstacle"
 msgstr "Expertise Juges SF Obstacle"
 
-#: template/sf-judges.php:289
+#: template/sf-judges.php:299
 msgid "Expertise judges SF model"
 msgstr "Expertise Juges SF Modèle"
 
-#: template/sf-judges.php:297
+#: template/sf-judges.php:307
 msgid "Top line"
 msgstr "Ligne de dessus"
 
-#: template/sf-judges.php:313
+#: template/sf-judges.php:323
 msgid "Stallion Bonus Assessment"
 msgstr "Appréciation Bonus Etalon"
 
-#: template/sf-judges.php:313
+#: template/sf-judges.php:323
 msgid "Click to learn bonus etalons"
 msgstr "Cliquez pour apprendre le bonus étalons"
 
