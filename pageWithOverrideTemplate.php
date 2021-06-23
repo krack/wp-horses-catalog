@@ -32,7 +32,7 @@ class PageWithOverrideTemplate{
     }
 
     private function add(){
-        add_action( 'wp_enqueue_scripts', array( $this,'wptuts_scripts_basicAppointmentPlugin') );
+        add_action( 'wp_enqueue_scripts', array( $this,'wptuts_scripts_basicAppointmentPlugin'), 999999 );
         
         
     }

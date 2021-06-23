@@ -107,6 +107,7 @@ class Horses{
         self::$map = [];
         self::$birth_years = [];
         $files = glob(wp_upload_dir()['basedir']."/horses-catalog/list_horses_*.csv", GLOB_BRACE);
+        $files = array_reverse($files);
         foreach ($files as $file){
             preg_match('/list_horses_([0-9]{4}).csv/', $file, $matches, PREG_OFFSET_CAPTURE);
             $year_file = $matches[1][0];

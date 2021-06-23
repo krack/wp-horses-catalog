@@ -64,10 +64,10 @@
                         <span class="label"><?php _e("Limbs", 'horses-catalog') ?></span>
                         <span class="value"><?php echo $horse->notes->sfExprets->limbs; ?></span>
                     </div>
-                    <?php if(isYoungHorse($horse)){ ?>
+                    <?php if(isYoungHorse($horse) && $horse->notes->sfExprets->modelComment != null){ ?>
                         
                         <pre id="young-model"><?php _e("Comment", 'horses-catalog') ?> :  
-                            <?php echo $horse->notes->sfExprets->locomotionComment; ?></pre>
+                            <?php echo $horse->notes->sfExprets->modelComment; ?></pre>
                     <?php } ?>
                 </div>
             </div>
@@ -98,8 +98,14 @@
                     <span class="label"><?php _e("Gallop", 'horses-catalog') ?></span>
                     <span class="value"><?php echo $horse->notes->sfExprets->locomotionGallop; ?></span>
                 </div>
+                <?php
+                if($horse->notes->sfExprets->locomotionComment != null){
+                ?>
                 <pre id="young-locomotion"><?php _e("Comment", 'horses-catalog') ?> : 
                 <?php echo $horse->notes->sfExprets->locomotionComment; ?></pre>
+                <?php
+                }
+                ?>
             </div>
         </div>
         <?php } ?>
@@ -125,9 +131,14 @@
                         <span class="label"><?php _e("Behaviours", 'horses-catalog') ?></span>
                         <span class="value"><?php echo $horse->notes->sfExprets->freeObstacleRespect; ?></span>
                     </div>
-
+                    <?php
+                    if($horse->notes->sfExprets->freeObstacleComment != null){
+                    ?>
                     <pre id="young-obstacle"><?php _e("Comment", 'horses-catalog') ?> : 
                     <?php echo $horse->notes->sfExprets->freeObstacleComment; ?></pre>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         <?php } ?>

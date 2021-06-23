@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2021-03-18 23:16+0100\n"
-"PO-Revision-Date: 2021-03-18 23:16+0100\n"
+"POT-Creation-Date: 2021-05-26 09:50+0200\n"
+"PO-Revision-Date: 2021-05-26 09:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -31,69 +31,69 @@ msgstr "importeur de la liste des document"
 msgid "Documents"
 msgstr "Documents"
 
-#: adminPlugin.php:47 adminPlugin.php:447
+#: adminPlugin.php:49 adminPlugin.php:529
 msgid "Import manager"
 msgstr "Importer"
 
-#: adminPlugin.php:50 adminPlugin.php:450
+#: adminPlugin.php:52 adminPlugin.php:532
 msgid "File uploaded"
 msgstr "Fichier uploadé"
 
-#: adminPlugin.php:59 adminPlugin.php:459
+#: adminPlugin.php:61 adminPlugin.php:541
 msgid "The file already existing, it will be overrided."
 msgstr "Il existe déjà un fichier valide, celui-ci sera surchargé."
 
-#: adminPlugin.php:61
+#: adminPlugin.php:63
 msgid "Warning : no file uploaded, the catalog is empty."
 msgstr ""
 "Attention : aucun fichier valide chargé pour le moment, le catalog est donc "
 "vide."
 
-#: adminPlugin.php:66
+#: adminPlugin.php:68
 msgid "Horses"
 msgstr "Chevaux"
 
-#: adminPlugin.php:70
+#: adminPlugin.php:72
 msgid "Year"
 msgstr "Année"
 
-#: adminPlugin.php:75
+#: adminPlugin.php:77
 msgid "Horse pictures zip"
 msgstr "Zip d'images des chevaux"
 
-#: adminPlugin.php:79
+#: adminPlugin.php:81
 msgid "Ignore pictures requeried and use media"
 msgstr "Ignorer le besoin des photos requises et utilisé les médias"
 
-#: adminPlugin.php:85 adminPlugin.php:470
+#: adminPlugin.php:87 adminPlugin.php:552
 msgid "Import"
 msgstr "Importer"
 
-#: adminPlugin.php:92
+#: adminPlugin.php:94
 msgid "Configuration labels"
 msgstr "Configuration des labels"
 
-#: adminPlugin.php:95
+#: adminPlugin.php:97
 msgid "saved"
 msgstr "savegardé"
 
-#: adminPlugin.php:99
+#: adminPlugin.php:101
 msgid "Menu title"
 msgstr "Menu titre"
 
-#: adminPlugin.php:103
+#: adminPlugin.php:105
 msgid "All link label"
 msgstr "Label du lien vers tous"
 
-#: adminPlugin.php:107
+#: adminPlugin.php:109
 msgid "save"
 msgstr "sauvegarder"
 
-#: adminPlugin.php:112 adminPlugin.php:477
+#: adminPlugin.php:114 adminPlugin.php:559
 msgid "Medias name"
 msgstr "Nom des médias"
 
-#: adminPlugin.php:114
+#: adminPlugin.php:116
 msgid ""
 "Adding wordpress medias with name can adding element on horse (photos, "
 "video, advertissement, pdf card"
@@ -101,134 +101,140 @@ msgstr ""
 "L'ajout de média wordpress avec un nom particulié permet d'ajouter à un "
 "cheval un élément (photos, video, pub, fiche pdf)"
 
-#: adminPlugin.php:117 adminPlugin.php:129 adminPlugin.php:141
-#: adminPlugin.php:152 adminPlugin.php:163 adminPlugin.php:482
-#: adminPlugin.php:493
+#: adminPlugin.php:119 adminPlugin.php:131 adminPlugin.php:143
+#: adminPlugin.php:154 adminPlugin.php:165 adminPlugin.php:564
+#: adminPlugin.php:575
 msgid "Example"
 msgstr "Exemple"
 
-#: adminPlugin.php:121
+#: adminPlugin.php:123
 msgid "Add a photo"
 msgstr "Ajouter une photo"
 
-#: adminPlugin.php:122 adminPlugin.php:136 adminPlugin.php:147
-#: adminPlugin.php:158 adminPlugin.php:488
+#: adminPlugin.php:124 adminPlugin.php:138 adminPlugin.php:149
+#: adminPlugin.php:160 adminPlugin.php:570
 msgid "horse id"
 msgstr "identifiant du cheval"
 
-#: adminPlugin.php:122
+#: adminPlugin.php:124
 msgid "sequence id"
 msgstr "numéro de séquence"
 
-#: adminPlugin.php:124
+#: adminPlugin.php:126
 msgid "Horse id is is value of columne 'id' in imported csv file."
 msgstr ""
 "L'identifiant du cheval est la valeur dans la colonne 'id' dans le fichier "
 "csv importé."
 
-#: adminPlugin.php:125
+#: adminPlugin.php:127
 msgid "Sequence id order photos in galery."
 msgstr "Le numéro de séquence permet d'ordonnée les photos dans la galerie."
 
-#: adminPlugin.php:126
+#: adminPlugin.php:128
 msgid "Photo with sequence id at 1 is use as profile picture."
 msgstr ""
 "La photo avec le numéro de séquence à 1 est utilisé comme photo de profil."
 
-#: adminPlugin.php:130
+#: adminPlugin.php:132
 msgid "profile's photo"
 msgstr "photo de profil"
 
-#: adminPlugin.php:131
+#: adminPlugin.php:133
 msgid "5eme galerie's photos"
 msgstr "5ieme photo dans la galerie"
 
-#: adminPlugin.php:135
+#: adminPlugin.php:137
 msgid "Add a video"
 msgstr "Ajouter une vidéo"
 
-#: adminPlugin.php:138 adminPlugin.php:149 adminPlugin.php:160
+#: adminPlugin.php:140 adminPlugin.php:151 adminPlugin.php:162
 msgid "horse id is is value of columne 'id' in imported csv file"
 msgstr ""
 "L'identifiant du cheval est la valeur dans la colonne 'id' dans le fichier "
 "csv importé"
 
-#: adminPlugin.php:142
+#: adminPlugin.php:144
 msgid "horse's video"
 msgstr "vidéo du cheval"
 
-#: adminPlugin.php:146
+#: adminPlugin.php:148
 msgid "Add a advertising"
 msgstr "Ajouter une publicité"
 
-#: adminPlugin.php:153
+#: adminPlugin.php:155
 msgid "advertissement visible in horse card"
 msgstr "publicité visible dans la fiche cheval"
 
-#: adminPlugin.php:157
+#: adminPlugin.php:159
 msgid "Add a pdf card"
 msgstr "Ajouter une fiche pdf"
 
-#: adminPlugin.php:164
+#: adminPlugin.php:166
 msgid "pdf card file downloadable"
 msgstr "fichier pdf téléchargeable de la fiche"
 
-#: adminPlugin.php:216 adminPlugin.php:507
+#: adminPlugin.php:179
+#, fuzzy
+#| msgid "Import manager"
+msgid "file manager"
+msgstr "Importer"
+
+#: adminPlugin.php:298 adminPlugin.php:589
 msgid "File type is not csv"
 msgstr "Le type du fichier n'est pas csv"
 
-#: adminPlugin.php:221
+#: adminPlugin.php:303
 msgid "File type is not zip"
 msgstr "Le type du fichier n'est pas une archive"
 
-#: adminPlugin.php:257 adminPlugin.php:532
+#: adminPlugin.php:339 adminPlugin.php:614
 msgid "Empty file"
 msgstr "Fichier vide"
 
-#: adminPlugin.php:292 adminPlugin.php:302 adminPlugin.php:547
+#: adminPlugin.php:374 adminPlugin.php:384 adminPlugin.php:629
 msgid "Error during file uploading"
 msgstr "Erreur durant le téléchargement du fichier"
 
-#: adminPlugin.php:332
+#: adminPlugin.php:414
 msgid "File must be encoding in UTF-8"
 msgstr "Le fichier doit être encodé en UTF-8"
 
-#: adminPlugin.php:349
+#: adminPlugin.php:431
 #, php-format
 msgid "It's missing picture for horse with id : %s"
 msgstr "Il manque une image pour le cheval avec l'id : %s"
 
-#: adminPlugin.php:377 adminPlugin.php:576
+#: adminPlugin.php:459 adminPlugin.php:658
 msgid "Error during copie after file validating"
 msgstr "Erreur durant la copie après la validation du fichier"
 
-#: adminPlugin.php:385 adminPlugin.php:389
+#: adminPlugin.php:467 adminPlugin.php:471
 msgid "Error during extract pictures"
 msgstr "Erreur durant l'extraction des images"
 
-#: adminPlugin.php:444
+#: adminPlugin.php:526
 msgid "Horse Catalog Document"
 msgstr "Catalogue de document"
 
-#: adminPlugin.php:461
+#: adminPlugin.php:543
 msgid "Warning : no file uploaded, the documents list is empty."
 msgstr ""
 "Attention : aucun fichier valide chargé pour le moment, le catalogue de "
 "document est donc vide."
 
-#: adminPlugin.php:466
+#: adminPlugin.php:548
 msgid "Documents files"
 msgstr "Fichiers de documents"
 
-#: adminPlugin.php:479
+#: adminPlugin.php:561
 msgid "Adding wordpress medias for documents"
 msgstr "Ajouté des médias pour des documents"
 
-#: adminPlugin.php:487
+#: adminPlugin.php:569
 msgid "Add a document"
 msgstr "Ajouter un document"
 
-#: adminPlugin.php:490
+#: adminPlugin.php:572
 msgid ""
 "Horse id is is value of columne 'ID_Etalon' in imported csv file for "
 "document."
@@ -236,7 +242,7 @@ msgstr ""
 "L'identifiant du cheval est la valeur dans la colonne 'ID_Etalon' dans le "
 "fichier csv importé."
 
-#: adminPlugin.php:494
+#: adminPlugin.php:576
 msgid "horse's document file"
 msgstr "document pour le cheval"
 
@@ -257,94 +263,90 @@ msgstr ""
 "Fichier invalide ligne %u avec la donnée %s : mauvais nombre de champs : "
 "actuel %u, attendu %u"
 
-#: documentShortcode.php:22
+#: documentShortcode.php:27
 msgid "Stallion name"
 msgstr "Nom étalon"
 
-#: documentShortcode.php:23
+#: documentShortcode.php:28
 msgid "Plugs<br /> sports performances<br /> from production"
 msgstr "Fiche<br /> performances sportives<br /> de la production"
 
-#: documentShortcode.php:24
+#: documentShortcode.php:29
 msgid "Perf"
 msgstr "Perf"
 
-#: documentShortcode.php:24
+#: documentShortcode.php:29
 msgid "Plugs\\nsports performances\\nfrom production"
 msgstr ""
 "Fiche\n"
 "performances sportives\n"
 "de la production"
 
-#: documentShortcode.php:25
+#: documentShortcode.php:30
 msgid ""
 "Specifications sheet<br /> transmissible model,<br /> gaits and free jumping"
 msgstr ""
 "Fiche caractéristiques<br /> transmissibles modèle,<br /> allures et saut en "
 "liberté"
 
-#: documentShortcode.php:26
+#: documentShortcode.php:31
 msgid "Caract"
 msgstr "Caract"
 
-#: documentShortcode.php:26
+#: documentShortcode.php:31
 msgid "Specifications sheet<\\ntransmissible model,\\ngaits and free jumping"
 msgstr ""
 "Fiche caractéristiques\n"
 "transmissibles modèle,\n"
 "allures et saut en liberté"
 
-#: documentShortcode.php:27
+#: documentShortcode.php:32
 msgid ""
 "Number of products<br /> appraised in Model - Gaits -<br /> Free Jumping as"
 msgstr ""
 "Nombre de produits<br /> expertisés en Modèle - Allures -<br /> Saut en "
 "liberté en tant que"
 
-#: documentShortcode.php:28
+#: documentShortcode.php:33
 msgid "Products"
 msgstr "Produits"
 
-#: documentShortcode.php:28
+#: documentShortcode.php:33
 msgid "Number of products\\nappraised in Model - Gaits -\\nFree Jumping as"
 msgstr ""
 "Nombre de produits\n"
 "expertisés en Modèle - Allures -\n"
 " Saut en liberté en tant que"
 
-#: documentShortcode.php:29
+#: documentShortcode.php:34
 msgid "PDF<br/> card"
 msgstr "Fiches<br/> PDF"
 
-#: documentShortcode.php:30
+#: documentShortcode.php:35
 msgid "PDF"
 msgstr "PDF"
 
-#: documentShortcode.php:33
+#: documentShortcode.php:38
 msgid "Father"
 msgstr "Père"
 
-#: documentShortcode.php:34
+#: documentShortcode.php:39
 msgid "Mother of father"
 msgstr "Père de mère"
 
-#: documentShortcode.php:62
+#: documentShortcode.php:71
 msgid "Consult the PDF file of the horse"
 msgstr "Consulter la/les<br /> fiche(s) PDF du cheval"
 
-#: documentShortcode.php:84
-msgid "Search<br /> a stallion"
-msgstr "Rechercher<br /> un étalon"
-
-#: documentShortcode.php:105
-msgid "Search by name"
-msgstr "Rechercher par nom"
-
-#: documentShortcode.php:106
+#: documentShortcode.php:94 documentShortcode.php:116
 msgid "Search a stallion"
 msgstr "Rechercher un étalon"
 
-#: documentShortcode.php:108
+#: documentShortcode.php:115
+msgid "Search by name"
+msgstr "Rechercher par nom"
+
+#: documentShortcode.php:118
 msgid "OK"
 msgstr "OK"
 
@@ -377,90 +379,90 @@ msgstr "Vidéo"
 msgid "Complete video"
 msgstr "Voir toutes les vidéos"
 
-#: template/horse-detail.php:82
+#: template/horse-detail.php:80
 msgid "Coming soon online"
 msgstr "Prochainement en ligne"
 
-#: template/horse-detail.php:108
+#: template/horse-detail.php:106
 #, php-format
 msgid "Expertise at %s years (%s)"
 msgstr "Expertise à %s  ans (%s)"
 
-#: template/horse-detail.php:110
+#: template/horse-detail.php:108
 #, php-format
 msgid "Expertise at %s years %s"
 msgstr "Expertise à %s  ans %s"
 
-#: template/horse-detail.php:110
+#: template/horse-detail.php:108
 msgid "Championnat"
 msgstr "Championnat"
 
-#: template/horse-detail.php:110
+#: template/horse-detail.php:108
 #, fuzzy
 #| msgid "Testing"
 msgid "Testage"
 msgstr "Testage"
 
-#: template/horse-detail.php:125 template/pedigree.php:15
+#: template/horse-detail.php:123 template/pedigree.php:15
 msgid "Pedigree"
 msgstr "Pédigrée"
 
-#: template/horse-detail.php:128
+#: template/horse-detail.php:126
 msgid "Strong points"
 msgstr "Points forts"
 
-#: template/horse-detail.php:131 template/mother-notes.php:4
+#: template/horse-detail.php:129 template/mother-notes.php:4
 msgid "Maternal Lineage Expertise"
 msgstr "Expertise Lignée Maternelle"
 
-#: template/horse-detail.php:132
+#: template/horse-detail.php:130
 msgid "Expertise judges"
 msgstr "Expertise juges"
 
-#: template/horse-detail.php:135
+#: template/horse-detail.php:133
 msgid "Testing expertise"
 msgstr "Expertise testage"
 
-#: template/horse-detail.php:138
+#: template/horse-detail.php:136
 msgid "Riders reviews"
 msgstr "Avis des cavaliers"
 
-#: template/horse-detail.php:140
+#: template/horse-detail.php:138
 msgid "Images"
 msgstr "Images"
 
-#: template/horse-detail.php:179
+#: template/horse-detail.php:175
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: template/horse-detail.php:183
+#: template/horse-detail.php:179
 msgid "Breeder"
 msgstr "Naisseur"
 
-#: template/horse-detail.php:192
+#: template/horse-detail.php:188
 #, php-format
 msgid "Protected mares in %s"
 msgstr "Juments saillies en  %s"
 
-#: template/horse-detail.php:199
+#: template/horse-detail.php:195
 msgid "Year of riding in France"
 msgstr "Année de monte en France"
 
-#: template/horse-detail.php:205
+#: template/horse-detail.php:201
 msgid "Protected mares in France"
 msgstr "Juments saillies en France"
 
-#: template/horse-detail.php:222
+#: template/horse-detail.php:218
 msgid "SIRE card"
 msgstr "fiche SIRE"
 
-#: template/horse-detail.php:236
+#: template/horse-detail.php:232
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
 
 #: template/horses-list.php:7
-msgid "Stallion"
-msgstr "Étalon"
+msgid "Stallions"
+msgstr "Étalons"
 
 #: template/horses-list.php:46
 msgid "Age filter : "
@@ -487,7 +489,7 @@ msgstr "Par %s x %s"
 msgid "International riders opinion"
 msgstr "L’avis des cavaliers internationaux"
 
-#: template/internationnal.php:11 template/sf-judges.php:158
+#: template/internationnal.php:11 template/sf-judges.php:169
 #: template/testing.php:36
 msgid "Ability to climb jump obstacle"
 msgstr "Aptitude à l’obstacle saut monté"
@@ -552,7 +554,7 @@ msgstr "Expertise juges SF"
 msgid "Modele"
 msgstr "Modèle"
 
-#: template/sf-judges.php:43 template/sf-judges.php:302
+#: template/sf-judges.php:43 template/sf-judges.php:313
 msgid "Race type"
 msgstr "Type race"
 
@@ -572,12 +574,12 @@ msgstr "Ligne de dessus (garrot-dos-rein)"
 msgid "Rear profile(rump-thigh-basin)"
 msgstr "Profil arrière (croupe-bassin-cuisse)"
 
-#: template/sf-judges.php:64 template/sf-judges.php:312
+#: template/sf-judges.php:64 template/sf-judges.php:323
 msgid "Limbs"
 msgstr "Aplombs"
 
-#: template/sf-judges.php:69 template/sf-judges.php:101
-#: template/sf-judges.php:129
+#: template/sf-judges.php:69 template/sf-judges.php:104
+#: template/sf-judges.php:137
 msgid "Comment"
 msgstr "Commentaire"
 
@@ -589,104 +591,104 @@ msgstr "Locomotion et fonctionnement général"
 msgid "Locomotion"
 msgstr "Locomotion"
 
-#: template/sf-judges.php:90 template/sf-judges.php:241 template/testing.php:17
+#: template/sf-judges.php:90 template/sf-judges.php:252 template/testing.php:17
 msgid "Pace"
 msgstr "Pas"
 
-#: template/sf-judges.php:94 template/sf-judges.php:245 template/testing.php:21
+#: template/sf-judges.php:94 template/sf-judges.php:256 template/testing.php:21
 msgid "Trot"
 msgstr "Trot"
 
-#: template/sf-judges.php:98 template/sf-judges.php:249 template/testing.php:25
+#: template/sf-judges.php:98 template/sf-judges.php:260 template/testing.php:25
 msgid "Gallop"
 msgstr "Galop"
 
-#: template/sf-judges.php:110
+#: template/sf-judges.php:116
 msgid "Ability to obstacle"
 msgstr "Aptitude à l’obstacle"
 
-#: template/sf-judges.php:113 template/sf-judges.php:161
+#: template/sf-judges.php:119 template/sf-judges.php:172
 #: template/testing.php:39
 msgid "Balance on jumps"
 msgstr "Équilibre sur les sauts"
 
-#: template/sf-judges.php:117 template/sf-judges.php:165
+#: template/sf-judges.php:123 template/sf-judges.php:176
 #: template/testing.php:43
 msgid "Means on the obstacle"
 msgstr "Moyens sur l’obstacle"
 
-#: template/sf-judges.php:121 template/sf-judges.php:169
+#: template/sf-judges.php:127 template/sf-judges.php:180
 #: template/testing.php:47
 msgid "Style on the obstacle"
 msgstr "Style sur l’obstacle"
 
-#: template/sf-judges.php:125 template/sf-judges.php:173
-#: template/sf-judges.php:221 template/sf-judges.php:284
+#: template/sf-judges.php:131 template/sf-judges.php:184
+#: template/sf-judges.php:232 template/sf-judges.php:295
 #: template/testing.php:51
 msgid "Behaviours"
 msgstr "Comportement"
 
-#: template/sf-judges.php:137
+#: template/sf-judges.php:148
 msgid "Jumping ability"
 msgstr "Aptitude à l’obstacle saut en liberté"
 
-#: template/sf-judges.php:193
+#: template/sf-judges.php:204
 msgid "Expertise judges SF Obstacle"
 msgstr "Expertise Juges SF Obstacle"
 
-#: template/sf-judges.php:197
+#: template/sf-judges.php:208
 msgid "Cross"
 msgstr "Cross"
 
-#: template/sf-judges.php:198
+#: template/sf-judges.php:209
 msgid "CSO"
 msgstr "CSO"
 
-#: template/sf-judges.php:201 template/sf-judges.php:268
+#: template/sf-judges.php:212 template/sf-judges.php:279
 msgid "Locomotion/Galop"
 msgstr "Locomotion / Galop"
 
-#: template/sf-judges.php:206 template/sf-judges.php:272
+#: template/sf-judges.php:217 template/sf-judges.php:283
 msgid "Equilibre & availability"
 msgstr "Equilibre & disponibilité"
 
-#: template/sf-judges.php:211 template/sf-judges.php:276
+#: template/sf-judges.php:222 template/sf-judges.php:287
 msgid "Means & path"
 msgstr "Moyens & trajectoire"
 
-#: template/sf-judges.php:216 template/sf-judges.php:280
+#: template/sf-judges.php:227 template/sf-judges.php:291
 msgid "Style"
 msgstr "Style"
 
-#: template/sf-judges.php:226 template/sf-judges.php:288
+#: template/sf-judges.php:237 template/sf-judges.php:299
 msgid "Impression in a body"
 msgstr "Impression d'ensemble"
 
-#: template/sf-judges.php:238
+#: template/sf-judges.php:249
 msgid "Expertise judges SF Paces"
 msgstr "Expertise Juges SF Allures"
 
-#: template/sf-judges.php:253 template/sf-judges.php:332
+#: template/sf-judges.php:264 template/sf-judges.php:343
 msgid "Globale impression"
 msgstr "Impression d’ensemble"
 
-#: template/sf-judges.php:265
+#: template/sf-judges.php:276
 msgid "Expertise judges SF obstacle"
 msgstr "Expertise Juges SF Obstacle"
 
-#: template/sf-judges.php:299
+#: template/sf-judges.php:310
 msgid "Expertise judges SF model"
 msgstr "Expertise Juges SF Modèle"
 
-#: template/sf-judges.php:307
+#: template/sf-judges.php:318
 msgid "Top line"
 msgstr "Ligne de dessus"
 
-#: template/sf-judges.php:323
+#: template/sf-judges.php:334
 msgid "Stallion Bonus Assessment"
 msgstr "Appréciation Bonus Etalon"
 
-#: template/sf-judges.php:323
+#: template/sf-judges.php:334
 msgid "Click to learn bonus etalons"
 msgstr "Cliquez pour apprendre le bonus étalons"
 
@@ -794,6 +796,9 @@ msgstr "Comportement aux soins"
 #: template/testing.php:207
 msgid "Globale behavior"
 msgstr "Comportement global"
+
+#~ msgid "Search<br /> a stallion"
+#~ msgstr "Rechercher<br /> un étalon"
 
 #~ msgid "Blood, will, respect & bar intelligence"
 #~ msgstr "Sang, volonté, respect<br />& intelligence de la barre"

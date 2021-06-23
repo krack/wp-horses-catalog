@@ -3,7 +3,6 @@
 require_once plugin_dir_path( __DIR__ ).'horses.php'; 
 ?>
 <?php get_header(); ?>
-
 <?php 
 $horseByYear = Horses::get($_GET["id"]);
 //construct list of year
@@ -71,7 +70,6 @@ function isInternationnalEmpty(){
     return $isEmpty;
 }
 ?>
-
 <div id="horse-catalog" class="detail-card">
     <div class="fixe-part">
         <h1><?php echo $horse->name ?></h1>
@@ -102,7 +100,7 @@ function isInternationnalEmpty(){
                     foreach( $yearsOfHorse as $yearOfHorse){
                         
                             ?>
-                        <a href="?id=<?php echo $_GET['id']; ?>&years=<?php echo $yearOfHorse; ?>#pedigree" class="<?php if($yearOfHorse ==$year ) echo "selected"; ?>">
+                        <a href="?id=<?php echo $_GET['id']; ?>&years=<?php echo $yearOfHorse; ?>" class="<?php if($yearOfHorse ==$year ) echo "selected"; ?>">
                                 <?php 
                                 if( !has2years()){
                                     echo sprintf(__("Expertise at %s years (%s)", 'horses-catalog'),($yearOfHorse-1 - $horse->birthYear), ($yearOfHorse-1));
@@ -160,9 +158,7 @@ function isInternationnalEmpty(){
             if(count($query_profile->posts) > 0){
                 $profileUrl=wp_get_attachment_url( $query_profile->posts[0]->ID );
             }
-        ?>
-
-
+?>
         <img class="profil" src="<?php echo $profileUrl; ?>" alt="profil <?php echo $horse->name ?>" />
         <?php if($horse->isPga ){ ?>
             <span class="pga">PGA</span>
@@ -277,4 +273,7 @@ if(function_exists("shf_add_fixed_connection_button")){
 <?php
 include("advertisement.php");
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <?php get_footer(); ?>

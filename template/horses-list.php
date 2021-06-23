@@ -4,7 +4,7 @@ $pagination = false;
 ?>
 <?php get_header(); ?>
 <div id="horse-catalog">
-<h1><?php _e("Stallion", 'horses-catalog') ?></h1>
+<h1><?php _e("Stallions", 'horses-catalog') ?></h1>
 <?php
 
 $searchYear = new Search($_GET);
