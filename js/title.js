@@ -1,5 +1,4 @@
 
-
 $(document).ready(function () {
     $("[title]").click(function (e) {
         $(".title-plugin").remove();

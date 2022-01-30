@@ -3,8 +3,8 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
 $pagination = false;
 ?>
 <?php get_header(); ?>
-
-<h1><?php _e("Stallion", 'horses-catalog') ?></h1>
+<div id="horse-catalog">
+<h1><?php _e("Stallions", 'horses-catalog') ?></h1>
 <?php
 
 $searchYear = new Search($_GET);
@@ -145,5 +145,5 @@ if($_GET['display-age']=='true'){
     </div>
     <?php } ?>
 </div>
-
+<div>
 <?php get_footer(); ?>

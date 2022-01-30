@@ -1,5 +1,4 @@
 
-
 function changeExample(){
     jQuery("[example]").each(function(){
         var text = jQuery(this).attr("example");

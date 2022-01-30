@@ -54,7 +54,7 @@ $query_images = new WP_Query( $query_images_args );
 if(count($query_images->posts) > 0){
 ?>
 
-<div class="gallery">
+<div id="gallery" class="gallery">
     <div class="zoom-block">
         <img id="zoom" />
 

@@ -1,4 +1,4 @@
-.fixed {
+#horse-catalog .fixed {
     position: fixed;
     top: 0;
     z-index: 9999;
@@ -8,83 +8,85 @@
 }
 
 @media only screen and (max-width: 959px) {
-    .fixed {
+    #horse-catalog .fixed {
         position: inherit;
         z-index: inherit;
         background-color: transparent;
     }
-    .fixe-replace {
+    #horse-catalog .fixe-replace {
         height: 0 !important;
     }
-    .with-admin-menu {
+    #horse-catalog .with-admin-menu {
         margin-top: 0px;
     }
 }
-.fixed h1{
+#horse-catalog .fixed h1{
     margin-top: 50px;
 }
 
-.with-admin-menu {
+#horse-catalog .with-admin-menu {
     margin-top: 30px;
 }
 
 /* form */
 
-form {
+#horse-catalog form {
     margin-bottom: 10px;
     text-align: center;
     width: 50%;
     margin: auto;
 }
 
-form h4 {
+#horse-catalog form h4 {
     margin-left: 0;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
-form ul {
+#horse-catalog form ul {
     display: flex;
 }
 
-form li {
+#horse-catalog form li {
     list-style: none;
     flex: 1 1 auto;
 }
 
-form .categories li::before, form .categories li::after {
+#horse-catalog form .categories li::before, #horse-catalog form .categories li::after {
     content: "\25C6";
     margin: 0 3px;
     font-size: 0.5em;
     vertical-align: super;
 }
 
-form input[type=checkbox] {
+#horse-catalog form input[type=checkbox] {
     margin-right: 5px;
 }
 
-form input[type=submit] {
+#horse-catalog form input[type=submit] {
     margin-top: 20px;
 }
 
 @media only screen and (max-width: 959px) {
-    form {
+    #horse-catalog form {
         width: 100%;
     }
-    form ul {
+    #horse-catalog form ul {
         padding-left: 0;
     }
-    form .categories li::before, form .categories li::after {
+    #horse-catalog form .categories li::before, #horse-catalog form .categories li::after {
         display: none;
     }
 }
 
 /* list */
 
-.list {
+#horse-catalog .list {
     padding: 0;
     position: flex;
 }
 
-.list .card {
+#horse-catalog .list .card {
     width: 33%;
     display: inline-flex;
     text-align: center;
@@ -93,21 +95,21 @@ form input[type=submit] {
     flex: 1 1 auto;
 }
 
-.list a {
+#horse-catalog .list a {
     text-decoration: none;
     padding: 5% 10%;
     color: initial;
     position: relative;
 }
 
-.list .card .age {
+#horse-catalog .list .card .age {
     display: block;
     position: relative;
     line-height: 2em;
     font-size: 1.5em;
 }
 
-.list .card .age::before {
+#horse-catalog .list .card .age::before {
     content: '';
     width: 15%;
     height: 3px;
@@ -118,7 +120,7 @@ form input[type=submit] {
     top: 1em;
 }
 
-.list .card .age::after {
+#horse-catalog .list .card .age::after {
     content: '';
     width: 15%;
     height: 3px;
@@ -130,16 +132,16 @@ form input[type=submit] {
     top: 1em;
 }
 
-.list .card img {
+#horse-catalog .list .card img {
     max-width: 100%;
 }
 
-.list .card .name {
+#horse-catalog .list .card .name {
     font-weight: bolder;
     display: block;
     font-size: 1.2em;
 }
-.list .logo-list{
+#horse-catalog .list .logo-list{
     display: block;
     background-repeat: no-repeat;
     background-size: contain;
@@ -151,83 +153,116 @@ form input[type=submit] {
     top: 95px;
 }
 
-.list .logo-list.SFO {
+#horse-catalog .list .logo-list.SFO {
     background-image: url("images/logo_sfo.png");
 }
-.list .logo-list.PSFO {
+#horse-catalog .list .logo-list.PSFO {
     background-image: url("images/logo_psfo.png");
 }
 
-.pagination {
+#horse-catalog .pagination {
     font-size: 1.5em;
     text-align: right;
     margin-right: 10%;
     font-family: "BluuNext-Bold";
 }
 
-.pagination a {
+#horse-catalog .pagination a {
     padding: 0;
 }
 
-.pagination a::after {
+#horse-catalog .pagination a::after {
     content: "\25C6";
     font-size: 10px;
     vertical-align: baseline;
     margin-left: 1%;
 }
 
-.pagination span:last-child a::after {
+#horse-catalog .pagination span:last-child a::after {
     content: "";
 }
 
-.pagination .current {
+#horse-catalog .pagination .current {
     font-size: 2em;
 }
 
 @media only screen and (max-width: 959px) {
-    .list .card {
+    #horse-catalog .list .card {
         width: 100%;
     }
 }
 
 /* detail */
 
-.detail-card {
+#horse-catalog.detail-card {
     position: relative;
 }
 
-.detail-card h1 {
+#horse-catalog.detail-card h1 {
     text-align: center;
     margin-bottom: 50px;
 }
 
-.detail-card h3 {
+#horse-catalog.detail-card h3 {
     text-align: left;
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
 
-.detail-card h4 {
+#horse-catalog.detail-card h4 {
     margin-left: 0%;
     margin-bottom: 3%;
 }
 
-.profilblock {
+#horse-catalog .profilblock {
     position: relative;
     width: 78%;
     margin: auto;
     margin-bottom: 10px;
 }
 
-nav#horse-menu {
+#horse-catalog nav#years{
+    text-align: center;
+    border: none;
+    display: block;
+}
+#horse-catalog nav#years a{
+    border: solid 1px #152857;
+    font-family: "FengardoNeue_Black";
+    padding-bottom: 7px;
+    color:#152857;
+    background-color:#fff;
+    border-radius:1.55em;
+    cursor:pointer;
+    display:inline-block;
+    font-size:1.125em;
+    padding:.667em 1.333em;
+    text-align:center;
+    margin-bottom: 10px;
+}
+#horse-catalog nav#years a.selected, #horse-catalog nav#years a:hover, #horse-catalog nav#years a:active{
+    font-family: "FengardoNeue_Black";
+    background-color: #152857;
+    color: #fff;
+}
+
+@media only screen and (max-width: 959px) {
+    #horse-catalog nav#years a{
+        font-size:0.7em;
+    }
+}
+
+#horse-catalog nav#horse-menu {
     margin-left: 11%;
     width: 78%;
     margin-right: 11%;
 }
 
-.detail-card .profil {
+#horse-catalog.detail-card .profil {
     width: 100%;
 }
 
-.detail-card .race {
+#horse-catalog.detail-card .race, #horse-catalog.detail-card .pga {
     display: block;
     background-repeat: no-repeat;
     background-size: contain;
@@ -239,23 +274,30 @@ nav#horse-menu {
     bottom: -50px;
 }
 
-.detail-card .race.SF {
+#horse-catalog.detail-card .race.SF {
     background-image: url("images/logo_sf.png");
 }
 
-.detail-card .race.SFO {
+#horse-catalog.detail-card .race.SFO {
     background-image: url("images/logo_sfo.png");
 }
 
-.detail-card .race.PSFO {
+#horse-catalog.detail-card .race.PSFO {
     background-image: url("images/logo_psfo.png");
 }
 
-.detail-card .race.AA {
+#horse-catalog.detail-card .race.AA {
     background-image: url("images/logo_anaa.jpg");
 }
 
-.detail-card .categorie {
+#horse-catalog.detail-card .pga {
+    background-image: url("images/logo_pga.png");
+    right: 15%;
+    width: 100px;
+    height: 100px;
+}
+
+#horse-catalog.detail-card .categorie {
     background: radial-gradient(#c11f18, #5b1017);
     padding: 7px;
     margin-top: 20px;
@@ -264,11 +306,15 @@ nav#horse-menu {
     font-family: "BluuNext-Bold";
 }
 
-.detail-card .categorie.ESPOIR {
+#horse-catalog.detail-card .categorie.ESPOIR {
     background: radial-gradient(#152857, #0b0f1e);
 }
 
-.detail-card .categorie::before, .detail-card .categorie::after {
+#horse-catalog.detail-card .categorie.A.SUIVRE {
+    background: radial-gradient(#3d7140, #41453e);
+}
+
+#horse-catalog.detail-card .categorie::before, #horse-catalog.detail-card .categorie::after {
     content: "\25C6";
     margin: 0 3px;
     font-size: 0.5em;
@@ -276,7 +322,7 @@ nav#horse-menu {
     vertical-align: middle;
 }
 
-.detail-card .human-linked, .detail-card .projections {
+#horse-catalog.detail-card .human-linked, #horse-catalog.detail-card .projections {
     display: flex;
     margin: auto;
     text-align: center;
@@ -284,35 +330,41 @@ nav#horse-menu {
     max-width: 600px;
 }
 
-.detail-card .human-linked>*, .detail-card .projections>* {
+#horse-catalog.detail-card .human-linked>*, #horse-catalog.detail-card .projections>* {
     flex: 1 1 auto;
     display: block;
 }
 
-.detail-card .human-linked span {
+#horse-catalog.detail-card .human-linked span {
     font-size: 0.9em;
     max-width: 95%;
     display: inline-block;
 }
 
-.detail-card .individual {
+#horse-catalog.detail-card .individual {
     text-align: center;
     margin-bottom: 40px;
     font-size: 1.6em;
 }
 
-.detail-card .doublelines .value {
+#horse-catalog.detail-card .doublelines .value {
     padding-top: 15px;
 }
 
 @media only screen and (max-width: 959px) {
-    .detail-card .race {
+    #horse-catalog.detail-card .race, #horse-catalog.detail-card .pga {
         width: 40px;
         height: 40px;
-        right: 3%;
+        right: 2.5%;
         bottom: -20px;
     }
-    .detail-card .race.PSFO {
+    #horse-catalog.detail-card .pga {
+        width: 40px;
+        height: 40px;
+        right: 17%;
+        bottom: -20px;
+    }
+    #horse-catalog.detail-card .race.PSFO {
         width: 50px;
         height: 50px;
     }
@@ -320,81 +372,79 @@ nav#horse-menu {
 
 /* projection */
 
-.detail-card .projections>*>span {
+#horse-catalog.detail-card .projections>*>span {
     display: block;
 }
 
-.detail-card .projections .value {
+#horse-catalog.detail-card .projections .value {
     font-weight: bold;
     font-size: 2em;
     font-family: "BluuNext-Bold";
 }
 
-.detail-card .size::after {
+#horse-catalog.detail-card .size::after {
     content: "m";
 }
 
-.detail-card table {
+#horse-catalog.detail-card table {
     max-width: 100%;
 }
 
 /** pedigree */
-#pedigree table {
+#horse-catalog #pedigree table {
 
     border-spacing: 0px 1px;
 }
 
-#pedigree td{
-}
-#pedigree td *{
+#horse-catalog #pedigree td *{
     display: block;
 }
 
 
-.detail-card #pedigree .parents {
+#horse-catalog.detail-card #pedigree .parents {
     width: 74%;
     border: solid black 1px;
 }
 
-.detail-card .race-SF{
+#horse-catalog.detail-card .race-SF{
     color: #003366;
 }
 
-.detail-card .race-PS{
+#horse-catalog.detail-card .race-PS{
     color: #dd0806;
 }
-.detail-card .race-AA{
+#horse-catalog.detail-card .race-AA{
     color: #006411;
 }
-.detail-card .race-AACR{
+#horse-catalog.detail-card .race-AACR{
     color: #00b050;
 }
-.detail-card .race-_AA_{
+#horse-catalog.detail-card .race-_AA_{
     color: #006411;
 }
 
-.detail-card .race-_AC_{
+#horse-catalog.detail-card .race-_AC_{
     color: #006411;
 }
-.detail-card .consanguineous{
+#horse-catalog.detail-card .consanguineous{
     background-color: lightgray;
 }
 
 
 /* contact */
 
-.detail-card #contact span {
+#horse-catalog.detail-card #contact span {
     text-align: center;
     display: block;
 }
 
-.detail-card #contact .name {
+#horse-catalog.detail-card #contact .name {
     font-weight: bold;
 }
 
 /* pedigree */
 
-.detail-card #pedigree table {
+#horse-catalog.detail-card #pedigree table {
     border: solid lightgray 1px;
     background-image: none;
     background-color: lightgray;
@@ -402,30 +452,36 @@ nav#horse-menu {
     margin: auto;
 }
 
-.detail-card #pedigree td>* {
+@media only screen and (max-width: 959px) {
+    #horse-catalog.detail-card #pedigree table {
+        line-height: 1em;
+    }
+}
+
+#horse-catalog.detail-card #pedigree td>* {
     display: block;
     text-align: center;
 }
 
 @media only screen and (max-width: 959px) {
-    .detail-card #pedigree table {
+    #horse-catalog.detail-card #pedigree table {
         font-size: 0.7em;
     }
 }
 
 /*** */
 
-.osteopathy-status {
+#horse-catalog .osteopathy-status {
     text-align: center;
 }
 
-.osteopathy-status span {
+#horse-catalog .osteopathy-status span {
     font-family: "BluuNext-Bold";
 }
 
 /** strong point */
 
-.detail-card #strong_points ul {
+#horse-catalog.detail-card #strong_points ul {
     list-style: none;
     text-align: center;
     padding-left: 0;
@@ -433,67 +489,73 @@ nav#horse-menu {
 
 /** maternal */
 
-.mother-notes {
+#horse-catalog .mother-notes {
     background-image: linear-gradient(to bottom, #2a2927, #f1c589);
     width: 80%;
     margin: auto;
     text-align: center;
 }
 
-.mother-notes {
+#horse-catalog .mother-notes {
     background-image: linear-gradient(to bottom, #2a2927, #f1c589);
     border-spacing: 0px 0px;
     background-color: tomato;
     border: 0;
 }
 
-.mother-notes tr:nth-child(2) td {
+#horse-catalog .mother-notes tr:nth-child(2) td {
     border-right: solid 1px #c69e6b;
 }
 
-.mother-notes .total {
+#horse-catalog .mother-notes .total {
     font-weight: bold;
     vertical-align: top;
 }
-.good-lineage{
+#horse-catalog .good-lineage{
     color: red;
 }
 
-.mother-notes .exponant {
+#horse-catalog .mother-notes .exponant {
     vertical-align: super;
     font-size: smaller;
 }
 
-.mother-notes .foreign-bloodline {
+#horse-catalog .mother-notes .foreign-bloodline {
     display: block;
 }
 
-.mobile-total {
+#horse-catalog .mobile-total {
     display: none;
     margin: auto;
     text-align: center;
     margin-top: 20px;
 }
 
-.mobile-total .total.label::after {
+#horse-catalog .mobile-total .total.label::after {
     content: ":";
 }
 
 @media only screen and (max-width: 959px) {
-    .mobile-total {
+    #horse-catalog .mobile-total {
         display: inherit;
     }
-    table.mother-notes .total {
+    #horse-catalog table.mother-notes .total {
         display: none;
     }
+    #horse-catalog .mother-notes {
+        margin: auto !important;
+        font-size: 0.7em !important;
+        line-height: 0.8em;
+    }
+    
 }
-#maternal{
+#horse-catalog #maternal{
     text-align: center;
 }
-#maternal h2{
+#horse-catalog #maternal h2{
     display: inline-block;
 }
-#maternal .fa-info-circle{
+#horse-catalog #maternal .fa-info-circle{
     font-size: 1.2em;
     display: inline;
     position: absolute;
@@ -501,8 +563,12 @@ nav#horse-menu {
     margin-left: 20px;
     cursor: help;
 }
+#horse-catalog #sf .fa-info-circle{
+    cursor: help;
+
+}
 @media only screen and (max-width: 959px) {
-    #maternal .fa-info-circle{
+    #horse-catalog #maternal .fa-info-circle{
         margin-top: 76px;
         margin-left: 5px;
     }
@@ -510,22 +576,22 @@ nav#horse-menu {
 
 /* sf judges */
 
-.root-notation>div {
+#horse-catalog .root-notation>div {
     font-size: 1.3em;
     line-height: 1.6em;
     display: flex;
     flex-wrap: wrap;
 }
 
-.root-notation {
+#horse-catalog .root-notation {
     position: relative;
 }
 
-.root-notation h3 {
+#horse-catalog .root-notation h3 {
     line-height: 0.4em;
 }
 
-.back {
+#horse-catalog .back {
     background: radial-gradient(#f1c589, #2a2927);
     position: absolute !important;
     top: 120px;
@@ -534,34 +600,54 @@ nav#horse-menu {
     right: 30%;
     z-index: -1;
 }
+#horse-catalog #young-model{
+    width: 400px;
+    text-align: left;
+    max-width: 100%;
+}
+#horse-catalog #young-locomotion{
+    margin-left: auto;
+    margin-right: auto;
+    float: none ;
+    text-align: left;
+    
+}
+#horse-catalog #young-obstacle{
+    float: left ;
+    text-align: left ;
+    margin-top: 0;
+}
 
 @media only screen and (max-width: 959px) {
-    .back {
+    #horse-catalog .back {
         display: none !important;
     }
-    .root-notation>div {
+    #horse-catalog .root-notation>div {
         line-height: 1em;
     }
-    .notation~pre {
+    #horse-catalog .notation~pre {
         padding-top: 10px;
     }
-    .root-notation>div>div.model, #testing.root-notation>div>div.locomotion {
+    #horse-catalog .root-notation>div>div.model,  #horse-catalog #testing.root-notation>div>div.locomotion {
         margin-bottom: 10px;
     }
-    .detail-card .projections .value {
+    #horse-catalog.detail-card .projections .value {
         font-size: 1.5em;
     }
-    .detail-card .individual {
+    #horse-catalog.detail-card .individual {
         font-size: 1.2em;
+    }
+    #horse-catalog #young-model{
+        width: 100%;
     }
 }
 
 
-#testing>div {
+#horse-catalog #testing>div {
     position: relative;
 }
 
-#testing .global-impression::before {
+#horse-catalog #testing .global-impression::before {
     text-decoration: none;
     content: '';
     display: inline-block;
@@ -573,17 +659,17 @@ nav#horse-menu {
 }
 
 @media only screen and (max-width: 959px) {
-    #testing .global-impression::before {
+    #horse-catalog #testing .global-impression::before {
         content: none;
     }
 }
 
-.root-notation>div {
+#horse-catalog .root-notation>div {
     display: flex;
     padding: 0px;
 }
 
-.root-notation>div>div {
+#horse-catalog .root-notation>div>div {
     flex: 1 1 49%;
     display: inline-block;
     padding-top: 15px;
@@ -592,52 +678,52 @@ nav#horse-menu {
     flex-grow: 0;
 }
 
-.root-notation>div>div {
+#horse-catalog .root-notation>div>div {
     margin-left: 1px;
     margin-right: 1px;
     margin-bottom: 1px;
     margin-top: 1px;
 }
-.root-notation>div>div:nth-last-child(-n+2){
+#horse-catalog .root-notation>div>div:nth-last-child(-n+2){
     margin-bottom: 0px;
 }
 
-#testing.root-notation>div>div {
+#horse-catalog #testing.root-notation>div>div {
     margin-bottom: 0px;
 }
 /** first element of line */
-.root-notation>div:nth-child(2n)>div {
+#horse-catalog .root-notation>div:nth-child(2n)>div {
     margin-bottom: 0px;
     margin-top: 1px;
 }
 
 @media only screen and (max-width: 959px) {
-    .root-notation>div:nth-child(2n)>div {
+    #horse-catalog .root-notation>div:nth-child(2n)>div {
         margin-top: 0px;
     }
 }
 
-.root-notation>div>div:nth-child(2n+1){
+#horse-catalog .root-notation>div>div:nth-child(2n+1){
     text-align: right;
     margin-right: 1px;
     margin-left: 0px;
 }
-.root-notation>div>div:nth-child(2n+1) > *{
+#horse-catalog .root-notation>div>div:nth-child(2n+1) > *{
     margin-right: 40px;
 }
-.root-notation>div>div:nth-child(2n) > *{
+#horse-catalog .root-notation>div>div:nth-child(2n) > *{
     margin-left: 40px;
 }
-.root-notation>div.global-impression> div >*{
+#horse-catalog .root-notation>div.global-impression> div >*{
 
     margin-left: 0px;
 }
 
-.root-notation>div>div:nth-child(2n+1) h3 {
+#horse-catalog .root-notation>div>div:nth-child(2n+1) h3 {
     float: right;
 }
 
-.root-notation>div>div .notation {
+#horse-catalog .root-notation>div>div .notation {
     float: left;
     clear: both;
     display: block;
@@ -645,17 +731,17 @@ nav#horse-menu {
     text-align: left;
 }
 
-.root-notation>div>div:nth-child(2n+1) .notation {
+#horse-catalog .root-notation>div>div:nth-child(2n+1) .notation {
     float: right;
 }
 
-.root-notation>div>div:nth-child(2n+1)>.notation {
+#horse-catalog .root-notation>div>div:nth-child(2n+1)>.notation {
     float: right;
     clear: both;
     display: block;
 }
 
-.young.root-notation>div>div:not(.global-impression) {
+#horse-catalog .young.root-notation>div>div:not(.global-impression) {
     flex: 2 1 37%;
     display: inline-block;
     padding-top: 15px;
@@ -666,239 +752,242 @@ nav#horse-menu {
 
 
 @media only screen and (max-width: 1600px) {
-    .young.root-notation>div>div:not(.global-impression) {
+    #horse-catalog .young.root-notation>div>div:not(.global-impression) {
         flex: 2 1 30%;
     }
 }
 @media only screen and (max-width: 1340px) {
-    .young.root-notation>div>div:not(.global-impression) {
+    #horse-catalog .young.root-notation>div>div:not(.global-impression) {
         flex: 2 1 25%;
     }
-    .young.root-notation>div>div:nth-child(3n+2) {
+    #horse-catalog .young.root-notation>div>div:nth-child(3n+2) {
         flex: 1 1 5%;
     }
-    .young.root-notation>div>div:nth-child(3n+2) .notation{
+    #horse-catalog .young.root-notation>div>div:nth-child(3n+2) .notation{
         width: 300px;
     }
 }
 @media only screen and (max-width: 1230px) {
 
-    .young.root-notation>div>div:nth-child(3n+2) .notation{
+    #horse-catalog .young.root-notation>div>div:nth-child(3n+2) .notation{
         width: 200px;
     }
 }
 
-.young.root-notation>div>div:nth-child(3n+1):not(.global-impression){
+#horse-catalog .young.root-notation>div>div:nth-child(3n+1):not(.global-impression){
     text-align: right;
     margin-right: 1px;
     margin-left: 0px;
 }
-.young.root-notation>div>div:nth-child(3n+1):not(.global-impression) > *{
+#horse-catalog .young.root-notation>div>div:nth-child(3n+1):not(.global-impression) > *{
     margin-right: 40px;
 }
 
 
-.young.root-notation>div>div:nth-child(3n+2) {
+#horse-catalog .young.root-notation>div>div:nth-child(3n+2) {
     float: none;
     text-align: center;
     flex: 1 1 10%;
 }
-.young.root-notation > div > div:nth-child(3n+2) > *{
+#horse-catalog .young.root-notation > div > div:nth-child(3n+2) > *{
     margin-left: 0;
     text-align: center;
 
 }
-.young.root-notation > div > div:nth-child(3n+2) .notation{
+#horse-catalog .young.root-notation > div > div:nth-child(3n+2) .notation{
     margin: auto;
     float: none;
     max-width: 80%;
 
 }
-.young.root-notation>div>div:nth-child(3n) > *{
+#horse-catalog .young.root-notation>div>div:nth-child(3n) > *{
     margin-left: 40px;
 }
-.young.root-notation>div>div:nth-child(3n) h3 {
+#horse-catalog .young.root-notation>div>div:nth-child(3n) h3 {
     float: left;
 }
-.young.root-notation>div>div:nth-child(3n) .notation {
+#horse-catalog .young.root-notation>div>div:nth-child(3n) .notation {
     float: left;
 }
-.young.root-notation>div>div:nth-child(3n) {
+#horse-catalog .young.root-notation>div>div:nth-child(3n) {
     margin-left: 1px;
 }
 
-.young.root-notation .global-impression{
+#horse-catalog .young.root-notation .global-impression{
     width: 100%;
     margin-top: 0px;
 }
-.young.root-notation > div > div{
+#horse-catalog .young.root-notation > div > div{
 
     margin-bottom: 0px;
 }
-.young.root-notation > div > div.global-impression .value{
+#horse-catalog .young.root-notation > div > div.global-impression .value{
     float: none;
 }
 
 
 
-.notation {
+#horse-catalog .notation {
     background-image: url("images/dash.png");
     background-repeat: repeat-x;
     background-position: center;
 }
 
-.notation>* {
+#horse-catalog .notation>* {
     background-color: white;
 }
 
-.notation>.value {
+#horse-catalog .notation>.value {
     width: 40px;
     text-align: right;
 }
 
-.notation+* {
+#horse-catalog .notation+* {
     clear: both;
 }
 
-.cso pre {
+#horse-catalog .cso pre {
     padding-top: 20px;
 }
 
-.notation .label {
+#horse-catalog .notation .label {
     display: inline-block;
     max-width: 350px;
     padding-right: 7px;
 }
 
 
-.root-notation>div>div .value, .root-notation>div>div >div>pre  {
+#horse-catalog .root-notation>div>div .value, #horse-catalog .root-notation>div>div >div>pre  {
     clear: both;
 }
-.root-notation>div>div:nth-child(2n) .value{
+#horse-catalog .root-notation>div>div:nth-child(2n) .value{
     float: left;
 }
-.root-notation>div>div:nth-child(2n+1) .value{
+#horse-catalog .root-notation>div>div:nth-child(2n+1) .value{
     float: right;
 }
-.root-notation>div>div .notation .value{
+#horse-catalog .root-notation>div>div .notation .value{
     float: right;
 
 }
-.root-notation>div>div:nth-child(2n) pre  {
+#horse-catalog .root-notation>div>div:nth-child(2n) pre  {
     float: left;
 }
-.root-notation>div>div:nth-child(2n+1) pre  {
+#horse-catalog .root-notation>div>div:nth-child(2n+1) pre  {
     float: right;
 }
 
 
-.root-notation pre {
+#horse-catalog .root-notation pre {
     max-width: 80%;
 }
 
-.root-notation>div>div:nth-child(2n+1)>div>pre {
+#horse-catalog .root-notation>div>div:nth-child(2n+1)>div>pre {
     text-align: right;
 }
 
-.root-notation .value {
+#horse-catalog .root-notation .value {
     font-weight: bold;
 }
 
-.root-notation .global-impression, .root-notation .temperament {
+#horse-catalog .root-notation .global-impression,  #horse-catalog .root-notation .temperament {
     display: block;
     text-align: center;
     background-color: white;
     flex: none;
 }
 
-.root-notation .global-impression div, .root-notation .temperament div {
+#horse-catalog .root-notation .global-impression div, #horse-catalog .root-notation .temperament div {
     display: block;
     width: 100%;
     padding-left: 0;
     padding-right: 0;
 }
-.root-notation>div.global-impression>div .value, .root-notation >div.global-impression>div pre {
+#horse-catalog .root-notation>div.global-impression>div .value, #horse-catalog .root-notation >div.global-impression>div pre {
     float: none;
 }
 
-.root-notation .global-impression div pre, .root-notation .temperament .comment pre {
+#horse-catalog .root-notation .global-impression div pre, #horse-catalog .root-notation .temperament .comment pre {
     max-width: 100%;
     float: none;
 }
 
-.root-notation .temperament .notation {
+#horse-catalog .root-notation .temperament .notation {
     float: none;
     margin: auto;
     width: 475px;
 }
 
-.root-notation .temperament .notation>.value {
+#horse-catalog .root-notation .temperament .notation>.value {
     width: max-content;
 }
 
-.root-notation .temperament .comment {
+#horse-catalog .root-notation .temperament .comment {
     display: block;
     clear: both;
 }
 
-.root-notation .temperament .comment .label {
+#horse-catalog .root-notation .temperament .comment .label {
     text-align: center;
     display: block;
     margin-top: 20px;
     font-size: 1.2em;
 }
 
-.root-notation .temperament .comment .label::after {
+#horse-catalog .root-notation .temperament .comment .label::after {
     content: ' :';
 }
 
-.root-notation .temperament .comment pre {
+#horse-catalog .root-notation .temperament .comment pre {
     text-align: center;
     margin-top: 5px;
 }
 
 @media only screen and (max-width: 959px) {
-    .root-notation {
+    #horse-catalog .root-notation {
         margin-left: 3%;
         margin-right: 3%;
     }
-    .root-notation>div {
+    #horse-catalog .root-notation>div {
         display: block;
         font-size: 1em;
     }
-    .root-notation>div>div {
+    #horse-catalog .root-notation>div h3 {
+        font-size: 1em !important;
+    }
+    #horse-catalog .root-notation>div>div {
         width: 100%;
         padding: 0 1%;
     }
-    .root-notation>div>div {
+    #horse-catalog .root-notation>div>div {
         text-align: center !important;
     }
-    .root-notation pre{
+    #horse-catalog .root-notation pre{
         text-align: center !important;
         float: none !important;
     }
-    .root-notation>div>div h3 {
+    #horse-catalog .root-notation>div>div h3 {
         float: none !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-    .root-notation>div>div h3::before {
+    #horse-catalog .root-notation>div>div h3::before {
         content: none;
     }
-    .root-notation>div>div .notation {
+    #horse-catalog .root-notation>div>div .notation {
         max-width: 95%;
     }
-    .detail-card h3 {
+    #horse-catalog.detail-card h3 {
         text-align: center !important;
     }
-    .root-notation pre {
+    #horse-catalog .root-notation pre {
         max-width: 95%;
     }
-    .root-notation>div>div:first-child>div>pre {
+    #horse-catalog .root-notation>div>div:first-child>div>pre {
         text-align: center;
         width: 100%;
     }
-    .root-notation .notation {
+    #horse-catalog .root-notation .notation {
         float: none !important;
         margin: auto;
         max-width: 95% !important;
@@ -907,29 +996,29 @@ nav#horse-menu {
     
 
 
-    .detail-card .freejump .value, .root-notation>div>div:first-child>div>pre {
+    #horse-catalog.detail-card .freejump .value, #horse-catalog .root-notation>div>div:first-child>div>pre {
         float: none;
     }
-    .root-notation>div>div>div {
+    #horse-catalog .root-notation>div>div>div {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-    .root-notation > div > div:nth-child(2n) .value{
+    #horse-catalog .root-notation > div > div:nth-child(2n) .value{
         float: none !important;
     }
 
-    .root-notation > div > div:nth-child(2n+1) .value{
+    #horse-catalog .root-notation > div > div:nth-child(2n+1) .value{
         float: none !important;
     }
-    .root-notation > div > div .notation .value{
+    #horse-catalog .root-notation > div > div .notation .value{
         float: right !important;
     }
-    .root-notation>div>div {
+    #horse-catalog .root-notation>div>div {
         text-align: center !important;
     }
 }
 
-.no-star {
+#horse-catalog .no-star {
     content: '';
     width: 23.4px;
     display: inline-block;
@@ -938,32 +1027,32 @@ nav#horse-menu {
 
 /* galerry */
 
-.gallery {
+#horse-catalog .gallery {
     margin-top: 70px;
 }
 
-.gallery #zoom {
+#horse-catalog .gallery #zoom {
     width: 78%;
     margin: auto;
     display: block;
 }
-.gallery  .zoom-block{
+#horse-catalog .gallery  .zoom-block{
     position: relative;
 }
-.gallery .next,.gallery .previous{
+#horse-catalog .gallery .next, #horse-catalog .gallery .previous{
     position: absolute;
     top: 50%;
     font-size: 2em;
     opacity: 0.5;
     transform: translateY(-50%);
 }
-.gallery .next{
+#horse-catalog .gallery .next{
     right: 7%;
 }
-.gallery .previous{
+#horse-catalog .gallery .previous{
     left: 7%;
 }
-.gallery #legend {
+#horse-catalog .gallery #legend {
     width: 78%;
     margin: auto;
     display: block;
@@ -972,11 +1061,11 @@ nav#horse-menu {
     margin-bottom: 10px;
 }
 
-.gallery .legend {
+#horse-catalog .gallery .legend {
     display: none;
 }
 
-.gallery .thumbnail {
+#horse-catalog .gallery .thumbnail {
     overflow-x: auto;
     width: 78%;
     margin: auto;
@@ -984,17 +1073,17 @@ nav#horse-menu {
     white-space: nowrap;
 }
 
-.gallery .thumbnail img {
+#horse-catalog .gallery .thumbnail img {
     max-width: 20%;
 }
 
-video {
+#horse-catalog video {
     display: block;
     width: 78%;
     margin: auto;
 }
 
-.complete-video {
+#horse-catalog .complete-video {
     text-decoration: none;
     background: radial-gradient(#152857, #0b0f1e);
     color: white;
@@ -1007,18 +1096,24 @@ video {
 }
 
 @media only screen and (min-width: 1200px) {
-    #video, .gallery {
+    #horse-catalog #video, #horse-catalog #video + .gallery {
         width: 49%;
         float: left;
-        margin-top: 00px;
+    }
+
+    #horse-catalog .gallery {
+        width: 49%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
-.fiche{
+#horse-catalog .fiche{
     display: flex;
     max-width: 600px;
     margin: auto;
 }
-.sire-link::before {
+#horse-catalog .sire-link::before {
     content: '';
     height: 60px;
     width: 200px;
@@ -1029,7 +1124,7 @@ video {
     margin: auto;
 }
 
-.sire-link {
+#horse-catalog .sire-link {
     text-align: center;
     margin: auto;
     display: block;
@@ -1038,12 +1133,12 @@ video {
     width: min-content;
     flex: 1 1 auto;
 }
-.download-pdf-fiche{
+#horse-catalog .download-pdf-fiche{
     flex: 1 1 auto;
     margin-top: 60px;
 
 }
-.download-pdf-fiche a{
+#horse-catalog .download-pdf-fiche a{
     border: #152857 solid 1px;
     background-color: lightgray;
     margin: auto;
@@ -1052,38 +1147,39 @@ video {
     text-align: center;
     width: min-content;
     min-width: 150px;
+    line-height: 1em;
 
 }
 
-.download-pdf-fiche a[href$="pdf"]:first-child::before {
+#horse-catalog .download-pdf-fiche a[href$="pdf"]:first-child::before {
     content: none;
 }
 
 
 @media only screen and (max-width: 959px) {
-    .fiche {
+    #horse-catalog .fiche {
         display: block;
     }
 }
 
 
-.advertisement img {
+#horse-catalog .advertisement img {
     margin: auto;
     display: block;
     max-width: 78%;
 }
 
-footer {
+#horse-catalog footer {
     clear: both;
 }
 
 
 
- #return{
+#horse-catalog #return{
     border: #152857 solid 1px;
     font-family: "BluuNext-Bold";
     display: block;
-    max-width: 8%;
+    max-width: 9%;
     white-space: initial;
     margin: 50px auto;
 
@@ -1107,29 +1203,31 @@ footer {
     cursor: pointer;
 }
 @media only screen and (max-width: 959px) {
-    #return::before{
+    #horse-catalog #return::before{
         content: "\f2ea";
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         font-size: 18px;
     }
-    #return{
+    #horse-catalog #return{
         font-size: 0;
         width: inherit;
+        line-height: 1em;
+        padding-top: 18px;
     }
 }
 
 
 
 @media only screen and (min-width: 1200px) {
-    footer {
+    #horse-catalog footer {
         float: left;
         width: 100%;
     }
 }
 
 
-.mother-help{
+.mother-help, .bonus-help{
     position: fixed;
     top: 100px;
     bottom: 100px;
@@ -1140,8 +1238,19 @@ footer {
     margin: auto;
     text-align: center;
 }
+
 .mother-help img{
     width: 75%;
+}
+ .bonus-help{
+    width: 800px;
+    background-color: white;
+    text-align: left;
+    padding: 20px;
+    height: 320px;
+}
+.bonus-help .new{
+    color: red;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -1160,6 +1269,12 @@ footer {
         top: 50px;
         bottom: 50px;
     }
+    .bonus-help{
+
+        width: 95%;
+        padding: 10px;
+        height: 550px;
+    }
 }
 
 .background-help{
@@ -1177,11 +1292,24 @@ footer {
 shortcode
 */
 .documents-shortcode {
-text-align: center;
+/*text-align: center;*/
+    font-size: 14px;
+    line-height: 14px;
 }
+/*utilisé dans la page Statistiques étalons, en entête du tableau */
+.enteteTab{
+	font-weight: normal!important;
+    color: #FFFFFF!important;
+    background-color: #131637;
+	text-align: center;	
+	padding:5px!important;
+	border: 1px solid #000!important;	
+    line-height: 1.4em;
+}
+   
 .documents-shortcode .search{
-    color: white;
-    width: 60%;
+/*    color: white;*/
+    width: 100%;
 
     display: table;
     margin: auto;
@@ -1193,12 +1321,26 @@ text-align: center;
     display: inline-block;
     width: 20%;
     height: 100%;
-    background: linear-gradient(to right, #df0000, #740609);
+/*    background: linear-gradient(to right, #df0000, #740609);*/
     display: table-cell;
     font-size: 2em;
     vertical-align: middle;
     position: relative;
 
+}
+
+.documents-shortcode form input[type=submit] {
+    margin-top: 20px;
+			font-family: 'fengardo';
+		font-size: 1em;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-left: 50px;
+		cursor: pointer;
+		border-width: 1px;
+		background-color: white;
 }
 .documents-shortcode  .search > .title:after {
     position: absolute;
@@ -1218,7 +1360,7 @@ text-align: center;
 .documents-shortcode .search > div{    
     display: inline-block;
     width: 80%;
-    background: linear-gradient(to left, #152a5c, #0b0f1f);
+/*    background: linear-gradient(to left, #152a5c, #0b0f1f);*/
     display: table-cell;
 }
 
@@ -1241,7 +1383,7 @@ text-align: center;
     border: none;
     background: none;
     color: white;
-    font-family: "FengardoNeue_Black";
+	font-family: "fengardo", serif;
     font-size: 1.4em;
     vertical-align: middle;
 }
@@ -1257,13 +1399,14 @@ text-align: center;
     text-transform: uppercase;
     font-size: 1.3em;
     color: #0b0f1f;
-    font-family: "FengardoNeue_Black";
+	font-family: "fengardo", serif;
 
 }
 .documents-shortcode .letter input[type='submit']:hover, .documents-shortcode .letter input[type='submit'].selected{
-    background: linear-gradient(to right, #df0000, #740609);
-    
+/*    background: linear-gradient(to right, #df0000, #740609);*/
+    background-color: #B8905D;
     color: white;
+	cursor: pointer;
 
 }
 
@@ -1275,6 +1418,8 @@ text-align: center;
     margin: auto;
     border-spacing: 1px 0px;
     max-width: 80%;
+	border: 1px solid #000!important;
+    text-align: center!important;
 
 }
 
@@ -1309,7 +1454,7 @@ text-align: center;
     margin: 5px auto;
 }
 .documents-shortcode a[href$="pdf"]:first-child{
-    font-size: 0;
+   /* font-size: 0;*/
 }
 .documents-shortcode a[href$="pdf"]:first-child::before {
     width: 30px;
@@ -1318,7 +1463,8 @@ text-align: center;
 }
 
 .documents-shortcode .bloqued-pdf{
-    background-image: url("images/pdf.svg");
+    background-image: url("images/pdf2.svg");
+	cursor:pointer;
     background-repeat: no-repeat;
     background-size:contain;
     background-position: center;
@@ -1334,23 +1480,8 @@ text-align: center;
 }
 
 
-
-@media only screen and (max-width: 1580px) {
-    .documents-shortcode .search{
-        width: 70%;
-    }
-}
-
-@media only screen and (max-width: 1375px) {
-    .documents-shortcode .search{
-        width: 80%;
-    }
-}
-
 @media only screen and (max-width: 1190px) {
-    .documents-shortcode .search{
-        width: 90%;
-    }
+
     .documents-shortcode  .search > .title{
 
         font-size: 1.5em;
@@ -1358,20 +1489,10 @@ text-align: center;
     }
 }
 
-@media only screen and (max-width: 1160px) {
-    .documents-shortcode .search{
-        width: 95%;
-    }
-    .documents-shortcode .search{
-        width: 95%;
-    }
-}
 
 @media only screen and (max-width: 1020px) {
 
-    .documents-shortcode .search{
-        width: 80%;
-    }
+
 
     .documents-shortcode  .search > .title{
         display: none;
@@ -1396,7 +1517,7 @@ text-align: center;
         margin-top: 10px;
     } 
     .documents-shortcode .search .by-name input[type="text"]{
-        width: 60%;
+        width: 100%;
     }
 
     .documents-shortcode .search .by-name{
@@ -1423,4 +1544,131 @@ text-align: center;
 
 
 
+}
+
+
+/* slider note */
+
+#horse-catalog .root-notation > div.slider-temperament > div:nth-child(2n) > *{
+    margin-left: 0px;
+
+}
+#horse-catalog .slider-temperament h4{
+    font-size: 1em;
+}
+#horse-catalog .slider-temperament p{
+    font-size: 0.9em;
+}
+
+#horse-catalog .root-notation .temperament .note{
+    margin: auto;
+    height: 50px;
+}
+
+#horse-catalog .root-notation .temperament .note > div{
+    display: inline-block;
+}
+#horse-catalog .root-notation .temperament .note .note-label{
+    width: 250px;
+    text-align: right;
+    font-size: 0.9em;
+}
+#horse-catalog .root-notation .temperament .note .note-label~.note-label{
+    text-align: left;
+}
+#horse-catalog .root-notation .temperament div.slider{
+    background-color: #152a5c;
+    height: 4px;
+    width: 350px;
+    text-align: left;
+    position: relative;
+    top: 12px;
+}
+
+
+@media only screen and (max-width: 959px) {
+    #horse-catalog .root-notation .temperament div.slider{
+        max-width: 25%;
+    }
+
+    #horse-catalog .root-notation .temperament .note .note-label{
+        max-width: 25%;
+    }
+}
+
+#horse-catalog .root-notation .temperament div.slider .before,#horse-catalog .root-notation .temperament div.slider .after,#horse-catalog .root-notation .temperament div.slider .slider-value{
+    display: inline-block;
+    position: relative;
+    height: 12px;
+    width: 2px;
+    top: -4px;
+    background-color: #152a5c;
+    
+}
+#horse-catalog .root-notation .temperament div.slider .slider-value{
+    height: 22px;
+    width: 4px;
+    top: -8px;
+    background-color: #152a5c;
+    text-align: left;
+}
+#horse-catalog .root-notation .temperament div.slider .slider-value.mobile{
+    display: none;
+}
+@media only screen and (max-width: 959px) {
+    #horse-catalog .root-notation .temperament div.slider .slider-value{
+        display: none;
+    }
+    #horse-catalog .root-notation .temperament div.slider .slider-value.mobile{
+        display: block;
+    }
+}
+
+
+#horse-catalog .root-notation .temperament div.slider .before{
+    float: left;
+}
+
+#horse-catalog .root-notation .temperament div.slider .after{
+    float: right;
+}
+
+#horse-catalog .temperament h4{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+#horse-catalog .temperament p{
+    margin-top: 0px;
+    margin-top: 5px;
+    font-size: 0.89em;
+    font-style: italic;
+
+}
+
+/* cross part */
+#horse-catalog .root-notation > div > div.cross .value{
+    clear: none;
+    text-align: center;
+    padding-left: 5px;
+}
+
+#horse-catalog .root-notation > div > div.cross .value+.value{
+    border-right: 1px solid black;
+    text-align: center;
+}
+
+#horse-catalog .root-notation > div > div.cross .notation.head{
+    background: none;
+}
+
+#horse-catalog .root-notation > div > div.cross .notation.head .value{
+    font-size: 0.8em;
+}
+
+#horse-catalog .root-notation > div > div.cross .notation.head .value+.value{
+
+}
+
+#horse-catalog ~ footer{
+	display: none;
 }

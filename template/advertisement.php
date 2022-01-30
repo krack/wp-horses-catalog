@@ -1,4 +1,3 @@
-
 <?php
 $query_advertisment_args = array(
     'post_type'      => 'attachment',

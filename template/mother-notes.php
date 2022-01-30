@@ -1,4 +1,3 @@
-
 <div id="maternal">
  
 <h2><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></h2>

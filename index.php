@@ -6,7 +6,7 @@
  * Plugin URI: 
  * Description: Plugin to display a catalog of horses.
  * Author: Sylvain Gandon
- * Version: 0.1
+ * Version: 0.3
  * Author URI: 
 */
 
@@ -22,14 +22,14 @@ function configure_admin_menu(){
 
 add_action( 'admin_menu', 'configure_admin_menu' );
 
-new PageWithOverrideTemplate("horse-detail", "template/horse-detail.php", ["horse-card.css"]);
+new PageWithOverrideTemplate("horse-detail", "template/horse-detail.php", ["style.css","horse-card.css"]);
 $pageName= get_option( 'menu_page_name' );
 if($pageName == null){
         $pageName = "horse-list"; 
         add_option( 'menu_page_name', $pageName );  
 }
 
-new PageWithOverrideTemplate($pageName, "template/horses-list.php", ["horse-list.css"]);
+new PageWithOverrideTemplate($pageName, "template/horses-list.php", ["style.css", "horse-list.css"]);
 
 $allLinkName = get_option( 'menu-all-elements' );
 if($allLinkName == null){
@@ -129,8 +129,53 @@ function getParent($elements){
 
 new DocumentShortcode();
 
-add_action('wp_enqueue_scripts', 'qg_enqueue');
+add_action('wp_enqueue_scripts', 'qg_enqueue', 99999);
 function qg_enqueue() {
         wp_enqueue_script( 'title', plugins_url( "/js/".'title.js', __FILE__ ), array(), null, true);
 }
+
+
+
+function theme_xyz_header_metadata() {
+
+
+        $horseByYear = Horses::get($_GET["id"]);
+        //construct list of year
+        $yearsOfHorse = array_keys($horseByYear);
+        sort($yearsOfHorse, SORT_NUMERIC);
+        $yearsOfHorse = array_reverse($yearsOfHorse);
+        
+        
+        $year = $yearsOfHorse[0];
+        $horse = $horseByYear[$year];
+
+        $query_profile_args = array(
+                'post_type'      => 'attachment',
+                'post_mime_type' => 'image',
+                'post_status'    => 'inherit',
+                'posts_per_page' => -1,
+                'post_parent'    => 0,
+                'starts_with'    => $horse->id."_1"
+                
+                
+            );
+        $profileUrl = "";
+        $query_profile = new WP_Query( $query_profile_args );
+        if(count($query_profile->posts) > 0){
+                $profileUrl=wp_get_attachment_url( $query_profile->posts[0]->ID );
+        }
+?>
+
+        
+        <meta property="og:title" content="<?php echo $horse->name ?>">
+        <meta property="og:image" itemprop="image"  content="<?php echo $profileUrl; ?>">
+        <meta property="og:description" content="<?php echo $horse->name ?>">
+
+
+  <?php
+
+}
+add_action( 'wp_head', 'theme_xyz_header_metadata', 1 );
+remove_action ( 'wp_head' , 'rel_canonical' ) ;
+
 ?>
