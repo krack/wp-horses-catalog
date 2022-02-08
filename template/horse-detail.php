@@ -74,6 +74,13 @@ function isInternationnalEmpty(){
     <div class="fixe-part">
         <h1><?php echo $horse->name ?></h1>
         <?php
+        if($horse->appro != null){ 
+        ?>
+             <p class="appro"><?php echo $horse->appro ?></p>
+        <?php 
+        }
+        ?>
+        <?php
         if($horse->birthYear == null){ 
             if($horse->id != null){    
         ?>
@@ -87,26 +94,30 @@ function isInternationnalEmpty(){
                 <nav id="years">
                 <?php
 
-                    function has2years(){
-                        global $yearsOfHorse, $horse;
-                        foreach( $yearsOfHorse as $yearOfHorse){
-                            if(($yearOfHorse-1 - $horse->birthYear)==2){
-                                return true;
-                            }
-                        }
-                        return false;
-                    }
-                
                     foreach( $yearsOfHorse as $yearOfHorse){
                         
                             ?>
                         <a href="?id=<?php echo $_GET['id']; ?>&years=<?php echo $yearOfHorse; ?>" class="<?php if($yearOfHorse ==$year ) echo "selected"; ?>">
                                 <?php 
-                                if( !has2years()){
-                                    echo sprintf(__("Expertise at %s years (%s)", 'horses-catalog'),($yearOfHorse-1 - $horse->birthYear), ($yearOfHorse-1));
-                                }else{
-                                    echo sprintf(__("Expertise at %s years %s", 'horses-catalog'),3, (($yearOfHorse-1 - $horse->birthYear)==2)? __("Championnat", 'horses-catalog'): __("Testage", 'horses-catalog'));
-                                }
+                                    $age= ($yearOfHorse-1 - $horse->birthYear);
+                                    $event = (($yearOfHorse-1 - $horse->birthYear)==2)? __("Championnat", 'horses-catalog'): __("Testage", 'horses-catalog');
+                                    $yearOfEvent = ($yearOfHorse-1);
+                                    if( (date('Y') - $horse->birthYear) == 3){
+                                        $age= ($yearOfHorse-1 - $horse->birthYear);
+                                    }
+                                    
+                                    if( $yearOfHorse >= 2020){
+
+                                        if($age == 2 && $yearOfHorse != date('Y')){
+                                            $age++;
+                                            $yearOfEvent++;
+                                        }
+                                    }
+                                    if(($yearOfHorse-1 - $horse->birthYear) <=3){
+                                        echo sprintf(__("Expertise at %s years %s (%s)", 'horses-catalog'),$age, $event, $yearOfEvent);
+                                    }else{
+                                        echo sprintf(__("Expertise at %s years (%s)", 'horses-catalog'),$age, $yearOfEvent);
+                                    }
                                 ?>
                         </a>
                         
@@ -143,20 +154,30 @@ function isInternationnalEmpty(){
 
     <div class="profilblock">
         <?php
-             $query_profile_args = array(
+            $query_profile_args = array(
                 'post_type'      => 'attachment',
                 'post_mime_type' => 'image',
                 'post_status'    => 'inherit',
                 'posts_per_page' => -1,
                 'post_parent'    => 0,
-                'starts_with'    => $horse->id."_1"
-                
-                
+                'starts_with'   => $horse->id,
+                'orderby'       => 'title',
+                'order'         => 'ASC'
             );
+            
+
             $profileUrl = "";
             $query_profile = new WP_Query( $query_profile_args );
             if(count($query_profile->posts) > 0){
-                $profileUrl=wp_get_attachment_url( $query_profile->posts[0]->ID );
+
+                $sortedImages = [];
+
+                foreach ( $query_profile->posts as $image ) {
+                    array_push($sortedImages, $image);
+                }
+            
+                usort($sortedImages, 'comparatorYearAndName');
+                $profileUrl=wp_get_attachment_url( $sortedImages[0]->ID );
             }
 ?>
         <img class="profil" src="<?php echo $profileUrl; ?>" alt="profil <?php echo $horse->name ?>" />
@@ -179,6 +200,40 @@ function isInternationnalEmpty(){
             <h4><?php _e("Breeder", 'horses-catalog') ?></h4>
             <span ><?php echo $horse->breeder ?></span>
         </div>
+       
+    </div>
+
+    <div class="human-linked">
+        <?php 
+        if(strtolower($horse->discipline) == "cce"){
+            $labelIndice = "ICC";
+            $labelBlup = "BCC";
+
+        }else if(strtolower($horse->discipline) == "dressage"){
+            $labelIndice = "IDR";
+            $labelBlup = "BDR";
+        }else{
+
+            $labelIndice = "ISO";
+            $labelBlup = "BSO";
+        }
+        if($horse->indice != null){
+        ?>
+        <div class="indice">
+            <h4><?php _e($labelIndice, 'horses-catalog') ?></h4>
+            <span><?php echo $horse->indice ?></span>
+        </div>
+        <?php } ?>
+
+        <?php 
+        if($horse->blup != null){
+        ?>
+        <div class="blup">
+            <h4><?php _e($labelBlup, 'horses-catalog') ?></h4>
+            <span ><?php echo $horse->blup ?></span>
+        </div>
+
+        <?php } ?>
        
     </div>
     <div class="projections">

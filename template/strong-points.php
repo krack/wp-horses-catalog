@@ -3,7 +3,7 @@
     <h2><?php _e("The strong points", 'horses-catalog') ?></h2>
     <ul>
         <?php foreach($horse->strongPoints as $point){ ?>
-            <li><?php echo $point; ?></li>
+            <li><pre><?php echo $point; ?></pre></li>
         <?php } ?>
     </ul>
 </div>

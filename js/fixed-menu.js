@@ -1,4 +1,4 @@
-var originTop = $(".fixe-part").offset().top;
+var originTop = $("#years").offset().top - 100;
 var fixePartHeight = $(".fixe-part").outerHeight();
 $(window).scroll(function () {
 

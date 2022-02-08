@@ -1,39 +1,60 @@
-<div id="sf" class="root-notation <?php if(isYoungHorse($horse)){ ?>young<?php } ?>">
+<?php
+    function is5YearsCsoDataArePresent(){
+    global $horse;
+    $isEmpty = true;
+    $isEmpty &= (($horse->notes->sfExprets->obstacleEquilibre) == null);
+    $isEmpty &= (($horse->notes->sfExprets->obstacleMeansPath) == null);
+    $isEmpty &= (($horse->notes->sfExprets->obstacleStyle) == null);
+    return !$isEmpty;
+}
+
+function is5YearsCrossDataArePresent(){
+    global $horse;
+    $isEmpty = true;
+    $isEmpty &= (($horse->notes->sfExprets->locomotionGallopCross) == null);
+    $isEmpty &= (($horse->notes->sfExprets->obstacleEquilibreCross) == null);
+    $isEmpty &= (($horse->notes->sfExprets->obstacleMeansPathCross) == null);
+    $isEmpty &= (($horse->notes->sfExprets->obstacleStyleCross) == null);
+    $isEmpty &= (($horse->notes->sfExprets->obstacleBehaviourCross) == null);
+    $isEmpty &= (($horse->notes->sfExprets->globaleCross) == null);
+    return !$isEmpty;
+}
+
+function is5YearsDressageDataArePresent(){
+    global $horse;
+    $isEmpty = true;
+    $isEmpty &= (($horse->notes->sfExprets->dressagePace) == null);
+    $isEmpty &= (($horse->notes->sfExprets->dressageTrot) == null);
+    $isEmpty &= (($horse->notes->sfExprets->dressageGallop) == null);
+    $isEmpty &= (($horse->notes->sfExprets->dressageGlobale) == null);
+    return !$isEmpty;
+}
+
+function hasCrossPace(){
+    global $horse;
+    $isEmpty = true;
+    $isEmpty &= (($horse->notes->sfExprets->crossPace) == null);
+    $isEmpty &= (($horse->notes->sfExprets->crossTrot) == null);
+    $isEmpty &= (($horse->notes->sfExprets->crossGallop) == null);
+    return !$isEmpty;
+}
+?>
+
+<div id="sf" class="root-notation <?php if(isYoungHorse($horse) || hasCrossPace()){ ?>young<?php } ?>">
+    <?php
+    if($horse->notes->sfExprets->locomotionGeneral != null && $horse->notes->sfExprets->locomotionComment != null){
+    ?>
+        <h2><?php _e("Expertise judges SF & International riders", 'horses-catalog') ?></h2>
+    <?php
+    }else{
+    ?>
     <h2><?php _e("Expertise judges SF", 'horses-catalog') ?></h2>
+    <?php
+    }
+    ?>
         <div class="back"></div>
     <div>
-        <?php
-         function is5YearsCsoDataArePresent(){
-            global $horse;
-            $isEmpty = true;
-            $isEmpty &= (($horse->notes->sfExprets->obstacleEquilibre) == null);
-            $isEmpty &= (($horse->notes->sfExprets->obstacleMeansPath) == null);
-            $isEmpty &= (($horse->notes->sfExprets->obstacleStyle) == null);
-            return !$isEmpty;
-        }
-
-        function is5YearsCrossDataArePresent(){
-            global $horse;
-            $isEmpty = true;
-            $isEmpty &= (($horse->notes->sfExprets->locomotionGallopCross) == null);
-            $isEmpty &= (($horse->notes->sfExprets->obstacleEquilibreCross) == null);
-            $isEmpty &= (($horse->notes->sfExprets->obstacleMeansPathCross) == null);
-            $isEmpty &= (($horse->notes->sfExprets->obstacleStyleCross) == null);
-            $isEmpty &= (($horse->notes->sfExprets->obstacleBehaviourCross) == null);
-            $isEmpty &= (($horse->notes->sfExprets->globaleCross) == null);
-            return !$isEmpty;
-        }
-
-        function is5YearsDressageDataArePresent(){
-            global $horse;
-            $isEmpty = true;
-            $isEmpty &= (($horse->notes->sfExprets->dressagePace) == null);
-            $isEmpty &= (($horse->notes->sfExprets->dressageTrot) == null);
-            $isEmpty &= (($horse->notes->sfExprets->dressageGallop) == null);
-            $isEmpty &= (($horse->notes->sfExprets->dressageGlobale) == null);
-            return !$isEmpty;
-        }
-        
+    <?php
         
         if(!is5YearsCsoDataArePresent() && !is5YearsDressageDataArePresent()){ ?>
             <div class="model list-note">
@@ -77,6 +98,31 @@
             <h3><?php _e("Locomotion and general functioning", 'horses-catalog') ?></h3>
             <div>
                 <span class="value"><?php echo $horse->notes->sfExprets->locomotion; ?></span>
+                <pre><?php echo $horse->notes->sfExprets->locomotionComment; ?></pre>
+            </div>
+        </div>
+        <?php } ?>
+
+        <?php if(!isYoungHorse($horse) && ($horse->notes->sfExprets->locomotionGeneral != null && $horse->notes->sfExprets->locomotionComment != null)){ ?>
+        <div class="locomotion">
+            <h3><?php _e("Locomotion and general functioning", 'horses-catalog') ?></h3>
+            <div>
+            <div class="notation">
+                    <span class="label"><?php _e("Pace", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->locomotionPace; ?></span>
+                </div>
+                <div class="notation">
+                    <span class="label"><?php _e("Trot", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->locomotionTrot; ?></span>
+                </div>
+                <div class="notation">
+                    <span class="label"><?php _e("Gallop", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->locomotionGallop; ?></span>
+                </div>
+                <div class="notation">
+                    <span class="label"><?php _e("General functionning", 'horses-catalog') ?></span>
+                    <span class="value"><?php echo $horse->notes->sfExprets->locomotionGeneral; ?></span>
+                </div>
                 <pre><?php echo $horse->notes->sfExprets->locomotionComment; ?></pre>
             </div>
         </div>
@@ -145,7 +191,10 @@
 
         <?php if(!isYoungHorse($horse) && (!is5YearsCsoDataArePresent() && !is5YearsDressageDataArePresent()) ){ ?>
             <div class="freejump">
-                <h3><?php _e("Jumping ability", 'horses-catalog') ?></h3>
+                <h3><?php _e("Jumping ability", 'horses-catalog') ?>
+                <i class="fas fa-info-circle" title="<?php _e("General average obtained in the 2-year-old championship or in the qualifier at 3 years old", 'horses-catalog') ?>"></i>
+            </h3>
+                
                 <div>
                     <span class="value"><?php echo $horse->notes->sfExprets->freeObstacle; ?></span>
                     <pre><?php echo $horse->notes->sfExprets->freeObstacleComment; ?></pre>
@@ -326,9 +375,40 @@
                 </div>
             </div>
 
+
+            <?php 
+             /* cross pace data data */
+            if(hasCrossPace()){
+            ?>
+            
+            <div class="list-note ">
+                <h3><?php _e("Expertise judges SF Paces", 'horses-catalog') ?></h3>
+                <div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Pace", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->crossPace; ?></span>
+                    </div>
+                    <div class="notation">
+                        <span class="label"><?php _e("Trot", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->crossTrot; ?></span>
+                    </div> 
+                    <div class="notation">
+                        <span class="label"><?php _e("Gallop", 'horses-catalog') ?></span>
+                        <span class="value"><?php echo $horse->notes->sfExprets->crossGallop; ?></span>
+                    </div>
+                </div>
+            </div>
+            <?php
+            }
+            
+            ?>
+
+            
+
         <?php } ?>
 
     </div>
+    
     <?php if($horse->notes->sfExprets->etalonBonus != null){ ?>
     <div class="global-impression">
         <h3><?php _e("Stallion Bonus Assessment", 'horses-catalog') ?> <i class="fas fa-info-circle bonus" title="<?php _e("Click to learn bonus etalons", 'horses-catalog') ?>"></i></h3> 
@@ -345,6 +425,16 @@
             <span class="value"><?php echo $horse->notes->sfExprets->globale; ?></span>
         </div>
     </div>
+    <?php } ?>
+
+    <?php if($horse->notes->sfExprets->finalComment != null){ ?>
+    <div class="global-impression">
+        <h3><?php _e("Final expertise", 'horses-catalog') ?></h3>
+        <div>
+            <pre><?php echo $horse->notes->sfExprets->finalComment; ?></pre>
+        </div>
+    </div>
+
     <?php } ?>
 
 

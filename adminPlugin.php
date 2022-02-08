@@ -42,6 +42,8 @@ class AdminPlugin{
         ?>
         <div class="wrap wp-horses-catalog-plugin-admin">
             <h1><?php _e("Horse Catalog", 'horses-catalog'); ?></h1>  
+
+            <?php  $this->displayFile(); ?>
             <form method="post" enctype="multipart/form-data" >
                 <fieldset>
                     <legend><?php _e("Import manager", 'horses-catalog'); ?></legend>
@@ -66,6 +68,11 @@ class AdminPlugin{
                         <label for="file_list_uploaded" class="fas fa-file-csv"><?php _e("Horses", 'horses-catalog'); ?></label>
                         <input type="file" name="<?php echo $this->csvInputName ?>" id="file_list_uploaded" accept=".csv" />
                     </div>
+                    <div>
+                        <label for="year" class="fas fa-calendar-alt"><?php _e("Year", 'horses-catalog'); ?></label>
+                        <input type="number" name="year" id="year" value="<?php echo date("Y"); ?>" required />
+                    </div>
+
                     <div style="display:none">
                         <label for="file_pictures_uploaded" class="fas fa-file-archive"><?php _e("Horse pictures zip", 'horses-catalog'); ?></label>
                         <input type="file" name="<?php echo $this->zipInputName ?>" id="file_pictures_uploaded" accept=".zip" />
@@ -164,6 +171,86 @@ class AdminPlugin{
         </div>
         <?php
 
+    }
+
+    private function displayFile(){
+        ?>
+        <fieldset>
+        <legend><?php _e("file manager", 'horses-catalog'); ?></legend>
+        <?php
+        $directory = wp_upload_dir()['basedir']."/horses-catalog/";
+        if(is_dir($directory)){
+            $this->displayRights($directory);
+            echo $directory;
+            $files = array_diff(scandir($directory), array('..', '.'));
+            foreach($files as $file){
+            ?>
+                <li><a href="<?php echo "/wp-content/uploads/horses-catalog/".$file; ?>">
+                <?php $this->displayRights($directory.$file); ?>
+                <?php echo $directory.$file; ?></a></li>
+            <?php
+            }
+        }
+            ?>
+        </fieldset>
+        <?php
+
+    }
+
+    private function displayRights($file){
+        $perms = fileperms($file);
+
+        switch ($perms & 0xF000) {
+            case 0xC000: // Socket
+                $info = 's';
+                break;
+            case 0xA000: // Lien symbolique
+                $info = 'l';
+                break;
+            case 0x8000: // Régulier
+                $info = 'r';
+                break;
+            case 0x6000: // Block special
+                $info = 'b';
+                break;
+            case 0x4000: // dossier
+                $info = 'd';
+                break;
+            case 0x2000: // Caractère spécial
+                $info = 'c';
+                break;
+            case 0x1000: // pipe FIFO
+                $info = 'p';
+                break;
+            default: // Inconnu
+                $info = 'u';
+        }
+
+        // Propriétaire
+        $info .= (($perms & 0x0100) ? 'r' : '-');
+        $info .= (($perms & 0x0080) ? 'w' : '-');
+        $info .= (($perms & 0x0040) ?
+                    (($perms & 0x0800) ? 's' : 'x' ) :
+                    (($perms & 0x0800) ? 'S' : '-'));
+
+        // Groupe
+        $info .= (($perms & 0x0020) ? 'r' : '-');
+        $info .= (($perms & 0x0010) ? 'w' : '-');
+        $info .= (($perms & 0x0008) ?
+                    (($perms & 0x0400) ? 's' : 'x' ) :
+                    (($perms & 0x0400) ? 'S' : '-'));
+
+        // Tout le monde
+        $info .= (($perms & 0x0004) ? 'r' : '-');
+        $info .= (($perms & 0x0002) ? 'w' : '-');
+        $info .= (($perms & 0x0001) ?
+                    (($perms & 0x0200) ? 't' : 'x' ) :
+                    (($perms & 0x0200) ? 'T' : '-'));
+
+        echo $info;
+
+        echo fileowner($file);
+        echo filegroup($file);
     }
 
     private function saveConfiguration(){
@@ -368,7 +455,7 @@ class AdminPlugin{
             mkdir(wp_upload_dir()['basedir']."/horses-catalog/", 0700);
         }
 
-        if(!rename($this->currentCsvFile, wp_upload_dir()['basedir']."/horses-catalog/list_horse.csv")){
+        if(!rename($this->currentCsvFile, wp_upload_dir()['basedir']."/horses-catalog/list_horses_".$_POST["year"].".csv")){
             array_push($this->errors, __("Error during copie after file validating", 'horses-catalog'));
         }
 

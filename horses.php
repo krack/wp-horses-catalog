@@ -179,7 +179,9 @@ class Horses{
 
     public function __construct($rawData) {
         $this->id = $rawData["id"];
+       
         $this->name = $rawData["nom"];
+
         $this->birthYear = $rawData["annee_naissance"];
         $this->age = (date("Y") - $this->birthYear);
         $this->coatColor = $rawData["robe"];
@@ -191,6 +193,11 @@ class Horses{
 
         $this->videoLink = $rawData["lien video"];
         $this->sireLink = $rawData["lien SIRE"];
+
+        $this->indice = $rawData["indice"];
+        $this->blup = $rawData["blup"];
+        $this->appro = $rawData["appro"];
+        
         
 
         
@@ -366,6 +373,7 @@ class SFExprets{
         $this->locomotionPace = $rawData["expertise_sf_note_locomotion_pas"];
         $this->locomotionTrot = $rawData["expertise_sf_note_locomotion_trot"];
         $this->locomotionGallop = $rawData["expertise_sf_note_locomotion_galop"];
+        $this->locomotionGeneral= $rawData["expertise_sf_note_locomotion_general"];
 
         $this->locomotionGlobale = $rawData["expertise_testing_note_locomotion_generale"];
 
@@ -374,10 +382,16 @@ class SFExprets{
         $this->freeObstacleResource = $rawData["expertise_sf_note_obstacle_liberte_moyens"];
         $this->freeObstacleStyle = $rawData["expertise_sf_note_obstacle_liberte_style"];
         $this->freeObstacleRespect = $rawData["expertise_sf_note_obstacle_liberte_barre"];
-
-
+        if($this->freeObstacleRespect == ""){
+            $this->freeObstacleRespect = $rawData["expertise_sf_note_obstacle_liberte_comportement"];
+        }
+        
+        $this->finalComment = $rawData["expertise_sf_finale"];
+        
         $this->globale = $rawData["expertise_sf_note_impression_ensemble"];
-
+        if($this->globale == ""){
+            $this->globale = $rawData["expertise_sf_note_obstacle_liberte_commentaire"];
+        }
 
         $this->obstacleEquilibre = $rawData["expertise_sf_note_equilibre_disponibilité"];
         $this->obstacleMeansPath = $rawData["expertise_sf_note_moyens_trajectoire"];
@@ -415,6 +429,11 @@ class SFExprets{
         $this->dressageTrot = $rawData["expertise_sf_note_trot_dr"];
         $this->dressageGallop = $rawData["expertise_sf_note_galop_dr"];
         $this->dressageGlobale = $rawData["expertise_sf_note_ensemble_dr"];
+
+
+        $this->crossPace = $rawData["expertise_sf_note_pas_cce"];
+        $this->crossTrot = $rawData["expertise_sf_note_trot_cce"];
+        $this->crossGallop = $rawData["expertise_sf_note_galop_cce"];
 
         $this->etalonBonus = $rawData["bonus_etalon"];
 
@@ -587,6 +606,15 @@ class Search{
         $this->categories = null;
         $this->start = "";
     }
+}
+
+function comparatorYearAndName($image1, $image2){
+    $year1= date('Y', strtotime($image1->post_date_gmt));
+    $year2= date('Y', strtotime($image2->post_date_gmt));
+    if($year1 == $year2){
+        return  $image1->title < $image2->title; 
+    }
+    return $year1 < $year2; 
 }
 
 ?>

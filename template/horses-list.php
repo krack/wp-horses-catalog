@@ -13,6 +13,7 @@ $listHorsesOfYear = Horses::getAll($searchYear);
 
 $search = new Search($_GET);
 $listHorses = Horses::getAll($search);
+
 if($pagination){
     $page = 1;
     $nbByPage = 9;
@@ -110,16 +111,24 @@ if($_GET['display-age']=='true'){
             'post_status'    => 'inherit',
             'posts_per_page' => -1,
             'post_parent'    => 0,
-            'starts_with'    => $horse->id."_1"
-            
-            
+            'starts_with'   => $horse->id,
+            'orderby'       => 'title',
+            'order'         => 'ASC'
         );
         $profileUrl = "";
         $query_profile = new WP_Query( $query_profile_args );
         if(count($query_profile->posts) > 0){
-            $profileUrl=wp_get_attachment_image_src( $query_profile->posts[0]->ID , 'large', false)[0];
+
+            $sortedImages = [];
+            foreach ( $query_profile->posts as $image ) {
+                array_push($sortedImages, $image);
+            }
+        
+            usort($sortedImages, 'comparatorYearAndName');
+            $profileUrl=wp_get_attachment_image_src( $sortedImages[0]->ID , 'large', false)[0];
         }
         ?>
+
         <div class="card"> 
             <a href="/horse-detail/?id=<?php echo $horse->id;?>">
     <span class="age"><?php echo sprintf(__('%s years', 'horses-catalog'), $horse->age)  ?><?php if($horse->discipline != null){ ?> - <?php echo $horse->discipline; ?><?php } ?></span>

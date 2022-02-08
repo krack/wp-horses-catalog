@@ -1,0 +1,472 @@
+/*
+Theme Name: SF catalog
+Theme URI: 
+Author: Sylvain Gandon
+Author URI: 
+Description: Theme for horse catalog of Selle Francais.
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 
+Text Domain: sf-catalog
+*/
+
+@font-face {
+    font-family: "BluuNext-Bold";
+    src: url("fonts/BluuNext-Bold.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "FengardoNeue_Black";
+    src: url("fonts/FengardoNeue_Black.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "FengardoNeue_Regular";
+    src: url("fonts/FengardoNeue_Regular.otf") format("truetype");
+}
+#horse-catalog{
+    font-size: 14px;
+}
+
+
+
+#horse-catalog nav {
+    margin: 0 7%;
+}
+
+#horse-catalog nav ul {
+    display: flex;
+    line-height: 50px;
+    font-size: 1.4em;
+    padding: 0;
+    margin: 0;
+}
+
+#horse-catalog nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0e113b;
+    width: max-content;
+}
+
+#horse-catalog nav a[href="#"] {
+    cursor: default;
+}
+
+#horse-catalog .header {
+    padding-top: 10px;
+}
+
+#horse-catalog .header::before {
+    content: '';
+    height: 60px;
+    width: 60px;
+    display: block;
+    flex: 1 1 auto;
+    background-image: url("assets/images/sf_blue.png");
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    position: absolute;
+    left: 2%;
+}
+
+#horse-catalog nav{
+
+    border-bottom: lightgray 1px solid;
+}
+#horse-catalog nav li {
+    display: block;
+    list-style: none;
+    flex: 1 1 auto;
+    text-align: center;
+    position: relative;
+}
+
+#horse-catalog nav li ul {
+    display: none;
+    background: radial-gradient(#152857, #0b0f1e);
+    font-size: 0.8em;
+    z-index: 999;
+    min-width: max-content;
+    color: white;
+}
+
+#horse-catalog .page-accueil-2 nav li ul {
+
+    background: none;
+    background-color: white;
+    color: #152857;
+}
+
+#horse-catalog nav li ul li {
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#horse-catalog nav li ul li a {
+    color: inherit;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
+}
+
+#horse-catalog nav li:hover ul {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+
+
+#horse-catalog .is-provider-youtube {
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+#horse-catalog .is-provider-youtube iframe, #horse-catalog .is-provider-youtube object, #horse-catalog .is-provider-youtube embed {
+    max-width: 100%;
+    margin: 0;
+}
+
+#horse-catalog #horse-menu {
+    font-size: 0.8em;
+}
+
+
+
+@media only screen and (min-width: 959px) and (max-width: 1100px) {
+    #horse-catalog nav {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1200px) {
+    #horse-catalog nav {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    #horse-catalog nav {
+        display: none;
+        z-index: 100;
+    }
+    #horse-catalog nav .menu{
+        padding-top: 10px;
+    }
+    
+}
+
+#horse-catalog h1, .shf-authentication-login h1{
+    margin: 0;
+    margin-top: 100px;
+    margin-bottom: 70px !important;
+    padding: 0;
+    font-size: 3.5em !important;
+    line-height: 0.3em;
+    display: inline-block;
+    margin-left: 50%;
+    transform: translate(-50%) rotate(-3deg);
+    white-space: nowrap;
+    font-family: "BluuNext-Bold";
+    font-weight: bold;
+}
+
+#horse-catalog h1::after {
+    text-decoration: none;
+    content: " ";
+    display: block;
+    background: linear-gradient(to right, #2a2927, #f1c589);
+    height: 3px;
+    width: 125px;
+    margin-top: 0.4em;
+}
+
+#horse-catalog h1:empty::after {
+    content: none;
+}
+
+#horse-catalog h1:empty {
+    margin: 0;
+    margin-bottom: 30px;
+    transform: none;
+}
+
+@media only screen and (max-width: 959px) {
+    #horse-catalog h1, .shf-authentication-login h1 {
+        text-align: center;
+        line-height: 1em;
+        font-size: 1.8em !important;
+        white-space: pre-line;
+    }
+    #horse-catalog h1::after {
+        margin: auto;
+        margin-top: 2%;
+    }
+    #horse-catalog h1:empty {
+        margin-bottom: 60px;
+    }
+}
+
+#horse-catalog h2 {
+    background: radial-gradient(#152857, #0b0f1e);
+    color: white;
+    font-family: "BluuNext-Bold";
+    display: block;
+    padding: 5px 20px;
+    width: min-content;
+    white-space: nowrap;
+    margin: 70px auto 30px auto;
+    font-size: 2em;
+}
+
+#horse-catalog h2.page-subtitle{
+   transform:rotate(-3deg);
+    background: none;
+    color: #152857;
+    margin: 0;
+
+    margin-top: -50px;
+    transform: translate(-50%) rotate(-3deg);
+    margin-left: 50%;
+    font-family: "FengardoNeue_Black";
+}
+
+@media only screen and (max-width: 959px) {
+    #horse-catalog h2 {
+        text-align: center;
+        font-size: 1em !important;
+    }
+}
+
+#horse-catalog h3 {
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    font-family: "BluuNext-Bold";
+    font-weight: normal;
+}
+
+#horse-catalog h3::before {
+    content: '';
+    width: auto;
+}
+
+#horse-catalog h3::after {
+    text-decoration: none;
+    content: '';
+    display: inline-block;
+    background: linear-gradient(to right, #2a2927, #f1c589, #2a2927);
+    height: 2px;
+    width: 100%;
+}
+
+#horse-catalog h3 {
+    font-family: "FengardoNeue_Black";
+}
+
+#horse-catalog h4 {
+    margin-left: 20%;
+    font-family: "FengardoNeue_Black";
+    font-weight: lighter;
+}
+
+#horse-catalog .content p {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#horse-catalog .content figure {
+    text-align: center;
+}
+
+#horse-catalog table {
+
+    border-spacing: 0px 1px;
+    border-collapse: separate;
+    font-family: "FengardoNeue_Regular";
+}
+#horse-catalog th{
+    background-color: #152857;
+    color: white;
+    font-family: "FengardoNeue_Black";
+    padding: 15px;
+}
+#horse-catalog tr + tr th{
+    width: 10%;
+}
+#horse-catalog td {
+    background-color: white;
+    text-align: center;
+}
+
+#horse-catalog hr {
+    background: linear-gradient(to right, #83603d, #f1c589, #83603d);
+    width: 15%;
+    height: 3px;
+    display: block;
+    border: none;
+    margin: 30px auto;
+    text-align: center;
+    transform: rotate(-3deg);
+}
+
+#horse-catalog strong {
+    font-family: "FengardoNeue_Black";
+    font-weight: lighter;
+    font-size: 1.1em;
+}
+
+#horse-catalog pre {
+    font-family: "FengardoNeue_Regular";
+    white-space: pre-line;
+}
+
+#horse-catalog a[href$="pdf"]:first-child {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    max-width: 200px;
+    text-decoration: none;
+    color: black;
+}
+
+#horse-catalog a[href$="pdf"]:first-child::before {
+    content: '';
+    background-image: url("assets/images/pdf.svg");
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+    width: 100px;
+    height: 60px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#horse-catalog a.no-pdf-style[href$="pdf"]:first-child::before{
+    content: none;
+}
+
+
+.shf-authentication-login .highlighted {
+    clip-path: polygon(0 150px, 100% 0, 100% 100%, 0% 100%);
+    padding-top: 150px;
+    background: linear-gradient(to bottom, #152a5c, #0b0f1f);
+    color: white;
+    margin: 0;
+    position: relative;
+    padding-bottom: 40px;
+    font-size: 1.2em;
+    margin-bottom: 50px;
+}
+.shf-authentication-login .highlighted p {
+    width: 45%;
+    margin-left: 15%;
+}
+
+@media only screen and (max-width: 959px) {
+    .shf-authentication-login{
+        position: absolute;
+    }
+    .shf-authentication-login .highlighted {
+        clip-path: polygon(0 50px, 100% 0, 100% 100%, 0% 100%);
+        padding-top: 50px;
+    }
+    .shf-authentication-login .highlighted p {
+        width: 80%;
+        margin-left: 10% !important;
+    }
+}
+
+.shf-authentication-login .highlighted.flat {
+    clip-path: none;
+    padding-top: 0px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+.shf-authentication-login .highlighted.center p{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+@media only screen and (max-width: 959px) {
+    #horse-catalog h4 {
+        margin-left: 7%;
+    }
+    #horse-catalog .content p {
+        margin-left: 7%;
+        margin-right: 7%;
+        font-size: 1em;
+    }
+}
+
+
+#horse-catalog .wp-block-columns {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+@media only screen and (max-width: 959px) {
+    #horse-catalog .wp-block-columns {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+
+
+
+.highlighted table {
+    color: black;
+}
+
+
+
+#horse-catalog button,button.shf-authentication-login-fixed-button {
+    background: radial-gradient(#152857, #0b0f1e);
+    color: white;
+    font-family: "BluuNext-Bold";
+    display: block;
+    padding: 5px 20px;
+    width: min-content;
+    white-space: nowrap;
+    margin: 50px auto;
+}
+
+
+@media only screen and (max-width: 959px) {
+    button.shf-authentication-login-fixed-button {
+        display: none;
+    }
+}
+#horse-catalog .shf-authentication-login-button::before {
+    content: none;
+}
+
+
+
+
+
+#horse-catalog .page-demande-dapprobation h1{
+    margin-bottom: 0;
+
+}
+
+#horse-catalog .text_justify {
+    text-align: justify;
+}
+
+#horse-catalog a{
+    color: inherit;
+}
+#horse-catalog input[type="text"]{
+    margin: auto;
+}
