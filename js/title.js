@@ -13,8 +13,9 @@ $(document).ready(function () {
         $(".title-plugin").css("position", "absolute");
         $(".title-plugin").css("top", e.pageY+"px");
         $(".title-plugin").css("left", e.pageX+"px");
-        $(".title-plugin").css("background-color", "black");
+        $(".title-plugin").css("background-color", "#152857");
         $(".title-plugin").css("color", "white");
+        $(".title-plugin").css("font-size", "0.66em");
         $(".title-plugin").css("max-width", "25%");
         $(".title-plugin").css("padding", "10px");
         e.stopPropagation();

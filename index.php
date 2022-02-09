@@ -50,6 +50,15 @@ if ( $starts_with ) {
         $where .= " AND $wpdb->posts.post_title LIKE '$starts_with%'";
 }
 
+
+$not_end_with = $query->get( 'not_end_with' );
+
+if ( $not_end_with ) {
+        $where .= " AND $wpdb->posts.post_title NOT LIKE '%$not_end_with' ";
+}
+
+
+
 $exact = $query->get( 'exact' );
 
 if ( $exact ) {

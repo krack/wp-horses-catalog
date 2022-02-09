@@ -65,10 +65,15 @@ class CsvReader{
 
 
     public function readFile(){
+        $bom = "\xef\xbb\xbf"; 
         $dataList = [];
         $headers;
         $row = 0;
         if (($handle = fopen($this->path, "r")) !== FALSE) {
+            if (fgets($handle, 4) !== $bom) {
+                // BOM not found - rewind pointer to start of file.
+                rewind($handle);
+            } 
             while (($data = fgetcsv($handle, 0,  $this->separator)) !== FALSE) {
                 if($row == 0){
                     $headers = $data;
@@ -86,7 +91,7 @@ class CsvReader{
             }
             fclose($handle);
         }else{
-            array_push($this->errors, __("File opening impossible", 'horses-catalog'));
+            array_push($this->errors, __("File opening impossible", $this->pluginName));
         }
         return $dataList;
     }

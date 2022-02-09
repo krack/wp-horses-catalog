@@ -208,6 +208,7 @@
     text-align: center;
     margin-top: -40px;
     margin-bottom: 30px;
+    font-size: 1.2em;
 }
 
 #horse-catalog.detail-card h3 {
@@ -215,6 +216,11 @@
     padding-top: 20px;
     margin-bottom: 20px;
 }
+
+#horse-catalog.detail-card h3 .fas {
+line-height: 0;
+}
+
 
 #horse-catalog.detail-card h4 {
     margin-left: 0%;
@@ -243,7 +249,7 @@
     cursor:pointer;
     display:inline-block;
     font-size:1.125em;
-    padding:.667em 1.333em;
+    padding:.3em 1.333em;
     text-align:center;
     margin-bottom: 10px;
 }
@@ -333,8 +339,13 @@
     display: flex;
     margin: auto;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     max-width: 600px;
+}
+
+#horse-catalog.detail-card .human-linked.metrics{
+
+    max-width: 200px;
 }
 
 #horse-catalog.detail-card .human-linked>*, #horse-catalog.detail-card .projections>* {
@@ -343,7 +354,7 @@
 }
 
 #horse-catalog.detail-card .human-linked span {
-    font-size: 0.9em;
+    font-size: 1.1em;
     max-width: 95%;
     display: inline-block;
 }
@@ -387,10 +398,6 @@
     font-weight: bold;
     font-size: 2em;
     font-family: "BluuNext-Bold";
-}
-
-#horse-catalog.detail-card .size::after {
-    content: "m";
 }
 
 #horse-catalog.detail-card table {

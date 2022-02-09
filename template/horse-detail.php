@@ -161,6 +161,7 @@ function isInternationnalEmpty(){
                 'posts_per_page' => -1,
                 'post_parent'    => 0,
                 'starts_with'   => $horse->id,
+                'not_end_with' => '_pub',
                 'orderby'       => 'title',
                 'order'         => 'ASC'
             );
@@ -203,7 +204,7 @@ function isInternationnalEmpty(){
        
     </div>
 
-    <div class="human-linked">
+    <div class="human-linked metrics">
         <?php 
         if(strtolower($horse->discipline) == "cce"){
             $labelIndice = "ICC";
@@ -260,7 +261,7 @@ function isInternationnalEmpty(){
     </div>
 
     <div class="individual">
-        <span class="size"><?php echo $horse->size .((strlen($horse->size)<=3)?"0": ""); ?></span>
+        <span class="size"><?php echo str_replace(",", "m", $horse->size) .((strlen($horse->size)<=3)?"0": ""); ?></span>
         <span class="coat-color"><?php echo $horse->coatColor; ?></span>
         <span class="birth-year"><?php echo $horse->birthYear; ?></span>
 

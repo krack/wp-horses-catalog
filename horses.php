@@ -129,6 +129,18 @@ class Horses{
         }
         self::$birth_years = array_unique(self::$birth_years);
         usort(self::$list, 'comparator');
+        self::mergeData();
+    }
+
+    public static function mergeData(){
+        foreach(self::$list as $horse){
+            foreach( self::$map[$horse->id] as $key => $value){
+               $value->size= $horse->size;
+               $value->coatColor= $horse->coatColor;
+               $value->breeder= $horse->breeder;
+               $value->owner= $horse->owner;
+            }
+        }
     }
 
      
