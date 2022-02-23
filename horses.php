@@ -219,7 +219,15 @@ class Horses{
 
 
         $this->projections = $rawData["saillit"];
+        if($this->projections == ""){
+            $this->projections = $rawData["saillies"];
+        }
+        
+
         $this->frProjections = $rawData["fr saillit"];
+        if($this->frProjections == ""){
+            $this->frProjections = $rawData["fr saillies"];
+        }
         $this->riding = $rawData["monte"];
         $this->strongPoints = preg_split("/\|/", $rawData["points forts"],0,  PREG_SPLIT_NO_EMPTY);
         
@@ -380,6 +388,10 @@ class SFExprets{
         $this->ridingObstacleResource = $rawData["expertise_sf_note_obstacle_monte_moyens"];
         $this->ridingObstacleStyle = $rawData["expertise_sf_note_obstacle_monte_style"];
         $this->ridingObstacleRespect = $rawData["expertise_sf_note_obstacle_monte_barre"];
+        if($this->ridingObstacleRespect == ""){
+            $this->ridingObstacleRespect = $rawData["expertise_sf_note_obstacle_monte_comportement"];
+        }
+        
         $this->ridingObstacleComment = $rawData["expertise_sf_note_obstacle_monte_commentaire"];
 
         $this->locomotionPace = $rawData["expertise_sf_note_locomotion_pas"];
@@ -406,6 +418,9 @@ class SFExprets{
         }
 
         $this->obstacleEquilibre = $rawData["expertise_sf_note_equilibre_disponibilité"];
+        if($this->obstacleEquilibre == ""){
+            $this->obstacleEquilibre = $rawData["expertise_sf_note_equilibre_disponibilite"];
+        }
         $this->obstacleMeansPath = $rawData["expertise_sf_note_moyens_trajectoire"];
         $this->obstacleStyle = $rawData["expertise_sf_note_style"];
         $this->obstacleBehaviour = $rawData["expertise_sf_note_comportement"];
@@ -414,6 +429,9 @@ class SFExprets{
         }
         if( $this->obstacleEquilibre == ""){
             $this->obstacleEquilibre = $rawData["expertise_sf_note_equilibre_disponibilité_cso_cce"];
+        }
+        if( $this->obstacleEquilibre == ""){
+            $this->obstacleEquilibre = $rawData["expertise_sf_note_equilibre_disponibilite_cso_cce"];
         }
         if( $this->obstacleMeansPath == ""){
             $this->obstacleMeansPath = $rawData["expertise_sf_note_moyens_trajectoire_cso_cce"];
@@ -431,6 +449,9 @@ class SFExprets{
 
         $this->locomotionGallopCross = $rawData["expertise_sf_note_locomotion_galop_cross_cce"];
         $this->obstacleEquilibreCross = $rawData["expertise_sf_note_equilibre_disponibilité_cross_cce"];
+        if( $this->obstacleEquilibreCross == ""){
+            $this->obstacleEquilibreCross = $rawData["expertise_sf_note_equilibre_disponibilite_cso_cce"];
+        }
         $this->obstacleMeansPathCross = $rawData["expertise_sf_note_moyens_trajectoire_cross_cce"];
         $this->obstacleStyleCross = $rawData["expertise_sf_note_style_cross_cce"];
         $this->obstacleBehaviourCross = $rawData["expertise_sf_note_comportement_cross_cce"];
@@ -480,6 +501,10 @@ class TestingExperts{
         $this->ridingObstacleResource = $rawData["expertise_testing_note_obstacle_monte_moyens"];
         $this->ridingObstacleStyle = $rawData["expertise_testing_note_obstacle_monte_style"];
         $this->ridingObstacleRespect = $rawData["expertise_testing_note_obstacle_monte_barre"];
+
+        if($this->ridingObstacleRespect == ""){
+            $this->ridingObstacleRespect = $rawData["expertise_testing_note_obstacle_monte_comportement"];    
+        }
 
 
         $this->globale = $rawData["expertise_testing_note_generale"];

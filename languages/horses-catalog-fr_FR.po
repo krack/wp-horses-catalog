@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2022-02-07 22:47+0100\n"
-"PO-Revision-Date: 2022-02-07 22:48+0100\n"
+"POT-Creation-Date: 2021-02-15 20:58+0100\n"
+"PO-Revision-Date: 2021-02-15 20:59+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -246,7 +246,7 @@ msgstr ""
 msgid "horse's document file"
 msgstr "document pour le cheval"
 
-#: csvReader.php:35 csvReader.php:89
+#: csvReader.php:35 csvReader.php:94
 msgid "File opening impossible"
 msgstr "Ouverture du fichier impossible"
 
@@ -362,14 +362,20 @@ msgstr "Espoir"
 msgid "To follow"
 msgstr "À suivre"
 
-#: index.php:92 template/horses-list.php:58 template/horses-list.php:134
+#: index.php:101 template/horses-list.php:58 template/horses-list.php:135
 #, php-format
 msgid "%s years"
 msgstr "%s ans"
 
-#: template/fiche-download.php:21
-msgid "Download pdf cart of this horse"
-msgstr "Télécharger cette page en PDF"
+#: template/fiche-download.php:26
+#, php-format
+msgid "Download in pdf his expertise at %s years %s (%s)"
+msgstr "Télécharger en pdf son expertise à %s ans %s (%s)"
+
+#: template/fiche-download.php:28
+#, php-format
+msgid "Download in pdf his expertise at %s years (%s)"
+msgstr "Télécharger en pdf son expertise à %s ans (%s)"
 
 #: template/galerie.php:18
 msgid "Video"
@@ -379,82 +385,82 @@ msgstr "Vidéo"
 msgid "Complete video"
 msgstr "Voir toutes les vidéos"
 
-#: template/horse-detail.php:87
-msgid "Coming soon online"
-msgstr "Prochainement en ligne"
-
-#: template/horse-detail.php:103
+#: template/horse-detail.php:75
 msgid "Championnat"
 msgstr "Championnat"
 
-#: template/horse-detail.php:103
+#: template/horse-detail.php:75
 msgid "Testage"
 msgstr "Testage"
 
-#: template/horse-detail.php:117
+#: template/horse-detail.php:115
+msgid "Coming soon online"
+msgstr "Prochainement en ligne"
+
+#: template/horse-detail.php:133
 #, php-format
 msgid "Expertise at %s years %s (%s)"
 msgstr "Expertise à %s  ans %s (%s)"
 
-#: template/horse-detail.php:119
+#: template/horse-detail.php:135
 #, php-format
 msgid "Expertise at %s years (%s)"
 msgstr "Expertise à %s  ans (%s)"
 
-#: template/horse-detail.php:134 template/pedigree.php:15
+#: template/horse-detail.php:150 template/pedigree.php:15
 msgid "Pedigree"
 msgstr "Pédigrée"
 
-#: template/horse-detail.php:137
+#: template/horse-detail.php:153
 msgid "Strong points"
 msgstr "Points forts"
 
-#: template/horse-detail.php:140 template/mother-notes.php:3
+#: template/horse-detail.php:156 template/mother-notes.php:3
 msgid "Maternal Lineage Expertise"
 msgstr "Expertise Lignée Maternelle"
 
-#: template/horse-detail.php:141
+#: template/horse-detail.php:157
 msgid "Expertise judges"
 msgstr "Expertise juges"
 
-#: template/horse-detail.php:144
+#: template/horse-detail.php:160
 msgid "Testing expertise"
 msgstr "Expertise testage"
 
-#: template/horse-detail.php:147
+#: template/horse-detail.php:163
 msgid "Riders reviews"
 msgstr "Avis des cavaliers"
 
-#: template/horse-detail.php:149
+#: template/horse-detail.php:165
 msgid "Images"
 msgstr "Images"
 
-#: template/horse-detail.php:196
+#: template/horse-detail.php:213
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: template/horse-detail.php:200
+#: template/horse-detail.php:217
 msgid "Breeder"
 msgstr "Naisseur"
 
-#: template/horse-detail.php:243
+#: template/horse-detail.php:260
 #, php-format
 msgid "Protected mares in %s"
 msgstr "Juments saillies en  %s"
 
-#: template/horse-detail.php:250
+#: template/horse-detail.php:267
 msgid "Year of riding in France"
 msgstr "Année de monte en France"
 
-#: template/horse-detail.php:256
+#: template/horse-detail.php:273
 msgid "Protected mares in France"
 msgstr "Juments saillies en France"
 
-#: template/horse-detail.php:273
+#: template/horse-detail.php:290
 msgid "SIRE card"
 msgstr "fiche SIRE"
 
-#: template/horse-detail.php:287
+#: template/horse-detail.php:304
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
 
@@ -478,7 +484,7 @@ msgstr "Filtrer par nom : "
 msgid "search"
 msgstr "rechercher"
 
-#: template/horses-list.php:137
+#: template/horses-list.php:138
 #, php-format
 msgid "By %s x %s"
 msgstr "Par %s x %s"
@@ -727,98 +733,105 @@ msgstr "Expertise équipe testage SF"
 msgid "General operation"
 msgstr "Impression générale"
 
-#: template/testing.php:104
+#: template/testing.php:108
 msgid "Temperament - Behavior"
 msgstr "Tempérament - Comportement"
 
-#: template/testing.php:111 template/testing.php:150
+#: template/testing.php:115 template/testing.php:175
 msgid "Emotionality"
 msgstr "Émotivité"
 
-#: template/testing.php:112
+#: template/testing.php:116
 msgid "evaluation of emotionality in relation to the environment"
 msgstr "évaluation de l'émotivité par rapport à l'environnement"
 
-#: template/testing.php:113
+#: template/testing.php:117
 msgid "Confident"
 msgstr "Confiant"
 
-#: template/testing.php:113
+#: template/testing.php:117
 msgid "Emotional"
 msgstr "Émotif"
 
-#: template/testing.php:116 template/testing.php:155
+#: template/testing.php:120 template/testing.php:180
 msgid "Sensory sensitivity"
 msgstr "Sensibilité sensorielle"
 
-#: template/testing.php:117
+#: template/testing.php:121
 msgid "evaluation of the horse's reaction to a human request"
 msgstr "évaluation de la réaction du cheval face à une demande de l'humain"
 
-#: template/testing.php:118
+#: template/testing.php:122
 msgid "Not very reactive, not very sensitive"
 msgstr "Peu réactif, peu sensible"
 
-#: template/testing.php:118
+#: template/testing.php:122
 msgid "Reactive, very sensitive"
 msgstr "Réactif, très sensible"
 
-#: template/testing.php:121 template/testing.php:161
+#: template/testing.php:125 template/testing.php:186
 msgid "Reactivity towards humans"
 msgstr "Réactivité vis-à-vis des humains"
 
-#: template/testing.php:122
+#: template/testing.php:126
 msgid "evaluation of the horse's reaction to human movements"
 msgstr ""
 "évaluation de la réaction du cheval vis-à-vis des mouvements de l'humain"
 
-#: template/testing.php:123
-msgid "Worried"
-msgstr "Inquiet"
-
-#: template/testing.php:123
+#: template/testing.php:129 template/testing.php:134
 msgid "In trust"
 msgstr "En confiance"
 
-#: template/testing.php:126 template/testing.php:166
+#: template/testing.php:129 template/testing.php:134
+msgid "Worried"
+msgstr "Inquiet"
+
+#: template/testing.php:140 template/testing.php:191
 msgid "Motor activity"
 msgstr "Activité motrice"
 
-#: template/testing.php:127
+#: template/testing.php:141
 msgid "Cold"
 msgstr "Froid"
 
-#: template/testing.php:127
+#: template/testing.php:141
 msgid "Energetic"
 msgstr "Énergique"
 
-#: template/testing.php:134 template/testing.php:173
+#: template/testing.php:148 template/testing.php:198
 msgid "Gregariousness"
 msgstr "Grégarité"
 
-#: template/testing.php:135
+#: template/testing.php:149
 msgid "sensitivity to the presence of its congeners"
 msgstr "sensibilité à la présence de ses congénères"
 
-#: template/testing.php:136
-msgid "Becomes distracted"
-msgstr "Se déconcentre"
-
-#: template/testing.php:136
+#: template/testing.php:153 template/testing.php:158
 msgid "Stay focused"
 msgstr "Reste concentré"
 
-#: template/testing.php:190
+#: template/testing.php:153 template/testing.php:158
+msgid "Becomes distracted"
+msgstr "Se déconcentre"
+
+#: template/testing.php:215
 msgid "Behavior under the saddle"
 msgstr "Comportement sous la selle"
 
-#: template/testing.php:198
+#: template/testing.php:223
 msgid "Behavior in care"
 msgstr "Comportement aux soins"
 
-#: template/testing.php:207
+#: template/testing.php:232
 msgid "Globale behavior"
 msgstr "Comportement global"
+
+#, php-format
+#~ msgid "Download its %s expertise in pdf"
+#~ msgstr "Télécharger son expertise %s en pdf"
+
+#~ msgid "Download pdf cart of this horse"
+#~ msgstr "Télécharger cette page en PDF"
 
 #~ msgid "Search<br /> a stallion"
 #~ msgstr "Rechercher<br /> un étalon"

@@ -18,7 +18,16 @@ if(function_exists("shf_connected_block") && shf_connected_block(false)){
             ?>
             <div class="download-pdf-fiche">
                 <a download href="<?php echo wp_get_attachment_url( $pdf->ID ) ?>">
-                    <?php _e("Download pdf cart of this horse", 'horses-catalog') ?>
+                    
+                    <?php 
+
+                    $expertiseTitle = computeExpertiseTitle(date("Y", strtotime($pdf->post_date_gmt)), $horse);
+                    if($expertiseTitle['event'] != null){
+                        echo sprintf(__("Download in pdf his expertise at %s years %s (%s)", 'horses-catalog'),$expertiseTitle['age'], $expertiseTitle['event'], $expertiseTitle['yearOfEvent']);
+                    }else{
+                        echo sprintf(__("Download in pdf his expertise at %s years (%s)", 'horses-catalog'),$expertiseTitle['age'], $expertiseTitle['yearOfEvent']);
+                    }
+                ?>
                 </a>
             </div>
             <?php

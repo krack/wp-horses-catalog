@@ -99,6 +99,10 @@ if(!isTestingEmpty()){
     <?php     
 
     }
+
+    function inverse($number){
+        return ((($number - 3) * - 1) +3);
+    }
     ?>
     <div class="temperament <?php  if($horse->notes->temperament->emotionalitySlider != null){ echo "slider-temperament"; } ?>">
         <h3><?php _e("Temperament - Behavior", 'horses-catalog') ?></h3>
@@ -120,7 +124,17 @@ if(!isTestingEmpty()){
                 <div>
                     <h4><?php _e("Reactivity towards humans", 'horses-catalog'); ?></h4>
                     <p><?php _e("evaluation of the horse's reaction to human movements", 'horses-catalog'); ?></p>
-                    <?php displayNoteInSlider($horse->notes->temperament->humainReactSlider, __("Worried", 'horses-catalog'), __("In trust", 'horses-catalog')); ?>
+                    <?php if($yearOfHorse >=2022 ){
+                        ?>
+                        <?php displayNoteInSlider($horse->notes->temperament->humainReactSlider,  __("In trust", 'horses-catalog'), __("Worried", 'horses-catalog')); ?>
+                        <?php
+
+                        }else{
+                        ?>
+                        <?php displayNoteInSlider($horse->notes->temperament->humainReactSlider,  __("Worried", 'horses-catalog'), __("In trust", 'horses-catalog')); ?>
+                        <?php
+                    }
+                   ?>
                 </div>
                 <div>
                     <h4><?php _e("Motor activity", 'horses-catalog'); ?></h4>
@@ -133,7 +147,18 @@ if(!isTestingEmpty()){
                 <div>
                     <h4><?php _e("Gregariousness", 'horses-catalog'); ?></h4>
                     <p><?php _e("sensitivity to the presence of its congeners", 'horses-catalog'); ?></p>
-                    <?php displayNoteInSlider($horse->notes->temperament->gregariousnessSlider, __("Becomes distracted", 'horses-catalog'), __("Stay focused", 'horses-catalog')); ?>
+
+                    <?php if($yearOfHorse >=2022 ){
+                        ?>
+                            <?php displayNoteInSlider($horse->notes->temperament->gregariousnessSlider, __("Stay focused", 'horses-catalog'), __("Becomes distracted", 'horses-catalog')); ?>
+                        <?php
+
+                    }else{
+                        ?>
+                        <?php displayNoteInSlider($horse->notes->temperament->gregariousnessSlider, __("Becomes distracted", 'horses-catalog'), __("Stay focused", 'horses-catalog')); ?>
+                        <?php
+                    }
+                   ?>
                 </div>
              <?php 
             }

@@ -69,6 +69,34 @@ function isInternationnalEmpty(){
     
     return $isEmpty;
 }
+
+function computeExpertiseTitle($yearOfHorse, $horse){
+    $age= ($yearOfHorse-1 - $horse->birthYear);
+    $event = (($yearOfHorse-1 - $horse->birthYear)==2)? __("Championnat", 'horses-catalog'): __("Testage", 'horses-catalog');
+    $yearOfEvent = ($yearOfHorse-1);
+    if( (date('Y') - $horse->birthYear) == 3){
+        $age= ($yearOfHorse-1 - $horse->birthYear);
+    }
+    
+    if( $yearOfHorse >= 2020){
+
+        if($age == 2 && $yearOfHorse != date('Y')){
+            $age++;
+            $yearOfEvent++;
+        }
+    }
+
+    $expertise['age'] = $age;
+    $expertise['yearOfEvent'] = $yearOfEvent;
+    $expertise['event'] = $event; 
+    if(($yearOfHorse-1 - $horse->birthYear) <=3){
+        $expertise['event'] = $event; 
+    }else{
+        $expertise['event'] = null; 
+    }
+
+    return $expertise;
+}
 ?>
 <div id="horse-catalog" class="detail-card">
     <div class="fixe-part">
@@ -99,24 +127,12 @@ function isInternationnalEmpty(){
                             ?>
                         <a href="?id=<?php echo $_GET['id']; ?>&years=<?php echo $yearOfHorse; ?>" class="<?php if($yearOfHorse ==$year ) echo "selected"; ?>">
                                 <?php 
-                                    $age= ($yearOfHorse-1 - $horse->birthYear);
-                                    $event = (($yearOfHorse-1 - $horse->birthYear)==2)? __("Championnat", 'horses-catalog'): __("Testage", 'horses-catalog');
-                                    $yearOfEvent = ($yearOfHorse-1);
-                                    if( (date('Y') - $horse->birthYear) == 3){
-                                        $age= ($yearOfHorse-1 - $horse->birthYear);
-                                    }
-                                    
-                                    if( $yearOfHorse >= 2020){
-
-                                        if($age == 2 && $yearOfHorse != date('Y')){
-                                            $age++;
-                                            $yearOfEvent++;
-                                        }
-                                    }
-                                    if(($yearOfHorse-1 - $horse->birthYear) <=3){
-                                        echo sprintf(__("Expertise at %s years %s (%s)", 'horses-catalog'),$age, $event, $yearOfEvent);
+                                   
+                                    $expertiseTitle = computeExpertiseTitle($yearOfHorse, $horse);
+                                    if($expertiseTitle['event'] != null){
+                                        echo sprintf(__("Expertise at %s years %s (%s)", 'horses-catalog'),$expertiseTitle['age'], $expertiseTitle['event'], $expertiseTitle['yearOfEvent']);
                                     }else{
-                                        echo sprintf(__("Expertise at %s years (%s)", 'horses-catalog'),$age, $yearOfEvent);
+                                        echo sprintf(__("Expertise at %s years (%s)", 'horses-catalog'),$expertiseTitle['age'], $expertiseTitle['yearOfEvent']);
                                     }
                                 ?>
                         </a>
