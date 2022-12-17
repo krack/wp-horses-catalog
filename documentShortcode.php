@@ -29,8 +29,8 @@ class DocumentShortcode
         $html[] = '<th rowspan="2" class="reduc enteteTab">'.__('Perf', 'horses-catalog').'<i class="fas fa-info-circle" title="'.__('Plugs\nsports performances\nfrom production', 'horses-catalog').'"></i></th>';
         $html[] = '<th rowspan="2" class="fulltext enteteTab">'.__('Specifications sheet<br /> transmissible model,<br /> gaits and free jumping', 'horses-catalog').'</th>';
         $html[] = '<th rowspan="2" class="reduc enteteTab">'.__('Caract', 'horses-catalog').'<i class="fas fa-info-circle" title="'.__('Specifications sheet<\ntransmissible model,\ngaits and free jumping', 'horses-catalog').'"></i></th>';
-        $html[] = '<th rowspan="1" colspan="2"  class="fulltext enteteTab">'.__('Number of products<br /> appraised in Model - Gaits -<br /> Free Jumping as', 'horses-catalog').'</th>';
-        $html[] = '<th rowspan="1" colspan="2"  class="reduc enteteTab">'.__('Products', 'horses-catalog').'<br /><i class="fas fa-info-circle" title="'.__('Number of products\nappraised in Model - Gaits -\nFree Jumping as', 'horses-catalog').'"></i></th>';
+        $html[] = '<th rowspan="1" colspan="2"  class="fulltext enteteTab">'.__('Number of products characterized in SF breeding competitions as :', 'horses-catalog').'</th>';
+        $html[] = '<th rowspan="1" colspan="2"  class="reduc enteteTab">'.__('Products', 'horses-catalog').'<br /><i class="fas fa-info-circle" title="'.__('Number of products characterized in SF breeding competitions as :', 'horses-catalog').'"></i></th>';
         $html[] = '<th rowspan="2" class="fulltext enteteTab">'.__('PDF<br/> card', 'horses-catalog').'</th>';
         $html[] = '<th rowspan="2" class="reduc enteteTab">'.__('PDF', 'horses-catalog').'</th>';
 

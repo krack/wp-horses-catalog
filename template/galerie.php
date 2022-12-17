@@ -6,18 +6,27 @@ $query_video_args = array(
     'posts_per_page' => -1,
     'post_parent'    => 0,
     'starts_with'   =>$horse->id,
-    'order'         => 'DESC'
+    'order'         => 'ASC'
     
     
 );
 
 $query_video = new WP_Query( $query_video_args );
 if(count($query_video->posts) > 0){
+    $sortedVideo = [];
+
+    foreach ( $query_video->posts as $video ) {
+        array_push($sortedVideo, $video);
+    }
+
+    usort($sortedVideo, 'comparatorYearAndName');
+
+
 ?>
 <div id="video">
     <h2><?php _e("Video", 'horses-catalog') ?></h2>
     <?php
-    foreach ( $query_video->posts as $video ) {
+    foreach ( $sortedVideo as $video ) {
     ?>
         <video class="video_<?php echo $video->ID; ?>" controls controlsList="nodownload" poster="<?php echo get_the_post_thumbnail_url( $video->ID); ?>">
             <source src="<?php echo wp_get_attachment_url( $video->ID ) ?>" >
@@ -34,7 +43,7 @@ if(count($query_video->posts) > 0){
 
     <div class="thumbnail">
         <?php
-        foreach ( $query_video->posts as $video ) {
+        foreach ( $sortedVideo as $video ) {
         ?>
             <img src="<?php echo get_the_post_thumbnail_url( $video->ID); ?>" video="<?php echo $video->ID; ?>" />
             <span class="legend"><?php echo $video->post_excerpt; ?> </span>

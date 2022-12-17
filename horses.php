@@ -649,7 +649,7 @@ function comparatorYearAndName($image1, $image2){
     $year1= date('Y', strtotime($image1->post_date_gmt));
     $year2= date('Y', strtotime($image2->post_date_gmt));
     if($year1 == $year2){
-        return  $image1->title < $image2->title; 
+        return  $image1->post_title > $image2->post_title; 
     }
     return $year1 < $year2; 
 }
