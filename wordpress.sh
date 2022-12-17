@@ -2,6 +2,7 @@ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pha
 chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 
+gp ports await 3306
 
 wp core download --locale=fr_FR --path=/workspace/wordpress/
 cd /workspace/wordpress/
