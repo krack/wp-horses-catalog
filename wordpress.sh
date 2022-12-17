@@ -23,8 +23,8 @@ URL=$(gp url 8080)
 wp config create --dbname=$DATABASE_NAME --dbuser=$DATABASE_USER --dbpass=$DATABASE_PASSWORD  --extra-php <<PHP
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
-define( 'WP_HOME',  $URL);
-define( 'WP_SITEURL', $URL );
+define( 'WP_HOME',  '$URL');
+define( 'WP_SITEURL', '$URL' );
 PHP
 wp db create
 wp core install --url=wpclidemo.dev --title="Etalon SF" --admin_user=admin --admin_password=admin --admin_email=admin@test.com
