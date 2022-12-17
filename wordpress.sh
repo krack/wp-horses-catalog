@@ -26,3 +26,5 @@ PHP
 wp db create
 wp core install --url=wpclidemo.dev --title="Etalon SF" --admin_user=admin --admin_password=admin --admin_email=admin@test.com
 wp plugin update --all
+
+wp server

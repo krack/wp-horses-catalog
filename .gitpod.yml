@@ -6,5 +6,5 @@ tasks:
   - command: |
       echo "test"
 ports:
-  - port: 80
+  - port: 8080
     onOpen: open-preview
