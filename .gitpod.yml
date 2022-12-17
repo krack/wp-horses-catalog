@@ -1,3 +1,5 @@
+
+image: gitpod/workspace-mysql
 tasks:
   - init: |
       ./wordpress.sh
