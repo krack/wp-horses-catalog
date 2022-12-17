@@ -22,9 +22,13 @@ cd /workspace/wordpress/
 wp config create --dbname=$DATABASE_NAME --dbuser=$DATABASE_USER --dbpass=$DATABASE_PASSWORD  --extra-php <<PHP
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
+define( 'WP_HOME', $(gp url 8080) );
+define( 'WP_SITEURL', $(gp url 8080) );
 PHP
 wp db create
 wp core install --url=wpclidemo.dev --title="Etalon SF" --admin_user=admin --admin_password=admin --admin_email=admin@test.com
 wp plugin update --all
 
 wp server
+
+gp ports await 8080
