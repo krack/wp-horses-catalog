@@ -1,12 +1,23 @@
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-chmod +x wp-cli.phar
-sudo mv wp-cli.phar /usr/local/bin/wp
+
+DATABASE_NAME="wordpress"
+DATABASE_USER="user"
+DATABASE_PASSWORD="password"
+
+if ! command -v wp &> /dev/null
+then
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    chmod +x wp-cli.phar
+    sudo mv wp-cli.phar /usr/local/bin/wp
+fi
+
 
 gp ports await 3306
 
+mysql -e "CREATE USER '$DATABASE_USER'@'%' IDENTIFIED BY '$DATABASE_PASSWORD' ;"
+
 wp core download --locale=fr_FR --path=/workspace/wordpress/
 cd /workspace/wordpress/
-wp config create --dbname=wordpress --dbuser=user --dbpass=password --extra-php <<PHP
+wp config create --dbname=$DATABASE_NAME --dbuser=$DATABASE_USER --dbpass=$DATABASE_PASSWORD  --extra-php <<PHP
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
 PHP
