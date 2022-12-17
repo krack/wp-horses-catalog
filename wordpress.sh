@@ -13,7 +13,9 @@ fi
 
 gp ports await 3306
 
+mysql -e "CREATE DATABASE IF NOT EXISTS \`$DATABASE_NAME\`"
 mysql -e "CREATE USER '$DATABASE_USER'@'%' IDENTIFIED BY '$DATABASE_PASSWORD' ;"
+mysql -e "GRANT ALL ON \`${DATABASE_NAME//_/\\_}\`.* TO '$DATABASE_USER'@'%' ;"
 
 wp core download --locale=fr_FR --path=/workspace/wordpress/
 cd /workspace/wordpress/
