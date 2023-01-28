@@ -53,7 +53,7 @@ if($_GET['display-age']=='true'){
                 <li><label><input type="checkbox"
                                 name="years[]" 
                                 value="<?php echo $year ?>"
-                                <?php echo in_array($year, $search->years)?"checked" : ""; ?> 
+                                <?php echo ($search->years != null && in_array($year, $search->years))?"checked" : ""; ?> 
                             />
                             <?php echo sprintf(__('%s years', 'horses-catalog'), (date("Y")-$year)) ?>
                     </label>
@@ -64,7 +64,7 @@ if($_GET['display-age']=='true'){
    
     <?php
     // it's not only 3 year
-    if(!(count($search->years) == 1 && ($search->years[0] == (date("Y")-3) && $_GET['display-age'] !== 'true') )){
+    if(!($search->years!= null && count($search->years) == 1 && ($search->years[0] == (date("Y")-3) && $_GET['display-age'] !== 'true') )){
     ?>
 
     <div class="categories">
@@ -74,7 +74,7 @@ if($_GET['display-age']=='true'){
             <li><label><input type="checkbox" 
                             name="categories[]"
                             value="<?php echo $category->id; ?>"
-                            <?php echo in_array("".$category->id, $search->categories)?"checked" : ""; ?> 
+                            <?php echo ($search->categories != null && in_array("".$category->id, $search->categories))?"checked" : ""; ?> 
                             />
                             <?php echo $category->label; ?>
             </label>
@@ -138,7 +138,10 @@ if($_GET['display-age']=='true'){
                 <span><?php echo sprintf(__('By %s x %s', 'horses-catalog'), $horse->father->name, $horse->mother->name) ?></span>
                 <?php if( $horse->logoList != ""){ ?>
                     <span class="logo-list <?php echo $horse->logoList; ?>"></span>
-                <?php } ?>              
+                <?php } ?>     
+                <?php if( $horse->new ){ ?>
+                    <span class="logo-new"></span>
+                <?php } ?>          
             </a>
         </div>
 <?php } ?>

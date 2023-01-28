@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2022-07-01 20:35+0200\n"
-"PO-Revision-Date: 2022-07-01 20:38+0200\n"
+"POT-Creation-Date: 2023-01-28 14:35+0100\n"
+"PO-Revision-Date: 2023-01-28 14:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -375,82 +375,82 @@ msgstr "Vidéo"
 msgid "Complete video"
 msgstr "Voir toutes les vidéos"
 
-#: template/horse-detail.php:75
+#: template/horse-detail.php:79
 msgid "Championnat"
 msgstr "Championnat"
 
-#: template/horse-detail.php:75
+#: template/horse-detail.php:79
 msgid "Testage"
 msgstr "Testage"
 
-#: template/horse-detail.php:115
+#: template/horse-detail.php:119
 msgid "Coming soon online"
 msgstr "Prochainement en ligne"
 
-#: template/horse-detail.php:133
+#: template/horse-detail.php:137
 #, php-format
 msgid "Expertise at %s years %s (%s)"
 msgstr "Expertise à %s  ans %s (%s)"
 
-#: template/horse-detail.php:135
+#: template/horse-detail.php:139
 #, php-format
 msgid "Expertise at %s years (%s)"
 msgstr "Expertise à %s  ans (%s)"
 
-#: template/horse-detail.php:150 template/pedigree.php:15
+#: template/horse-detail.php:154 template/pedigree.php:15
 msgid "Pedigree"
 msgstr "Pédigrée"
 
-#: template/horse-detail.php:153
+#: template/horse-detail.php:157
 msgid "Strong points"
 msgstr "Points forts"
 
-#: template/horse-detail.php:156 template/mother-notes.php:3
+#: template/horse-detail.php:160
 msgid "Maternal Lineage Expertise"
 msgstr "Expertise Lignée Maternelle"
 
-#: template/horse-detail.php:157
+#: template/horse-detail.php:161
 msgid "Expertise judges"
 msgstr "Expertise juges"
 
-#: template/horse-detail.php:160
+#: template/horse-detail.php:164
 msgid "Testing expertise"
 msgstr "Expertise testage"
 
-#: template/horse-detail.php:163
+#: template/horse-detail.php:167
 msgid "Riders reviews"
 msgstr "Avis des cavaliers"
 
-#: template/horse-detail.php:165
+#: template/horse-detail.php:169
 msgid "Images"
 msgstr "Images"
 
-#: template/horse-detail.php:213
+#: template/horse-detail.php:221
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: template/horse-detail.php:217
+#: template/horse-detail.php:225
 msgid "Breeder"
 msgstr "Naisseur"
 
-#: template/horse-detail.php:260
+#: template/horse-detail.php:268
 #, php-format
 msgid "Protected mares in %s"
 msgstr "Juments saillies en  %s"
 
-#: template/horse-detail.php:267
+#: template/horse-detail.php:275
 msgid "Year of riding in France"
 msgstr "Année de monte en France"
 
-#: template/horse-detail.php:273
+#: template/horse-detail.php:281
 msgid "Protected mares in France"
 msgstr "Juments saillies en France"
 
-#: template/horse-detail.php:290
+#: template/horse-detail.php:298
 msgid "SIRE card"
 msgstr "fiche SIRE"
 
-#: template/horse-detail.php:304
+#: template/horse-detail.php:312
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
 
@@ -479,60 +479,66 @@ msgstr "rechercher"
 msgid "By %s x %s"
 msgstr "Par %s x %s"
 
-#: template/internationnal.php:7
-msgid "International riders opinion"
-msgstr "L’avis des cavaliers internationaux"
+#: template/internationnal.php:9
+#, php-format
+msgid "International riders opinion (%s)"
+msgstr "L’avis des cavaliers internationaux (%s)"
 
-#: template/internationnal.php:11 template/sf-judges.php:218
-#: template/testing.php:36
+#: template/internationnal.php:13 template/sf-judges.php:220
+#: template/testing.php:38
 msgid "Ability to climb jump obstacle"
 msgstr "Aptitude à l’obstacle saut monté"
 
-#: template/internationnal.php:14
+#: template/internationnal.php:16
 msgid "Means, style, aptitude"
 msgstr "Moyens, style, aptitude"
 
-#: template/internationnal.php:18
+#: template/internationnal.php:20
 msgid "Availability"
 msgstr "Disponibilité"
 
-#: template/internationnal.php:22
+#: template/internationnal.php:24
 msgid "Impulses, reactivity"
 msgstr "Influx, réactivité"
 
-#: template/internationnal.php:26
+#: template/internationnal.php:28
 msgid "Instinct, helm intelligence"
 msgstr "Instinct & intelligence de la barre"
 
-#: template/internationnal.php:33 template/testing.php:58
+#: template/internationnal.php:35 template/testing.php:60
 msgid "General impression"
 msgstr "Impression générale"
 
-#: template/mother-notes.php:4
+#: template/mother-notes.php:5
+#, php-format
+msgid "Maternal Lineage Expertise (%s)"
+msgstr "Expertise Lignée Maternelle (%s)"
+
+#: template/mother-notes.php:6
 msgid "Click to learn to read maternal lineage"
 msgstr "Cliquez pour apprendre à lire la lignée maternelle"
 
-#: template/mother-notes.php:8 template/mother-notes.php:24
+#: template/mother-notes.php:10 template/mother-notes.php:26
 msgid "Mother"
 msgstr "Mère"
 
-#: template/mother-notes.php:31 template/mother-notes.php:65
+#: template/mother-notes.php:33 template/mother-notes.php:67
 msgid "Total weighted points"
 msgstr "Total points pondérés"
 
-#: template/mother-notes.php:32 template/mother-notes.php:69
+#: template/mother-notes.php:34 template/mother-notes.php:71
 msgid "Final note"
 msgstr "Note finale"
 
-#: template/mother-notes.php:35
+#: template/mother-notes.php:37
 msgid "Name"
 msgstr "Nom"
 
-#: template/mother-notes.php:45
+#: template/mother-notes.php:47
 msgid "Points"
 msgstr "Points"
 
-#: template/mother-notes.php:57 template/mother-notes.php:73
+#: template/mother-notes.php:59 template/mother-notes.php:75
 msgid "foreign bloodline"
 msgstr "lignée étrangère"
 
@@ -540,174 +546,177 @@ msgstr "lignée étrangère"
 msgid "Revenir à la recherche"
 msgstr "Revenir à la recherche"
 
-#: template/sf-judges.php:47
-msgid "Expertise judges SF & International riders"
-msgstr "Expertise juges SF & cavaliers internationnaux"
+#: template/sf-judges.php:49
+#, php-format
+msgid "Expertise judges SF & International riders (%s)"
+msgstr "Expertise juges SF & cavaliers internationnaux (%s)"
 
-#: template/sf-judges.php:51
-msgid "Expertise judges SF"
-msgstr "Expertise juges SF"
+#: template/sf-judges.php:53
+#, php-format
+msgid "Expertise judges SF (%s)"
+msgstr "Expertise juges SF (%s)"
 
-#: template/sf-judges.php:61
+#: template/sf-judges.php:63
 msgid "Modele"
 msgstr "Modèle"
 
-#: template/sf-judges.php:64 template/sf-judges.php:362
+#: template/sf-judges.php:66 template/sf-judges.php:364
 msgid "Race type"
 msgstr "Type race"
 
-#: template/sf-judges.php:68
+#: template/sf-judges.php:70
 msgid "Head tie - neckline"
 msgstr "Attache de tête – encolure"
 
-#: template/sf-judges.php:72
+#: template/sf-judges.php:74
 msgid "Front profile (shoulder- forearm)"
 msgstr "Profil avant (épaule- avant bras)"
 
-#: template/sf-judges.php:76
+#: template/sf-judges.php:78
 msgid "Top line(tourniquet-dos-kidney)"
 msgstr "Ligne de dessus (garrot-dos-rein)"
 
-#: template/sf-judges.php:81
+#: template/sf-judges.php:83
 msgid "Rear profile(rump-thigh-basin)"
 msgstr "Profil arrière (croupe-bassin-cuisse)"
 
-#: template/sf-judges.php:85 template/sf-judges.php:372
+#: template/sf-judges.php:87 template/sf-judges.php:374
 msgid "Limbs"
 msgstr "Aplombs"
 
-#: template/sf-judges.php:90 template/sf-judges.php:150
-#: template/sf-judges.php:183
+#: template/sf-judges.php:92 template/sf-judges.php:152
+#: template/sf-judges.php:185
 msgid "Comment"
 msgstr "Commentaire"
 
-#: template/sf-judges.php:98 template/sf-judges.php:108 template/testing.php:14
+#: template/sf-judges.php:100 template/sf-judges.php:110
+#: template/testing.php:16
 msgid "Locomotion and general functioning"
 msgstr "Locomotion et fonctionnement général"
 
-#: template/sf-judges.php:111 template/sf-judges.php:136
-#: template/sf-judges.php:301 template/sf-judges.php:388
-#: template/testing.php:17
+#: template/sf-judges.php:113 template/sf-judges.php:138
+#: template/sf-judges.php:303 template/sf-judges.php:390
+#: template/testing.php:19
 msgid "Pace"
 msgstr "Pas"
 
-#: template/sf-judges.php:115 template/sf-judges.php:140
-#: template/sf-judges.php:305 template/sf-judges.php:392
-#: template/testing.php:21
+#: template/sf-judges.php:117 template/sf-judges.php:142
+#: template/sf-judges.php:307 template/sf-judges.php:394
+#: template/testing.php:23
 msgid "Trot"
 msgstr "Trot"
 
-#: template/sf-judges.php:119 template/sf-judges.php:144
-#: template/sf-judges.php:309 template/sf-judges.php:396
-#: template/testing.php:25
+#: template/sf-judges.php:121 template/sf-judges.php:146
+#: template/sf-judges.php:311 template/sf-judges.php:398
+#: template/testing.php:27
 msgid "Gallop"
 msgstr "Galop"
 
-#: template/sf-judges.php:123
+#: template/sf-judges.php:125
 msgid "General functionning"
 msgstr "Fonctionnement général"
 
-#: template/sf-judges.php:133
+#: template/sf-judges.php:135
 msgid "Locomotion"
 msgstr "Locomotion"
 
-#: template/sf-judges.php:162
+#: template/sf-judges.php:164
 msgid "Ability to obstacle"
 msgstr "Aptitude à l’obstacle"
 
-#: template/sf-judges.php:165 template/sf-judges.php:221
-#: template/testing.php:39
+#: template/sf-judges.php:167 template/sf-judges.php:223
+#: template/testing.php:41
 msgid "Balance on jumps"
 msgstr "Équilibre sur les sauts"
 
-#: template/sf-judges.php:169 template/sf-judges.php:225
-#: template/testing.php:43
+#: template/sf-judges.php:171 template/sf-judges.php:227
+#: template/testing.php:45
 msgid "Means on the obstacle"
 msgstr "Moyens sur l’obstacle"
 
-#: template/sf-judges.php:173 template/sf-judges.php:229
-#: template/testing.php:47
+#: template/sf-judges.php:175 template/sf-judges.php:231
+#: template/testing.php:49
 msgid "Style on the obstacle"
 msgstr "Style sur l’obstacle"
 
-#: template/sf-judges.php:177 template/sf-judges.php:233
-#: template/sf-judges.php:281 template/sf-judges.php:344
-#: template/testing.php:51
+#: template/sf-judges.php:179 template/sf-judges.php:235
+#: template/sf-judges.php:283 template/sf-judges.php:346
+#: template/testing.php:53
 msgid "Behaviours"
 msgstr "Comportement"
 
-#: template/sf-judges.php:194
+#: template/sf-judges.php:196
 msgid "Jumping ability"
 msgstr "Aptitude à l’obstacle saut en liberté"
 
-#: template/sf-judges.php:195
+#: template/sf-judges.php:197
 msgid ""
 "General average obtained in the 2-year-old championship or in the qualifier "
 "at 3 years old"
 msgstr ""
 "Moyenne générale obtenue au championnat des 2ans ou en qualificative à 3ans"
 
-#: template/sf-judges.php:253
+#: template/sf-judges.php:255
 msgid "Expertise judges SF Obstacle"
 msgstr "Expertise Juges SF Obstacle"
 
-#: template/sf-judges.php:257
+#: template/sf-judges.php:259
 msgid "Cross"
 msgstr "Cross"
 
-#: template/sf-judges.php:258
+#: template/sf-judges.php:260
 msgid "CSO"
 msgstr "CSO"
 
-#: template/sf-judges.php:261 template/sf-judges.php:328
+#: template/sf-judges.php:263 template/sf-judges.php:330
 msgid "Locomotion/Galop"
 msgstr "Locomotion / Galop"
 
-#: template/sf-judges.php:266 template/sf-judges.php:332
+#: template/sf-judges.php:268 template/sf-judges.php:334
 msgid "Equilibre & availability"
 msgstr "Equilibre & disponibilité"
 
-#: template/sf-judges.php:271 template/sf-judges.php:336
+#: template/sf-judges.php:273 template/sf-judges.php:338
 msgid "Means & path"
 msgstr "Moyens & trajectoire"
 
-#: template/sf-judges.php:276 template/sf-judges.php:340
+#: template/sf-judges.php:278 template/sf-judges.php:342
 msgid "Style"
 msgstr "Style"
 
-#: template/sf-judges.php:286 template/sf-judges.php:348
+#: template/sf-judges.php:288 template/sf-judges.php:350
 msgid "Impression in a body"
 msgstr "Impression d'ensemble"
 
-#: template/sf-judges.php:298 template/sf-judges.php:385
+#: template/sf-judges.php:300 template/sf-judges.php:387
 msgid "Expertise judges SF Paces"
 msgstr "Expertise Juges SF Allures"
 
-#: template/sf-judges.php:313 template/sf-judges.php:423
+#: template/sf-judges.php:315 template/sf-judges.php:425
 msgid "Globale impression"
 msgstr "Impression d’ensemble"
 
-#: template/sf-judges.php:325
+#: template/sf-judges.php:327
 msgid "Expertise judges SF obstacle"
 msgstr "Expertise Juges SF Obstacle"
 
-#: template/sf-judges.php:359
+#: template/sf-judges.php:361
 msgid "Expertise judges SF model"
 msgstr "Expertise Juges SF Modèle"
 
-#: template/sf-judges.php:367
+#: template/sf-judges.php:369
 msgid "Top line"
 msgstr "Ligne de dessus"
 
-#: template/sf-judges.php:414
+#: template/sf-judges.php:416
 msgid "Stallion Bonus Assessment"
 msgstr "Appréciation Bonus Etalon"
 
-#: template/sf-judges.php:414
+#: template/sf-judges.php:416
 msgid "Click to learn bonus etalons"
 msgstr "Cliquez pour apprendre le bonus étalons"
 
-#: template/sf-judges.php:432
+#: template/sf-judges.php:434
 msgid "Final expertise"
 msgstr "Expertise finale"
 
@@ -715,104 +724,105 @@ msgstr "Expertise finale"
 msgid "The strong points"
 msgstr "Les points forts"
 
-#: template/testing.php:8
-msgid "Expertise SF test team"
-msgstr "Expertise équipe testage SF"
+#: template/testing.php:10
+#, php-format
+msgid "Expertise SF test team (%s)"
+msgstr "Expertise équipe testage SF (%s)"
 
-#: template/testing.php:29
+#: template/testing.php:31
 msgid "General operation"
 msgstr "Impression générale"
 
-#: template/testing.php:108
+#: template/testing.php:110
 msgid "Temperament - Behavior"
 msgstr "Tempérament - Comportement"
 
-#: template/testing.php:115 template/testing.php:175
+#: template/testing.php:117 template/testing.php:177
 msgid "Emotionality"
 msgstr "Émotivité"
 
-#: template/testing.php:116
+#: template/testing.php:118
 msgid "evaluation of emotionality in relation to the environment"
 msgstr "évaluation de l'émotivité par rapport à l'environnement"
 
-#: template/testing.php:117
+#: template/testing.php:119
 msgid "Confident"
 msgstr "Confiant"
 
-#: template/testing.php:117
+#: template/testing.php:119
 msgid "Emotional"
 msgstr "Émotif"
 
-#: template/testing.php:120 template/testing.php:180
+#: template/testing.php:122 template/testing.php:182
 msgid "Sensory sensitivity"
 msgstr "Sensibilité sensorielle"
 
-#: template/testing.php:121
+#: template/testing.php:123
 msgid "evaluation of the horse's reaction to a human request"
 msgstr "évaluation de la réaction du cheval face à une demande de l'humain"
 
-#: template/testing.php:122
+#: template/testing.php:124
 msgid "Not very reactive, not very sensitive"
 msgstr "Peu réactif, peu sensible"
 
-#: template/testing.php:122
+#: template/testing.php:124
 msgid "Reactive, very sensitive"
 msgstr "Réactif, très sensible"
 
-#: template/testing.php:125 template/testing.php:186
+#: template/testing.php:127 template/testing.php:188
 msgid "Reactivity towards humans"
 msgstr "Réactivité vis-à-vis des humains"
 
-#: template/testing.php:126
+#: template/testing.php:128
 msgid "evaluation of the horse's reaction to human movements"
 msgstr ""
 "évaluation de la réaction du cheval vis-à-vis des mouvements de l'humain"
 
-#: template/testing.php:129 template/testing.php:134
+#: template/testing.php:131 template/testing.php:136
 msgid "In trust"
 msgstr "En confiance"
 
-#: template/testing.php:129 template/testing.php:134
+#: template/testing.php:131 template/testing.php:136
 msgid "Worried"
 msgstr "Inquiet"
 
-#: template/testing.php:140 template/testing.php:191
+#: template/testing.php:142 template/testing.php:193
 msgid "Motor activity"
 msgstr "Activité motrice"
 
-#: template/testing.php:141
+#: template/testing.php:143
 msgid "Cold"
 msgstr "Froid"
 
-#: template/testing.php:141
+#: template/testing.php:143
 msgid "Energetic"
 msgstr "Énergique"
 
-#: template/testing.php:148 template/testing.php:198
+#: template/testing.php:150 template/testing.php:200
 msgid "Gregariousness"
 msgstr "Grégarité"
 
-#: template/testing.php:149
+#: template/testing.php:151
 msgid "sensitivity to the presence of its congeners"
 msgstr "sensibilité à la présence de ses congénères"
 
-#: template/testing.php:153 template/testing.php:158
+#: template/testing.php:155 template/testing.php:160
 msgid "Stay focused"
 msgstr "Reste concentré"
 
-#: template/testing.php:153 template/testing.php:158
+#: template/testing.php:155 template/testing.php:160
 msgid "Becomes distracted"
 msgstr "Se déconcentre"
 
-#: template/testing.php:215
+#: template/testing.php:217
 msgid "Behavior under the saddle"
 msgstr "Comportement sous la selle"
 
-#: template/testing.php:223
+#: template/testing.php:225
 msgid "Behavior in care"
 msgstr "Comportement aux soins"
 
-#: template/testing.php:232
+#: template/testing.php:234
 msgid "Globale behavior"
 msgstr "Comportement global"
 

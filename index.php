@@ -98,7 +98,7 @@ function only_submenu_for_current( $sorted_menu_items, $args ) {
         foreach ($years as $year){
                 $pageForYear =(object) array(
                         'menu_item_parent' =>  $parent->ID,
-                        'title' => sprintf(__('%s years', 'horses-catalog'), (date("Y") - $year)),
+                        'title' => sprintf(__('%s years', 'horses-catalog'), (intval(date("Y")) - $year)),
                          'url' => $parent->url.'?years[]='.$year,
                          'menu_order' =>  - $year
                         );
@@ -150,7 +150,11 @@ function theme_xyz_header_metadata() {
 
         $horseByYear = Horses::get($_GET["id"]);
         //construct list of year
-        $yearsOfHorse = array_keys($horseByYear);
+        if($horseByYear != null){
+                $yearsOfHorse = array_keys($horseByYear);
+        }else{
+                $yearsOfHorse =[];
+        }
         sort($yearsOfHorse, SORT_NUMERIC);
         $yearsOfHorse = array_reverse($yearsOfHorse);
         

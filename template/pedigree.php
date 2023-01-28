@@ -5,7 +5,9 @@
         <td rowspan="<?php echo $size; ?>" class="<?php if($horse->race != null) { echo str_replace("*",  "_", "race-".$horse->race);} ?> <?php if($horse->consanguineous){ echo "consanguineous"; } ?>">
 
             <span class="name"><?php echo $horse->name; ?></span>
-            <span class="race-pedigree"><?php echo $horse->race; ?></span>
+            <?php if($horse->race != null){ ?>
+            - <span class="race-pedigree"><?php echo $horse->race; ?></span>
+            <?php } ?>
         </td>
     <?php
     }

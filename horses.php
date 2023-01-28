@@ -110,16 +110,17 @@ class Horses{
         $files = array_reverse($files);
         foreach ($files as $file){
             preg_match('/list_horses_([0-9]{4}).csv/', $file, $matches, PREG_OFFSET_CAPTURE);
+
             $year_file = $matches[1][0];
             $csvReader = new CsvReader($file);
             $rawDataList = $csvReader->readFile();
-
             foreach ($rawDataList as $rawData){
+
                 $horse = new Horses($rawData);
                 if(self::$map[$horse->id] == null){
 					if($horse->birthYear != null){
 						array_push(self::$list, $horse);
-						array_push(self::$birth_years, $horse->birthYear);
+						array_push(self::$birth_years, intval($horse->birthYear));
 					}
                     self::$map[$horse->id] = [];
                 }
@@ -139,6 +140,7 @@ class Horses{
                $value->coatColor= $horse->coatColor;
                $value->breeder= $horse->breeder;
                $value->owner= $horse->owner;
+               $value->appro= $horse->appro;
             }
         }
     }
@@ -175,6 +177,7 @@ class Horses{
 
 
     public $osteopathyStatus;
+    public $osteopathyStatusYear;
     public $globalEvaluation;
 
     public $projections;
@@ -195,7 +198,7 @@ class Horses{
         $this->name = $rawData["nom"];
 
         $this->birthYear = $rawData["annee_naissance"];
-        $this->age = (date("Y") - $this->birthYear);
+        $this->age = (intval(date("Y")) - intval($this->birthYear));
         $this->coatColor = $rawData["robe"];
         $this->race = $rawData["race"];
         $this->logo = $rawData["Logo"];
@@ -209,6 +212,7 @@ class Horses{
         $this->indice = $rawData["indice"];
         $this->blup = $rawData["blup"];
         $this->appro = $rawData["appro"];
+        $this->new = (strtolower($rawData["nouveau"])=="oui");
         
         
 
@@ -250,6 +254,7 @@ class Horses{
         $this->foreignBloodline = (strtolower($rawData["mere_ligne_etrangere"])=="oui");
 
         $this->osteopathyStatus = $rawData["statut_osteo_articulaire"];
+        $this->osteopathyStatusYear = $rawData["annee_radios"];
 
 
         $this->globalEvaluation = $rawData["categorie"];

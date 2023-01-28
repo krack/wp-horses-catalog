@@ -162,6 +162,19 @@
     background-image: url("images/logo_psfo.png");
 }
 
+#horse-catalog .list .logo-new{
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 5.88%;
+    top: 95px;
+    background-image: url("images/new.png");
+}
+
 #horse-catalog .pagination {
     font-size: 1.5em;
     text-align: right;
@@ -287,6 +300,7 @@ line-height: 0;
     bottom: -50px;
 }
 
+
 #horse-catalog.detail-card .race.SF {
     background-image: url("images/logo_sf.png");
 }
@@ -310,6 +324,18 @@ line-height: 0;
     height: 100px;
 }
 
+#horse-catalog.detail-card .new {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 3%;
+    bottom: -50px;
+    background-image: url("images/new.png");
+}
 #horse-catalog.detail-card .categorie {
     background: radial-gradient(#c11f18, #5b1017);
     padding: 7px;
@@ -478,9 +504,13 @@ line-height: 0;
         line-height: 1em;
     }
 }
+#horse-catalog.detail-card #pedigree td {
 
+    word-break: keep-all;
+    padding-top: 3px;
+}
 #horse-catalog.detail-card #pedigree td>* {
-    display: block;
+    display: inline;
     text-align: center;
 }
 

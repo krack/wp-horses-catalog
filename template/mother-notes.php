@@ -1,6 +1,8 @@
 <div id="maternal">
- 
-<h2><?php _e("Maternal Lineage Expertise", 'horses-catalog') ?></h2>
+<?php
+$expertiseTitle = computeExpertiseTitle($year, $horse);
+?>
+<h2><?php  echo sprintf(__("Maternal Lineage Expertise (%s)", 'horses-catalog'),$expertiseTitle['yearOfEvent']); ?></h2>
 <i class="fas fa-info-circle mother" title="<?php _e("Click to learn to read maternal lineage", 'horses-catalog') ?>"></i>
 
     <table class="mother-notes">

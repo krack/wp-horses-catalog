@@ -39,16 +39,18 @@ function hasCrossPace(){
     return !$isEmpty;
 }
 ?>
-
+<?php
+$expertiseTitle = computeExpertiseTitle($year, $horse);
+?>
 <div id="sf" class="root-notation <?php if(isYoungHorse($horse) || hasCrossPace()){ ?>young<?php } ?>">
     <?php
     if($horse->notes->sfExprets->locomotionGeneral != null && $horse->notes->sfExprets->locomotionComment != null){
     ?>
-        <h2><?php _e("Expertise judges SF & International riders", 'horses-catalog') ?></h2>
+        <h2><?php echo sprintf(__("Expertise judges SF & International riders (%s)", 'horses-catalog'),$expertiseTitle['yearOfEvent']); ?></h2>
     <?php
     }else{
     ?>
-    <h2><?php _e("Expertise judges SF", 'horses-catalog') ?></h2>
+    <h2><?php echo sprintf(__("Expertise judges SF (%s)", 'horses-catalog'),$expertiseTitle['yearOfEvent']); ?></h2>
     <?php
     }
     ?>

@@ -6,7 +6,11 @@ require_once plugin_dir_path( __DIR__ ).'horses.php';
 <?php 
 $horseByYear = Horses::get($_GET["id"]);
 //construct list of year
-$yearsOfHorse = array_keys($horseByYear);
+if($horseByYear != null){
+    $yearsOfHorse = array_keys($horseByYear);
+}else{
+    $yearsOfHorse =[];
+}
 sort($yearsOfHorse, SORT_NUMERIC);
 $yearsOfHorse = array_reverse($yearsOfHorse);
 
@@ -202,6 +206,10 @@ function computeExpertiseTitle($yearOfHorse, $horse){
             <span class="pga">PGA</span>
 
         <?php } ?>
+        <?php if($horse->new ){ ?>
+            <span class="new">new</span>
+
+        <?php } ?>
         <span class="race <?php echo $horse->logo ?>"><?php echo $horse->logo ?></span>
     </div>
     <?php if($horse->globalEvaluation !=null) { ?>
@@ -301,7 +309,7 @@ function computeExpertiseTitle($yearOfHorse, $horse){
 
     <?php if(function_exists("shf_connected_block") && shf_connected_block()){ ?>
     <div class="osteopathy-status">
-        <h2><?php _e("Osteo Articular Status", 'horses-catalog') ?></h2>
+        <h2><?php _e("Osteo Articular Status", 'horses-catalog') ?><?php if( $horse->osteopathyStatusYear!= null){ echo "(". $horse->osteopathyStatusYear.")";} ?></h2>
         <span class="value"><?php echo $horse->osteopathyStatus; ?><span>
    </div>  
     <?php 
