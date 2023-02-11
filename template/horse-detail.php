@@ -104,7 +104,14 @@ function computeExpertiseTitle($yearOfHorse, $horse){
 ?>
 <div id="horse-catalog" class="detail-card">
     <div class="fixe-part">
-        <h1><?php echo $horse->name ?></h1>
+        <h1>
+            <?php echo $horse->name ?>
+            <?php if($horse->new ){ ?>
+                <span class="new">new</span>
+
+            <?php } ?>
+        </h1>
+       
         <?php
         if($horse->appro != null){ 
         ?>
@@ -206,10 +213,7 @@ function computeExpertiseTitle($yearOfHorse, $horse){
             <span class="pga">PGA</span>
 
         <?php } ?>
-        <?php if($horse->new ){ ?>
-            <span class="new">new</span>
-
-        <?php } ?>
+        
         <span class="race <?php echo $horse->logo ?>"><?php echo $horse->logo ?></span>
     </div>
     <?php if($horse->globalEvaluation !=null) { ?>
@@ -309,8 +313,13 @@ function computeExpertiseTitle($yearOfHorse, $horse){
 
     <?php if(function_exists("shf_connected_block") && shf_connected_block()){ ?>
     <div class="osteopathy-status">
-        <h2><?php _e("Osteo Articular Status", 'horses-catalog') ?><?php if( $horse->osteopathyStatusYear!= null){ echo "(". $horse->osteopathyStatusYear.")";} ?></h2>
+        <h2><?php _e("Osteo Articular Status", 'horses-catalog') ?></h2>
         <span class="value"><?php echo $horse->osteopathyStatus; ?><span>
+        <?php if( $horse->osteopathyStatusYear!= null){
+        ?>
+            <div><?php echo sprintf(__("X-ray year: %s", 'horses-catalog'), $horse->osteopathyStatusYear); ?></div>
+        <?php
+        } ?>
    </div>  
     <?php 
         include("strong-points.php"); 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2023-01-28 14:35+0100\n"
-"PO-Revision-Date: 2023-01-28 14:35+0100\n"
+"POT-Creation-Date: 2023-02-11 12:26+0100\n"
+"PO-Revision-Date: 2023-02-11 12:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -383,76 +383,81 @@ msgstr "Championnat"
 msgid "Testage"
 msgstr "Testage"
 
-#: template/horse-detail.php:119
+#: template/horse-detail.php:126
 msgid "Coming soon online"
 msgstr "Prochainement en ligne"
 
-#: template/horse-detail.php:137
+#: template/horse-detail.php:144
 #, php-format
 msgid "Expertise at %s years %s (%s)"
 msgstr "Expertise à %s  ans %s (%s)"
 
-#: template/horse-detail.php:139
+#: template/horse-detail.php:146
 #, php-format
 msgid "Expertise at %s years (%s)"
 msgstr "Expertise à %s  ans (%s)"
 
-#: template/horse-detail.php:154 template/pedigree.php:15
+#: template/horse-detail.php:161 template/pedigree.php:17
 msgid "Pedigree"
 msgstr "Pédigrée"
 
-#: template/horse-detail.php:157
+#: template/horse-detail.php:164
 msgid "Strong points"
 msgstr "Points forts"
 
-#: template/horse-detail.php:160
+#: template/horse-detail.php:167
 msgid "Maternal Lineage Expertise"
 msgstr "Expertise Lignée Maternelle"
 
-#: template/horse-detail.php:161
+#: template/horse-detail.php:168
 msgid "Expertise judges"
 msgstr "Expertise juges"
 
-#: template/horse-detail.php:164
+#: template/horse-detail.php:171
 msgid "Testing expertise"
 msgstr "Expertise testage"
 
-#: template/horse-detail.php:167
+#: template/horse-detail.php:174
 msgid "Riders reviews"
 msgstr "Avis des cavaliers"
 
-#: template/horse-detail.php:169
+#: template/horse-detail.php:176
 msgid "Images"
 msgstr "Images"
 
-#: template/horse-detail.php:221
+#: template/horse-detail.php:225
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: template/horse-detail.php:225
+#: template/horse-detail.php:229
 msgid "Breeder"
 msgstr "Naisseur"
 
-#: template/horse-detail.php:268
+#: template/horse-detail.php:272
 #, php-format
 msgid "Protected mares in %s"
 msgstr "Juments saillies en  %s"
 
-#: template/horse-detail.php:275
+#: template/horse-detail.php:279
 msgid "Year of riding in France"
 msgstr "Année de monte en France"
 
-#: template/horse-detail.php:281
+#: template/horse-detail.php:285
 msgid "Protected mares in France"
 msgstr "Juments saillies en France"
 
-#: template/horse-detail.php:298
+#: template/horse-detail.php:302
 msgid "SIRE card"
 msgstr "fiche SIRE"
 
-#: template/horse-detail.php:312
+#: template/horse-detail.php:316
 msgid "Osteo Articular Status"
 msgstr "Statut Ostéo Articulaire"
+
+#: template/horse-detail.php:320
+#, php-format
+msgid "X-ray year: %s"
+msgstr "Année radio  : %s"
 
 #: template/horses-list.php:7
 msgid "Stallions"
@@ -481,8 +486,8 @@ msgstr "Par %s x %s"
 
 #: template/internationnal.php:9
 #, php-format
-msgid "International riders opinion (%s)"
-msgstr "L’avis des cavaliers internationaux (%s)"
+msgid "International riders opinion %s"
+msgstr "L’avis des cavaliers internationaux %s"
 
 #: template/internationnal.php:13 template/sf-judges.php:220
 #: template/testing.php:38
@@ -511,8 +516,8 @@ msgstr "Impression générale"
 
 #: template/mother-notes.php:5
 #, php-format
-msgid "Maternal Lineage Expertise (%s)"
-msgstr "Expertise Lignée Maternelle (%s)"
+msgid "Maternal Lineage Expertise %s"
+msgstr "Expertise Lignée Maternelle %s"
 
 #: template/mother-notes.php:6
 msgid "Click to learn to read maternal lineage"
@@ -522,11 +527,11 @@ msgstr "Cliquez pour apprendre à lire la lignée maternelle"
 msgid "Mother"
 msgstr "Mère"
 
-#: template/mother-notes.php:33 template/mother-notes.php:67
+#: template/mother-notes.php:33 template/mother-notes.php:69
 msgid "Total weighted points"
 msgstr "Total points pondérés"
 
-#: template/mother-notes.php:34 template/mother-notes.php:71
+#: template/mother-notes.php:34 template/mother-notes.php:73
 msgid "Final note"
 msgstr "Note finale"
 
@@ -538,7 +543,7 @@ msgstr "Nom"
 msgid "Points"
 msgstr "Points"
 
-#: template/mother-notes.php:59 template/mother-notes.php:75
+#: template/mother-notes.php:61 template/mother-notes.php:79
 msgid "foreign bloodline"
 msgstr "lignée étrangère"
 
@@ -548,13 +553,13 @@ msgstr "Revenir à la recherche"
 
 #: template/sf-judges.php:49
 #, php-format
-msgid "Expertise judges SF & International riders (%s)"
-msgstr "Expertise juges SF & cavaliers internationnaux (%s)"
+msgid "Expertise judges SF & International riders %s"
+msgstr "Expertise juges SF & cavaliers internationaux %s"
 
 #: template/sf-judges.php:53
 #, php-format
-msgid "Expertise judges SF (%s)"
-msgstr "Expertise juges SF (%s)"
+msgid "Expertise judges SF %s"
+msgstr "Expertise juges SF %s"
 
 #: template/sf-judges.php:63
 msgid "Modele"
@@ -726,8 +731,8 @@ msgstr "Les points forts"
 
 #: template/testing.php:10
 #, php-format
-msgid "Expertise SF test team (%s)"
-msgstr "Expertise équipe testage SF (%s)"
+msgid "Expertise SF test team %s"
+msgstr "Expertise équipe testage SF %s"
 
 #: template/testing.php:31
 msgid "General operation"
@@ -926,6 +931,3 @@ msgstr "Comportement global"
 
 #~ msgid "Obstacle exercise"
 #~ msgstr "Exercice à l'obstacle"
-
-#~ msgid " years"
-#~ msgstr "ans"

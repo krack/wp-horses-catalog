@@ -2,7 +2,7 @@
 <?php
 $expertiseTitle = computeExpertiseTitle($year, $horse);
 ?>
-<h2><?php  echo sprintf(__("Maternal Lineage Expertise (%s)", 'horses-catalog'),$expertiseTitle['yearOfEvent']); ?></h2>
+<h2><?php  echo sprintf(__("Maternal Lineage Expertise %s", 'horses-catalog'),$expertiseTitle['yearOfEvent']); ?></h2>
 <i class="fas fa-info-circle mother" title="<?php _e("Click to learn to read maternal lineage", 'horses-catalog') ?>"></i>
 
     <table class="mother-notes">
@@ -54,7 +54,9 @@ $expertiseTitle = computeExpertiseTitle($year, $horse);
             ?>
             <td class="total value"><?php echo $horse->totalMothersNotes; ?></td>
             <td class="total value <?php if($horse->evaluateMothersNotes >=8){ echo "good-lineage"; } ?>">
-                <?php echo $horse->evaluateMothersNotes; ?>/10
+                <?php if(!$horse->foreignBloodline){ ?>
+                    <?php echo $horse->evaluateMothersNotes; ?>/10
+                <?php } ?>
                 <?php if($horse->foreignBloodline){ ?>
                     <span class="foreign-bloodline"><?php _e("foreign bloodline", 'horses-catalog') ?></span>
                 <?php } ?>
@@ -70,7 +72,9 @@ $expertiseTitle = computeExpertiseTitle($year, $horse);
         <div>
             <span class="total label"><?php _e("Final note", 'horses-catalog') ?></span> 
             <span class="total value <?php if($horse->evaluateMothersNotes >=8){ echo "good-lineage"; } ?>">
-                <?php echo $horse->evaluateMothersNotes; ?>/10
+                <?php if(!$horse->foreignBloodline){ ?>
+                    <?php echo $horse->evaluateMothersNotes; ?>/10
+                <?php } ?>
                 <?php if($horse->foreignBloodline){ ?>
                     <span class="foreign-bloodline">- <?php _e("foreign bloodline", 'horses-catalog') ?></span>
                 <?php } ?>

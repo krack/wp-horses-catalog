@@ -7,7 +7,7 @@ if(!isTestingEmpty()){
 $expertiseTitle = computeExpertiseTitle($year, $horse);
 ?>
 <div id="testing" class="root-notation">
-    <h2><?php echo sprintf(__("Expertise SF test team (%s)", 'horses-catalog'),$expertiseTitle['yearOfEvent']); ?></h2>
+    <h2><?php echo sprintf(__("Expertise SF test team %s", 'horses-catalog'),$expertiseTitle['yearOfEvent']); ?></h2>
     
     <div class="back"></div>
     <div>

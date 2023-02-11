@@ -6,7 +6,7 @@ if(!isInternationnalEmpty()){
 $expertiseTitle = computeExpertiseTitle($year, $horse);
 ?>
 <div id="opinion" class="root-notation">
-    <h2><?php  echo sprintf(__("International riders opinion (%s)", 'horses-catalog'),$expertiseTitle['yearOfEvent']); ?></h2>
+    <h2><?php  echo sprintf(__("International riders opinion %s", 'horses-catalog'),$expertiseTitle['yearOfEvent']); ?></h2>
         <div class="back"></div>
     <div>
         <div class="model list-note">
