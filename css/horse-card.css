@@ -446,6 +446,7 @@ line-height: 0;
 
     border-spacing: 0px 1px;
     text-transform: uppercase;
+    line-height: 1;
 }
 
 #horse-catalog #pedigree td *{

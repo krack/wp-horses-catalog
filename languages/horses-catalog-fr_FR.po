@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2023-02-11 12:26+0100\n"
-"PO-Revision-Date: 2023-02-11 12:27+0100\n"
+"POT-Creation-Date: 2023-02-11 14:46+0100\n"
+"PO-Revision-Date: 2023-02-11 18:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -340,19 +340,19 @@ msgstr "Rechercher par nom"
 msgid "OK"
 msgstr "OK"
 
-#: horses.php:90
+#: horses.php:105
 msgid "Very promising"
 msgstr "Très prometteur"
 
-#: horses.php:91
+#: horses.php:106
 msgid "Hope"
 msgstr "Espoir"
 
-#: horses.php:92
+#: horses.php:107
 msgid "To follow"
 msgstr "À suivre"
 
-#: index.php:101 template/horses-list.php:58 template/horses-list.php:135
+#: index.php:101 template/horses-list.php:74 template/horses-list.php:176
 #, php-format
 msgid "%s years"
 msgstr "%s ans"
@@ -463,23 +463,39 @@ msgstr "Année radio  : %s"
 msgid "Stallions"
 msgstr "Étalons"
 
-#: template/horses-list.php:47
+#: template/horses-list.php:19
+msgid "SFO"
+msgstr "SFO"
+
+#: template/horses-list.php:23
+msgid "Producing in SFO"
+msgstr "Produisant en SFO"
+
+#: template/horses-list.php:27
+msgid "PGA eligible"
+msgstr "Éligible PGA"
+
+#: template/horses-list.php:63
 msgid "Age filter : "
 msgstr "Filtrer par âge : "
 
-#: template/horses-list.php:71
+#: template/horses-list.php:87
 msgid "Categories filter : "
 msgstr "Filtrer par catégorie de labellisation : "
 
-#: template/horses-list.php:90
+#: template/horses-list.php:111
+msgid "Filter stallion : "
+msgstr "Filtrer les étalons : "
+
+#: template/horses-list.php:131
 msgid "Name filter : "
 msgstr "Filtrer par nom : "
 
-#: template/horses-list.php:100
+#: template/horses-list.php:141
 msgid "search"
 msgstr "rechercher"
 
-#: template/horses-list.php:138
+#: template/horses-list.php:179
 #, php-format
 msgid "By %s x %s"
 msgstr "Par %s x %s"

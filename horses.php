@@ -30,7 +30,11 @@ class Horses{
                 self::searchYears($k, $searchFilter)
                 && 
                 self::searchCategory($k, $searchFilter)
+                &&
+                self::searchSfType($k, $searchFilter) 
                 && 
+                self::searchPGA($k, $searchFilter)
+                &&
                 self::searchTerm($k, $searchFilter)
                 ;
         }));
@@ -69,6 +73,32 @@ class Horses{
             }
         }
         return false;
+    }
+
+    private static function searchSfType($k, $search){
+        if($search->isClearSFtype()){
+            return true;
+        }
+        foreach($search->sftype as $type){
+            if($type !="PGA"){
+                if($k->logoList == $type){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static function searchPGA($k, $search){
+        if($search->isClearPGA()){
+            return true;
+        }
+        foreach($search->sftype as $type){
+            if($type =="PGA"){
+                return $k->isPga;
+            }
+        }
+        return true;
     }
 
     public static function get($id){
@@ -117,14 +147,16 @@ class Horses{
             foreach ($rawDataList as $rawData){
 
                 $horse = new Horses($rawData);
-                if(self::$map[$horse->id] == null){
-					if($horse->birthYear != null){
-						array_push(self::$list, $horse);
-						array_push(self::$birth_years, intval($horse->birthYear));
-					}
-                    self::$map[$horse->id] = [];
+                if($horse->inline){
+                    if(self::$map[$horse->id] == null){
+                        if($horse->birthYear != null){
+                            array_push(self::$list, $horse);
+                            array_push(self::$birth_years, intval($horse->birthYear));
+                        }
+                        self::$map[$horse->id] = [];
+                    }
+                    self::$map[$horse->id][$year_file] = $horse;
                 }
-                self::$map[$horse->id][$year_file] = $horse;
                  
             }
         }
@@ -148,6 +180,7 @@ class Horses{
      
 
     public $id;
+    public $inline;
     public $name;
     public $race;
     public $logo;
@@ -194,6 +227,7 @@ class Horses{
 
     public function __construct($rawData) {
         $this->id = $rawData["id"];
+        $this->inline = (($rawData["en_ligne"] == "NON")?false:true);
        
         $this->name = $rawData["nom"];
 
@@ -202,6 +236,9 @@ class Horses{
         $this->coatColor = $rawData["robe"];
         $this->race = $rawData["race"];
         $this->logo = $rawData["Logo"];
+        if($this->logo == ""){
+            $this->logo = $rawData["logo"];
+        }
         $this->logoList = $rawData["sfo"];
         $this->size = $rawData["toise"];
         $this->discipline = $rawData["discipline"];
@@ -211,7 +248,7 @@ class Horses{
 
         $this->indice = $rawData["indice"];
         $this->blup = $rawData["blup"];
-        $this->appro = $rawData["appro"];
+        $this->appro = $rawData["annee_appro"];
         $this->new = (strtolower($rawData["nouveau"])=="oui");
         
         
@@ -616,17 +653,24 @@ class Search{
     public $name;
     public $years;
     public $categories;
+    public $sftype;
     public $start;
 
     public function __construct($post) {
         $this->name = stripcslashes($post["search"]);
         $this->years = $post["years"];
         $this->categories = $post["categories"];
+        $this->sftype = $post["sftype"];
         $this->start = $post["start"];
     }
 
     public function isClear(){
-        return$this->isClearName() && $this->isClearYear() && $this->isClearCategories()  && $this->isClearStart();
+        return $this->isClearName() 
+        && $this->isClearYear()
+        && $this->isClearCategories()
+        && $this->isClearSFtype()
+        && $this->isClearPGA()
+        && $this->isClearStart();
     }
 
     public function isClearName(){
@@ -641,11 +685,18 @@ class Search{
     public function isClearStart(){
         return $this->start == null || $this->start == "";
     }
+    public function isClearSFtype(){
+        return $this->sftype == null || (count($this->sftype) == 1 && in_array("PGA", $this->sftype));
+    }
+    public function isClearPGA(){
+        return $this->sftype == null || !in_array("PGA", $this->sftype);
+    }
     
 
     public function clearExceptYears(){
         $this->name = "";
         $this->categories = null;
+        $this->sftype = null;
         $this->start = "";
     }
 }

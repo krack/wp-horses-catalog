@@ -87,7 +87,7 @@ function create_submenu_etalons( $item_output, $item, $depth, $args ) {
 	return $item_output;
 }
 
-add_filter( 'wp_nav_menu_objects', 'only_submenu_for_current', 10, 2 );
+add_filter( 'wp_nav_menu_objects', 'only_submenu_for_current', 9, 2 );
 function only_submenu_for_current( $sorted_menu_items, $args ) {
 
         $parent = getParent($sorted_menu_items);
@@ -111,13 +111,31 @@ function only_submenu_for_current( $sorted_menu_items, $args ) {
                 'menu_item_parent' =>  $parent->ID,
                 'title' => get_option( 'menu-all-elements' ),
                  'url' => $parent->url.'?display-age=true',
-                 'menu_order' => 1
+                 'menu_order' => 0
         );
         array_push ( $sorted_menu_items , $pageForAll);
 
         usort($sorted_menu_items, 'comparatorPage');
         return $sorted_menu_items;
 }
+
+add_filter( 'wp_nav_menu_objects', 'nav_submenu_type_stalion',10, 2 );
+function nav_submenu_type_stalion( $sorted_menu_items, $args ) {
+
+        $parent = getParent($sorted_menu_items);
+
+       
+        $pageForAll =(object) array(
+                'menu_item_parent' =>  $parent->ID,
+                'title' =>__('SFO', 'horses-catalog')."/".__('Producing in SFO', 'horses-catalog'),
+                 'url' => $parent->url.'?display-age=true&sftype[]=SFO&sftype[]=PSFO',
+                 'menu_order' => 1
+        );
+        array_push ( $sorted_menu_items , $pageForAll);
+        usort($sorted_menu_items, 'comparatorPage');
+        return $sorted_menu_items;
+}
+
 
 function comparatorPage($page1, $page2){
         return $page1->menu_order > $page2->menu_order; 

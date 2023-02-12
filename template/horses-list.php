@@ -14,6 +14,22 @@ $listHorsesOfYear = Horses::getAll($searchYear);
 $search = new Search($_GET);
 $listHorses = Horses::getAll($search);
 
+$SFTypeHorse=[
+    array(
+        'label' => __('SFO', 'horses-catalog'),
+        'value' => 'SFO'
+    ),
+    array(
+        'label' => __('Producing in SFO', 'horses-catalog'),
+        'value' => 'PSFO'
+    ),
+    array(
+        'label' => __('PGA eligible', 'horses-catalog'),
+        'value' => 'PGA'
+    )
+];
+
+
 if($pagination){
     $page = 1;
     $nbByPage = 9;
@@ -63,6 +79,30 @@ if($_GET['display-age']=='true'){
     </div>
    
     <?php
+    if(true){
+    ?>
+
+    <div class="filters-stalions">
+        <h4><?php _e("Filter stallion : ", 'horses-catalog') ?></h4>
+        <ul>
+            <?php foreach($SFTypeHorse as $sfType){ ?>
+            <li><label><input type="checkbox" 
+                            name="sftype[]"
+                            value="<?php echo $sfType["value"]; ?>"
+                            <?php echo ($search->sftype != null && in_array("".$sfType["value"], $search->sftype))?"checked" : ""; ?> 
+                            />
+                            <?php echo $sfType["label"]; ?>
+            </label>
+          
+            <?php } ?>
+            </li>
+        </ul>
+    </div>
+    <?php
+    }
+    ?>
+
+    <?php
     // it's not only 3 year
     if(!($search->years!= null && count($search->years) == 1 && ($search->years[0] == (date("Y")-3) && $_GET['display-age'] !== 'true') )){
     ?>
@@ -86,6 +126,9 @@ if($_GET['display-age']=='true'){
     <?php
     }
     ?>
+
+
+
     <div class="name">
         <h4><?php _e("Name filter : ", 'horses-catalog') ?></h4>
         <input type="text" name="search" value="<?php echo $search->name; ?>" list="horses" autocomplete="off" />
