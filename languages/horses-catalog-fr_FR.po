@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
-"POT-Creation-Date: 2023-02-11 14:46+0100\n"
-"PO-Revision-Date: 2023-02-11 18:36+0100\n"
+"POT-Creation-Date: 2024-01-19 17:27+0100\n"
+"PO-Revision-Date: 2024-01-19 17:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: est\n"
 "Language: fr\n"
@@ -268,94 +268,108 @@ msgid "Stallion name"
 msgstr "Nom étalon"
 
 #: documentShortcode.php:28
+#, fuzzy
+#| msgid "Race type"
+msgid "Race"
+msgstr "Type race"
+
+#: documentShortcode.php:29
+msgid "Birtd year"
+msgstr ""
+
+#: documentShortcode.php:30
 msgid "Plugs<br /> sports performances<br /> from production"
 msgstr "Fiche<br /> performances sportives<br /> de la production"
 
-#: documentShortcode.php:29
+#: documentShortcode.php:31
 msgid "Perf"
 msgstr "Perf"
 
-#: documentShortcode.php:29
+#: documentShortcode.php:31
 msgid "Plugs\\nsports performances\\nfrom production"
 msgstr ""
 "Fiche\n"
 "performances sportives\n"
 "de la production"
 
-#: documentShortcode.php:30
+#: documentShortcode.php:32
 msgid ""
 "Specifications sheet<br /> transmissible model,<br /> gaits and free jumping"
 msgstr ""
 "Fiche caractéristiques<br /> transmissibles modèle,<br /> allures et saut en "
 "liberté"
 
-#: documentShortcode.php:31
+#: documentShortcode.php:33
 msgid "Caract"
 msgstr "Caract"
 
-#: documentShortcode.php:31
+#: documentShortcode.php:33
 msgid "Specifications sheet<\\ntransmissible model,\\ngaits and free jumping"
 msgstr ""
 "Fiche caractéristiques\n"
 "transmissibles modèle,\n"
 "allures et saut en liberté"
 
-#: documentShortcode.php:32 documentShortcode.php:33
+#: documentShortcode.php:34 documentShortcode.php:35
 msgid "Number of products characterized in SF breeding competitions as :"
 msgstr "Nombre de produits caractérisés en concours d’élevage SF en tant que :"
 
-#: documentShortcode.php:33
+#: documentShortcode.php:35
 msgid "Products"
 msgstr "Produits"
 
-#: documentShortcode.php:34
+#: documentShortcode.php:36
 msgid "PDF<br/> card"
 msgstr "Fiches<br/> PDF"
 
-#: documentShortcode.php:35
+#: documentShortcode.php:37
 msgid "PDF"
 msgstr "PDF"
 
-#: documentShortcode.php:38
+#: documentShortcode.php:40
 msgid "Father"
 msgstr "Père"
 
-#: documentShortcode.php:39
-msgid "Mother of father"
-msgstr "Père de mère"
-
-#: documentShortcode.php:71
+#: documentShortcode.php:73
 msgid "Consult the PDF file of the horse"
 msgstr "Consulter la/les<br /> fiche(s) PDF du cheval"
 
-#: documentShortcode.php:94 documentShortcode.php:116
+#: documentShortcode.php:96 documentShortcode.php:118
 msgid "Search a stallion"
 msgstr "Rechercher un étalon"
 
-#: documentShortcode.php:115
+#: documentShortcode.php:117
 msgid "Search by name"
 msgstr "Rechercher par nom"
 
-#: documentShortcode.php:118
+#: documentShortcode.php:120
 msgid "OK"
 msgstr "OK"
 
-#: horses.php:105
+#: horses.php:120
 msgid "Very promising"
 msgstr "Très prometteur"
 
-#: horses.php:106
+#: horses.php:121
 msgid "Hope"
 msgstr "Espoir"
 
-#: horses.php:107
+#: horses.php:122
 msgid "To follow"
 msgstr "À suivre"
 
-#: index.php:101 template/horses-list.php:74 template/horses-list.php:176
+#: index.php:101 template/horses-list.php:74 template/horses-list.php:178
 #, php-format
 msgid "%s years"
 msgstr "%s ans"
+
+#: index.php:132 template/horses-list.php:19
+msgid "SFO"
+msgstr "SFO"
+
+#: index.php:132 template/horses-list.php:23
+msgid "Producing in SFO"
+msgstr "Produisant en SFO"
 
 #: template/fiche-download.php:26
 #, php-format
@@ -463,14 +477,6 @@ msgstr "Année radio  : %s"
 msgid "Stallions"
 msgstr "Étalons"
 
-#: template/horses-list.php:19
-msgid "SFO"
-msgstr "SFO"
-
-#: template/horses-list.php:23
-msgid "Producing in SFO"
-msgstr "Produisant en SFO"
-
 #: template/horses-list.php:27
 msgid "PGA eligible"
 msgstr "Éligible PGA"
@@ -479,23 +485,23 @@ msgstr "Éligible PGA"
 msgid "Age filter : "
 msgstr "Filtrer par âge : "
 
-#: template/horses-list.php:87
-msgid "Categories filter : "
-msgstr "Filtrer par catégorie de labellisation : "
-
-#: template/horses-list.php:111
+#: template/horses-list.php:86
 msgid "Filter stallion : "
 msgstr "Filtrer les étalons : "
 
-#: template/horses-list.php:131
+#: template/horses-list.php:111
+msgid "Categories filter : "
+msgstr "Filtrer par catégorie de labellisation : "
+
+#: template/horses-list.php:133
 msgid "Name filter : "
 msgstr "Filtrer par nom : "
 
-#: template/horses-list.php:141
+#: template/horses-list.php:143
 msgid "search"
 msgstr "rechercher"
 
-#: template/horses-list.php:179
+#: template/horses-list.php:181
 #, php-format
 msgid "By %s x %s"
 msgstr "Par %s x %s"
@@ -505,7 +511,7 @@ msgstr "Par %s x %s"
 msgid "International riders opinion %s"
 msgstr "L’avis des cavaliers internationaux %s"
 
-#: template/internationnal.php:13 template/sf-judges.php:220
+#: template/internationnal.php:13 template/sf-judges.php:244
 #: template/testing.php:38
 msgid "Ability to climb jump obstacle"
 msgstr "Aptitude à l’obstacle saut monté"
@@ -567,179 +573,210 @@ msgstr "lignée étrangère"
 msgid "Revenir à la recherche"
 msgstr "Revenir à la recherche"
 
-#: template/sf-judges.php:49
+#: template/sf-judges.php:72
 #, php-format
 msgid "Expertise judges SF & International riders %s"
 msgstr "Expertise juges SF & cavaliers internationaux %s"
 
-#: template/sf-judges.php:53
+#: template/sf-judges.php:76
 #, php-format
 msgid "Expertise judges SF %s"
 msgstr "Expertise juges SF %s"
 
-#: template/sf-judges.php:63
+#: template/sf-judges.php:86 template/sf-judges.php:504
 msgid "Modele"
 msgstr "Modèle"
 
-#: template/sf-judges.php:66 template/sf-judges.php:364
+#: template/sf-judges.php:89 template/sf-judges.php:388
+#: template/sf-judges.php:507
 msgid "Race type"
 msgstr "Type race"
 
-#: template/sf-judges.php:70
+#: template/sf-judges.php:93
 msgid "Head tie - neckline"
 msgstr "Attache de tête – encolure"
 
-#: template/sf-judges.php:74
+#: template/sf-judges.php:97
 msgid "Front profile (shoulder- forearm)"
 msgstr "Profil avant (épaule- avant bras)"
 
-#: template/sf-judges.php:78
+#: template/sf-judges.php:101
 msgid "Top line(tourniquet-dos-kidney)"
 msgstr "Ligne de dessus (garrot-dos-rein)"
 
-#: template/sf-judges.php:83
+#: template/sf-judges.php:106
 msgid "Rear profile(rump-thigh-basin)"
 msgstr "Profil arrière (croupe-bassin-cuisse)"
 
-#: template/sf-judges.php:87 template/sf-judges.php:374
+#: template/sf-judges.php:110 template/sf-judges.php:398
+#: template/sf-judges.php:511
 msgid "Limbs"
 msgstr "Aplombs"
 
-#: template/sf-judges.php:92 template/sf-judges.php:152
-#: template/sf-judges.php:185
+#: template/sf-judges.php:115 template/sf-judges.php:175
+#: template/sf-judges.php:208
 msgid "Comment"
 msgstr "Commentaire"
 
-#: template/sf-judges.php:100 template/sf-judges.php:110
+#: template/sf-judges.php:123 template/sf-judges.php:133
 #: template/testing.php:16
 msgid "Locomotion and general functioning"
 msgstr "Locomotion et fonctionnement général"
 
-#: template/sf-judges.php:113 template/sf-judges.php:138
-#: template/sf-judges.php:303 template/sf-judges.php:390
-#: template/testing.php:19
+#: template/sf-judges.php:136 template/sf-judges.php:161
+#: template/sf-judges.php:327 template/sf-judges.php:416
+#: template/sf-judges.php:487 template/testing.php:19
 msgid "Pace"
 msgstr "Pas"
 
-#: template/sf-judges.php:117 template/sf-judges.php:142
-#: template/sf-judges.php:307 template/sf-judges.php:394
-#: template/testing.php:23
+#: template/sf-judges.php:140 template/sf-judges.php:165
+#: template/sf-judges.php:331 template/sf-judges.php:420
+#: template/sf-judges.php:491 template/testing.php:23
 msgid "Trot"
 msgstr "Trot"
 
-#: template/sf-judges.php:121 template/sf-judges.php:146
-#: template/sf-judges.php:311 template/sf-judges.php:398
-#: template/testing.php:27
+#: template/sf-judges.php:144 template/sf-judges.php:169
+#: template/sf-judges.php:335 template/sf-judges.php:424
+#: template/sf-judges.php:495 template/testing.php:27
 msgid "Gallop"
 msgstr "Galop"
 
-#: template/sf-judges.php:125
+#: template/sf-judges.php:148
 msgid "General functionning"
 msgstr "Fonctionnement général"
 
-#: template/sf-judges.php:135
+#: template/sf-judges.php:158
 msgid "Locomotion"
 msgstr "Locomotion"
 
-#: template/sf-judges.php:164
+#: template/sf-judges.php:187
 msgid "Ability to obstacle"
 msgstr "Aptitude à l’obstacle"
 
-#: template/sf-judges.php:167 template/sf-judges.php:223
+#: template/sf-judges.php:190 template/sf-judges.php:247
 #: template/testing.php:41
 msgid "Balance on jumps"
 msgstr "Équilibre sur les sauts"
 
-#: template/sf-judges.php:171 template/sf-judges.php:227
+#: template/sf-judges.php:194 template/sf-judges.php:251
 #: template/testing.php:45
 msgid "Means on the obstacle"
 msgstr "Moyens sur l’obstacle"
 
-#: template/sf-judges.php:175 template/sf-judges.php:231
+#: template/sf-judges.php:198 template/sf-judges.php:255
 #: template/testing.php:49
 msgid "Style on the obstacle"
 msgstr "Style sur l’obstacle"
 
-#: template/sf-judges.php:179 template/sf-judges.php:235
-#: template/sf-judges.php:283 template/sf-judges.php:346
+#: template/sf-judges.php:202 template/sf-judges.php:259
+#: template/sf-judges.php:307 template/sf-judges.php:370
 #: template/testing.php:53
 msgid "Behaviours"
 msgstr "Comportement"
 
-#: template/sf-judges.php:196
+#: template/sf-judges.php:220
 msgid "Jumping ability"
 msgstr "Aptitude à l’obstacle saut en liberté"
 
-#: template/sf-judges.php:197
+#: template/sf-judges.php:221
 msgid ""
 "General average obtained in the 2-year-old championship or in the qualifier "
 "at 3 years old"
 msgstr ""
 "Moyenne générale obtenue au championnat des 2ans ou en qualificative à 3ans"
 
-#: template/sf-judges.php:255
+#: template/sf-judges.php:279
 msgid "Expertise judges SF Obstacle"
 msgstr "Expertise Juges SF Obstacle"
 
-#: template/sf-judges.php:259
+#: template/sf-judges.php:283
 msgid "Cross"
 msgstr "Cross"
 
-#: template/sf-judges.php:260
+#: template/sf-judges.php:284
 msgid "CSO"
 msgstr "CSO"
 
-#: template/sf-judges.php:263 template/sf-judges.php:330
+#: template/sf-judges.php:287 template/sf-judges.php:354
 msgid "Locomotion/Galop"
 msgstr "Locomotion / Galop"
 
-#: template/sf-judges.php:268 template/sf-judges.php:334
+#: template/sf-judges.php:292 template/sf-judges.php:358
 msgid "Equilibre & availability"
 msgstr "Equilibre & disponibilité"
 
-#: template/sf-judges.php:273 template/sf-judges.php:338
+#: template/sf-judges.php:297 template/sf-judges.php:362
 msgid "Means & path"
 msgstr "Moyens & trajectoire"
 
-#: template/sf-judges.php:278 template/sf-judges.php:342
+#: template/sf-judges.php:302 template/sf-judges.php:366
 msgid "Style"
 msgstr "Style"
 
-#: template/sf-judges.php:288 template/sf-judges.php:350
+#: template/sf-judges.php:312 template/sf-judges.php:374
 msgid "Impression in a body"
 msgstr "Impression d'ensemble"
 
-#: template/sf-judges.php:300 template/sf-judges.php:387
+#: template/sf-judges.php:324 template/sf-judges.php:413
 msgid "Expertise judges SF Paces"
 msgstr "Expertise Juges SF Allures"
 
-#: template/sf-judges.php:315 template/sf-judges.php:425
+#: template/sf-judges.php:339 template/sf-judges.php:454
+#: template/sf-judges.php:545
 msgid "Globale impression"
 msgstr "Impression d’ensemble"
 
-#: template/sf-judges.php:327
+#: template/sf-judges.php:351
 msgid "Expertise judges SF obstacle"
 msgstr "Expertise Juges SF Obstacle"
 
-#: template/sf-judges.php:361
+#: template/sf-judges.php:385
 msgid "Expertise judges SF model"
 msgstr "Expertise Juges SF Modèle"
 
-#: template/sf-judges.php:369
+#: template/sf-judges.php:393 template/sf-judges.php:515
 msgid "Top line"
 msgstr "Ligne de dessus"
 
-#: template/sf-judges.php:416
+#: template/sf-judges.php:445
 msgid "Stallion Bonus Assessment"
 msgstr "Appréciation Bonus Etalon"
 
-#: template/sf-judges.php:416
+#: template/sf-judges.php:445
 msgid "Click to learn bonus etalons"
 msgstr "Cliquez pour apprendre le bonus étalons"
 
-#: template/sf-judges.php:434
+#: template/sf-judges.php:463
 msgid "Final expertise"
 msgstr "Expertise finale"
+
+#: template/sf-judges.php:476
+msgid "Expertise judges SF"
+msgstr "Expertise juges SF"
+
+#: template/sf-judges.php:484
+msgid "Paces"
+msgstr "Allures"
+
+#: template/sf-judges.php:523
+msgid "Aptitude"
+msgstr "Aptitude"
+
+#: template/sf-judges.php:526
+msgid "Energy & impulse"
+msgstr "Énergie & Impulsion"
+
+#: template/sf-judges.php:530
+msgid "Contact & Permeability"
+msgstr "Contact & Perméabilité"
+
+#: template/sf-judges.php:534
+msgid "Generosity & Concentration"
+msgstr "Générosité & Concentration"
+
+#: template/sf-judges.php:538
+msgid "Flexibility"
+msgstr "Souplesse"
 
 #: template/strong-points.php:3
 msgid "The strong points"
@@ -846,6 +883,9 @@ msgstr "Comportement aux soins"
 #: template/testing.php:234
 msgid "Globale behavior"
 msgstr "Comportement global"
+
+#~ msgid "Mother of father"
+#~ msgstr "Père de mère"
 
 #~ msgid ""
 #~ "Number of products<br /> appraised in Model - Gaits -<br /> Free Jumping "

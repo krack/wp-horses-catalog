@@ -91,7 +91,7 @@ add_filter( 'wp_nav_menu_objects', 'only_submenu_for_current', 9, 2 );
 function only_submenu_for_current( $sorted_menu_items, $args ) {
 
         $parent = getParent($sorted_menu_items);
-
+		
         $years = Horses::getBirthYear();
         arsort($years);
 
@@ -103,8 +103,9 @@ function only_submenu_for_current( $sorted_menu_items, $args ) {
                          'menu_order' =>  - $year
                         );
 
-
-                array_push ( $sorted_menu_items , $pageForYear);
+				if($parent != null){
+                	array_push ( $sorted_menu_items , $pageForYear);
+				}
         }
         
         $pageForAll =(object) array(
@@ -113,8 +114,9 @@ function only_submenu_for_current( $sorted_menu_items, $args ) {
                  'url' => $parent->url.'?display-age=true',
                  'menu_order' => 0
         );
-        array_push ( $sorted_menu_items , $pageForAll);
-
+		if($parent != null){
+        	array_push ( $sorted_menu_items , $pageForAll);
+		}
         usort($sorted_menu_items, 'comparatorPage');
         return $sorted_menu_items;
 }
@@ -131,7 +133,9 @@ function nav_submenu_type_stalion( $sorted_menu_items, $args ) {
                  'url' => $parent->url.'?display-age=true&sftype[]=SFO&sftype[]=PSFO',
                  'menu_order' => 1
         );
-        array_push ( $sorted_menu_items , $pageForAll);
+		if($parent != null){
+        	array_push ( $sorted_menu_items , $pageForAll);
+		}
         usort($sorted_menu_items, 'comparatorPage');
         return $sorted_menu_items;
 }
@@ -208,5 +212,4 @@ function theme_xyz_header_metadata() {
 }
 add_action( 'wp_head', 'theme_xyz_header_metadata', 1 );
 remove_action ( 'wp_head' , 'rel_canonical' ) ;
-
 ?>

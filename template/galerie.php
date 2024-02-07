@@ -5,7 +5,7 @@ $query_video_args = array(
     'post_status'    => 'inherit',
     'posts_per_page' => -1,
     'post_parent'    => 0,
-    'starts_with'   =>$horse->id,
+    'starts_with'   => $horse->id,
     'order'         => 'ASC'
     
     
@@ -19,7 +19,7 @@ if(count($query_video->posts) > 0){
         array_push($sortedVideo, $video);
     }
 
-    usort($sortedVideo, 'comparatorYearAndName');
+    usort($sortedVideo, 'comparatorYearAndNameVideo');
 
 
 ?>

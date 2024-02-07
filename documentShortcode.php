@@ -25,18 +25,19 @@ class DocumentShortcode
 		$html[] = '<tr>';
 		
         $html[] = '<th rowspan="2" class="enteteTab">'.__('Stallion name', 'horses-catalog').'</th>';
+        $html[] = '<th rowspan="2" class="enteteTab">'.__('Race', 'horses-catalog').'</th>';
+        $html[] = '<th rowspan="2" class="enteteTab">'.__('Birtd year', 'horses-catalog').'</th>';
         $html[] = '<th rowspan="2" class="fulltext enteteTab">'.__('Plugs<br /> sports performances<br /> from production', 'horses-catalog').'</th>';
         $html[] = '<th rowspan="2" class="reduc enteteTab">'.__('Perf', 'horses-catalog').'<i class="fas fa-info-circle" title="'.__('Plugs\nsports performances\nfrom production', 'horses-catalog').'"></i></th>';
         $html[] = '<th rowspan="2" class="fulltext enteteTab">'.__('Specifications sheet<br /> transmissible model,<br /> gaits and free jumping', 'horses-catalog').'</th>';
         $html[] = '<th rowspan="2" class="reduc enteteTab">'.__('Caract', 'horses-catalog').'<i class="fas fa-info-circle" title="'.__('Specifications sheet<\ntransmissible model,\ngaits and free jumping', 'horses-catalog').'"></i></th>';
-        $html[] = '<th rowspan="1" colspan="2"  class="fulltext enteteTab">'.__('Number of products characterized in SF breeding competitions as :', 'horses-catalog').'</th>';
+        $html[] = '<th rowspan="1" class="fulltext enteteTab">'.__('Number of products characterized in SF breeding competitions as :', 'horses-catalog').'</th>';
         $html[] = '<th rowspan="1" colspan="2"  class="reduc enteteTab">'.__('Products', 'horses-catalog').'<br /><i class="fas fa-info-circle" title="'.__('Number of products characterized in SF breeding competitions as :', 'horses-catalog').'"></i></th>';
         $html[] = '<th rowspan="2" class="fulltext enteteTab">'.__('PDF<br/> card', 'horses-catalog').'</th>';
         $html[] = '<th rowspan="2" class="reduc enteteTab">'.__('PDF', 'horses-catalog').'</th>';
 
         $html[] = '<tr>';
-        $html[] = '<th class="enteteTab">'.__('Father', 'horses-catalog').'</th>';
-        $html[] = '<th class="enteteTab">'.__('Mother of father', 'horses-catalog').'</th>';		
+        $html[] = '<th class="enteteTab">'.__('Father', 'horses-catalog').'</th>';	
 		
         $html[] = '</tr>';
 		
@@ -48,10 +49,11 @@ class DocumentShortcode
         foreach($documents as $document){
             $html[] = '<tr>';
             $html[] = '<td>'.$document->name.'</td>';
+            $html[] = '<td>'.$document->race.'</td>';
+            $html[] = '<td>'.$document->birthYear.'</td>';
             $html = array_merge($html, $this->addIcon($document->hasDocumentPerf));
             $html = array_merge($html, $this->addIcon($document->hasDocumentCarateritic));
             $html[] = '<td>'.$document->productFatherCount.'</td>';
-            $html[] = '<td>'.$document->hasDocumentCarateriticCount.'</td>';
             $html[] = '<td>';
             $query_fiche_args = array(
                 'post_type'      => 'attachment',

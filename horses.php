@@ -173,6 +173,7 @@ class Horses{
                $value->breeder= $horse->breeder;
                $value->owner= $horse->owner;
                $value->appro= $horse->appro;
+               $value->new= $horse->new;
             }
         }
     }
@@ -226,6 +227,16 @@ class Horses{
 
 
     public function __construct($rawData) {
+        // clean duplicate value in data
+        $newData = [];
+        foreach ($rawData as $key => $value){
+            if($newData[$key] == null || $newData[$key] == ""){
+                $newData[$key] =$value;
+            }
+        }
+        $rawData = $newData;
+        // and clean data
+
         $this->id = $rawData["id"];
         $this->inline = (($rawData["en_ligne"] == "NON")?false:true);
        
@@ -288,8 +299,14 @@ class Horses{
 
         $this->totalMothersNotes = $rawData["mere_points_total"];
         $this->evaluateMothersNotes = $rawData["mere_evaluation"];
-        $this->foreignBloodline = (strtolower($rawData["mere_ligne_etrangere"])=="oui");
-
+        if(strtolower($rawData["mere_ligne_etrangere"])=="oui"){
+            $this->foreignBloodline = true;
+        }else if(strtolower($rawData["mere_ligne_etrangere"])=="non" || strtolower($rawData["mere_ligne_etrangere"])==""){
+            $this->foreignBloodline = false;
+        }else{
+            $this->foreignBloodline = true;
+            $this->foreignBloodlineLabel = $rawData["mere_ligne_etrangere"];
+        }
         $this->osteopathyStatus = $rawData["statut_osteo_articulaire"];
         $this->osteopathyStatusYear = $rawData["annee_radios"];
 
@@ -387,6 +404,10 @@ class SFExprets{
     public $obstacleBehaviourCross;
     public $globaleCross;
     public $etalonBonus;
+    public $dressageEnergie;
+    public $dressageContact;
+    public $dressageGenerosity;
+    public $dressageFlexibility;
 
     public function __construct($rawData) {
         $this->raceType = $rawData["expertise_sf_note_race"];
@@ -439,6 +460,9 @@ class SFExprets{
         $this->locomotionPace = $rawData["expertise_sf_note_locomotion_pas"];
         $this->locomotionTrot = $rawData["expertise_sf_note_locomotion_trot"];
         $this->locomotionGallop = $rawData["expertise_sf_note_locomotion_galop"];
+        if($this->locomotionGallop == ""){
+            $this->locomotionGallop = $rawData["expertise_sf_note_loc_galop"];
+        }
         $this->locomotionGeneral= $rawData["expertise_sf_note_locomotion_general"];
 
         $this->locomotionGlobale = $rawData["expertise_testing_note_locomotion_generale"];
@@ -488,7 +512,10 @@ class SFExprets{
             $this->globale = $rawData["expertise_sf_note_impression_ensemble_cso_cce"];
         }
 
-
+        if($this->globale == "" ){
+            $this->globale = $rawData["expertise_sf_note_imp_ensemble"];
+            
+        }
         $this->locomotionGallopCross = $rawData["expertise_sf_note_locomotion_galop_cross_cce"];
         $this->obstacleEquilibreCross = $rawData["expertise_sf_note_equilibre_disponibilité_cross_cce"];
         if( $this->obstacleEquilibreCross == ""){
@@ -505,6 +532,11 @@ class SFExprets{
         $this->dressageGallop = $rawData["expertise_sf_note_galop_dr"];
         $this->dressageGlobale = $rawData["expertise_sf_note_ensemble_dr"];
 
+
+        $this->dressageEnergie =$rawData["expertise_sf_note_energie_dr"];
+        $this->dressageContact =$rawData["expertise_sf_note_contact_dr"];
+        $this->dressageGenerosity =$rawData["expertise_sf_note_generosité_dr"];
+        $this->dressageFlexibility =$rawData["expertise_sf_note_souplesse_dr"];
 
         $this->crossPace = $rawData["expertise_sf_note_pas_cce"];
         $this->crossTrot = $rawData["expertise_sf_note_trot_cce"];
@@ -536,7 +568,7 @@ class TestingExperts{
         $this->locomotionPace = $rawData["expertise_testing_note_locomotion_pas"];
         $this->locomotionTrot = $rawData["expertise_testing_note_locomotion_trot"];
         $this->locomotionGallop = $rawData["expertise_testing_note_locomotion_galop"];
-
+       
         $this->locomotionGlobale = $rawData["expertise_testing_note_locomotion_generale"];
 
         $this->ridingObstacleEquilibre = $rawData["expertise_testing_note_obstacle_monte_equilibre"];
@@ -551,6 +583,8 @@ class TestingExperts{
 
         $this->globale = $rawData["expertise_testing_note_generale"];
         $this->comment = $rawData["expertise_testing_note_commentaire"];
+
+        $this->globale = $rawData["expertise_testing_note_generale"];        
     }
 }
 
@@ -706,6 +740,14 @@ function comparatorYearAndName($image1, $image2){
     $year2= date('Y', strtotime($image2->post_date_gmt));
     if($year1 == $year2){
         return  $image1->post_title > $image2->post_title; 
+    }
+    return $year1 < $year2; 
+}
+function comparatorYearAndNameVideo($image1, $image2){
+    $year1= date('Y', strtotime($image1->post_date_gmt));
+    $year2= date('Y', strtotime($image2->post_date_gmt));
+    if($year1 == $year2){
+        return  $image1->post_title < $image2->post_title; 
     }
     return $year1 < $year2; 
 }

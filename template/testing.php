@@ -133,7 +133,7 @@ $expertiseTitle = computeExpertiseTitle($year, $horse);
 
                         }else{
                         ?>
-                        <?php displayNoteInSlider($horse->notes->temperament->humainReactSlider,  __("Worried", 'horses-catalog'), __("In trust", 'horses-catalog')); ?>
+                        <?php displayNoteInSlider(((($horse->notes->temperament->humainReactSlider-3)*-1)+3),  __("In trust", 'horses-catalog'), __("Worried", 'horses-catalog')); ?>
                         <?php
                     }
                    ?>
@@ -157,7 +157,7 @@ $expertiseTitle = computeExpertiseTitle($year, $horse);
 
                     }else{
                         ?>
-                        <?php displayNoteInSlider($horse->notes->temperament->gregariousnessSlider, __("Becomes distracted", 'horses-catalog'), __("Stay focused", 'horses-catalog')); ?>
+                        <?php displayNoteInSlider(((($horse->notes->temperament->gregariousnessSlider-3)*-1)+3),__("Stay focused", 'horses-catalog'), __("Becomes distracted", 'horses-catalog') ); ?>
                         <?php
                     }
                    ?>

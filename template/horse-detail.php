@@ -81,8 +81,12 @@ function computeExpertiseTitle($yearOfHorse, $horse){
     if( (date('Y') - $horse->birthYear) == 3){
         $age= ($yearOfHorse-1 - $horse->birthYear);
     }
-    
-    if( $yearOfHorse >= 2020){
+    // jusqu'a année 2021 de testage et championna la même année
+    // depuis c'est championnat l'année d'avant et testage 
+
+    // jusqu'a fichier 2022 même année
+    // depuis 1 année de différence 
+    if( $yearOfHorse <= 2022 && $yearOfHorse >= 2020){
 
         if($age == 2 && $yearOfHorse != date('Y')){
             $age++;
@@ -105,11 +109,11 @@ function computeExpertiseTitle($yearOfHorse, $horse){
 <div id="horse-catalog" class="detail-card">
     <div class="fixe-part">
         <h1>
-            <?php echo $horse->name ?>
             <?php if($horse->new ){ ?>
                 <span class="new">new</span>
-
             <?php } ?>
+            <?php echo $horse->name ?>
+
         </h1>
        
         <?php
@@ -173,7 +177,7 @@ function computeExpertiseTitle($yearOfHorse, $horse){
                 <?php if(!isYoungHorse($horse) && !isInternationnalEmpty()){ ?>
                 <li class="<?php shf_connected_class() ?>"><a href="#opinion"><?php _e("Riders reviews", 'horses-catalog') ?></a></li>
                 <?php } ?> 
-                <li class="<?php shf_connected_class() ?>"><a href="#video"><?php _e("Images", 'horses-catalog') ?></a></li>   
+                <li class="<?php shf_connected_class() ?>"><a href="#gallery"><?php _e("Images", 'horses-catalog') ?></a></li>   
 
             </ul>
         </nav>
@@ -215,6 +219,13 @@ function computeExpertiseTitle($yearOfHorse, $horse){
         <?php } ?>
         
         <span class="race <?php echo $horse->logo ?>"><?php echo $horse->logo ?></span>
+        <?php 
+        if ($horse->logo  != $horse->logoList){ 
+        ?>
+        <span class="logo-list <?php echo $horse->logoList ?>"><?php echo $horse->logoList ?></span>
+        <?php
+        }
+        ?>
     </div>
     <?php if($horse->globalEvaluation !=null) { ?>
     <span class="categorie <?php echo $horse->globalEvaluation; ?>"><?php echo $horse->globalEvaluation; ?></span>
@@ -314,7 +325,7 @@ function computeExpertiseTitle($yearOfHorse, $horse){
     <?php if(function_exists("shf_connected_block") && shf_connected_block()){ ?>
     <div class="osteopathy-status">
         <h2><?php _e("Osteo Articular Status", 'horses-catalog') ?></h2>
-        <span class="value"><?php echo $horse->osteopathyStatus; ?><span>
+        <span class="value"><?php echo $horse->osteopathyStatus; ?></span>
         <?php if( $horse->osteopathyStatusYear!= null){
         ?>
             <div><?php echo sprintf(__("X-ray year: %s", 'horses-catalog'), $horse->osteopathyStatusYear); ?></div>

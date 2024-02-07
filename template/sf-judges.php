@@ -1,5 +1,28 @@
 <?php
-    function is5YearsCsoDataArePresent(){
+function createConditionnalBlock($title, $notations){
+    $complete = true;
+    foreach($notations as $notation){ 
+        if($notation["value"] == null){
+         #   $complete = false;
+        }
+    }
+    if($complete){
+        echo '<div class="list-note ">';
+        echo '  <h3>'. $title .'</h3>';
+        echo '  <div>';
+        foreach($notations as $notation){ 
+            echo '      <div class="notation">';
+            echo '          <span class="label">'. $notation["label"].'</span>';
+            echo '          <span class="value">'. $notation["value"].'</span>';
+            echo '      </div>';
+        
+        }
+        echo '  </div>';
+        echo '</div>';
+    }
+}
+
+function is5YearsCsoDataArePresent(){
     global $horse;
     $isEmpty = true;
     $isEmpty &= (($horse->notes->sfExprets->obstacleEquilibre) == null);
@@ -38,9 +61,16 @@ function hasCrossPace(){
     $isEmpty &= (($horse->notes->sfExprets->crossGallop) == null);
     return !$isEmpty;
 }
+
+function isNewDressage(){
+    global $horse;
+
+    return $horse->notes->sfExprets->dressageEnergie != null;
+}
 ?>
 <?php
 $expertiseTitle = computeExpertiseTitle($year, $horse);
+if(!isNewDressage()){
 ?>
 <div id="sf" class="root-notation <?php if(isYoungHorse($horse) || hasCrossPace()){ ?>young<?php } ?>">
     <?php
@@ -109,7 +139,7 @@ $expertiseTitle = computeExpertiseTitle($year, $horse);
         <div class="locomotion">
             <h3><?php _e("Locomotion and general functioning", 'horses-catalog') ?></h3>
             <div>
-            <div class="notation">
+                <div class="notation">
                     <span class="label"><?php _e("Pace", 'horses-catalog') ?></span>
                     <span class="value"><?php echo $horse->notes->sfExprets->locomotionPace; ?></span>
                 </div>
@@ -190,8 +220,9 @@ $expertiseTitle = computeExpertiseTitle($year, $horse);
                 </div>
             </div>
         <?php } ?>
+                    
 
-        <?php if(!isYoungHorse($horse) && (!is5YearsCsoDataArePresent() && !is5YearsDressageDataArePresent()) ){ ?>
+        <?php if(!isYoungHorse($horse) && (!is5YearsCsoDataArePresent() && !is5YearsDressageDataArePresent() && (strtolower($horse->discipline) != "dressage")) ){ ?>
             <div class="freejump">
                 <h3><?php _e("Jumping ability", 'horses-catalog') ?>
                 <i class="fas fa-info-circle" title="<?php _e("General average obtained in the 2-year-old championship or in the qualifier at 3 years old", 'horses-catalog') ?>"></i>
@@ -378,6 +409,8 @@ $expertiseTitle = computeExpertiseTitle($year, $horse);
             </div>
 
 
+
+
             <?php 
              /* cross pace data data */
             if(hasCrossPace()){
@@ -410,6 +443,9 @@ $expertiseTitle = computeExpertiseTitle($year, $horse);
         <?php } ?>
 
     </div>
+
+
+
     
     <?php if($horse->notes->sfExprets->etalonBonus != null){ ?>
     <div class="global-impression">
@@ -442,3 +478,87 @@ $expertiseTitle = computeExpertiseTitle($year, $horse);
 
    
 </div>
+<?php
+}else {
+?>
+
+<div id="sf" class="root-notation young" >
+    <h2><?php echo __("Expertise judges SF", 'horses-catalog'); ?></h2>
+    
+    <div class="back"></div>
+    <div>
+<?php
+
+/* dressage aptitude if present */
+createConditionnalBlock(
+    __("Paces", "horses-catalog"), 
+    [
+        array(
+            'label' => __("Pace", "horses-catalog"),
+            'value' => $horse->notes->sfExprets->dressagePace
+        ),
+        array(
+            'label' => __("Trot", "horses-catalog"),
+            'value' => $horse->notes->sfExprets->dressageTrot
+        ),
+        array(
+            'label' => __("Gallop", "horses-catalog"),
+            'value' => $horse->notes->sfExprets->dressageGallop
+        )
+    ]
+);
+
+
+/* dressage aptitude if present */
+createConditionnalBlock(
+    __("Modele", "horses-catalog"), 
+    [
+        array(
+            'label' => __("Race type", "horses-catalog"),
+            'value' => $horse->notes->sfExprets->raceType
+        ),
+        array(
+            'label' => __("Limbs", "horses-catalog"),
+            'value' => $horse->notes->sfExprets->limbs
+        ),
+        array(
+            'label' => __("Top line", "horses-catalog"),
+            'value' => $horse->notes->sfExprets->topLine
+        )
+    ]
+);
+
+/* dressage aptitude if present */
+createConditionnalBlock(
+    __("Aptitude", "horses-catalog"), 
+    [
+        array(
+            'label' => __("Energy & impulse", "horses-catalog"),
+            'value' => $horse->notes->sfExprets->dressageEnergie
+        ),
+        array(
+            'label' => __("Contact & Permeability", "horses-catalog"),
+            'value' => $horse->notes->sfExprets->dressageContact
+        ),
+        array(
+            'label' => __("Generosity & Concentration", "horses-catalog"),
+            'value' => $horse->notes->sfExprets->dressageGenerosity
+        ),
+        array(
+            'label' => __("Flexibility", "horses-catalog"),
+            'value' => $horse->notes->sfExprets->dressageFlexibility
+        )
+    ]
+);
+?>
+    <div class="global-impression">
+        <h3><?php _e("Globale impression", 'horses-catalog') ?></h3>
+        <div>
+            <span class="value"><?php echo $horse->notes->sfExprets->dressageGlobale; ?></span>
+        </div>
+    </div>
+    </div>
+</div>
+<?php
+} 
+?>

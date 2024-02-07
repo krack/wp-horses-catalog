@@ -63,6 +63,9 @@ class Document{
 
     public $id;
     public $name;
+    public $race;
+    public $birthYear;
+
 
     public $hasDocumentPerf;
     public $hasDocumentCarateritic;
@@ -78,6 +81,8 @@ class Document{
         $this->hasDocumentCarateritic = (strtolower($rawData["Fiche_Caract"])=="oui");
         $this->productFatherCount = $rawData["Nb_pdts_exp_P"];
         $this->hasDocumentCarateriticCount = $rawData["Nb_pdts_exp_PM"];
+        $this->race = $rawData["Race"];
+        $this->birthYear = $rawData["Année de naissance"];
         
     }
 

@@ -18,7 +18,7 @@ $(document).ready(function () {
         var image = "<div class=\"bonus-help\">";
         image += "<span class=\"new\">NOUVEAUTE:</span>";
 
-        image += "<p ><b><span class=\"new\">Lors de l’édition 2021,</span> les 5 meilleurs mâles du championnat se sont vus attribuer une note supplémentaire correspondant à l’ « Impression Générale Etalon » qui leur ont apporté un Bonus s’ajoutant au total des épreuves du Championnat.</b></p>";
+        image += "<p ><b><span class=\"new\">Lors de l’édition 2022,</span> les 5 meilleurs mâles du championnat se sont vus attribuer une note supplémentaire correspondant à l’ « Impression Générale Etalon » qui leur ont apporté un Bonus s’ajoutant au total des épreuves du Championnat.</b></p>";
         
         image += "<p>Pour attribuer cette note, un comité composé de 3 membres du jury et de 3 membres de la Commission d’approbation du Stud Book a attribué une note « d’appréciation générale étalon » à chacun d’entre eux. Cette note est attribuée selon le barème suivant :</p>";
         image += "<ul>";

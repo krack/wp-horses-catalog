@@ -56,9 +56,11 @@ $expertiseTitle = computeExpertiseTitle($year, $horse);
             <td class="total value <?php if($horse->evaluateMothersNotes >=8){ echo "good-lineage"; } ?>">
                 <?php if(!$horse->foreignBloodline){ ?>
                     <?php echo $horse->evaluateMothersNotes; ?>/10
-                <?php } ?>
-                <?php if($horse->foreignBloodline){ ?>
+                <?php }else if($horse->foreignBloodline && $horse->foreignBloodlineLabel == ""){ ?>
                     <span class="foreign-bloodline"><?php _e("foreign bloodline", 'horses-catalog') ?></span>
+                <?php }else{
+                    ?>
+                    <span class="foreign-bloodline"><?php echo $horse->foreignBloodlineLabel ; ?></span>
                 <?php } ?>
             </td>
         </tr>
